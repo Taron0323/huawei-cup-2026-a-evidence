@@ -1,0 +1,10 @@
+{
+  "archive": "结果核验与论文填充包_20260924.zip",
+  "archive_bytes": 941007618,
+  "archive_sha256": "2dfcb2c63112b6aebab805d58a6afb5f5e79eb3cfa7b2cf1a3624b74033cf97b",
+  "members": 22163,
+  "source_bytes": 10375017082,
+  "member_sha256_and_crc": "PASS",
+  "path_and_duplicate_check": "PASS",
+  "self_contained_files": "PASS"
+}
