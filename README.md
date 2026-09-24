@@ -4,8 +4,8 @@ This is a private repository for the Huawei Cup 2026 A-problem experiment packag
 
 The complete reproducibility archive is attached to the private release `2026-09-24`:
 
-- `结果核验与论文填充包_20260924.zip`: source snapshot, official evaluator outputs, audited CSV data, tables, figures, replay checks, and the paper-filling prompt.
-- `结果核验与论文填充包_20260924.verification.json`: archive SHA-256, member count, and independent archive checks.
+- `huawei_cup_2026_a_evidence_20260924.zip`: source snapshot, official evaluator outputs, audited CSV data, tables, figures, replay checks, and the paper-filling prompt.
+- `huawei_cup_2026_a_evidence_20260924.verification.json`: archive SHA-256, member count, and independent archive checks.
 
 The archive contains 22,163 verified members and has source content of about 10.4 GB. The uploaded ZIP is a compressed release asset; its SHA-256 is recorded in the verification JSON.
 
