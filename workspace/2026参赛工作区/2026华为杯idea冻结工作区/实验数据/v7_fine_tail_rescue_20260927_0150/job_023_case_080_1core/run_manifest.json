@@ -1,0 +1,75 @@
+{
+  "active_experiment_processes": [],
+  "algorithm": "fresh_final_idea_review_v0.7_mandatory_anchors",
+  "backend": {
+    "available": true,
+    "backend": "mps",
+    "device": "Apple GPU"
+  },
+  "case_graph_sha256": {
+    "case_080": "20b2fa1e14bf879ac7c5b0321f69731c8a8102bb65bbd96d7543f54f4974f98c"
+  },
+  "cases": [
+    "case_080"
+  ],
+  "combination_status": {
+    "case_080/1core/A": "AI_VERIFIED",
+    "case_080/1core/B": "AI_VERIFIED",
+    "case_080/1core/C": "AI_VERIFIED"
+  },
+  "config": "data/raw/A题/data/config.txt",
+  "config_sha256": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+  "cores": [
+    1
+  ],
+  "effective_call_limit_policy": "max(nominal two-call limit, distinct mandatory anchors plus one exploratory call); fallback calls recorded separately",
+  "ended_at": 1790445050.809453,
+  "fast_profile": true,
+  "full_candidates_requested": 2,
+  "gc_disabled": true,
+  "idea": "idea/A题_Final_idea_给codex运行.md",
+  "idea_sha256": "ad20b0248789b58a9e4d5e96c224d105c9672912d43a98301b66ac3b2d29ad72",
+  "new_workspace": true,
+  "official_code_sha256": {
+    "contest_io.py": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e",
+    "evaluation_validation.py": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64",
+    "multicore_cut_evaluate_problem_1.py": "1ee2522655aa6f41b51fbc26b9e17f79ca654585f68796e4ebd842d65a132e1a",
+    "multicore_cut_evaluate_problem_2.py": "0b39f84d5ec0a7fba9a4c92a598a9044b97ab79c71393824c1ba130ecfe6c464",
+    "multicore_cut_evaluate_problem_3.py": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0",
+    "schedule_step1.py": "d8fe721ff3dbe036e34a20c00cce6430960860000a49eb467e63465f76b84034",
+    "schedule_step2.py": "2836baac176f4e0bdd9eec59b8d9ce254e209e5f7a251e23837ab684312fa0c3",
+    "schedule_step3.py": "50053db0436f1d166dd75436693ba3af49b5c339576beb6e7299477f6b69fc7a",
+    "singlecore_evaluate.py": "446b753ee134ef1fec8e052356bb077a2602fbe95572ccd3dddd7928e894b77a",
+    "stub_multicore_cut_and_schedule.py": "0a3a3b79b5173b466fc05fc8d33b72d11d90b4df78995435853d91c632a35892"
+  },
+  "official_evaluator_dir": "/Users/futaoran/Desktop/华为杯2026/华为杯_code/solver_review_v7_20260926/vendor/official_evaluator_fast",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "python": "3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:46:59) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "rows": 6,
+  "run_id": "job_023_case_080_1core",
+  "scene_call_limits": {
+    "A": 2,
+    "B": 2,
+    "C": 2
+  },
+  "scenes": [
+    "A",
+    "B",
+    "C"
+  ],
+  "selection_policy": "Evaluate distinct whole-graph, component-pack, lower-core, and Q1-to-Q2 warm-start anchors in A/B; C also evaluates its B incumbent. Then evaluate a profile-selected candidate. Final selection uses official makespan, then added copy bytes; fallback calls are recorded separately",
+  "solver_source_sha256": {
+    "scripts/run_experiment.py": "fbb54a33d213867f0566176942455520c80e5351ae76d4d90040fe187eaacbd7",
+    "scripts/run_full_matrix.py": "ac40162c97d4264db155d95360934ee8f80c2ed2aa4ec7c19ce0038fe9b6a2f8",
+    "src/huawei_code/__init__.py": "e0a06dce3e6867f90b45d01ba3ea66ccc4bd1157f12f0b4ffeb417fd9f2bb8ce",
+    "src/huawei_code/candidates.py": "b5a057ddc098e1b2683cf7758f9f6bf7c78a84718b203e2f4da527b2c5593742",
+    "src/huawei_code/gpu_score.py": "09e5cf644d94f16db7a62e6d757c2590044bce99b79cec499845adada65fc492",
+    "src/huawei_code/graph.py": "37d1ea7643e04d08d6b3542a0c2a9e037379c39b17bb8dde62fa5dd01b799615",
+    "src/huawei_code/official.py": "57b7ada4a0a98b2054fe98cb5106c58e376426d5c319f92620eb1c51f05fdef8",
+    "src/huawei_code/plan.py": "09e82cc4d55a51ff3cb012ede95ce3c47103a89c575125f41dbc9356c74f6acc",
+    "src/huawei_code/scoring.py": "7efc3597bbe7148b6af8d5b9679373870f1e192255af0dde83b68e5a1b4185d1",
+    "src/huawei_code/verification.py": "1b0c68886687be38d0e6f54955ee0b3819b07c4d4d3d305f1528cde9fb773a89"
+  },
+  "status": "COMPUTED",
+  "workers": 1
+}

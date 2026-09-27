@@ -1,0 +1,47 @@
+\appendix
+\ctexset{section={aftername={\quad}}}
+\input{sections/source-code}
+\section{数据与指标说明}\label{app:provenance}
+本文使用题面给出的100张计算图、硬件配置和评价程序。主表包含100图、1至5核和A、B、C三种场景的1500条记录；其中A的2至5核400条为正式问题一结果，另保存A单核100条用于核对整图A0基准（\texttt{baseline\_A0}），并单独标记单核搜索诊断（\texttt{search\_A\_K1}）。这两类记录用途不同：前者定义统一速度比基准，后者保留单核候选搜索的实际工期与比值。另有500组B/C同计划配对和24组Cache参数固定计划评价。表中工期、搬运和命中率均由相应评价结果汇总。
+
+图中区间以100图有放回重采样1500次所得经验分位数表示实例组成对均值的影响。加速比均由原始工期计算。统一基准工期为整图单Task单核 A0 的 $T_{1,i}$；A、B 单核曲线按题面显示为 1.000，逐例表的 A/B 单核单元仍列各自最终已评计划的实际工期，C 单核单元列实际工期比。以\Case{053}为例，A/B/C 的单核实际工期分别为 1471202、1448004、1426552 cycle，统一基准为 1472686 cycle。
+
+\section{三问逐图结果}\label{app:results}
+表\ref{tab:detail-1}至表\ref{tab:detail-5}共列出100图、5种核数、3问的1500条最终记录。
+每个$T_r/S_r$单元中的斜线分别分隔工期（cycle）和相对整图单核 A0 的加速比；$D_r$是官方额外搬运字节。A、B 的单核 $S_r$ 按题面显示为 1.000，C 的单核 $S_r$ 保留实际工期比；三种场景的单核实际工期均来自对应最终已评计划。
+逐例表只列出最终工期、相对整图单核 A0 的加速比和额外数据搬运量。初始工期、候选来源、方案哈希、切分搬运与 Spill 搬运见 \path{data/audited_20260924/main_results.csv}；\path{data/final_idea_v2/candidate_effects.csv} 另列首个成功候选至最终候选的逐组工期变化。
+\begingroup
+\small
+\setlength{\tabcolsep}{2.5pt}
+\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}
+\renewcommand{\arraystretch}{1.03}
+\input{generated/selected_tables.tex}
+\endgroup
+
+\section{Cache同计划完整配对}\label{app:cache}
+表\ref{tab:cache-detail-1}至表\ref{tab:cache-detail-5}共列出500组配对。
+$T_B=F_B(X_B^*)$，$T_C(X_B)=F_C(X_B^*)$，
+$T_C(X_C)=F_C(X_C^*)$；三比值由式\eqref{eq:cache-factors}计算。
+表中同时列出$C(X_B)$与$C(X_C)$各自的字节命中率；硬件效应图和同计划工期解释只使用$C(X_B)$字段。
+每组的$C(X_B)$沿用该组$B$的最终计划，因而三段工期的计划身份保持一致。
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}
+\renewcommand{\arraystretch}{1.03}
+\input{generated/cache_tables.tex}
+\endgroup
+
+\section{Cache参数敏感性}\label{app:sensitivity}
+六图各在四个非默认硬件配置下固定五核B最终计划，并尝试候选重优化。
+下表的“失败候选”表示未通过依赖检查的记录；这些记录不赋予工期。
+\begingroup
+\small
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{0.94}
+\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}
+\input{generated/sensitivity_table.tex}
+\endgroup
+
+\section{计算参数与配对字段}
+正式评价使用题面默认的L1、UB、DDR和L2 Cache参数；敏感性实验仅改变L2容量或读带宽，其他计划和硬件条件保持不变。C初始命中率与C最终命中率分别保存，固定计划和重调度计划的字段由此分开。未通过依赖检查的候选不进入工期统计。

@@ -1,0 +1,20 @@
+\section{本文数学符号说明}
+本文以 $I$ 表示无量纲湍流综合指标，以 $T$ 表示绝对温度，避免热力变量与风险变量重名。空间位置用 $\bm r=(x,y,z)$ 表示，时间用 $t$ 表示；所有距离计算先转换到以米为单位的坐标系。主要符号及其含义见表\ref{tab:symbols}，变量之间的依赖关系见图\ref{fig:symbols}。
+\begin{table}[H]\centering\auxtablecaption{主要数学符号及其物理含义}\label{tab:symbols}
+\begin{tabularx}{\linewidth}{lYl}\toprule
+符号 & 物理意义 & 单位\\\midrule
+$x,y,z$ & 局部平面坐标与统一基准下的高度 & m\\
+$t,\Delta t$ & 观测时刻及时间步长 & s\\
+$T,p,\theta$ & 绝对温度、气压与位温 & K、hPa、K\\
+$u,v,w$ & 东、北和向上的风速分量 & m/s\\
+$S,Ri$ & 垂直风切变和梯度理查逊数 & $\mathrm{s}^{-1}$、1\\
+$SW,q_{SW}$ & 观测谱宽与校正后的谱宽方差代理量 & m/s、$\mathrm{m^2/s^2}$\\
+$\mathrm{TKE},\varepsilon$ & 湍流动能和湍流动能耗散率 & $\mathrm{m^2/s^2}$、$\mathrm{m^2/s^3}$\\
+$I_a,I_b,I_c,I_d,I_e$ & 模型 a 至 e 的无量纲风险指标 & 1\\
+$H_k,R_k$ & 第 $k$ 类观测算子与误差协方差 & 随观测定义\\
+$\alpha_j,\omega_i$ & 指标组合系数与归一化融合权重 & 1\\
+$\Delta x,\Delta y,\Delta z$ & 三维产品网格间距 & m\\
+$\pi,C(\pi)$ & 路径节点序列与累计风险代价 & 路径、m\\
+$\Omega_{\mathrm{fly}}$ & 题目给定的允许飞行区域 & 集合\\\bottomrule
+\end{tabularx}\end{table}
+\auxfigure{symbols}{观测量、诊断量与决策量的层次关系}{fig:symbols}

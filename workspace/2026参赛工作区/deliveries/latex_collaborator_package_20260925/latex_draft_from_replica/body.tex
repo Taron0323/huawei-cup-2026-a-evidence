@@ -1,0 +1,18 @@
+% 正文前置目录：单独分页，显示章、节和三级标题。
+% 目录保留跳转功能，但采用正文黑色，避免目录链接颜色喧宾夺主。
+{\clearpage\begingroup\hypersetup{linkcolor=black}\setcounter{tocdepth}{3}\small\tableofcontents\endgroup\clearpage}
+
+\input{sections/01-background}
+\input{sections/02-problem}
+\input{sections/03-symbols}
+\input{sections/04-preparation}
+\input{sections/06-model-ab}
+\input{sections/07-model-c}
+\input{sections/08-model-de}
+\input{sections/08-overall-sensitivity}
+\input{sections/09-evaluation}
+\ifcontest\input{sections/12-ai}\fi
+\clearpage
+\input{sections/10-references}
+\clearpage
+\input{sections/11-support}

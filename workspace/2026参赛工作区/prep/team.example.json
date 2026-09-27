@@ -1,0 +1,23 @@
+{
+  "team_number": null,
+  "school": null,
+  "school_code": null,
+  "problem": null,
+  "members": [
+    {
+      "name": null,
+      "role": null
+    },
+    {
+      "name": null,
+      "role": null
+    },
+    {
+      "name": null,
+      "role": null
+    }
+  ],
+  "registration": "UNCONFIRMED",
+  "eligibility_review": "UNCONFIRMED",
+  "payment": "UNCONFIRMED"
+}

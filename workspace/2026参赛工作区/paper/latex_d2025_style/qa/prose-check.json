@@ -1,0 +1,82 @@
+[
+  {
+    "file": "sections/00-abstract.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 88,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/01-background.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 600,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/02-problem.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 843,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/03-symbols.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 333,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/04-analysis.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 817,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/05-assumptions.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 803,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/06-model-ab.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 3084,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/07-model-c.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 3395,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/08-model-de.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 3370,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 1,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": [\n    {\n      \"code\": \"uniform_sentence_run\",\n      \"severity\": \"warning\",\n      \"runs\": [\n        {\n          \"sentences\": [\n            59,\n            63\n          ],\n          \"word_counts\": [\n            35,\n            37,\n            36,\n            38,\n            36\n          ]\n        },\n        {\n          \"sentences\": [\n            60,\n            64\n          ],\n          \"word_counts\": [\n            37,\n            36,\n            38,\n            36,\n            37\n          ]\n        },\n        {\n          \"sentences\": [\n            61,\n            65\n          ],\n          \"word_counts\": [\n            36,\n            38,\n            36,\n            37,\n            36\n          ]\n        }\n      ],\n      \"message\": \"Review five-sentence runs with nearly identical length for repeated syntax.\"\n    }\n  ]\n}\n"
+  },
+  {
+    "file": "sections/09-evaluation.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 816,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/10-references.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 140,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/11-support.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 526,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/12-ai.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 331,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "sections/abstract-prose.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 1387,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "models.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 2896,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  },
+  {
+    "file": "preamble.tex",
+    "returncode": 0,
+    "output": "{\n  \"scope\": \"paper\",\n  \"source_format\": \"latex\",\n  \"word_count\": 382,\n  \"em_dash_count\": 0,\n  \"em_dash_limit\": 3,\n  \"issue_count\": 0,\n  \"defensive_count\": 0,\n  \"semantic_review_required\": true,\n  \"issues\": []\n}\n"
+  }
+]

@@ -1,0 +1,6 @@
+interface:
+  display_name: "华为杯冲冠军"
+  short_description: "从2024数模之星论文提炼建模取舍、验证、写作与答辩方法"
+  default_prompt: "使用 $huawei-cup-champion，依据当前赛题、模型和结果找出最影响竞争力的瓶颈，完成有证据支持的改进并交付。"
+policy:
+  allow_implicit_invocation: true

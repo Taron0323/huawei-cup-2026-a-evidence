@@ -1,0 +1,24 @@
+\clearpage
+\section*{附件}
+\textbf{问题一至问题三核心程序与结果索引。}
+支撑材料用于重建正文中的计算结果。正式交付时按题目要求保存程序、配置、必要输入、派生结果与运行说明；正文引用的图、表和结论应能定位到具体结果文件。附表 A 给出拟交付目录和对应内容，图\ref{fig:support}说明结果生成关系。
+\begin{table}[H]\centering\caption*{附表 A：支撑材料清单示例}\label{tab:support}
+\begin{tabularx}{\linewidth}{lYYY}\toprule
+类别 & 目录 & 内容 & 当前状态\\\midrule
+程序 & \texttt{code/} & 解析、建模、验证和绘图程序 & 正式程序待实现\\
+配置 & \texttt{config/} & 时间划分、参数、种子和坐标定义 & 按真实方案填写\\
+结果 & \texttt{results/} & 逐点预测、指标和路径坐标 & 正式结果待计算\\
+必要数据 & \texttt{data/} & 题目要求或复现所需数据 & 按题目和大小限制整理\\
+运行说明 & \texttt{REPRODUCE.md} & 环境、入口、顺序和预期输出 & 随程序补全\\
+AI 记录 & \texttt{ai/} & 实际使用信息及题目要求的输入处理记录 & 待核验\\\bottomrule
+\end{tabularx}\end{table}
+\auxfigure{support}{输入、程序、结果与论文图表的对应关系}{fig:support}
+\textbf{程序前 AI 使用说明的填写位置。}
+工具名称：\aitool；版本或型号：\aimodel；开发机构：\aideveloper；版本发布日期：\aireleased。
+实际辅助环节为\slot{解析、编程或调试内容}，队伍检查包括\slot{逐项检查方法与结果}。
+
+\textbf{核心程序排版示例。}
+下面程序仅演示非负风险边代价的计算接口，完整程序应随正式支撑材料提供。英文注释中的四个字段对应程序前的中文说明。
+\VerbatimInput[fontsize=\small,samepage=true]{support_example.py}
+
+支撑清单应填写实际存在的文件，正文中的拟交付接口在完成实现后替换为真实名称。附件格式和上传范围依据当届具体赛题、后续公告及系统要求核对；本模板压缩包用于编辑与准备。

@@ -1,0 +1,60 @@
+{
+  "source_sha256": "dccd1aeb6b7e0a7610133e169cb32e4cf711df2b6935f59441265b04ce5a26ec",
+  "pdf_sha256": "93063aff3a7883b1bbf2ab789fd02272e1569b6aa3601f2a05ad6d87f645e608",
+  "pages": 9,
+  "tables": 6,
+  "source_text_units": 304,
+  "missing_source_units": [],
+  "missing_character_counts": {},
+  "missing_glyphs": [],
+  "out_of_bounds_spans": [],
+  "embedded_fonts": [
+    {
+      "name": "Helvetica",
+      "extension": "n/a",
+      "type": "Type1",
+      "bytes": 0
+    },
+    {
+      "name": "AAAAAA+STHeitiSC-Light-1",
+      "extension": "ttf",
+      "type": "TrueType",
+      "bytes": 115452
+    },
+    {
+      "name": "AAAAAB+STHeitiSC-Light-1",
+      "extension": "ttf",
+      "type": "TrueType",
+      "bytes": 167548
+    },
+    {
+      "name": "AAAAAC+STHeitiSC-Light-1",
+      "extension": "ttf",
+      "type": "TrueType",
+      "bytes": 183028
+    },
+    {
+      "name": "AAAAAD+STHeitiSC-Light-1",
+      "extension": "ttf",
+      "type": "TrueType",
+      "bytes": 73696
+    },
+    {
+      "name": "AAAAAA+STHeitiSC-Medium-1",
+      "extension": "ttf",
+      "type": "TrueType",
+      "bytes": 112116
+    },
+    {
+      "name": "AAAAAB+STHeitiSC-Medium-1",
+      "extension": "ttf",
+      "type": "TrueType",
+      "bytes": 96308
+    }
+  ],
+  "unembedded_cjk_fonts": [],
+  "rendered_pages": 9,
+  "visual_review": "passed: final 9-page contact sheet inspected; updated pages 8 and 9 inspected at full resolution; title and table-dense pages inspected during layout QA; no clipping, overlap, missing glyphs, or raw Markdown bold markers observed",
+  "repository_pdf_link_verified": "https://github.com/Taron0323/Huawei-Cup-Mathematical-Modeling-Skill",
+  "outline_entries_verified": 29
+}

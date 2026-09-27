@@ -1,0 +1,989 @@
+{
+  "scope": "PREPARATION_BACKUP_NOT_CONTEST_SUBMISSION",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 100,
+      "sha256": "dc9612bf63d4e8146658c2803bfe6103f18e6fb2032747eb6993f087ce0690f0"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1240,
+      "sha256": "7902d25529f964fb96d9a25d197458f56ac67fbe3bc163c2a7269d40ef202142"
+    },
+    {
+      "path": "CONTEXT.md",
+      "bytes": 4089,
+      "sha256": "4ef09e1b2c611bf03d2a26cf2aee5f88e4902711f8a2c0af49f15973821c3f9f"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_01_initial/README.md",
+      "bytes": 516,
+      "sha256": "6d7597dd01c8c784d54f0b950d448178d5cf7d43b251afabb028d3c4baf0d06a"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_01_initial/original_inventory.json",
+      "bytes": 37306,
+      "sha256": "fc4920b30ad64af45a38dd6dae71945938bade34df49e53ee00e61cd6ba7ee71"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_01_initial/reviewed_inventory.json",
+      "bytes": 37385,
+      "sha256": "48f6a2c7cb48619f0af7558220ee9ac3f053df852ad2bd7d1cb32938469afc46"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_02_templates/artifact.md",
+      "bytes": 1048,
+      "sha256": "18045d7e9969f3e2e8d455b4d7c80993b50b9501013e4d21bb3d173f7e7d1103"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_02_templates/before-working-template.docx",
+      "bytes": 770536,
+      "sha256": "f732822619c73cc6f4038bfe305b0ad56a8b8875997990db3a4045c2c8d656f1"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_02_templates/latex_first_failed.log",
+      "bytes": 5476,
+      "sha256": "97989b61f134817cd4c2139f00058fef217a34639000c3111a9f8514a2295529"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_02_templates/latex_second_failed.log",
+      "bytes": 5744,
+      "sha256": "ef3878e1afc6dc035b2bd05dbdcfd3bd6c8a044cc043663acabde779fe41402f"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_03_latex_compliance/README.md",
+      "bytes": 1690,
+      "sha256": "8af18bb6e5760729553bb66bdf54f84e9278591cebbce8b5ab1954655e3ad693"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_03_latex_compliance/ai_table_first_failed.log",
+      "bytes": 5553,
+      "sha256": "4ca4a6950732a39c46211221da40142db52d1b470fdfd6847c1bf2a2f7de90e4"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_03_latex_compliance/before-title-style.docx",
+      "bytes": 770233,
+      "sha256": "3bdb0248b6cca5371ec7c9c44469c5b74462c5fb03284e9cf298d3a4b0e662cb"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_03_latex_compliance/build_paper.py",
+      "bytes": 2888,
+      "sha256": "533c345b3da8fbf3738aef5c0bf0559bdc7cde1ae1301491c61d42fda2c00775"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_03_latex_compliance/main.tex",
+      "bytes": 1556,
+      "sha256": "ecd88f71c1fca58847fd2f5a5d84c3a82b6bf1f3aa70405692eb9b4dda5dee43"
+    },
+    {
+      "path": "Each Stage Review Work/20260921_03_latex_compliance/变更与验收.md",
+      "bytes": 1341,
+      "sha256": "14b9d62a813bc7830808e6736112a76fd2f0afec10e84120e91604953c7687b3"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 1615,
+      "sha256": "bbf0c3ad4adae3c6a200a62b2195e086a09ddaf8b32f77c3d720f2231def7e7a"
+    },
+    {
+      "path": "IDEA.md",
+      "bytes": 744,
+      "sha256": "c705024029a23757f6d9308a21dccac6bf770904f3bdc841397d9e707b265ff4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3640,
+      "sha256": "818ac95564a6a4b9e276fcc6dfac788c6c804b6fe4fb8e8cac8ba89ecb0edfd8"
+    },
+    {
+      "path": "REQ.md",
+      "bytes": 1189,
+      "sha256": "ce76740ecad3482949148a8e7bf5a2878d65e2ec24dbbfbc00155ff638c3ac7f"
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 1317,
+      "sha256": "39a023b76426c6b06de6139b074fc11f6fe5ee894ee61e8a413766338d603d40"
+    },
+    {
+      "path": "data/processed/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "evidence/README.md",
+      "bytes": 1091,
+      "sha256": "00cac31f1a7a82da731c2ace52558ca530bc55415b4288d9510aa99d2670a9d0"
+    },
+    {
+      "path": "evidence/ai_usage.csv",
+      "bytes": 250,
+      "sha256": "d29e1049e0923abf024edc01a0594139194c10ddee8e16ca2d9ece2cc4c54672"
+    },
+    {
+      "path": "evidence/claims.csv",
+      "bytes": 160,
+      "sha256": "c6b535029305f13af6014c1cb510f5bb16e104bed147a9e50fa7c924204d6cae"
+    },
+    {
+      "path": "evidence/figures.csv",
+      "bytes": 136,
+      "sha256": "00f812bff0d5d1fbc48b8b36b0490398d9c04f31e5df9a59862856648b7534d1"
+    },
+    {
+      "path": "evidence/human_review.csv",
+      "bytes": 64,
+      "sha256": "c9208b3657d230df735739fc53d3f994cb929e62b157ca1e0d656e88066419af"
+    },
+    {
+      "path": "evidence/parameters.csv",
+      "bytes": 123,
+      "sha256": "7e92e94ef599af67943eefa0ec7fc988a2524bf8ca3b5f63eeb7943c5961f07a"
+    },
+    {
+      "path": "evidence/references.csv",
+      "bytes": 104,
+      "sha256": "a22f1a7e6f7b7711d7d0016ca12341a0d9b2f7711531cf2c3cbb1abde439bbce"
+    },
+    {
+      "path": "evidence/requirements.csv",
+      "bytes": 92,
+      "sha256": "8196d08582c813e5ee734f534eca9940970b37b8b74753ed58dec18c9d60baa3"
+    },
+    {
+      "path": "figures/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "inputs/README.md",
+      "bytes": 284,
+      "sha256": "6fc3879c9dcdd3505cbfec09bca2cc44fd84dd0086730aa2c237a66c3cbd98e7"
+    },
+    {
+      "path": "inputs/manifest.json",
+      "bytes": 4,
+      "sha256": "5239a7754876b9a70871c45e41f1bd9abbd91ed2de67af926c1cfcc9c9377d51"
+    },
+    {
+      "path": "inputs/problem/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "inputs/raw/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "official/20260921/01_官方网页/2026年中国研究生数学建模竞赛培训教师学术交流会通知.html",
+      "bytes": 92683,
+      "sha256": "136b277be7dd473be3d97278416e4dc156afcbecdeadd488e9fc7082c76485b3"
+    },
+    {
+      "path": "official/20260921/01_官方网页/2026年中国研究生数学建模竞赛培训教师学术交流会通知.md",
+      "bytes": 4929,
+      "sha256": "02b550703bbee3346b618f29dc068981897fa0a2b2964f1c5694b782c1469360"
+    },
+    {
+      "path": "official/20260921/01_官方网页/2026年数学建模竞赛官网首页.html",
+      "bytes": 109441,
+      "sha256": "ddf8d3d9955a2d27f7076868cacc405adbf06b2a16306e7e69e21b2356bb72d3"
+    },
+    {
+      "path": "official/20260921/01_官方网页/2026年数学建模竞赛官网首页.md",
+      "bytes": 666,
+      "sha256": "1079247c3aa8c3d9261602b80b0a9d08b0bcb7d2bc63b2b0158b3ae3bed1278a"
+    },
+    {
+      "path": "official/20260921/01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.html",
+      "bytes": 101517,
+      "sha256": "eab779eb7aa2db7af077ea70cb33cc444fb2d34060f07e5d10aa7d98391ebef1"
+    },
+    {
+      "path": "official/20260921/01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.md",
+      "bytes": 9730,
+      "sha256": "0770da3c8352b8926a5d61a424666853adb5ac1d2dc21b7414fd9dc59713482e"
+    },
+    {
+      "path": "official/20260921/01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛开赛公告.html",
+      "bytes": 140739,
+      "sha256": "4af78873c2b6efc774b3cae4942ad77eaf3b86977eb35eafcb694a039407cdc9"
+    },
+    {
+      "path": "official/20260921/01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛开赛公告.md",
+      "bytes": 9969,
+      "sha256": "503407de77fa232f9f8a01b26fcd1d3ac1f33f04d491f1ce95b253c99c3b6292"
+    },
+    {
+      "path": "official/20260921/01_官方网页/中国研究生数学建模竞赛组委会秘书处及承办单位联系方式.html",
+      "bytes": 66989,
+      "sha256": "df5ba7e9004cf6feacb69d0d355533e019b378e9ab991bd577d81a7e911a8cc8"
+    },
+    {
+      "path": "official/20260921/01_官方网页/中国研究生数学建模竞赛组委会秘书处及承办单位联系方式.md",
+      "bytes": 955,
+      "sha256": "6b1a1707bd0470a88a8221e17a5ee0daf258876ca68e1dca11d647dc597e12a7"
+    },
+    {
+      "path": "official/20260921/01_官方网页/关于“华为杯”第二十三届中国研究生数学建模竞赛赛题下载及提交作品的重要提醒.html",
+      "bytes": 77056,
+      "sha256": "48f27ecfa4acc587e7582ecbadc072369db8f9a69f0e1fbb25d9c20b1c384282"
+    },
+    {
+      "path": "official/20260921/01_官方网页/关于“华为杯”第二十三届中国研究生数学建模竞赛赛题下载及提交作品的重要提醒.md",
+      "bytes": 5185,
+      "sha256": "19936016693052cda389762c9927cc8ffa7d2d01126c7fca175bc32c5d94726c"
+    },
+    {
+      "path": "official/20260921/01_官方网页/关于变更中国研究生数模竞赛组委会秘书处办公电话的公告.html",
+      "bytes": 68311,
+      "sha256": "f7c3d4f9affae79a7d468cddacbb23590d7dfac73080e851b30bc84ef930ee87"
+    },
+    {
+      "path": "official/20260921/01_官方网页/关于变更中国研究生数模竞赛组委会秘书处办公电话的公告.md",
+      "bytes": 804,
+      "sha256": "fcf0b321b46dbc8a45f42936bd98743244f336b2a76bb94c7593c1715751bcc2"
+    },
+    {
+      "path": "official/20260921/01_官方网页/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.html",
+      "bytes": 70217,
+      "sha256": "ba284bf5ad30359f74f712dd0ed95fa8d9f45e3a5ab49a7ff429a7fd270267d0"
+    },
+    {
+      "path": "official/20260921/01_官方网页/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.md",
+      "bytes": 2242,
+      "sha256": "d85a29b0d2e69f92705281119595f3c756c021a34cfb72fe2c336d3526adc74a"
+    },
+    {
+      "path": "official/20260921/01_官方网页/常见问题.html",
+      "bytes": 81734,
+      "sha256": "64f1fb6699f873c2ef3f82344823cde348945f2d9193780acb4e0ab4e8bb99b6"
+    },
+    {
+      "path": "official/20260921/01_官方网页/常见问题.md",
+      "bytes": 4852,
+      "sha256": "5929138421cab649174ae3d991173228e44c1fd6cec63caa33817e4c1b32e12b"
+    },
+    {
+      "path": "official/20260921/01_官方网页/组织机构.html",
+      "bytes": 97111,
+      "sha256": "9c950b835b541ca65bf6592698a3319711b1f16fc503a54128e57b91fde1623d"
+    },
+    {
+      "path": "official/20260921/01_官方网页/组织机构.md",
+      "bytes": 1871,
+      "sha256": "888f6298705672063ee5e4a1fd565ae554f47747b56f5ef666e1b0be3c91caeb"
+    },
+    {
+      "path": "official/20260921/01_官方网页/赛事介绍.html",
+      "bytes": 67111,
+      "sha256": "84b7fcad157e25a7e12f8bc006852f6776ba16afd5eeb601579a1ca4f8c1a3b7"
+    },
+    {
+      "path": "official/20260921/01_官方网页/赛事介绍.md",
+      "bytes": 1152,
+      "sha256": "d6bfde2d5725c02f43b1a1592cf1f189205134d0d71ded895e49f1a7337a5304"
+    },
+    {
+      "path": "official/20260921/02_官方附件/2026年中国研究生数学建模竞赛培训教师学术交流会通知(盖章版).pdf",
+      "bytes": 666654,
+      "sha256": "a9177441f4b1dc16222d9b30bd3caff708402134926fe2b5f93e5c0af469cafe"
+    },
+    {
+      "path": "official/20260921/02_官方附件/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.pdf",
+      "bytes": 1414627,
+      "sha256": "1ba5ee30aa28d6b170401ff71dfb28429ee79547f0cddee682c4ffde140e6952"
+    },
+    {
+      "path": "official/20260921/02_官方附件/中国研究生创新实践系列大赛数模竞赛-用户手册（学生）V4.1.pdf",
+      "bytes": 3000815,
+      "sha256": "7f3df1135ed882ea09d37a9ff09da60a23f98c64eeeac7ec70e60266740949e3"
+    },
+    {
+      "path": "official/20260921/02_官方附件/中国研究生创新实践系列大赛数模竞赛-用户手册（研究生培养单位）.pdf",
+      "bytes": 2467849,
+      "sha256": "eb6d47f8007af8a9d020f5a9befb2ac5d6b86f42e192c6393521949ad6162a88"
+    },
+    {
+      "path": "official/20260921/02_官方附件/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.pdf",
+      "bytes": 1348718,
+      "sha256": "ee948a4699a4f0970b6f7ac528ce01ccae9ef7c12f3752e71e4d4b27923c2655"
+    },
+    {
+      "path": "official/20260921/02_官方附件/第二十三届中国研究生数学建模竞赛评审专家推荐表.docx",
+      "bytes": 18793,
+      "sha256": "d3b67c4be2183a22529ca2f9807dcbb824edd07d384f1840528a16112bea5e65"
+    },
+    {
+      "path": "official/20260921/02_官方附件/附件1：“华为杯”第二十三届中国研究生数学建模竞赛下载试题及上传论文操作手册.pdf",
+      "bytes": 1276899,
+      "sha256": "bd3f6c4456f8f57b309a3aace33644e1a9f877883cda64bf7d014c4e9e7adec4"
+    },
+    {
+      "path": "official/20260921/02_官方附件/附件2：“华为杯”第二十三届中国研究生数学建模竞赛论文格式规范.docx",
+      "bytes": 93167,
+      "sha256": "46d2e2a87e90608ace764203d5326d7c7e41f01a5eb79986724a6f159fd70e16"
+    },
+    {
+      "path": "official/20260921/02_官方附件/附件3：“华为杯”第二十三届中国研究生数学建模竞赛论文模板.doc",
+      "bytes": 894976,
+      "sha256": "195b06cf670ec1aeb796bfd07e6d3e98e36d16db119308dcf4d0756319fe2e29"
+    },
+    {
+      "path": "official/20260921/02_官方附件/附件4：“华为杯”第二十三届中国研究生数学建模竞赛人工智能工具及输出使用规定.docx",
+      "bytes": 18523,
+      "sha256": "5922c1f92530c88eab3214e67de981aeda195c27d5b583ddc2380ee24db0e539"
+    },
+    {
+      "path": "official/20260921/02_官方附件/附件一：报告内容.pdf",
+      "bytes": 94063,
+      "sha256": "1960cb5480c118097bd6cce9a00397624a8251c8bba3347b4eeb8a9229f5b9c9"
+    },
+    {
+      "path": "official/20260921/02_官方附件/附件二：交通指南.pdf",
+      "bytes": 169432,
+      "sha256": "690bcc6e51df4c6fe1449aff673bc25aaf8a3d03532bab86cd4a6b67f922bc5b"
+    },
+    {
+      "path": "official/20260921/03_网页内嵌图片/1233ce12b7224c43bc49d0a32a1dcc6e.png",
+      "bytes": 72532,
+      "sha256": "9f45e389223a120882ab2dba700b8b9a16a0f846dcaa0437b4689ce2e7e9627a"
+    },
+    {
+      "path": "official/20260921/03_网页内嵌图片/2bd0b79d348d4fba841a8e26bb24c727.jpg",
+      "bytes": 40507,
+      "sha256": "bab285be491e3a60a2d3c602ced71b2e2b60660658f9683a1e53f993f26f2adc"
+    },
+    {
+      "path": "official/20260921/03_网页内嵌图片/e0a680528ed9478b8e3dc55631cd3925.jpeg",
+      "bytes": 57973,
+      "sha256": "6c359225e3c47449fb429b75217b38568e57e796b9467a6466730d704465b92c"
+    },
+    {
+      "path": "official/20260921/03_网页内嵌图片/f6c60a0d801a4d52b498ae72561c9793.jpeg",
+      "bytes": 6651,
+      "sha256": "fcd7a985a20be4a69a9df772acf0498028bdec363f87d99507f476bbf5c1e82b"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/2026年中国研究生数学建模竞赛培训教师学术交流会通知(盖章版).pdf.txt",
+      "bytes": 3971,
+      "sha256": "116ab281809f67443993a2280138b89d3cd210b7de16ea3a910c86c4159b023f"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.pdf.txt",
+      "bytes": 454,
+      "sha256": "9b53a6beaa05e18043c9c50ab890d08b996c350a5da3a57687c365b2bc54c0e8"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/中国研究生创新实践系列大赛数模竞赛-用户手册（学生）V4.1.pdf.txt",
+      "bytes": 14772,
+      "sha256": "54620bcc5f6df00a70206229479459a00b2b3d76f568c5efc75a8a22dbeac1a7"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/中国研究生创新实践系列大赛数模竞赛-用户手册（研究生培养单位）.pdf.txt",
+      "bytes": 18075,
+      "sha256": "68ca40c6ad52c20f82ccb7beec0149a1b585191e300ed7cea87acd4427e5c7ec"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.pdf.txt",
+      "bytes": 307,
+      "sha256": "47672d4ae1854ec8cf67ef8eee733da3acd3a22e507bc083abd64181e27d72df"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/第二十三届中国研究生数学建模竞赛评审专家推荐表.docx.txt",
+      "bytes": 732,
+      "sha256": "6330bb650a247964d9d724b5bb4a1685d666a0bc49cd69c2561c3b5f2e3e8dae"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/附件1：“华为杯”第二十三届中国研究生数学建模竞赛下载试题及上传论文操作手册.pdf.txt",
+      "bytes": 8951,
+      "sha256": "c896d87be05431c0ee28e07195b2fa8a03b4af9585eb6e54a931e48bb0de4860"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/附件2：“华为杯”第二十三届中国研究生数学建模竞赛论文格式规范.docx.txt",
+      "bytes": 2182,
+      "sha256": "da1b831bc5aa76e4a283d9a9d708e63474a8ef6716b48c3f2d77bfdc8533209c"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/附件3：“华为杯”第二十三届中国研究生数学建模竞赛论文模板.doc.txt",
+      "bytes": 974,
+      "sha256": "5ca01c957f4b01124cf7f7bc28998e70e8760868a2d1e188716749582a3da093"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/附件4：“华为杯”第二十三届中国研究生数学建模竞赛人工智能工具及输出使用规定.docx.txt",
+      "bytes": 3286,
+      "sha256": "e6adf7d632184f27bc9357093be297a99ce4e74c0874480c5c89bb7d9c1cf39b"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/附件一：报告内容.pdf.txt",
+      "bytes": 1524,
+      "sha256": "6e4aedbda7e9e25ff78e43df550e2cc185759874637c27def72138ad88406652"
+    },
+    {
+      "path": "official/20260921/04_附件可检索文本/附件二：交通指南.pdf.txt",
+      "bytes": 1736,
+      "sha256": "88f54db32a962dc898bed7ecaaaf8c5e0c0257693d463624fbbea433ea8ea259"
+    },
+    {
+      "path": "official/20260921/README.md",
+      "bytes": 1595,
+      "sha256": "ce77464e1a7ddc45ecb4e2ca88a0c267547e09d2bc08d8306f5d292147bc5af0"
+    },
+    {
+      "path": "official/20260921/来源清单.json",
+      "bytes": 34649,
+      "sha256": "4be84693be935ef8113923b4ce7660c76b9c581fec7b7ee8aa447b5452284551"
+    },
+    {
+      "path": "official/20260921/采集记录/collect_public.py",
+      "bytes": 7160,
+      "sha256": "333b146de9acb678b14f6d14ae85ea914d949939f9a02853f4903f1c5e7644f2"
+    },
+    {
+      "path": "official/20260921/采集记录/verify_and_extract.py",
+      "bytes": 2866,
+      "sha256": "5950aa64db024372786732cf2323285d0ff126f1a7e0b2eb57d3d3bc95dfafed"
+    },
+    {
+      "path": "official/20260921/采集记录/下载校验报告.json",
+      "bytes": 3855,
+      "sha256": "dd302b7f30276552f7efc68aad8aac02b7cf11462e2b70e4b31dba6a6cb7c8e6"
+    },
+    {
+      "path": "official/20260921/采集记录/检索覆盖.json",
+      "bytes": 83440,
+      "sha256": "1e301e8c8570fc6732db8cfac6ab927ce80a9980ad2999fae5c7c9f2cbd7a605"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-1.html",
+      "bytes": 113221,
+      "sha256": "c8e4d59e960b1d97142289517348f78268bb47fe6c8f79b5ae4293585cb47cc2"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-10.html",
+      "bytes": 99425,
+      "sha256": "1478d4442ac182f41844c690174950e408b79580b1a3fd43f3b4c8daa73e15f9"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-11.html",
+      "bytes": 98420,
+      "sha256": "0eb3b515fbe327827070e955533950c3d26a1d850b605172ba1edd9460999663"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-12.html",
+      "bytes": 90171,
+      "sha256": "ea7805355939c926122317998291e923e52fcdbb00f1b8a615f5a670b2965299"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-13.html",
+      "bytes": 104288,
+      "sha256": "e95bfdaa05970d15d58b57fd7a3f0be0cccbf6334434113657d0687b8d4d1bb7"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-2.html",
+      "bytes": 108175,
+      "sha256": "2908b875d64efc1c2672902a72f78d37c67cf7c81152149569fa8d065f2522cb"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-3.html",
+      "bytes": 105850,
+      "sha256": "01a6a6c28f48784336f8869af210ef7e66b6830d1bf7d814f4fa3f7f25a102d6"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-4.html",
+      "bytes": 100890,
+      "sha256": "64d829722255f18f6be3dcdf94c58ca64063bf80622d76c9a6a01e8d6b0a4252"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-5.html",
+      "bytes": 101756,
+      "sha256": "fa19cc7b63ff64842eca6b48f25c9ce3de683a29da0dbfe7e13b1aae2480bac2"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-6.html",
+      "bytes": 102055,
+      "sha256": "bf152b139cd3d5edbd99ac822c9c1a3448f5687dd1d2046b6479f5e048367cdf"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-7.html",
+      "bytes": 105565,
+      "sha256": "e498a81dc2cf2780d7bb81a0197b6cd3b0835b43f2a18b8765a2371c2efd5205"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-8.html",
+      "bytes": 110031,
+      "sha256": "779b788b05900e4b5028e91f8298228d51f1e98198e5251c104604b3df7a1849"
+    },
+    {
+      "path": "official/20260921/采集记录/通知列表快照/page-9.html",
+      "bytes": 102824,
+      "sha256": "d0721ba7ad60d65da956974cfd254f7e4f2136044107e4695c1adf8b58ef3fc5"
+    },
+    {
+      "path": "paper/2026格式与合规对照.md",
+      "bytes": 2776,
+      "sha256": "d0ad939942128a3329e00b8f204750e677d3c108ca67c5d99a2ea0d9f6c1c178"
+    },
+    {
+      "path": "paper/README.md",
+      "bytes": 2168,
+      "sha256": "9ce9b70ea9241427a1d84cecd97573f1f50cc67149465bca716ce2d988a86d96"
+    },
+    {
+      "path": "paper/latex/ai-config.tex",
+      "bytes": 564,
+      "sha256": "11132da2c38c6b4f151c14c152208faa995dd89157342ff6307133ed6c40b8f6"
+    },
+    {
+      "path": "paper/latex/ai-disclosure.tex",
+      "bytes": 1661,
+      "sha256": "3d032381ad005df676be6c3ddb5672620b58312291ddad10ec998b5901f826af"
+    },
+    {
+      "path": "paper/latex/frontmatter.pdf",
+      "bytes": 220966,
+      "sha256": "455828dff54de56a623ff285f21b5c22c2b61439574664f17d02566174ec04cc"
+    },
+    {
+      "path": "paper/latex/main.tex",
+      "bytes": 2142,
+      "sha256": "27af4df0e6b42b5a9eb82774f681ffffca4ddbe2f0e6cffe862516b51b743009"
+    },
+    {
+      "path": "paper/latex/official-cover.pdf",
+      "bytes": 220328,
+      "sha256": "476959228de22f8a92e424c2c416cc16f2e68c7e0993ba170de763662904e9ec"
+    },
+    {
+      "path": "paper/latex/support-index.tex",
+      "bytes": 1166,
+      "sha256": "26d369f306507095d5073617b1914ae9c8f14e1690762b9c22b743201eaa8338"
+    },
+    {
+      "path": "paper/preview/latex/page-1.png",
+      "bytes": 102599,
+      "sha256": "6dd8d8db550e10a014aa3d73abf451b954eb3ff05830fc4d9a7f6454ebd2ec36"
+    },
+    {
+      "path": "paper/preview/latex/page-2.png",
+      "bytes": 41515,
+      "sha256": "fe268dfd113a98bea15b91cd66c04dba18b073b44b3465465a827369d239d6b6"
+    },
+    {
+      "path": "paper/preview/latex/page-3.png",
+      "bytes": 230420,
+      "sha256": "4b511b625c1e3cae6555076bad8b820e87491d786ce56de3c9014cd7d116699f"
+    },
+    {
+      "path": "paper/preview/latex/page-4.png",
+      "bytes": 202100,
+      "sha256": "aea1d41729a7c28d5beab83301eb3e4b492bf64c6f0e8d225c90262ecf69c16d"
+    },
+    {
+      "path": "paper/preview/latex/page-5.png",
+      "bytes": 137577,
+      "sha256": "afb5069e5c4d2683f7d3bace1d5cf9277de8e41269757b0191b303060d6ad316"
+    },
+    {
+      "path": "paper/preview/latex/template.pdf",
+      "bytes": 301731,
+      "sha256": "d89e01a5419d253ba2f94d3ec0928457495ec8af3909fd4df80362fe1011e884"
+    },
+    {
+      "path": "paper/preview/latex/template.txt",
+      "bytes": 5270,
+      "sha256": "1424096b1ca5081984440b6ea187c9221fba6190a7e313bc212349c2cd84fe1e"
+    },
+    {
+      "path": "paper/preview/reference/official-template.pdf",
+      "bytes": 263922,
+      "sha256": "f3754b8f3234deaa4ec6e4f1a157f31db95376dc230933eb9e01a559f7512712"
+    },
+    {
+      "path": "paper/preview/reference/page-1.png",
+      "bytes": 200699,
+      "sha256": "4460c81ad8c1b23fb414235279ce6ca60863d51815dfc3e35069591fce01fd6d"
+    },
+    {
+      "path": "paper/preview/reference/page-2.png",
+      "bytes": 71273,
+      "sha256": "195fe3cacd72571828a08c090ca3ac2fe0184c7a13ec369fa2282ed959547818"
+    },
+    {
+      "path": "paper/preview/reference/page-3.png",
+      "bytes": 13249,
+      "sha256": "b67b03088640853d72ef3e549e13c17ff4013e7ca39d81337cd31de6e38d8bee"
+    },
+    {
+      "path": "paper/preview/reference/page-4.png",
+      "bytes": 13281,
+      "sha256": "03dc94fe4531d3e7677567faf52e712160386b1a44fe7e7f6143192cbbb44735"
+    },
+    {
+      "path": "paper/preview/word/page-1.png",
+      "bytes": 200158,
+      "sha256": "6a5f5af5c2c8f1dd148d524eac2a2da0945da11a6c44caa4b8b3c9108c181882"
+    },
+    {
+      "path": "paper/preview/word/page-2.png",
+      "bytes": 71298,
+      "sha256": "79852972ed2762ca35669b0f85aead5fa6308f40f9a80534f3cf6516c1fef0fe"
+    },
+    {
+      "path": "paper/preview/word/page-3.png",
+      "bytes": 13249,
+      "sha256": "b67b03088640853d72ef3e549e13c17ff4013e7ca39d81337cd31de6e38d8bee"
+    },
+    {
+      "path": "paper/preview/word/page-4.png",
+      "bytes": 13281,
+      "sha256": "03dc94fe4531d3e7677567faf52e712160386b1a44fe7e7f6143192cbbb44735"
+    },
+    {
+      "path": "paper/preview/word/working-template.pdf",
+      "bytes": 260500,
+      "sha256": "aea66f7534e1a2e8bf3f1b0fe0070cd552b7b1a87b6f05f0be91b99b773fb8f3"
+    },
+    {
+      "path": "paper/word/official-template.doc",
+      "bytes": 894976,
+      "sha256": "195b06cf670ec1aeb796bfd07e6d3e98e36d16db119308dcf4d0756319fe2e29"
+    },
+    {
+      "path": "paper/word/working-template.docx",
+      "bytes": 770244,
+      "sha256": "c3291981847179fbb26996cd5edf85aa81877d8b93ae8a6f10d342a8c828f795"
+    },
+    {
+      "path": "practice/README.md",
+      "bytes": 754,
+      "sha256": "5967727815c2ae9cd9e92ce90903e234c2a65c30b556acf466e38c62602a2626"
+    },
+    {
+      "path": "practice/transport/input.json",
+      "bytes": 272,
+      "sha256": "7e67d8c2e1349a406df29083c32d22ade7190594b180770c3029eb53e608d6a5"
+    },
+    {
+      "path": "practice/transport/run.py",
+      "bytes": 8844,
+      "sha256": "ba7795d2f3eb878db609daeaf008cc65e4095f85766437cbb74786d7421e4429"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/allocation.pdf",
+      "bytes": 10227,
+      "sha256": "e652c9a156fccf145ff22a4d18486a35eefa3cc3df1b2d3b10a65889285bd76d"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/allocation.png",
+      "bytes": 21119,
+      "sha256": "c2d46217a5cdb4b2b2a9b7d8d44af13a2ffbd6d4f6163ff5761430715df6992f"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/compile.log",
+      "bytes": 1890,
+      "sha256": "ed8e826a4a16df43cef1ca966e4c78d63dfe5f7a6fa1f8fdc392b60c19dbe834"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/flows.csv",
+      "bytes": 191,
+      "sha256": "9117c7db2e3e871481397cbcd286014b8f88addcf2ddcf90268794c45eb79504"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/metrics.csv",
+      "bytes": 52,
+      "sha256": "661255ef9e4f184a48adfbdaee19ff622f12cb2d626cd6169bd1bc6eb12de031"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/report-page-1.png",
+      "bytes": 104166,
+      "sha256": "5ddb4087029f37016a0427077e942063c301ea50f262de03681ff4c5971ca1e3"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/report.aux",
+      "bytes": 32,
+      "sha256": "fbabe80c887f95a1ede6847f22dd91b380bda9d17ae8bfaa72e1741b16aa41e9"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/report.log",
+      "bytes": 8057,
+      "sha256": "3d994fb71cca3307c80b2ebc2a2036aa4743de8e6d973850a482bacfe4763a91"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/report.pdf",
+      "bytes": 28893,
+      "sha256": "a320a7eaadad4bf565cadbafacfc7a2cfc3e76aca1cbd7d26b96832fbe23ef6c"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/report.tex",
+      "bytes": 1558,
+      "sha256": "6e784e85143f5b003e732cb14458686fcc139ea433404ddbb6f40d0442c16eb8"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/run.json",
+      "bytes": 2465,
+      "sha256": "e23c7863c8bd72657aee74d65367b333092dff209b0fea29b64d4912d6a47746"
+    },
+    {
+      "path": "practice/transport/runs/rehearsal-01/verification.json",
+      "bytes": 1721,
+      "sha256": "39039344f6419c6f000cd7f35cc6513fbfe36f35ed2d2f528be88d71311b13bd"
+    },
+    {
+      "path": "prep/AI使用与标注.md",
+      "bytes": 1728,
+      "sha256": "3c185d21de0fc969a6318fb0819eb94eaa8d04fd696e6453145ec90bd89a4f47"
+    },
+    {
+      "path": "prep/ai_preparation.json",
+      "bytes": 362,
+      "sha256": "0f41233976a18891ed4e578eafe1ba0f59c1dd32dfb00e2a260cbaa36990d325"
+    },
+    {
+      "path": "prep/team.example.json",
+      "bytes": 361,
+      "sha256": "45b9db02d8042eacac6d82c1cd363abb5b408674914b598b9e340fc82d53cd01"
+    },
+    {
+      "path": "prep/时间安排.md",
+      "bytes": 1252,
+      "sha256": "0912efc37d9a839130838ae5f91ff3a7d8422420ab2b4d6c1b87fb5c8eab3bbe"
+    },
+    {
+      "path": "prep/环境说明.md",
+      "bytes": 1763,
+      "sha256": "fdb54dd55c54d3ba482aaa606fcb576905005a2b881d4d22a02e1b273f44833f"
+    },
+    {
+      "path": "prep/赛前清单.md",
+      "bytes": 2788,
+      "sha256": "289011eb6931d6395a017ec2a69ce741bd0f39623bcddfaa8471dfa4ddf4dbc0"
+    },
+    {
+      "path": "prompts/00_准备与审查Goal.md",
+      "bytes": 3358,
+      "sha256": "4586a0081c095a46a5bbe30fb6a23fa54d7b97d078f358258cf3f2e82df8bace"
+    },
+    {
+      "path": "prompts/01_接收与选题.md",
+      "bytes": 607,
+      "sha256": "58122c4fedafb69b289bb6dfdd9c6942f4fb04cde6af6645b90f563f9d5fe6c4"
+    },
+    {
+      "path": "prompts/02_建模与实现.md",
+      "bytes": 547,
+      "sha256": "0d1ff7c72eba797609e7fb4ad178d1b09d8eda3f30ef79bdf9264625f53d9492"
+    },
+    {
+      "path": "prompts/03_验证与图表.md",
+      "bytes": 536,
+      "sha256": "24286f6a5e26ec73220dafdd6ddfb7c7882e196c3ebb946e3bbc94def55dda43"
+    },
+    {
+      "path": "prompts/04_论文与引用.md",
+      "bytes": 615,
+      "sha256": "cb9910c91f7b2bc434322689186a7b4435ad2850f79f456fbc293d0d169f995e"
+    },
+    {
+      "path": "prompts/05_整体验收.md",
+      "bytes": 554,
+      "sha256": "06c363e36ebcbdccbb9e4cc461be62da159aeabb7ecd6ae3535c9aae12e39a4d"
+    },
+    {
+      "path": "prompts/06_冻结与交付.md",
+      "bytes": 561,
+      "sha256": "cd5aef69be32cc28c719fa1d64e5f14d2277754fd437d6d647d701f99f1affad"
+    },
+    {
+      "path": "prompts/07_恢复.md",
+      "bytes": 504,
+      "sha256": "6441aaaf68a76642d3258756b5bb613459058bcc8b0b5c7ab5d535b8a411098a"
+    },
+    {
+      "path": "reference/preview/appendix-40.png",
+      "bytes": 120884,
+      "sha256": "448fb27c532652de763f4812a89a4a24e3a81fcb70e850938d8086cad638cd02"
+    },
+    {
+      "path": "reference/preview/model-09.png",
+      "bytes": 300059,
+      "sha256": "a0fe36118379a7499fe5d0b441e08e90d0be9359b3577b41c627a58d6a1d5e80"
+    },
+    {
+      "path": "reference/preview/results-20.png",
+      "bytes": 160472,
+      "sha256": "05d797ec74ec8f04f3d88363d040d015548a1e4bbd783544b960c5eb74553c61"
+    },
+    {
+      "path": "reference/provenance.json",
+      "bytes": 439,
+      "sha256": "93d5715eda674bbce3f331edb46e60c7a16172928e2117fb44024b59e873b271"
+    },
+    {
+      "path": "reference/reference_C23105320040.pdf",
+      "bytes": 5542218,
+      "sha256": "aec5529fde81d1899e3c18099fa0ced21af8c2f128399ec1244a8af7c1ab0c48"
+    },
+    {
+      "path": "reference/reference_C23105320040.txt",
+      "bytes": 95506,
+      "sha256": "e5afbd4a2699adda685c79ff85918bcd829c1bdd00b620e4e1298412cb60b8d1"
+    },
+    {
+      "path": "reference/参考论文使用说明.md",
+      "bytes": 1110,
+      "sha256": "9f4d681390cf51d21c5d4d9e284ae40a78d34065a1fbd5ef61f12748827dc2ff"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 314,
+      "sha256": "856b1655d2fe58b4471aacb69f4af9f9370053dc8a5c6f6030577829e25247f0"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 106,
+      "sha256": "ed2dbaa1f8d6d54d85f7e5080f3094be06d7f3e75fc66d8df15c4caab6cdf0b0"
+    },
+    {
+      "path": "results/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "review/environment.json",
+      "bytes": 843,
+      "sha256": "c9e77038738682687a8a785f1064abd6c177a54d4d8f21847fdda6d2d2724cf1"
+    },
+    {
+      "path": "review/preparation-validation.json",
+      "bytes": 5232,
+      "sha256": "abdc8a1509067d725d4e2f354f820d5081edaa1ea0baeaac0736a3456884d585"
+    },
+    {
+      "path": "review/submission-precheck.json",
+      "bytes": 954,
+      "sha256": "27d8639f13f435a030d0f962bb98719961f516b324ba9bc2912b9854b39fd2c9"
+    },
+    {
+      "path": "review/test_workflow.log",
+      "bytes": 1118,
+      "sha256": "f2d8d97ae0ac59ed28a797637920078299e87694c24ea292f13d8d1f7fde7051"
+    },
+    {
+      "path": "review/审查与准备报告_20260921.md",
+      "bytes": 6959,
+      "sha256": "724a9f644a436574190177ecbb635cfa30878ba72e14c80634085aa041b70290"
+    },
+    {
+      "path": "src/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "submission/README.md",
+      "bytes": 1324,
+      "sha256": "12b6fabfeac9076697f313c949777011082be14bf5da8700d143914b48899334"
+    },
+    {
+      "path": "support/AI代码注释模板.txt",
+      "bytes": 391,
+      "sha256": "0dfb836303b966881e6d44167aff343b74380972cafbffff539ec91640dca1d8"
+    },
+    {
+      "path": "support/MANIFEST.csv",
+      "bytes": 41,
+      "sha256": "1a1e04173eed207a2a57f495c8736320590d259fd6e48a4b7b7910cc45749ed6"
+    },
+    {
+      "path": "support/README.md",
+      "bytes": 1849,
+      "sha256": "95a41524d775966084f0e8a10dc463cae16a6202dfca4527b655dd872a19b8ce"
+    },
+    {
+      "path": "support/REPRODUCE.md",
+      "bytes": 670,
+      "sha256": "1900087bd7aff88679989c87f8226166bf02640eac0294a9f58f50d1fc622701"
+    },
+    {
+      "path": "support/code/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "support/data/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "support/results/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tools/README.md",
+      "bytes": 1602,
+      "sha256": "44bab66d42b46fc1538ce7ff56f9cfbcf832c58426836e3fe91c6296bb13bdb8"
+    },
+    {
+      "path": "tools/audit_existing.py",
+      "bytes": 4470,
+      "sha256": "801531bfdea63830a43654ab8fe0838238352077528b48964c5c933b41d2926b"
+    },
+    {
+      "path": "tools/build_paper.py",
+      "bytes": 2888,
+      "sha256": "533c345b3da8fbf3738aef5c0bf0559bdc7cde1ae1301491c61d42fda2c00775"
+    },
+    {
+      "path": "tools/check_submission.py",
+      "bytes": 4300,
+      "sha256": "91476f8a3e196295de39d5bbd24e9bc55b95e91a4e632463757ed0f0095df215"
+    },
+    {
+      "path": "tools/fonts.conf",
+      "bytes": 361,
+      "sha256": "72a5dd6e1951a1fa6931bde504ece8bee8ff6df0b5345ea252e5a9b877b1c3b3"
+    },
+    {
+      "path": "tools/package_workspace.py",
+      "bytes": 3853,
+      "sha256": "fa6a76a4d31c60fac145c2d7a8c09ad1518196bc14b053993922e12a63fbc5d7"
+    },
+    {
+      "path": "tools/prepare_word_template.py",
+      "bytes": 1429,
+      "sha256": "5a7878710bdc3dfa71230c04f4f8001b29796a84cdbf82db7baed71309e3e17e"
+    },
+    {
+      "path": "tools/set_title_style.py",
+      "bytes": 2018,
+      "sha256": "118d59c66978ccfd4011a5bd2bfdc334dfbffcdf3c64a1fc52370427f44cc0a1"
+    },
+    {
+      "path": "tools/test_workflow.py",
+      "bytes": 4794,
+      "sha256": "90c1813f548c3d2d36bb9dc1004fe4db80c5137971ad91f2ec5d9a199ac0b558"
+    },
+    {
+      "path": "tools/verify_preparation.py",
+      "bytes": 8735,
+      "sha256": "802d5d07ef0bc4fb775922750d4c3c2d0b43c6e88fff5bbdba085bcab53efa41"
+    },
+    {
+      "path": "tools/workspace.py",
+      "bytes": 10348,
+      "sha256": "11d6b6c4bf763cc204e6889d86b2a081d37c6ff04ba01f731e768b5f70db56ec"
+    }
+  ],
+  "excluded": [
+    ".venv",
+    "__pycache__",
+    "build",
+    "prep/team.local.json",
+    "submission/private-receipts",
+    "prep/数模之星优秀论文_2024-2025",
+    "Each Stage Review Work/20260921_star_papers"
+  ]
+}

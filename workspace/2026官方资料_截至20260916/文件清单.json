@@ -1,0 +1,353 @@
+{
+  "package": "2026官方资料_截至20260916",
+  "created": "2026-09-16",
+  "manifest_excludes_self": true,
+  "file_count_excluding_manifest": 69,
+  "files": [
+    {
+      "path": "01_官方网页/2026年中国研究生数学建模竞赛培训教师学术交流会通知.html",
+      "bytes": 92683,
+      "sha256": "57bc45dccdb1fcdbe183c538e92fe6edd918f678bd78d7d7a10778826510a71c"
+    },
+    {
+      "path": "01_官方网页/2026年中国研究生数学建模竞赛培训教师学术交流会通知.md",
+      "bytes": 4929,
+      "sha256": "d3c6b7f5b27c913ed33d09b15a4a9a500fbd6a4390b7f33b6f1a828452d7a813"
+    },
+    {
+      "path": "01_官方网页/2026年数学建模竞赛官网首页.html",
+      "bytes": 109294,
+      "sha256": "0524d0cc6e51c564cf51251d96842cb220a7ec142b903da724b83247f6d997a0"
+    },
+    {
+      "path": "01_官方网页/2026年数学建模竞赛官网首页.md",
+      "bytes": 666,
+      "sha256": "34186eddbcde93ba034d027c8f0710f07922cd391d1b6ac00c8d839226898ef8"
+    },
+    {
+      "path": "01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.html",
+      "bytes": 101517,
+      "sha256": "bc5875f2e08752766a6eddaf51472a30307f9e59cc0b1c41a58768a3d7f02029"
+    },
+    {
+      "path": "01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.md",
+      "bytes": 9730,
+      "sha256": "65a233d9c0c8a2a3888a25f2b68d85383d75baff53c4cc0ef1da09752750f0e7"
+    },
+    {
+      "path": "01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛开赛公告.html",
+      "bytes": 140828,
+      "sha256": "5e2b8495cae2e747b4647835130b5633556292fecf202fa6761779e630809528"
+    },
+    {
+      "path": "01_官方网页/“华为杯”第二十三届中国研究生数学建模竞赛开赛公告.md",
+      "bytes": 10058,
+      "sha256": "37c7ee994b278623692f732b1caeb0d08f5542ea94fdd6dd4fdb7ab0ed9c072b"
+    },
+    {
+      "path": "01_官方网页/中国研究生数学建模竞赛组委会秘书处及承办单位联系方式.html",
+      "bytes": 66989,
+      "sha256": "00de3c898bf326cb25783b7e1aecc96d7e9764a78c4574e1cbfa8f8146eb6679"
+    },
+    {
+      "path": "01_官方网页/中国研究生数学建模竞赛组委会秘书处及承办单位联系方式.md",
+      "bytes": 955,
+      "sha256": "7c7936ba7b6a5e43269acee6d39d83083c1b4793ebeb05aa8cbcbcbf18a93341"
+    },
+    {
+      "path": "01_官方网页/关于变更中国研究生数模竞赛组委会秘书处办公电话的公告.html",
+      "bytes": 68311,
+      "sha256": "c085c988744154e437fdb991fc21c09a0a47f897c251d6ed7baa01dd3c05bbc1"
+    },
+    {
+      "path": "01_官方网页/关于变更中国研究生数模竞赛组委会秘书处办公电话的公告.md",
+      "bytes": 804,
+      "sha256": "0a409fc46c4bba3c8ee820ee6da6f17e0e8c182ce7d596f8ef59859700bdcabd"
+    },
+    {
+      "path": "01_官方网页/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.html",
+      "bytes": 70217,
+      "sha256": "ac04887c447929a66a67ae82ab39c6da80b5177dbaa109533871ef365f5ac3cb"
+    },
+    {
+      "path": "01_官方网页/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.md",
+      "bytes": 2242,
+      "sha256": "dae80cd41ed12aa1d12d75a4ba8aabdb7c246139405a5daf6b10883370551404"
+    },
+    {
+      "path": "01_官方网页/常见问题.html",
+      "bytes": 81734,
+      "sha256": "9a8b6cf168eca967e5f4d5b5dd96691cedf0b944356bf2ded13511194a7e3a8c"
+    },
+    {
+      "path": "01_官方网页/常见问题.md",
+      "bytes": 4852,
+      "sha256": "a9cd32b0b33fdd821322bb19018ce83bc34b5c971f216454e4b7387c13cc6dc8"
+    },
+    {
+      "path": "01_官方网页/组织机构.html",
+      "bytes": 97111,
+      "sha256": "bed1b49a767d0d63c8c67cdcbdd1d6ca4ec24c9cfcadc872eb2bd1f1b422ef28"
+    },
+    {
+      "path": "01_官方网页/组织机构.md",
+      "bytes": 1871,
+      "sha256": "e6da827910d65b4ce8196d62d57ab8ce96ab86e7f714ec2a5edcded1c040f45e"
+    },
+    {
+      "path": "01_官方网页/赛事介绍.html",
+      "bytes": 67111,
+      "sha256": "1255d688f9b3c0e5c57c372187584b53aa7c8b66da204768079a24d2ed4f1dff"
+    },
+    {
+      "path": "01_官方网页/赛事介绍.md",
+      "bytes": 1152,
+      "sha256": "3772d8898f94bc70911823346a349e29a46838af357940020246c08e5fe6cf92"
+    },
+    {
+      "path": "02_官方附件/2026年中国研究生数学建模竞赛培训教师学术交流会通知(盖章版).pdf",
+      "bytes": 666654,
+      "sha256": "a9177441f4b1dc16222d9b30bd3caff708402134926fe2b5f93e5c0af469cafe"
+    },
+    {
+      "path": "02_官方附件/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.pdf",
+      "bytes": 1414627,
+      "sha256": "1ba5ee30aa28d6b170401ff71dfb28429ee79547f0cddee682c4ffde140e6952"
+    },
+    {
+      "path": "02_官方附件/中国研究生创新实践系列大赛数模竞赛-用户手册（学生）V4.1.pdf",
+      "bytes": 3000815,
+      "sha256": "7f3df1135ed882ea09d37a9ff09da60a23f98c64eeeac7ec70e60266740949e3"
+    },
+    {
+      "path": "02_官方附件/中国研究生创新实践系列大赛数模竞赛-用户手册（研究生培养单位）.pdf",
+      "bytes": 2467849,
+      "sha256": "eb6d47f8007af8a9d020f5a9befb2ac5d6b86f42e192c6393521949ad6162a88"
+    },
+    {
+      "path": "02_官方附件/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.pdf",
+      "bytes": 1348718,
+      "sha256": "ee948a4699a4f0970b6f7ac528ce01ccae9ef7c12f3752e71e4d4b27923c2655"
+    },
+    {
+      "path": "02_官方附件/第二十三届中国研究生数学建模竞赛评审专家推荐表.docx",
+      "bytes": 18793,
+      "sha256": "d3b67c4be2183a22529ca2f9807dcbb824edd07d384f1840528a16112bea5e65"
+    },
+    {
+      "path": "02_官方附件/附件1：“华为杯”第二十三届中国研究生数学建模竞赛下载试题及上传论文操作手册.pdf",
+      "bytes": 1276899,
+      "sha256": "bd3f6c4456f8f57b309a3aace33644e1a9f877883cda64bf7d014c4e9e7adec4"
+    },
+    {
+      "path": "02_官方附件/附件2：“华为杯”第二十三届中国研究生数学建模竞赛论文格式规范.docx",
+      "bytes": 93167,
+      "sha256": "46d2e2a87e90608ace764203d5326d7c7e41f01a5eb79986724a6f159fd70e16"
+    },
+    {
+      "path": "02_官方附件/附件3：“华为杯”第二十三届中国研究生数学建模竞赛论文模板.doc",
+      "bytes": 894976,
+      "sha256": "195b06cf670ec1aeb796bfd07e6d3e98e36d16db119308dcf4d0756319fe2e29"
+    },
+    {
+      "path": "02_官方附件/附件4：“华为杯”第二十三届中国研究生数学建模竞赛人工智能工具及输出使用规定.docx",
+      "bytes": 18523,
+      "sha256": "5922c1f92530c88eab3214e67de981aeda195c27d5b583ddc2380ee24db0e539"
+    },
+    {
+      "path": "02_官方附件/附件一：报告内容.pdf",
+      "bytes": 94063,
+      "sha256": "1960cb5480c118097bd6cce9a00397624a8251c8bba3347b4eeb8a9229f5b9c9"
+    },
+    {
+      "path": "02_官方附件/附件二：交通指南.pdf",
+      "bytes": 169432,
+      "sha256": "690bcc6e51df4c6fe1449aff673bc25aaf8a3d03532bab86cd4a6b67f922bc5b"
+    },
+    {
+      "path": "03_网页内嵌图片/1233ce12b7224c43bc49d0a32a1dcc6e.png",
+      "bytes": 72532,
+      "sha256": "9f45e389223a120882ab2dba700b8b9a16a0f846dcaa0437b4689ce2e7e9627a"
+    },
+    {
+      "path": "03_网页内嵌图片/2bd0b79d348d4fba841a8e26bb24c727.jpg",
+      "bytes": 40507,
+      "sha256": "bab285be491e3a60a2d3c602ced71b2e2b60660658f9683a1e53f993f26f2adc"
+    },
+    {
+      "path": "03_网页内嵌图片/e0a680528ed9478b8e3dc55631cd3925.jpeg",
+      "bytes": 57973,
+      "sha256": "6c359225e3c47449fb429b75217b38568e57e796b9467a6466730d704465b92c"
+    },
+    {
+      "path": "03_网页内嵌图片/f6c60a0d801a4d52b498ae72561c9793.jpeg",
+      "bytes": 6651,
+      "sha256": "fcd7a985a20be4a69a9df772acf0498028bdec363f87d99507f476bbf5c1e82b"
+    },
+    {
+      "path": "04_附件可检索文本/2026年中国研究生数学建模竞赛培训教师学术交流会通知(盖章版).pdf.txt",
+      "bytes": 3971,
+      "sha256": "116ab281809f67443993a2280138b89d3cd210b7de16ea3a910c86c4159b023f"
+    },
+    {
+      "path": "04_附件可检索文本/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.pdf.txt",
+      "bytes": 454,
+      "sha256": "9b53a6beaa05e18043c9c50ab890d08b996c350a5da3a57687c365b2bc54c0e8"
+    },
+    {
+      "path": "04_附件可检索文本/中国研究生创新实践系列大赛数模竞赛-用户手册（学生）V4.1.pdf.txt",
+      "bytes": 14772,
+      "sha256": "54620bcc5f6df00a70206229479459a00b2b3d76f568c5efc75a8a22dbeac1a7"
+    },
+    {
+      "path": "04_附件可检索文本/中国研究生创新实践系列大赛数模竞赛-用户手册（研究生培养单位）.pdf.txt",
+      "bytes": 18075,
+      "sha256": "68ca40c6ad52c20f82ccb7beec0149a1b585191e300ed7cea87acd4427e5c7ec"
+    },
+    {
+      "path": "04_附件可检索文本/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.pdf.txt",
+      "bytes": 307,
+      "sha256": "47672d4ae1854ec8cf67ef8eee733da3acd3a22e507bc083abd64181e27d72df"
+    },
+    {
+      "path": "04_附件可检索文本/第二十三届中国研究生数学建模竞赛评审专家推荐表.docx.txt",
+      "bytes": 732,
+      "sha256": "6330bb650a247964d9d724b5bb4a1685d666a0bc49cd69c2561c3b5f2e3e8dae"
+    },
+    {
+      "path": "04_附件可检索文本/附件1：“华为杯”第二十三届中国研究生数学建模竞赛下载试题及上传论文操作手册.pdf.txt",
+      "bytes": 8951,
+      "sha256": "c896d87be05431c0ee28e07195b2fa8a03b4af9585eb6e54a931e48bb0de4860"
+    },
+    {
+      "path": "04_附件可检索文本/附件2：“华为杯”第二十三届中国研究生数学建模竞赛论文格式规范.docx.txt",
+      "bytes": 2182,
+      "sha256": "da1b831bc5aa76e4a283d9a9d708e63474a8ef6716b48c3f2d77bfdc8533209c"
+    },
+    {
+      "path": "04_附件可检索文本/附件3：“华为杯”第二十三届中国研究生数学建模竞赛论文模板.doc.txt",
+      "bytes": 974,
+      "sha256": "5ca01c957f4b01124cf7f7bc28998e70e8760868a2d1e188716749582a3da093"
+    },
+    {
+      "path": "04_附件可检索文本/附件4：“华为杯”第二十三届中国研究生数学建模竞赛人工智能工具及输出使用规定.docx.txt",
+      "bytes": 3286,
+      "sha256": "e6adf7d632184f27bc9357093be297a99ce4e74c0874480c5c89bb7d9c1cf39b"
+    },
+    {
+      "path": "04_附件可检索文本/附件一：报告内容.pdf.txt",
+      "bytes": 1524,
+      "sha256": "6e4aedbda7e9e25ff78e43df550e2cc185759874637c27def72138ad88406652"
+    },
+    {
+      "path": "04_附件可检索文本/附件二：交通指南.pdf.txt",
+      "bytes": 1736,
+      "sha256": "88f54db32a962dc898bed7ecaaaf8c5e0c0257693d463624fbbea433ea8ea259"
+    },
+    {
+      "path": "2026参赛要点与时间表.md",
+      "bytes": 4256,
+      "sha256": "0433db67e3345feb952d45bf6d7d0a601e1daa33f3675345705acc93cbcb628a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4998,
+      "sha256": "5484f60558099e786858eeae2237b4bf2caf5cd0b392262e75cdbd6015c536be"
+    },
+    {
+      "path": "未开放与未确认内容.md",
+      "bytes": 2443,
+      "sha256": "64d76425d1261fa9aaacae02883fb4e67af01eb64c8926db45e8303b983a48bf"
+    },
+    {
+      "path": "来源清单.json",
+      "bytes": 33333,
+      "sha256": "0fa0074c988b51111b9de0cc7e9ab8403775ccea0a8eade1add01a9a4cc9b8a0"
+    },
+    {
+      "path": "采集记录/collect_public.py",
+      "bytes": 7003,
+      "sha256": "a3e173d5bfb4bea15f6ac716972cf422167952be1602a80abaefacc833c28d58"
+    },
+    {
+      "path": "采集记录/verify_and_extract.py",
+      "bytes": 2866,
+      "sha256": "5950aa64db024372786732cf2323285d0ff126f1a7e0b2eb57d3d3bc95dfafed"
+    },
+    {
+      "path": "采集记录/下载校验报告.json",
+      "bytes": 3855,
+      "sha256": "3c087fa2d3af3fc5809f4425681eb79caa759d6ab60f71327dd598b82b742bfa"
+    },
+    {
+      "path": "采集记录/检索覆盖.json",
+      "bytes": 82836,
+      "sha256": "36fd317a2f7c687111802e88ff8bb448a1aac687b33f38031fca65afba3b04fd"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-1.html",
+      "bytes": 110340,
+      "sha256": "8e71e3c820deb1c1b25703d0ef55c078c3b3ab107bc30efb3a136b4e04564709"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-10.html",
+      "bytes": 99934,
+      "sha256": "ac79114852eb5f4d2a84fd3afe56ee91dcc48c22eeefcfc07aa3e8b0d0301c5c"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-11.html",
+      "bytes": 98960,
+      "sha256": "fee613166c8edb3e6cf0d9abfe11d149a81de9e7811abc9c9823d2af91e11a03"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-12.html",
+      "bytes": 95553,
+      "sha256": "0e4cd6b90d860e6d733b0b3d4400cf73badfaac4ee005ce38cefd459ddc267fe"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-13.html",
+      "bytes": 97766,
+      "sha256": "0d09d9e35607d4ed8fd4c68a76ba44e1581e349ef1a9d53e0b7b993ecb209988"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-2.html",
+      "bytes": 106222,
+      "sha256": "d17c1730c85aa3905f8ac47ea9bc3401fce9f665b953ee986a14d213af0f93ab"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-3.html",
+      "bytes": 106273,
+      "sha256": "176054c8433571b2bf4eb28197fa97679250024f9854a7f5efee8ed9ddb1b7a4"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-4.html",
+      "bytes": 105239,
+      "sha256": "3b9a34244931e4bcd37075864f6aa436aa3b8dc5bf48cb573ae7de366699de4d"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-5.html",
+      "bytes": 98909,
+      "sha256": "795f72b55943c2247e4b324c5e5bb24b51ad04e4b762b35c927b77e3b3404745"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-6.html",
+      "bytes": 106455,
+      "sha256": "d2262da304b708b34ea6824e6295019c5520deed09da56282795b7f3204ea1cf"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-7.html",
+      "bytes": 99721,
+      "sha256": "2653bea9c4df4c7db1f5cb478448dc582a1a48d315d19ebcb7771139ccec702b"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-8.html",
+      "bytes": 110028,
+      "sha256": "874a9f9275cf82c1034e72ecc347835b99119bba7407651fbd3e03c02c28f40b"
+    },
+    {
+      "path": "采集记录/通知列表快照/page-9.html",
+      "bytes": 102489,
+      "sha256": "86d4bb2ef897cafa5c8ff68d4f2f038d6f983f88f971f8b6e43394e3e969c296"
+    }
+  ]
+}

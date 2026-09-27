@@ -1,0 +1,63 @@
+{
+  "selected": [
+    "r1_merge_g5_6",
+    "L3_base"
+  ],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "score": [
+        7714975,
+        393218,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A2_base",
+      "score": [
+        3870135,
+        1572878,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A3_base",
+      "score": [
+        3870135,
+        3145758,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "L2_base",
+      "score": [
+        3860560,
+        1769566,
+        0,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L3_base",
+      "score": [
+        3857992,
+        6881362,
+        294912,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    }
+  ]
+}

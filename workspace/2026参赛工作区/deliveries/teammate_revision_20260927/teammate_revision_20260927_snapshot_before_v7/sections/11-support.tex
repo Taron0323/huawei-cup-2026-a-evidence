@@ -1,0 +1,19 @@
+\section*{附件}
+本文采用本届A题题面、技术附录与随题官方评估程序。随文给出结果文件、关键实现和逐图附表；100图逐例工期、额外搬运、Cache配对及参数扰动结果列于后续附录。
+\begin{table}[H]\centering\small\auxtablecaption{结果与文件索引}\label{tab:support}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{l>{\hsize=1.25\hsize}Y>{\hsize=.75\hsize}Y}\toprule
+类别 & 相对路径或文件名 & 内容\\\midrule
+主矩阵 & \path{data/audited_20260924/main_results.csv} & 100图、三问、1至5核最终与初始结果\\
+候选比较 & \path{data/final_idea_v2/candidate_effects.csv} & 1500组初始/最终来源与降幅\\
+Cache配对 & \path{data/final_idea_v2/cache_pairs.csv} & 500组B最终计划起始的三段工期比及$C(X_B)$/$C(X_C)$分离命中字段\\
+参数实验 & \path{data/final_idea_v2/sensitivity_summary.csv} & 六图四变体的固定与重优化结果\\
+预算实验 & \path{data/budget_sensitivity_20260927_v2/budget_aggregate.csv} & 六张代表图在2、5、10、20次评价预算下的均值、成功率与累计耗时\\
+失败记录 & \path{data/final_idea_v2/sensitivity_failures.csv} & 12条官方依赖环文本\\
+关键实现 & \path{support/experiment/src/huawei_code/} & 图预处理、候选构造、评分和三问接口\\
+官方程序 & \path{support/experiment/vendor/official_evaluator/} & 题目提供的事件评价程序\\
+结果汇总 & \path{data/final_idea_v2/FINAL_VALIDATION_20260924.json} & 组合覆盖与字段汇总\\
+继承后汇总 & \path{generated/final_evidence_summary.json} & 逐图从1至$K$核已评价计划及整图基准取最短工期后的统计\\\bottomrule
+\end{tabularx}\end{table}
+逐图附表报告最终工期、相对整图单核 A0 速度比和额外搬运。\path{data/audited_20260924/main_results.csv} 另外保存 \texttt{baseline\_makespan}、\texttt{initial\_makespan}、\texttt{final\_makespan}、候选来源及方案哈希；\texttt{final\_partition\_added\_copy\_bytes} 与 \texttt{final\_spill\_added\_copy\_bytes} 分别给出切分搬运和 Spill 搬运。\path{data/final_idea_v2/candidate_effects.csv} 保存首次成功候选到最终候选的工期与相对变化，附表字段与结果文件的范围由此分开。
+\input{sections/appendices}

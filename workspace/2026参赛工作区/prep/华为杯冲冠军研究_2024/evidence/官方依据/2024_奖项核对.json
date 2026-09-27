@@ -1,0 +1,309 @@
+{
+  "year": 2024,
+  "contest_edition": 21,
+  "source_page_url": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c908017963932320196b2fd18ea5158?page=0",
+  "source_file_url": "https://cpipc.acge.org.cn/sysFile/downFile.do?fileId=fe3fbf1ace87488c9d97c8d88260aa39",
+  "source_file_local": "来源与校验/2024_官方获奖名单.xlsx",
+  "source_sha256": "846cbdd1057beded8d53df42892fdf5fa5d2610b7ce998a83e1f042af2a65976",
+  "award_classification_evidence": "Official workbook award cells explicitly name champion, runner-up, third place, and nomination award. Classification is not inferred from first-prize ordering.",
+  "total_domestic_star_awards": 13,
+  "total_domestic_nominations": 10,
+  "awards": [
+    {
+      "sheet": "A题",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "A",
+      "team_id": "24103350007",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "许诺",
+      "university": "浙江大学",
+      "members": [
+        "许诺",
+        "孟旭瑶",
+        "刘相万"
+      ],
+      "universities": [
+        "浙江大学",
+        "浙江大学",
+        "浙江大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "A题",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "A",
+      "team_id": "24107120016",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "杨磊",
+      "university": "西北农林科技大学",
+      "members": [
+        "杨磊",
+        "林炅",
+        "刘冠麟"
+      ],
+      "universities": [
+        "西北农林科技大学",
+        "西北农林科技大学",
+        "西北农林科技大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "B题",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "B",
+      "team_id": "24102860287",
+      "award_verbatim": "一等奖(“数模之星”季军、华为专项一等奖)",
+      "leader": "栾兴",
+      "university": "东南大学",
+      "members": [
+        "栾兴",
+        "徐泽辰",
+        "徐明晖"
+      ],
+      "universities": [
+        "东南大学",
+        "东南大学",
+        "东南大学"
+      ],
+      "star_award": "季军"
+    },
+    {
+      "sheet": "B题",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "B",
+      "team_id": "24116640167",
+      "award_verbatim": "一等奖(“数模之星”提名奖、华为专项一等奖)",
+      "leader": "李明浩",
+      "university": "西安邮电大学",
+      "members": [
+        "李明浩",
+        "向洋",
+        "周夏怡"
+      ],
+      "universities": [
+        "西安邮电大学",
+        "西安邮电大学",
+        "西安邮电大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "C题",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "C",
+      "team_id": "24104220149",
+      "award_verbatim": "一等奖(“数模之星”冠军)",
+      "leader": "张良收",
+      "university": "山东大学",
+      "members": [
+        "张良收",
+        "赵佳",
+        "王硕"
+      ],
+      "universities": [
+        "山东大学",
+        "山东大学",
+        "山东大学"
+      ],
+      "star_award": "冠军"
+    },
+    {
+      "sheet": "C题",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "C",
+      "team_id": "24102890089",
+      "award_verbatim": "一等奖(“数模之星”亚军)",
+      "leader": "薛任煊",
+      "university": "江苏科技大学",
+      "members": [
+        "薛任煊",
+        "孙慧",
+        "周心仪"
+      ],
+      "universities": [
+        "江苏科技大学",
+        "江苏科技大学",
+        "江苏科技大学"
+      ],
+      "star_award": "亚军"
+    },
+    {
+      "sheet": "C题",
+      "row": 4,
+      "source_range": "A4:J4",
+      "problem": "C",
+      "team_id": "24103860012",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "欧成光",
+      "university": "福州大学",
+      "members": [
+        "欧成光",
+        "詹鹏翔",
+        "余佳硕"
+      ],
+      "universities": [
+        "福州大学",
+        "福州大学",
+        "福州大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "D题",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "D",
+      "team_id": "24104460003",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "姜喆",
+      "university": "曲阜师范大学",
+      "members": [
+        "姜喆",
+        "常芮源",
+        "刘鲁倩"
+      ],
+      "universities": [
+        "曲阜师范大学",
+        "曲阜师范大学",
+        "曲阜师范大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "D题",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "D",
+      "team_id": "24103850092",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "周文浩",
+      "university": "华侨大学",
+      "members": [
+        "周文浩",
+        "李虎峰",
+        "欧雪雯"
+      ],
+      "universities": [
+        "华侨大学",
+        "华侨大学",
+        "华侨大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "E题",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "E",
+      "team_id": "24101480006",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "贾青青",
+      "university": "辽宁石油化工大学",
+      "members": [
+        "贾青青",
+        "徐康",
+        "曾潇"
+      ],
+      "universities": [
+        "辽宁石油化工大学",
+        "辽宁石油化工大学",
+        "辽宁石油化工大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "E题",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "E",
+      "team_id": "24102910005",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "任碧芸",
+      "university": "南京工业大学",
+      "members": [
+        "任碧芸",
+        "张朝凯",
+        "武瑞"
+      ],
+      "universities": [
+        "南京工业大学",
+        "南京工业大学",
+        "南京工业大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "F题",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "F",
+      "team_id": "24102870082",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "尚明昊",
+      "university": "南京航空航天大学",
+      "members": [
+        "尚明昊",
+        "邓兴婷",
+        "李龙龙"
+      ],
+      "universities": [
+        "南京航空航天大学",
+        "南京航空航天大学",
+        "南京航空航天大学"
+      ],
+      "star_award": "提名奖"
+    },
+    {
+      "sheet": "F题",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "F",
+      "team_id": "24910020063",
+      "award_verbatim": "一等奖(“数模之星”提名奖)",
+      "leader": "吴政城",
+      "university": "国防科技大学",
+      "members": [
+        "吴政城",
+        "徐子晨",
+        "嵇志敏"
+      ],
+      "universities": [
+        "国防科技大学",
+        "国防科技大学",
+        "国防科技大学"
+      ],
+      "star_award": "提名奖"
+    }
+  ],
+  "international_eligible_for_defense": [
+    {
+      "sheet": "International Track",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "H",
+      "team_id": "24700070001",
+      "award_verbatim": "First Prize（eligible for the “Mathematical Modeling Star” defense）",
+      "leader": "Sun Shulei",
+      "university": "St Petersburg University",
+      "members": [
+        "Sun Shulei",
+        "Huang XiYue",
+        "Iakov Zhukov"
+      ],
+      "universities": [
+        "St Petersburg University",
+        "St Petersburg University",
+        "St Petersburg University"
+      ],
+      "note": "Source says eligible for defense, not a named final star award. Kept separate from the 13 domestic star awards."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "kind": "PREPARATION_TEMPLATE",
+  "entries": 0,
+  "source_csv_sha256": "09bae62bf10e3bc3b9987bc0c318b4996d6ad98b7609ccffe2e05912e25ba4ac",
+  "pdf_sha256": "d72055fc41dd45e02bb839f70b324931c43e33ee036ed0f9c2be41d2e04d1aec",
+  "referenced_files": {},
+  "complete_for_submission": false,
+  "issues": [],
+  "human_review_inferred": false,
+  "visual_review": "PENDING",
+  "pdf": "/Users/futaoran/Desktop/数学建模/templates/ai/AI工具使用详情.pdf"
+}

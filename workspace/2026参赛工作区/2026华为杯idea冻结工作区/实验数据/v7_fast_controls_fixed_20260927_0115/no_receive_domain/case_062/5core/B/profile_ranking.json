@@ -1,0 +1,52 @@
+{
+  "failures": [
+    {
+      "candidate": "r1_move_g19_c4_p0",
+      "error": "global execution (core, op): dependency cycle; (2, 1000082995) -[cross-core COPY]-> (4, 1000082996); (4, 1000082996) -[local data/memory dependency]-> (4, 21804); (4, 21804) -[local data/memory dependency]-> (4, 1000072731); (4, 1000072731) -[local data/memory dependency]-> (4, 17411); (4, 17411) -[local data/memory dependency]-> (4, 17421); (4, 17421) -[local data/memory dependency]-> (4, 17431); (4, 17431) -[local data/memory dependency]-> (4, 17441); (4, 17441) -[local data/memory dependency]-> (4, 17461); (4, 17461) -[local data/memory dependency]-> (4, 17511); (4, 17511) -[local data/memory dependency]-> (4, 17641); (4, 17641) -[local data/memory dependency]-> (4, 17961); (4, 17961) -[local data/memory dependency]-> (4, 18641); (4, 18641) -[local data/memory dependency]-> (4, 19321); (4, 19321) -[local data/memory dependency]-> (4, 20001); (4, 20001) -[local data/memory dependency]-> (4, 20681); (4, 20681) -[local data/memory dependency]-> (4, 21361); ... (146 edges total)",
+      "error_type": "EvaluationValidationError"
+    }
+  ],
+  "representatives": [],
+  "starts": [
+    {
+      "candidate": "B0_base",
+      "profile_score": [
+        2854809,
+        13401600,
+        0
+      ]
+    },
+    {
+      "candidate": "B2_base",
+      "profile_score": [
+        1363106,
+        81595392,
+        8186880
+      ]
+    },
+    {
+      "candidate": "B3_base",
+      "profile_score": [
+        1364250,
+        81586176,
+        7483392
+      ]
+    },
+    {
+      "candidate": "L2_base",
+      "profile_score": [
+        1594685,
+        94846464,
+        2092032
+      ]
+    },
+    {
+      "candidate": "L3_base",
+      "profile_score": [
+        1573029,
+        94264320,
+        12139008
+      ]
+    }
+  ]
+}

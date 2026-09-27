@@ -1,0 +1,758 @@
+{
+  "status": "COMPUTED",
+  "main_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030",
+  "official_evaluator_dir": "/Users/futaoran/Desktop/华为杯2026/华为杯_code/solver_review_v7_20260926/vendor/official_evaluator_fast",
+  "fast_profile": true,
+  "jobs": [
+    {
+      "case": "case_014",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 1,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_01/cases/case_014",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_000_case_014_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_040",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 1,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_01/cases/case_040",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_001_case_040_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_040",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 1,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_01/cases/case_040",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_002_case_040_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_040",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 1,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_01/cases/case_040",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_003_case_040_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_040",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 1,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_01/cases/case_040",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_004_case_040_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_040",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 1,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_01/cases/case_040",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_005_case_040_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_076",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 2,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_02/cases/case_076",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_006_case_076_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_076",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 2,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_02/cases/case_076",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_007_case_076_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_081",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 2,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_02/cases/case_081",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_008_case_081_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_081",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 2,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_02/cases/case_081",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_009_case_081_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_081",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 2,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_02/cases/case_081",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_010_case_081_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_081",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 2,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_02/cases/case_081",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_011_case_081_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_081",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 2,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_02/cases/case_081",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_012_case_081_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_091",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_091",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_013_case_091_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_091",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_091",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_014_case_091_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_091",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_091",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_015_case_091_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_093",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_093",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_016_case_093_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_093",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_093",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_017_case_093_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_093",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_093",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_018_case_093_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_093",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_093",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_019_case_093_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_093",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 3,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_03/cases/case_093",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_020_case_093_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_072",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_072",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_021_case_072_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_072",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_072",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_022_case_072_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_080",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_080",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_023_case_080_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_080",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_080",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_024_case_080_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_080",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_080",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_025_case_080_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_080",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_080",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_026_case_080_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_080",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_080",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_027_case_080_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_088",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_088",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_028_case_088_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_088",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_088",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_029_case_088_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_088",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_088",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_030_case_088_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_088",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_088",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_031_case_088_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_088",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 4,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_04/cases/case_088",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_032_case_088_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_087",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 5,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_05/cases/case_087",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_033_case_087_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_087",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 5,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_05/cases/case_087",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_034_case_087_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_095",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 5,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_05/cases/case_095",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_035_case_095_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_095",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 5,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_05/cases/case_095",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_036_case_095_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_095",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 5,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_05/cases/case_095",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_037_case_095_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_095",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 5,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_05/cases/case_095",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_038_case_095_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_095",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 5,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_05/cases/case_095",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_039_case_095_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_085",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 6,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_06/cases/case_085",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_040_case_085_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_097",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 6,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_06/cases/case_097",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_041_case_097_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_097",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 6,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_06/cases/case_097",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_042_case_097_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_097",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 6,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_06/cases/case_097",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_043_case_097_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_097",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 6,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_06/cases/case_097",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_044_case_097_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_097",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 6,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_06/cases/case_097",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_045_case_097_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_062",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_062",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_046_case_062_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_062",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_062",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_047_case_062_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_068",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_068",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_048_case_068_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_068",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_068",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_049_case_068_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_068",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_068",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_050_case_068_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_068",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_068",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_051_case_068_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_068",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_068",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_052_case_068_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_070",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_070",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_053_case_070_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_070",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_070",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_054_case_070_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_070",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_070",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_055_case_070_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_070",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_070",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_056_case_070_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_070",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_070",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_057_case_070_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_100",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_100",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_058_case_100_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_100",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_100",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_059_case_100_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_100",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_100",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_060_case_100_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_100",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_100",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_061_case_100_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_100",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 7,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_07/cases/case_100",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_062_case_100_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_063",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_063",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_063_case_063_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_063",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_063",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_064_case_063_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_063",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_063",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_065_case_063_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_082",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_082",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_066_case_082_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_082",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_082",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_067_case_082_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_082",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_082",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_068_case_082_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_082",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_082",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_069_case_082_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_082",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_082",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_070_case_082_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_086",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_086",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_071_case_086_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_086",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_086",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_072_case_086_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_086",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_086",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_073_case_086_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_086",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_086",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_074_case_086_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_086",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_086",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_075_case_086_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_098",
+      "cores": 1,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_098",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_076_case_098_1core",
+      "returncode": 0
+    },
+    {
+      "case": "case_098",
+      "cores": 2,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_098",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_077_case_098_2core",
+      "returncode": 0
+    },
+    {
+      "case": "case_098",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_098",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_078_case_098_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_098",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_098",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_079_case_098_4core",
+      "returncode": 0
+    },
+    {
+      "case": "case_098",
+      "cores": 5,
+      "missing_scenes": [],
+      "source_batch": 8,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_08/cases/case_098",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_080_case_098_5core",
+      "returncode": 0
+    },
+    {
+      "case": "case_079",
+      "cores": 3,
+      "missing_scenes": [],
+      "source_batch": 9,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_09/cases/case_079",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_081_case_079_3core",
+      "returncode": 0
+    },
+    {
+      "case": "case_079",
+      "cores": 4,
+      "missing_scenes": [],
+      "source_batch": 9,
+      "main_case_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030/batch_09/cases/case_079",
+      "output_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fine_tail_rescue_20260927_0150/job_082_case_079_4core",
+      "returncode": 0
+    }
+  ],
+  "job_count": 83,
+  "ended_at": 1790446676.9216409,
+  "snapshot": true
+}

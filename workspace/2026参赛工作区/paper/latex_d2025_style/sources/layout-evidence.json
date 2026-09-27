@@ -1,0 +1,475 @@
+{
+  "pages": 110,
+  "page_size_pt": [
+    595.28,
+    841.89
+  ],
+  "sha256": "adb0dff5b17a62a3e6ffa3852c7fe10ef6fa9542fc3b95e34f8a6d9e32f185f1",
+  "fonts": [
+    {
+      "font": "OEXHQH+FandolSong-Regular",
+      "size_pt": 12.0,
+      "characters": 23334
+    },
+    {
+      "font": "VPVIEB+TeXGyreTermes-Regular",
+      "size_pt": 12.0,
+      "characters": 4083
+    },
+    {
+      "font": "GCDBLX+CMMI12",
+      "size_pt": 12.0,
+      "characters": 2196
+    },
+    {
+      "font": "SOVERI+CMR12",
+      "size_pt": 12.0,
+      "characters": 1495
+    },
+    {
+      "font": "CJQNNP+FandolSong-Bold",
+      "size_pt": 12.0,
+      "characters": 1416
+    },
+    {
+      "font": "SCDXHG+CMMI8",
+      "size_pt": 7.97,
+      "characters": 981
+    },
+    {
+      "font": "VPVIEB+TeXGyreTermes-Regular",
+      "size_pt": 7.97,
+      "characters": 731
+    },
+    {
+      "font": "LJDDII+CMR8",
+      "size_pt": 7.97,
+      "characters": 658
+    },
+    {
+      "font": "GLMSKI+TeXGyreTermes-Bold",
+      "size_pt": 12.0,
+      "characters": 523
+    },
+    {
+      "font": "KEPVFB+CMSY10",
+      "size_pt": 12.0,
+      "characters": 399
+    },
+    {
+      "font": "QZINOC+CMEX10",
+      "size_pt": 12.0,
+      "characters": 270
+    },
+    {
+      "font": "BLERQZ+CMSY8",
+      "size_pt": 7.97,
+      "characters": 108
+    },
+    {
+      "font": "VPVIEB+TeXGyreTermes-Regular",
+      "size_pt": 9.0,
+      "characters": 81
+    },
+    {
+      "font": "IVNROI+FandolHei-Bold",
+      "size_pt": 14.0,
+      "characters": 75
+    },
+    {
+      "font": "SIWMRX+CMR6",
+      "size_pt": 5.98,
+      "characters": 51
+    },
+    {
+      "font": "LCEWKA+CMMI6",
+      "size_pt": 5.98,
+      "characters": 49
+    },
+    {
+      "font": "OVUHUL+STXinwei",
+      "size_pt": 22.02,
+      "characters": 42
+    },
+    {
+      "font": "OVUHUL+STXinwei",
+      "size_pt": 18.0,
+      "characters": 26
+    },
+    {
+      "font": "PHMDRD+FandolHei-Regular",
+      "size_pt": 16.0,
+      "characters": 20
+    },
+    {
+      "font": "GLMSKI+TeXGyreTermes-Bold",
+      "size_pt": 14.0,
+      "characters": 9
+    },
+    {
+      "font": "VPVIEB+TeXGyreTermes-Regular",
+      "size_pt": 5.98,
+      "characters": 7
+    },
+    {
+      "font": "YTNPYC+FandolKai-Regular",
+      "size_pt": 18.0,
+      "characters": 5
+    },
+    {
+      "font": "YTNPYC+FandolKai-Regular",
+      "size_pt": 15.0,
+      "characters": 4
+    },
+    {
+      "font": "GURKOR+CMSY6",
+      "size_pt": 5.98,
+      "characters": 4
+    },
+    {
+      "font": "SZLOOK+TeXGyreTermes-Italic",
+      "size_pt": 12.0,
+      "characters": 4
+    },
+    {
+      "font": "BDJSNY+MSBM10",
+      "size_pt": 12.0,
+      "characters": 4
+    },
+    {
+      "font": "VPVIEB+TeXGyreTermes-Regular",
+      "size_pt": 18.0,
+      "characters": 1
+    }
+  ],
+  "headings": [
+    {
+      "page": 3,
+      "heading": "1 研究背景及问题重述"
+    },
+    {
+      "page": 3,
+      "heading": "1.1 研究背景"
+    },
+    {
+      "page": 3,
+      "heading": "2 问题重述及全文大致思路"
+    },
+    {
+      "page": 3,
+      "heading": "2.1 问题一"
+    },
+    {
+      "page": 3,
+      "heading": "2.2 问题二"
+    },
+    {
+      "page": 4,
+      "heading": "2.3 问题三"
+    },
+    {
+      "page": 4,
+      "heading": "2.4 总体解题思路"
+    },
+    {
+      "page": 6,
+      "heading": "3 本文数学符号说明"
+    },
+    {
+      "page": 7,
+      "heading": "4 问题分析"
+    },
+    {
+      "page": 7,
+      "heading": "4.1 问题1的分析"
+    },
+    {
+      "page": 7,
+      "heading": "4.2 问题2的分析"
+    },
+    {
+      "page": 7,
+      "heading": "4.3 问题3的分析"
+    },
+    {
+      "page": 8,
+      "heading": "5 模型假设"
+    },
+    {
+      "page": 8,
+      "heading": "5.1 问题一：湍流强度模型的构建与优化"
+    },
+    {
+      "page": 8,
+      "heading": "5.2 问题二：三维湍流场的多源数据融合"
+    },
+    {
+      "page": 8,
+      "heading": "5.3 问题三：低空飞行的航路规划与优化"
+    },
+    {
+      "page": 9,
+      "heading": "6 问题一模型建立与求解"
+    },
+    {
+      "page": 10,
+      "heading": "6.1 数据预处理"
+    },
+    {
+      "page": 10,
+      "heading": "6.1.1 高度对齐与缺测值处理"
+    },
+    {
+      "page": 12,
+      "heading": "11.38 公里高度，覆盖了边界层至自由对流层的大气剖面，这种完整的垂直覆盖为研究不"
+    },
+    {
+      "page": 14,
+      "heading": "6.1.2 参数准备"
+    },
+    {
+      "page": 17,
+      "heading": "6.2 模型a：融合数据流流强度模型"
+    },
+    {
+      "page": 18,
+      "heading": "6.3 模型b：仅风廓线雷达流流强度模型"
+    },
+    {
+      "page": 18,
+      "heading": "6.4 参照模型a对模型b优化过程"
+    },
+    {
+      "page": 19,
+      "heading": "6.4.1 参数优化法"
+    },
+    {
+      "page": 19,
+      "heading": "6.4.2 机器学习法"
+    },
+    {
+      "page": 20,
+      "heading": "6.5 模型评估指标"
+    },
+    {
+      "page": 22,
+      "heading": "6.6 模型计算结果分析"
+    },
+    {
+      "page": 25,
+      "heading": "2 模型对比分析.py 建立a模型、b模型以及优化后的b模型并进行对比分析"
+    },
+    {
+      "page": 27,
+      "heading": "7 问题二模型建立与求解"
+    },
+    {
+      "page": 28,
+      "heading": "7.1 数据预处理"
+    },
+    {
+      "page": 28,
+      "heading": "7.1.1 时间序列预处理"
+    },
+    {
+      "page": 29,
+      "heading": "7.1.2 多源数据时间对齐"
+    },
+    {
+      "page": 29,
+      "heading": "7.1.3 空间数据预处理"
+    },
+    {
+      "page": 30,
+      "heading": "7.1.4 数据质量控制"
+    },
+    {
+      "page": 31,
+      "heading": "7.1.5 空间坐标系统一"
+    },
+    {
+      "page": 32,
+      "heading": "7.1.6 直角坐标系网格"
+    },
+    {
+      "page": 32,
+      "heading": "7.1.7 球面坐标系网格"
+    },
+    {
+      "page": 34,
+      "heading": "7.1.8 多源数据融合权重"
+    },
+    {
+      "page": 35,
+      "heading": "7.2 问题二模型建立"
+    },
+    {
+      "page": 35,
+      "heading": "7.2.1 参数配置"
+    },
+    {
+      "page": 38,
+      "heading": "7.2.2 各向异性反距离加权插值（AnisotropicIDW）"
+    },
+    {
+      "page": 38,
+      "heading": "7.2.3 多源数据融合过程（变分融合模型）"
+    },
+    {
+      "page": 38,
+      "heading": "7.2.4 权重优化"
+    },
+    {
+      "page": 40,
+      "heading": "7.2.5 观测算子设计"
+    },
+    {
+      "page": 41,
+      "heading": "7.2.6 湍流强度计算过程"
+    },
+    {
+      "page": 42,
+      "heading": "7.2.7 时空平滑与外推过程（卡尔曼滤波（TurbKF）算法）"
+    },
+    {
+      "page": 43,
+      "heading": "7.2.8 半拉格朗日平流方法"
+    },
+    {
+      "page": 43,
+      "heading": "7.2.9 不确定性量化过程"
+    },
+    {
+      "page": 46,
+      "heading": "7.3 问题二计算结果展示"
+    },
+    {
+      "page": 47,
+      "heading": "1 问题二初步.py 提取气象站和雷达数据以及预处理"
+    },
+    {
+      "page": 47,
+      "heading": "2 三位插值.py 基于理查逊数的湍流强度计算模型并生成三维网格"
+    },
+    {
+      "page": 47,
+      "heading": "3 数据可视化.py 生成综合分析图表并进行气象要素相关性分析"
+    },
+    {
+      "page": 47,
+      "heading": "4 地图可视化.py 生成高精度雷达站点分布图"
+    },
+    {
+      "page": 47,
+      "heading": "8 问题三模型的建立与求解"
+    },
+    {
+      "page": 47,
+      "heading": "8.1 数据预处理"
+    },
+    {
+      "page": 49,
+      "heading": "8.2 整体建模框架设计"
+    },
+    {
+      "page": 50,
+      "heading": "8.2.1 构建基于NWP数据的湍流诊断模型（模型d）"
+    },
+    {
+      "page": 51,
+      "heading": "8.2.2 构建基于观测数据外推的临近预报模型（模型e）"
+    },
+    {
+      "page": 54,
+      "heading": "8.2.3 智能航路规划算法"
+    },
+    {
+      "page": 55,
+      "heading": "8.2.4 深度学习增强的外推模型"
+    },
+    {
+      "page": 56,
+      "heading": "8.2.5 集合预报与不确定性量化"
+    },
+    {
+      "page": 56,
+      "heading": "8.3 问题三计算结果展示"
+    },
+    {
+      "page": 56,
+      "heading": "8.3.1 多目标优化框架"
+    },
+    {
+      "page": 57,
+      "heading": "8.3.2 改进A*算法实现"
+    },
+    {
+      "page": 57,
+      "heading": "8.3.3 鲁棒优化模型"
+    },
+    {
+      "page": 58,
+      "heading": "8.3.5 模型e可靠性评估"
+    },
+    {
+      "page": 58,
+      "heading": "8.4 航路规划决策系统"
+    },
+    {
+      "page": 58,
+      "heading": "8.4.1 多准则决策框架"
+    },
+    {
+      "page": 58,
+      "heading": "8.4.2 实时自适应调整"
+    },
+    {
+      "page": 59,
+      "heading": "8.4.3 时间序列分析与插值方法"
+    },
+    {
+      "page": 59,
+      "heading": "8.4.4 多尺度时间分析"
+    },
+    {
+      "page": 59,
+      "heading": "8.4.5 湍流场的时空统计特性"
+    },
+    {
+      "page": 60,
+      "heading": "8.5 问题三计算结果展示"
+    },
+    {
+      "page": 60,
+      "heading": "1 优化模型.py WRF 湍流强度计算核心模块"
+    },
+    {
+      "page": 60,
+      "heading": "2 可视化.py WRF数据预处理和可视化"
+    },
+    {
+      "page": 60,
+      "heading": "3 预测模型.py 时间序列预测建模系统"
+    },
+    {
+      "page": 60,
+      "heading": "4 问题三全部插值.py 多源数据融合插值"
+    },
+    {
+      "page": 61,
+      "heading": "9 模型评价"
+    },
+    {
+      "page": 61,
+      "heading": "9.1 问题一模型评价"
+    },
+    {
+      "page": 61,
+      "heading": "9.2 问题二模型评价"
+    },
+    {
+      "page": 62,
+      "heading": "9.3 问题三模型评价"
+    }
+  ]
+}

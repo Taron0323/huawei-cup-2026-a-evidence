@@ -1,0 +1,11 @@
+{
+  "source_bytes": 135032224711,
+  "files": 406404,
+  "online_files": 6573,
+  "deduplicated_files": 227423,
+  "compressed_bytes": 6355862122,
+  "parts": 6,
+  "excluded": 384,
+  "rewritten_archives": 16,
+  "elapsed_seconds": 805
+}

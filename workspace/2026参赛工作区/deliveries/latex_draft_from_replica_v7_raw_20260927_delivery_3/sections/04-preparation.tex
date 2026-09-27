@@ -1,0 +1,91 @@
+\section{模型的准备}
+本章先建立三问共用的数据索引，再给出原图特征、研究路线和可提交的计划表示。
+
+\subsection{数据预处理}
+一张输入图含操作、张量和有向边。操作记录编号、类型、所属流水线及周期；张量记录编号、存储位置和字节数。原始COPY操作表示读入或写回需求，不作为外层分核的可分配计算节点。解析时保留原编号和字段，以边的端点类型识别张量的生产者及消费者，再将经过同一张量的计算生产者和计算消费者连成计算依赖。新计划只提交非COPY操作的归属；Task边界所需的COPY由官方构图器重新生成。这样既保留原始输入输出语义，也让新增通信随划分变化。
+
+记非COPY操作集合为$V$，张量集合为$\mathcal T$。操作$v$的周期$c_v$在静态排序中取权重$w_v=\max\{1,c_v\}$；张量$t$的大小为$b_t$，计算生产者为$p(t)$，去重的计算消费者集合为$U(t)$。若张量连接原始COPY\_OUT，或计算产生后没有后继计算消费者，置最终写出指示$o_t=1$。无计算生产者而有计算消费者的张量构成输入集合$\mathcal T_{\rm in}$；有计算生产者的张量构成$\mathcal T_{\rm prod}$。100张原图均能形成计算拓扑序，后文使用的每个计算结果只有一个计算生产者，计算操作间的依赖均经张量连接。相同消费者即使在原边列表中重复出现，也只在$U(t)$中计一次。
+
+读取原图后，先建立操作、张量和生产消费索引，再检查字段、编号、端点及计算依赖。100张图均能建立计算拓扑序；零周期操作为原始COPY占位记录，不计入新计划的搬运耗时。非COPY操作的计算周期保持原值，新生成COPY的时间由字节数和实际服务池带宽决定。
+
+\begin{algorithm}[H]\caption{计算依赖和张量接收域的预处理}
+\begin{algorithmic}[1]
+\REQUIRE 原始操作、张量、边及题设配置
+\ENSURE 非COPY图、生产消费索引、拓扑序和弱连通分量
+\STATE 保留原编号，分别建立操作表与张量表
+\FOR{每条原始边}
+\STATE 根据端点类型登记计算生产者、计算消费者或原始写回
+\ENDFOR
+\FOR{每个张量$t$}
+\STATE 去重$U(t)$，识别输入或计算结果，记录$b_t$、位置和$o_t$
+\STATE 对$p(t)\to U(t)$建立计算依赖
+\ENDFOR
+\STATE 拓扑排序并求弱连通分量；汇总各流水线周期及原始COPY字节
+\end{algorithmic}\end{algorithm}
+
+\subsection{原始数据特征与可视化}
+为判断整图分配与切块两类起点分别适用于哪些输入，表\ref{tab:q1-graph-profile}对100张原图逐张统计非COPY操作、张量、原始边以及收缩后计算依赖图的弱连通分量。最大分量规模先在每张图内计算，再对100张图的结果汇总最小值、中位数和最大值。
+
+\begin{table}[H]\centering\small
+\caption{100张原始计算图的结构画像（逐图统计）}\label{tab:q1-graph-profile}
+\begin{tabular}{lrrr}\toprule
+统计量 & 最小值 & 中位数 & 最大值\\\midrule
+非COPY操作数/个 & 552 & 3720.5 & 35705\\
+张量数/个 & 816 & 4590.5 & 40287\\
+原始有向边数/条 & 1841 & 11187 & 108272\\
+弱连通分量数/个 & 1 & 39.5 & 2666\\
+图内最大分量操作数/个 & 3 & 146 & 19737\\\bottomrule
+\end{tabular}\end{table}
+
+图\ref{fig:graph-structure-profile}左侧将100张图按非COPY操作数分箱，右侧以弱连通分量数为横轴、总计算周期与加权依赖最长路之比为纵轴，每个点对应一张原图。记$W_i=\sum_{v\in V_i}w_v$，$\ell_i(v)=w_v+\max_{u\to v}\ell_i(u)$（无前驱时第二项为0），$L_i=\max_{v\in V_i}\ell_i(v)$。比值$W_i/L_i$刻画只考虑计算依赖时可释放的并行度；它不是实际加速比，尚未计入通信、片上容量、M/V流水线和DDR争用。右图两轴均取对数。
+\samplefigure{graph_structure_profile}{100张原始图的非COPY操作规模与依赖并行度（右图双对数轴）}{fig:graph-structure-profile}
+
+全体图共含634506个非COPY操作、747786个张量和1867394条原始边；五张图的非COPY操作数超过20000，仍进入后续完整评价。图\ref{fig:graph-structure-profile}显示，16张图只有一个弱连通分量，27张图超过100个分量。\Case{016}的17995个操作全部处在一个分量，加权最长路为655140周期，最宽拓扑层含12个操作，$W/L=11.8$；同为单分量的\Case{062}最长路仅3120周期，最宽层含2181个操作，$W/L=965.1$。单分量并不等于长串行链。\Case{025}有2666个分量且最大分量只有7个操作，分量间无计算依赖，可作为B1的并行起点。对大分量仍须结合最长路、拓扑层宽和M/V流水线工作量判断切块价值；字节量以B计、时间以cycle计。
+
+\subsection{建模与求解路线}
+在原始计算图的依赖关系上，本文先识别可独立装箱的分量和必须沿拓扑序切开的部分，再将操作划入子图、分配核心并确定核内次序。
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,
+  band/.style={draw=red!70!black,line width=.7pt,align=center,font=\footnotesize,minimum height=.42cm},
+  prep/.style={draw=orange!85!black,line width=.7pt,align=center,font=\footnotesize,minimum height=1.72cm},
+  model/.style={draw=cyan!65!black,line width=.7pt,align=center,font=\footnotesize,minimum height=1.72cm},
+  review/.style={draw=green!55!black,line width=.7pt,align=center,font=\footnotesize,minimum height=.68cm},
+  flow/.style={-{Stealth[length=2mm]},thin,draw=black!60}]
+\node[band,text width=4.95cm] at (2.75,0) {Part I\quad 计算图与计划准备};
+\node[band,text width=9.65cm] at (10.35,0) {Part II\quad 三问模型与评估程序评价};
+\node[prep,text width=2.05cm] (index) at (1.45,-1.32) {生产消费索引\\依赖拓扑序};
+\node[prep,text width=2.05cm] (seed) at (4.05,-1.32) {整图与分量装箱\\拓扑切块};
+\draw[flow] (index)--(seed);
+\node[model,text width=2.65cm] (a) at (7.1,-1.32) {问题一\\Task边界与等待\\结构搬运、分核调序};
+\node[model,text width=2.65cm] (b) at (10.45,-1.32) {问题二\\核心驻留与容量\\物理副本、Spill恢复};
+\node[model,text width=2.65cm] (c) at (13.8,-1.32) {问题三\\FIFO Cache时序\\同计划B/C配对\\容量与带宽扰动};
+\draw[flow] (seed)--(a);\draw[flow] (a)--(b);\draw[flow] (b)--(c);
+\node[band,text width=15.05cm] at (7.9,-2.77) {Part III\quad 结果分析与检验};
+\node[review,text width=4.35cm] (base) at (2.55,-3.56) {整图基线与逐图工期};
+\node[review,text width=4.35cm] (ablation) at (7.9,-3.56) {方案对照与搬运分解};
+\node[review,text width=4.35cm] (sense) at (13.25,-3.56) {核数及Cache参数灵敏度};
+\draw[flow] (base)--(ablation);\draw[flow] (ablation)--(sense);
+\end{tikzpicture}
+\caption{本文的建模与求解流程}\label{fig:roadmap}
+\end{figure}
+
+问题一按独立Task核算边界搬运与等待；问题二改为核心级驻留，检查张量物理副本占用和换出恢复；问题三固定问题二方案比较Cache硬件作用，再评价可改变读请求时序的候选。每一步都输出完整计划，交给题目提供的事件评估程序取得工期与搬运结果。图\ref{fig:roadmap}概括这些工作及其结果分析的对应关系。
+
+\subsection{统一计划表示}
+设$\mathcal S$为使用中的非空子图集合，方案$X=(g,a,\sigma)$包含三项：$g(v)\in\mathcal S$指定操作所在子图，$a(s)\in\{0,\ldots,K-1\}$指定子图所在核心，$\sigma_k$为核心$k$的子图有序列表。它分别写入\texttt{node\_to\_subgraph}和\texttt{core\_schedules}。空核对应空列表；原始COPY不在映射中。外层方案的覆盖与唯一性条件是
+\begin{equation}
+V=\biguplus_{s\in\mathcal S}g^{-1}(s),\qquad
+\biguplus_{k=0}^{K-1}\operatorname{set}(\sigma_k)=\mathcal S,
+\qquad |g^{-1}(s)|\ge1.
+\label{eq:plan-coverage}
+\end{equation}
+覆盖条件还需与核内序列逐项对应：每个非空子图在所有核心序列中恰好出现一次，即
+\begin{equation}
+\sum_{k=0}^{K-1}\sum_{j=1}^{m_k}
+\mathbf 1\!\left\{\sigma_k[j]=s\right\}=1,
+\qquad \forall s\in\mathcal S,
+\label{eq:plan-sequence-unique}
+\end{equation}
+其中$m_k=|\sigma_k|$，$\mathbf 1\{\cdot\}$为指示函数。式\eqref{eq:plan-coverage}说明操作集合和子图集合没有遗漏或重复归属，式\eqref{eq:plan-sequence-unique}进一步排除同一子图在核内执行序列中被重复列出的情况；两者共同构成提交前的外层计划检查。
+若$u\to v$为计算依赖且$g(u)\ne g(v)$，就在两个子图间建立依赖边。对三种场景，均把同一核心列表中相邻Task（或核级Task）的先后关系与商图依赖一起检查；例如$a\to b\to c$而某核心列表为$[c,a]$时，数据商图虽无环，加入顺序边$c\to a$后即应判为非法。问题二、三的核级列表还会由评估程序展开为操作、内存复用、Pipe FIFO及跨核COPY依赖，外层检查与事件展开分别承担结构合法性和执行可行性。规范化只重编号子图，保持每个核心列表内的相对顺序，并用计划内容去重。

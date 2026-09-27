@@ -1,0 +1,38 @@
+{
+  "cases": [
+    "case_051",
+    "case_012",
+    "case_067",
+    "case_081",
+    "case_016",
+    "case_062"
+  ],
+  "config_sha256": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9",
+  "controls": {
+    "light_direct_select": "A starts and ordinary/capacity representatives are ranked directly by the light score without independent official profile selection.",
+    "no_capacity_guidance": "B R start uses H; capacity anchors, edits, representative and pressure ranking are removed; official Step2 spilling remains active.",
+    "no_receive_domain": "A/B starts and local edits use compute load, path and id instead of receive-domain byte priorities; real copy traffic remains in official profile and evaluation."
+  },
+  "cores": [
+    2,
+    5
+  ],
+  "ended_at": 1790435564.409942,
+  "idea_sha256": "ad20b0248789b58a9e4d5e96c224d105c9672912d43a98301b66ac3b2d29ad72",
+  "jobs": 48,
+  "official_evaluator_dir": "/Users/futaoran/Desktop/华为杯2026/华为杯_code/solver_mechanism_v6_20260926/vendor/official_evaluator_fast",
+  "parallel": 4,
+  "rows": 96,
+  "run_id": "v6_controls_20260926_2305",
+  "selected_jobs": 48,
+  "solver_source_sha256": {
+    "scripts/run_controls.py": "384b53f2a41d56c6476da6e6c55e0e5d140b5e2b66fd436c94a963ff4e1643de",
+    "src/huawei_code/candidates.py": "48184c2c71b4683ae8ca1d4672a258535bdf73a04aad0c8e8efd01482c9c49ad",
+    "src/huawei_code/official.py": "57b7ada4a0a98b2054fe98cb5106c58e376426d5c319f92620eb1c51f05fdef8",
+    "src/huawei_code/plan.py": "09e82cc4d55a51ff3cb012ede95ce3c47103a89c575125f41dbc9356c74f6acc",
+    "src/huawei_code/scoring.py": "2bf32a071cfdb1c1128cd8e6afb16403a67a27ea92acc548b4e5cf70ba355da2"
+  },
+  "started_at": 1790434946.102499,
+  "status": "PARTIAL",
+  "verified_rows": 95
+}

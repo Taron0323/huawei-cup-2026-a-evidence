@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "scope": "2024 数模之星三篇 A/B 题提名论文的公开 PDF",
+  "page_numbering": "PDF physical pages, starting with cover as page 1",
+  "evidence_boundary": "All scientific values are author-reported. No author code was executed and no scientific results were reproduced. Award status is not evidence of correctness or official judging weights.",
+  "feature_semantics": {
+    "present": "The specified behavior is visible in the PDF; this does not certify validity or completeness.",
+    "not_found": "Not found in the inspected PDF; external attachments were not evaluated.",
+    "unclear": "Mentioned or partially visible, but the necessary behavior cannot be established.",
+    "method_comparison": "Actual numerical or plotted comparison of candidate methods or alternatives.",
+    "validation": "Actual error measurement, held-out comparison, constraint checking, or simulation checking; quality gaps are recorded separately.",
+    "sensitivity": "An input condition or parameter is changed and its output effect is reported; mere headings do not qualify.",
+    "quantified_abstract": "Abstract reports achieved numerical results, not just dataset sizes or split proportions."
+  },
+  "papers": [
+    {
+      "id": "A24103350007",
+      "school": "浙江大学",
+      "award": "数模之星提名奖",
+      "title": "风电场有功功率优化分配",
+      "pdf_file": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_浙江大学_A24103350007.pdf",
+      "total_pages": 79,
+      "page_boundaries": {
+        "cover": [1, 1],
+        "abstract": [2, 3],
+        "contents": [4, 5],
+        "main_text": [6, 57],
+        "references": [58, 58],
+        "appendix": [59, 79]
+      },
+      "reading_coverage": {
+        "main_text": "All main-text pages read",
+        "appendix": "All appendix structure and code text inspected, including rainflow, BiLSTM split, NSGA-II objective, denoising and downstream objective fragments",
+        "visually_checked_pages": [24, 28],
+        "external_attachments_checked": false,
+        "code_executed": false
+      },
+      "model_chain": [
+        {
+          "question": 1,
+          "pages": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+          "input": "主轴扭矩、塔架推力载荷时间序列",
+          "mechanism": "四点式雨流计数、Goodman 修正、Palmgren-Miner，加入滑动时间窗",
+          "output": "实时累计疲劳损伤与等效载荷",
+          "reported_check": "与 Rainflow-Miner、Rainflow-Goodman-Miner 和参考结果比较，另测运行时间"
+        },
+        {
+          "question": 2,
+          "pages": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+          "input": "风速、功率参考值、桨距角、轴转速相关信息",
+          "mechanism": "物理载荷关系加 Nelder-Mead 或 BiLSTM 数据拟合",
+          "output": "主轴扭矩与塔架推力估计",
+          "reported_check": "正文称 WF1 前70%训练、后30%测试；表3对比两种方法，附录划分不同"
+        },
+        {
+          "question": 3,
+          "pages": [30, 31, 32, 33, 34, 35, 36, 37, 38],
+          "input": "问题二载荷估计与问题一疲劳函数的正文组合",
+          "mechanism": "双目标疲劳损伤最小化，NSGA-II，功率平衡及个机约束",
+          "output": "逐风机功率分配",
+          "reported_check": "总量误差、疲劳曲线、功率分布与均分/原始方案比较"
+        },
+        {
+          "question": 4,
+          "pages": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56],
+          "input": "含测量噪声和通信延迟的数据",
+          "mechanism": "SVD 去噪、傅里叶相位差识别延迟、样条补值，再调用第三问优化器",
+          "output": "经校正输入得到的功率分配",
+          "reported_check": "原始/含扰动/校正后信号和下游结果比较，100s与300s结果展示"
+        }
+      ],
+      "substantive_adaptation": [
+        "将载荷估计、疲劳计算、功率优化、噪声与延迟处理组成跨问流程。",
+        "滑动窗针对实时性，去噪和缺失恢复针对具体输入缺陷。",
+        "第41页的改进三次样条未固定具体新增约束或公式，不能仅凭名称确认算法创新。"
+      ],
+      "features": {
+        "question_alignment": {"status": "present", "pages": [6, 7, 10, 20, 30, 39], "evidence": "四问分别设建模、求解和检验；第三问消费前两问输出，第四问补充输入处理。"},
+        "domain_mechanism": {"status": "present", "pages": [10, 11, 13, 20, 21, 30, 31], "evidence": "载荷循环、Goodman、Miner、功率/扭矩和气动推力关系进入模型；正确性另有代码与指标缺口。"},
+        "method_comparison": {"status": "present", "pages": [16, 17, 28, 34, 35, 36, 44], "evidence": "实际绘制疲劳计算候选方法对照，表3比较Nelder-Mead与BiLSTM，优化结果对比原始/均分。"},
+        "validation": {"status": "present", "pages": [15, 23, 25, 28, 33, 44, 47], "evidence": "运行计时、正文声明留出测试集、参考值误差、总功率等式误差及去噪误差比较；不代表全部检验可信。"},
+        "sensitivity": {"status": "present", "pages": [39, 44, 48, 49, 50, 51, 52, 54, 56], "evidence": "比较干净、含噪声/延迟和校正后的输入条件及输出，另展示100s/300s；仅为条件敏感性，未见关键参数或扰动幅度系统扫描。"},
+        "quantified_abstract": {"status": "not_found", "pages": [2, 3], "evidence": "摘要未报告 achieved runtime、error 或 optimization gain；70%/30%是数据划分而非结果。"},
+        "visual_results": {"status": "present", "pages": [16, 17, 18, 25, 26, 28, 34, 35, 36, 44, 45, 47, 48, 50, 54], "evidence": "包含时序、散点、误差表、对照曲线及噪声处理前后图；第28页已视觉核验。"},
+        "limitations": {"status": "present", "pages": [57], "evidence": "明确承认指标展示和理论方法应用描述不充分，但讨论较概括。"},
+        "appendix_code": {"status": "present", "pages": [59, 60, 61, 62, 63, 64, 65, 67, 70, 72, 77, 79], "evidence": "各问题部分MATLAB代码可见；包含不同疲劳目标版本及未给出的辅助函数，不是完整复现包。"}
+      },
+      "structural_features": {
+        "cross_question_io_link": {"status": "present", "pages": [30, 31, 41, 42], "evidence": "第30页图28与5.2将功率/风速经问题二载荷和问题一疲劳送入第三问；第41页第4步将去噪补值后的数据输入第三问。代码版本是否贯通另未证。"},
+        "actual_alternative_comparison": {"status": "present", "pages": [16, 17, 28, 34, 35, 36], "evidence": "三种疲劳算法、两种拟合方法及原始/均分/优化方案均有实际数值或图示对照；不等于公平对照。"},
+        "concrete_final_answer": {"status": "present", "pages": [31, 44, 65], "evidence": "给出0至5MW与相对均分±1MW的约束、74.5945到77.5239dB结果，以及附录种群100/最大代数100等求解配置。"}
+      },
+      "strong_evidence": [
+        {"pages": [15], "quote": "算法求解时间约0.009s", "reported_values": ["0.009s", "1.00s"], "meaning": "CPU/MATLAB计时回应实时性；缺硬件和重复计时。"},
+        {"pages": [23], "quote": "前70%数据作为训练集", "reported_values": ["70%", "30%"], "meaning": "正文声明时间留出；需与第60页打乱划分核对。"},
+        {"pages": [28], "quote": "降低了99.05%", "reported_values": ["99.05%", "69.35%"], "meaning": "作者报告扭矩和推力MSE改善；指标定义和数值自洽性不足。"},
+        {"pages": [33], "quote": "整体误差维持在10-7数量级", "reported_values": ["10-7"], "meaning": "总功率误差检查，仅对应聚合等式。"},
+        {"pages": [44], "quote": "提升2.9294dB", "reported_values": ["74.5945dB", "77.5239dB", "2.9294dB"], "meaning": "SVD处理前后风速SNR的实际对照。"}
+      ],
+      "validation_gaps": [
+        {"pages": [24, 28, 63], "finding": "MAPE/MSE正文公式不是标准定义，R²缺中心化；表3同一对象MAE=5.1988×10^5大于RMSE=6.5917×10^4。第24与28页已渲染确认。"},
+        {"pages": [23, 60], "finding": "正文称前70%/后30%，附录先res(randperm(num_samples),:)随机打乱；表3来自何种划分待实际运行版本确认。"},
+        {"pages": [33, 34], "finding": "总输出与调度指令之差不能验证每台机组0至5MW及相对均分±1MW约束。"},
+        {"pages": [59, 67, 70, 77, 78, 79], "finding": "附录雨流片段使用全部历史；问题三片段用扭矩/推力平方代理，后段又调用Q1_cal；未证实正文各模块与结果使用一致版本。"},
+        {"pages": [41], "finding": "改进样条没有具体确定的新约束、公式或对应完整实现。"}
+      ],
+      "transferable_practices": ["逐问明确输入输出与验收指标", "局部估计误差和下游调度效果分别展示", "总体结果与代表时间曲线并列", "以受扰动输入测试处理模块"],
+      "do_not_copy": ["错误或混用的误差指标", "时间划分与随机划分不一致", "总量误差替代逐项约束检查", "正文疲劳模型与附录代理目标混用"]
+    },
+    {
+      "id": "A24107120016",
+      "school": "西北农林科技大学",
+      "award": "数模之星提名奖",
+      "title": "风电场有功功率分配优化模型",
+      "pdf_file": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_西北农林科技大学_A24107120016.pdf",
+      "total_pages": 59,
+      "page_boundaries": {"cover": [1, 1], "abstract": [2, 3], "contents": [4, 5], "main_text": [6, 52], "references": [53, 53], "appendix": [54, 59]},
+      "reading_coverage": {"main_text": "All main-text pages read", "appendix": "Full appendix structure read; answer tables and all supplied code fragments inspected", "visually_checked_pages": [30], "external_attachments_checked": false, "code_executed": false},
+      "model_chain": [
+        {"question": 1, "pages": [10, 11, 12, 13, 14, 15, 16], "input": "扭矩与推力时间序列", "mechanism": "10秒窗口提取幅值和均值，Goodman修正、Miner累加，三角拟合补初始历史并向量化", "output": "逐时疲劳指标", "reported_check": "雨流参考曲线对照和运行计时"},
+        {"question": 2, "pages": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27], "input": "风速、功率与风机状态", "mechanism": "选取参考风机参数，物理估计后加扭矩尺度/时滞修正、推力幅值/偏置校正", "output": "扭矩与推力估计", "reported_check": "修改前后SSE，扩展至两个风场全部机组"},
+        {"question": 3, "pages": [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38], "input": "总调度功率和各风机风速", "mechanism": "PV²损伤代理，功率权重编码，归一化和越界剔除的遗传算法", "output": "满足功率约束的分配方案", "reported_check": "时间统计、独立约束检查伪代码及五类评价指标"},
+        {"question": 4, "pages": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51], "input": "含噪声/延迟风速和功率", "mechanism": "三种滤波候选中选调优卡尔曼，三种预测候选中选LSTM，再调用第三问优化器", "output": "校正后优化功率分配", "reported_check": "滤波MSE、验证集预测图、五种处理组合的下游结果"}
+      ],
+      "substantive_adaptation": ["根据时序错峰及均值/振幅偏差对载荷公式具体校正并展示前后SSE。", "将功率分配写成权重问题，设计归一化、界限剔除和外部约束检查。", "将去噪、延迟预测、联合处理与最终优化组织为五种方案。"],
+      "features": {
+        "question_alignment": {"status": "present", "pages": [6, 7, 10, 17, 28, 39, 48], "evidence": "四问对应四组建模输出，第四问修正后的风速与功率明确输入第三问模型。"},
+        "domain_mechanism": {"status": "present", "pages": [12, 13, 19, 20, 21, 23, 25, 26, 30], "evidence": "窗口疲劳、气动关系与控制时滞具体化；PV²代理和功率因子解释存在待纠正问题。"},
+        "method_comparison": {"status": "present", "pages": [15, 24, 27, 38, 49, 50, 51], "evidence": "修改前后SSE、三种功率方案、三种滤波、三种预测及五种组合均有实际结果。"},
+        "validation": {"status": "present", "pages": [16, 24, 27, 35, 36, 46, 47, 49], "evidence": "实际SSE和MSE、运行时间、可行性检查及85%/15%验证集预测可见；物理与泛化效度仍待检验。"},
+        "sensitivity": {"status": "present", "pages": [42, 43], "evidence": "遍历卡尔曼Q/R组合并绘制MSE随参数变化，选Q=R=0.029764；属于实际参数响应。"},
+        "quantified_abstract": {"status": "not_found", "pages": [2, 3], "evidence": "摘要列方法和比较指标，没有给出取得的具体误差、时延或收益。"},
+        "visual_results": {"status": "present", "pages": [15, 16, 22, 23, 24, 26, 34, 35, 37, 38, 43, 47, 49, 50, 51], "evidence": "曲线、箱线图、参数响应图、比较表和可行性/运行时间展示。"},
+        "limitations": {"status": "present", "pages": [52], "evidence": "明确列出局部疲劳不足、现实因素不全、时间依赖和元件差异考虑不足、LSTM对训练数据敏感。"},
+        "appendix_code": {"status": "present", "pages": [54, 55, 56, 57, 58, 59], "evidence": "窗口、载荷、遗传和卡尔曼片段可见；目标函数部分重复主程序且卡尔曼状态未逐机重置。"}
+      },
+      "structural_features": {
+        "cross_question_io_link": {"status": "present", "pages": [48], "evidence": "第7.5.3节明确去噪及延迟预测所得功率参考值/风速送入第三问优化器。第30页前两问到疲劳代理的真实性另有缺口。"},
+        "actual_alternative_comparison": {"status": "present", "pages": [24, 27, 38, 49, 50, 51], "evidence": "载荷修改前后SSE、均分/原始/优化功率、滤波和五种输入处理方案均有数值比较。"},
+        "concrete_final_answer": {"status": "present", "pages": [34, 42, 51, 54, 55, 56], "evidence": "遗传种群10、最大代数50；Q=R=0.029764；五方式ACD；附录前五机组前30条答案。"}
+      },
+      "strong_evidence": [
+        {"pages": [16], "quote": "滑动窗口法运行时间仅为0.7 秒", "reported_values": ["0.7秒", "12秒"], "meaning": "滑动窗耗时与一次性三角拟合耗时分别报告。"},
+        {"pages": [24, 27], "quote": "主轴扭矩误差分析", "quote_page": 24, "reported_values": ["8.2854e+13", "9.9011e+12", "9.6753e+13", "4.5409e+12"], "meaning": "全2000s单机扭矩与推力的修改前后SSE。"},
+        {"pages": [35, 36], "quote": "设计了测试约束条件的算法", "quote_page": 35, "reported_values": [], "meaning": "算法6.2检查权重和及上下界；不依赖优化目标下降推断可行。"},
+        {"pages": [42, 43, 49], "quote": "对风速数据的精准去噪处理", "quote_page": 42, "reported_values": ["Q=0.029764", "R=0.029764", "4.8101e-01", "7.6918e-01", "7.3910e-01"], "meaning": "参数响应和滤波方法MSE的实际比较。"},
+        {"pages": [51], "quote": "五种分配方式的ACD", "reported_values": ["5.4492e+12", "5.3707e+12", "5.4262e+12", "5.3311e+12", "5.2748e+12"], "meaning": "五种方式的下游代理目标比较，可观察处理模块叠加效果。"}
+      ],
+      "validation_gaps": [
+        {"pages": [29, 30, 52], "finding": "主轴/塔架代理均取PV²，缺少与第一问Miner疲劳指标的一致性验证；固定风速下目标对功率线性。第30页公式已视觉确认。"},
+        {"pages": [23, 26, 27], "finding": "功率因子被解释成转换效率；推力常数978700按SSE拟合后未给独立划分，改进前后SSE不能证明外推。"},
+        {"pages": [12, 16], "finding": "初始历史通过前10秒数据拟合，在线首秒的信息可得性未说明；约12秒初始化与0.7秒滑动窗计时口径需单列。"},
+        {"pages": [58, 59], "finding": "标为目标函数的部分重复遗传主程序；卡尔曼初始化在风机循环外，公开片段会携带上一风机末态。"},
+        {"pages": [50, 51], "finding": "解释段落对方式2/方式3的去噪与延迟预测含义互换，需以表7-3固定映射复查。"}
+      ],
+      "transferable_practices": ["保留模型修正前后的误差证据", "优化器外单独核查各项约束", "参数搜索用响应图展示", "将模块比较延伸到最终目标"],
+      "do_not_copy": ["未经验证的PV²疲劳代理", "机械效率与功率因子混淆", "拟合数据评估冒充外推", "跨机组复用卡尔曼末态"]
+    },
+    {
+      "id": "B24116640167",
+      "school": "西安邮电大学",
+      "award": "数模之星提名奖",
+      "title": "WLAN 组网中网络吞吐量建模",
+      "pdf_file": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_西安邮电大学_B24116640167.pdf",
+      "total_pages": 69,
+      "page_boundaries": {"cover": [1, 1], "abstract": [2, 2], "contents": [3, 4], "main_text": [5, 53], "references": [54, 54], "appendix": [55, 69]},
+      "reading_coverage": {"main_text": "All main-text pages read", "appendix": "All prediction-table sections and all seven representative code sections inspected", "visually_checked_pages": [50], "external_attachments_checked": false, "code_executed": false},
+      "model_chain": [
+        {"question": 1, "pages": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25], "input": "网络拓扑、RSSI、门限、流量、功率等实测特征", "mechanism": "异常清除、-100dBm填补、RSSI数组均值、相关性筛选、2AP/3AP分别比较随机森林和不同深度LSTM", "output": "AP发送时长seq_time", "reported_check": "80%/20%划分、MSE/MAE、模型深度比较、逐任务预测"},
+        {"question": 2, "pages": [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], "input": "RSSI、门限、SINR和传输模式特征", "mechanism": "比较随机森林、线性回归和LSTM预测PHY Rate，再查表匹配MCS/NSS", "output": "PHY Rate与MCS/NSS", "reported_check": "分2AP/3AP的验证误差及最终模型选择"},
+        {"question": 3, "pages": [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52], "input": "前问发送时长、PHY速率、PER、Test_dur", "mechanism": "吞吐量公式与随机森林/SVR/LSTM候选预测器", "output": "每任务吞吐量预测与公式参照误差", "reported_check": "候选模型MSE/MAE、不同核/层数对照、附录预测表；公式生成参照值不是独立实测真值"}
+      ],
+      "substantive_adaptation": ["实际坏行表、缺失RSSI处理、数组特征汇总和2AP/3AP分组具体化。", "同一问题根据AP数量采用不同模型和深度。", "前两问中间量用于吞吐量计算；未见随机森林/LSTM内部算法创新。"],
+      "features": {
+        "question_alignment": {"status": "present", "pages": [5, 7, 26, 39, 41, 44], "evidence": "发送机会、PHY速率/MCS-NSS、吞吐量三个输出逐问回应并衔接。"},
+        "domain_mechanism": {"status": "present", "pages": [8, 9, 26, 29, 30, 32, 40, 41], "evidence": "网络拓扑、CCA/NAV、SINR、速率映射、发送占时和丢包进入解释和特征；SINR公式/代码正确性存在缺口。"},
+        "method_comparison": {"status": "present", "pages": [23, 24, 25, 36, 37, 38, 46, 47, 48, 49, 50, 51], "evidence": "实际RF/LSTM/线性回归/SVR比较表，三种核及不同层数有指标；部分表不自洽。"},
+        "validation": {"status": "present", "pages": [22, 23, 24, 36, 37, 38, 46, 48, 49, 50, 51, 52], "evidence": "80%/20%留出验证与误差曲线可见；预处理提前拟合以及公式参照值限制其证据强度。"},
+        "sensitivity": {"status": "present", "pages": [24, 25, 38, 51], "evidence": "隐藏单元固定50，改变LSTM层数1/5/10并报告MSE；是超参数敏感性，不是噪声或跨布局稳健性。"},
+        "quantified_abstract": {"status": "not_found", "pages": [2], "evidence": "摘要仅说明选择最优模型及预测结果存放位置，无误差或性能的具体结果数值。"},
+        "visual_results": {"status": "present", "pages": [10, 11, 12, 15, 16, 17, 18, 23, 24, 27, 28, 30, 31, 36, 37, 38, 42, 44, 46, 47, 48, 49, 50, 52], "evidence": "相关性图、RSSI图、实值/预测值图、候选模型指标表以及逐任务误差图。"},
+        "limitations": {"status": "present", "pages": [53], "evidence": "承认外部设备干扰、不变变量忽略、拟合不足及仅对给定数据集参考性较强。"},
+        "appendix_code": {"status": "present", "pages": [63, 64, 65, 66, 67, 68, 69], "evidence": "七类代码片段与第55至63页预测表并列；片段不含全部数据入口和配置，未独立运行。"}
+      },
+      "structural_features": {
+        "cross_question_io_link": {"status": "present", "pages": [41, 44], "evidence": "seq_time明确来自问题一，MCS/NSS查表得到PHY Rate，与PER和Test_dur输入问题三公式。"},
+        "actual_alternative_comparison": {"status": "present", "pages": [23, 24, 25, 36, 37, 38, 46, 47, 48, 49, 50, 51], "evidence": "多个预测器、核函数和层数均有实际指标或图；存在不自洽数据，不能据此确认公平或最优。"},
+        "concrete_final_answer": {"status": "present", "pages": [25, 38, 55, 56, 57, 58, 59, 60, 61, 62, 63], "evidence": "按场景给最终LSTM/RF配置，并列出带test_id/AP/STA标识的发送时长、MCS/NSS和吞吐量预测。"}
+      },
+      "strong_evidence": [
+        {"pages": [13, 14], "quote": "进行整行删除操作", "quote_page": 13, "reported_values": ["2行", "392", "858"], "meaning": "实际异常行与分组后样本规模。"},
+        {"pages": [24, 25], "quote": "具有10 层50 个隐藏神经元", "quote_page": 25, "reported_values": ["10.04", "8.99", "8.12", "41.81", "37.90", "42.76"], "meaning": "发送时长预测在1/5/10层下的2AP及3AP MSE，支持按场景选择。"},
+        {"pages": [36, 38], "quote": "随机森林模型具有较好的预测效果", "quote_page": 38, "reported_values": ["1158.25", "1507.85", "544.64"], "meaning": "3AP PHY Rate选择RF；2AP选择10层LSTM。"},
+        {"pages": [41], "quote": "由问题一模型预测得到", "reported_values": [], "meaning": "明确前问预测发送时长进入第三问吞吐量计算。"},
+        {"pages": [55], "quote": "任务id 及预测数据", "reported_values": ["48.69", "115.07", "119.42", "3.64"], "meaning": "test_id=1/ap_1逐项交付；119.42为公式参照吞吐量，115.07为预测，误差3.64%。"}
+      ],
+      "validation_gaps": [
+        {"pages": [50, 51], "finding": "第50页视觉确认3AP多项式SVR的MSE=12.48、MAE=7.30，违反同尺度残差的MSE>=MAE²=53.29；又与第51页LSTM MSE=50.12却称最好矛盾。不能自行更正为猜测值。"},
+        {"pages": [44, 52, 69], "finding": "吞吐量预测误差中的参照值由PHY Rate、PER、seq_time、Test_dur公式生成，不能当独立实测真值。"},
+        {"pages": [51, 52], "finding": "正文所谓吞吐量结果表列为NSS/MCS/PHY_Rate，与本问输出不匹配；附录才给吞吐量逐项数值。"},
+        {"pages": [64, 65, 66], "finding": "LSTM/线性回归/SVR先全数据fit_transform再随机划分，预处理使用了验证数据；未见按位置或测试任务隔离。"},
+        {"pages": [64], "finding": "LSTM输入reshape为(samples,1,features)，可见片段每样本只有一个时间步，不能据模型名称证明长时依赖建模。"},
+        {"pages": [29, 67], "finding": "多干扰SINR片段直接rssi_0-rssi_1-rssi_2，未先在线性功率域求干扰总和；正文混合条件还存在不同尺度相加。"}
+      ],
+      "transferable_practices": ["实际坏行与清洗操作对应", "按场景选模型而非强行统一", "保留所有候选层数/方法结果", "附录用任务ID连接输入与最终预测"],
+      "do_not_copy": ["误差表与最佳模型结论不一致", "公式生成标签冒充独立真值", "先全数据标准化再划分", "dBm干扰直接相减", "单时间步LSTM作长时机制解释"]
+    }
+  ]
+}

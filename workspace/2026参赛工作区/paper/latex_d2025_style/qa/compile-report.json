@@ -1,0 +1,22 @@
+{
+  "main-reference": {
+    "pages": 44,
+    "bytes": 3547346,
+    "warnings": []
+  },
+  "main-2026": {
+    "pages": 39,
+    "bytes": 4289884,
+    "warnings": []
+  },
+  "models": {
+    "pages": 8,
+    "bytes": 335825,
+    "warnings": []
+  },
+  "facsimile": {
+    "pages": 110,
+    "bytes": 18876002,
+    "warnings": []
+  }
+}

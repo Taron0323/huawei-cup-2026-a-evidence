@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "scope": "2024数模之星E/F题四篇提名论文",
+  "page_basis": "PDF physical page, cover=1",
+  "verification": "全部正文、参考文献和附录结构及代表代码已阅读；数字为原作者报告，未复现。present仅表示特征实际存在，不表示有效性已充分证明。",
+  "papers": [
+    {
+      "id": "E24101480006",
+      "university": "辽宁石油化工大学",
+      "award": "提名奖",
+      "title": "高速公路应急车道启用管控优化与决策模型研究",
+      "pdf_pages": 84,
+      "boundaries": {"abstract": [2, 3], "contents": [4, 5], "body": [6, 68], "references": [69, 70], "appendix": [71, 84]},
+      "features": {
+        "question_alignment": {"status": "present", "pages": [6, 11, 40, 51, 58], "evidence": "四问分别覆盖交通参数/拥堵预警、开道依据、规则量化、监测点布置，并复用中间变量。"},
+        "domain_mechanism": {"status": "present", "pages": [12, 35, 59, 61, 62], "evidence": "交通流量-密度-速度关系、Greenberg密速关系、摄像头几何和区间车速差进入模型；存在单位/标定及公式待核问题。"},
+        "method_comparison": {"status": "present", "pages": [32, 34, 39], "evidence": "HA、SVM、决策树、LSTM实际图表对照；第三点LSTM MSE=2.1956、R2=0.9358；测试条件一致性未完全交代。"},
+        "validation": {"status": "present", "pages": [34, 36, 37, 39, 78, 80], "evidence": "误差指标和部分拥堵视频时点核对；附录树/SVR使用随机20%测试划分。不是严格时间留后验证证明。"},
+        "sensitivity": {"status": "not_found", "pages": [54, 55, 56, 57, 74], "evidence": "读完全文未见系统参数扰动与输出稳定性实验；按不同速度段乘改善因子是规则设定，附录加噪没有完整扰动前后性能比较。"},
+        "quantified_abstract": {"status": "present", "pages": [3], "evidence": "摘要给二分布点单次最少3摄像头的资源配置，以及公共时段；主要预测误差和决策收益没有在摘要量化。此处按明确方案配置计present。"},
+        "visual_results": {"status": "present", "pages": [18, 23, 32, 37, 52, 55, 64], "evidence": "检测截图、时间曲线、预测对照、视频核对、相关性矩阵、规则前后和路段速度差图。"},
+        "limitations": {"status": "present", "pages": [13, 60, 67], "evidence": "明确承认相对单位、视野及计数限制、数据量和天气/时段单一。"},
+        "appendix_code": {"status": "present", "pages": [71, 74, 78, 80, 82, 83, 84], "evidence": "含绘图、Greenberg、HA、树、SVR和YOLOv5/DeepSORT片段；未取得完整数据/权重，未见完整LSTM训练代码，不能宣称可运行复现。"}
+      },
+      "structural_features": {
+        "connected_questions": {"status": "present", "pages": [11, 12, 26, 51, 54], "evidence": "视频计数形成交通参数，密度预测经Greenberg转为速度，问题三直接复用该链并形成开道阈值。"},
+        "actual_comparison": {"status": "present", "pages": [34, 39, 55, 57], "evidence": "四预测器实际指标表；另有规则前后曲线。后者由人为乘因子产生，不证明真实干预收益。"},
+        "actionable_output": {"status": "present", "pages": [54, 55, 56, 57, 58, 61], "evidence": "速度80/60/40 km/h分级、持续3帧、密度阈值、摄像机6.5m与15-30度建议、最少3摄像头二分布点方案。"}
+      },
+      "question_chain": ["YOLOv5+DeepSORT计数→交通参数→四模型择优LSTM→Greenberg速度→阈值与视频核对", "共同时间对齐及上下游关系→开道原则", "复用LSTM/Greenberg→阈值持续规则与人为速度/密度乘因子", "针孔摄像机几何+车速差→二分布点"],
+      "reported_numbers": [{"pages": [34], "label": "第三点LSTM", "values": {"MSE": 2.1956, "MAE": 0.8663, "RMSE": 1.4817, "R2": 0.9358}}, {"pages": [39], "label": "第四点LSTM", "values": {"MSE": 1.7213, "MAE": 0.8275, "RMSE": 1.312, "R2": 0.9497}}],
+      "transferable": ["学习预测与交通机理、决策规则串联", "通过观测部署改进可观测性", "实际列候选模型指标"],
+      "gaps": ["相对指标到绝对速度缺独立标定", "规则后速度/密度直接乘因子，效益非独立验证", "时间窗随机切分与绘图拼接需修复", "附录显式加噪和过滤与正文结果对应未核", "未复现"]
+    },
+    {
+      "id": "E24102910005",
+      "university": "南京工业大学",
+      "award": "提名奖",
+      "title": "基于目标检测的高速公路应急车道实时启用策略研究",
+      "pdf_pages": 60,
+      "boundaries": {"abstract": [2, 3], "contents": [4, 5], "body": [6, 58], "references": [59, 59], "appendix": [60, 60]},
+      "features": {
+        "question_alignment": {"status": "present", "pages": [6, 8, 44, 49, 53], "evidence": "由视频统计到预警、决策、启用效果、监控布局，后续观测量回接开闭流程。"},
+        "domain_mechanism": {"status": "present", "pages": [21, 27, 28, 29, 30, 44, 45], "evidence": "交通流守恒、间断波、密度预测的上下游时滞和车辆占用率积分量。"},
+        "method_comparison": {"status": "present", "pages": [22, 24, 26, 34, 36], "evidence": "多个交通流关系拟合模型实际指标表；线性回归MAE47.4与AdaBoost MAE11.2比较，未证明完全一致测试协议。"},
+        "validation": {"status": "present", "pages": [36, 40, 41, 42, 43], "evidence": "134样本按94/40分训练测试，AdaBoost R2=0.968；CD与BC两个视频事件用于预警核对。"},
+        "sensitivity": {"status": "not_found", "pages": [45, 49, 51, 54], "evidence": "全文未见改变开闭阈值、权重、30%通行增益假设的结果实验；第54页灵敏度是定性讨论。"},
+        "quantified_abstract": {"status": "present", "pages": [2, 3], "evidence": "摘要含10分钟预警、MAE11.2/RMSE19.9/R2=0.968、拥堵时长减少48.3%等；后者为假设情景估计。"},
+        "visual_results": {"status": "present", "pages": [15, 16, 17, 23, 25, 36, 46, 52, 55, 56], "evidence": "统计对照视频、拟合散点/曲线、测试预测、流量累积区域、策略前后和车道热图。"},
+        "limitations": {"status": "present", "pages": [23, 26, 54, 56, 57, 58], "evidence": "承认模型在部分密度区拟合不足、少数点位观测不足、遮挡漏检和安全性问题；非完整不确定性验证。"},
+        "appendix_code": {"status": "not_found", "pages": [60], "evidence": "PDF附录只列16项外部脚本、权重和表格文件名称，没有代码正文；本次未得到这些外部附件。"}
+      },
+      "structural_features": {
+        "connected_questions": {"status": "present", "pages": [36, 37, 44, 45, 49, 53, 56], "evidence": "视频参数和密度预测用于拥堵判断，K用于启闭与效果估计，新增E/F观测点补充下游状态和利用率回接流程。"},
+        "actual_comparison": {"status": "present", "pages": [22, 24, 26, 34, 36, 51, 52], "evidence": "候选交通流模型、线性/AdaBoost及启用前后实际图表；策略对照基于30%增益假设。"},
+        "actionable_output": {"status": "present", "pages": [45, 49, 52, 54, 55, 56], "evidence": "K开启0.8/关闭0.6、0.4/0.6上游权重、下游240veh/km、B移至E及新增F利用率条件。"}
+      },
+      "question_chain": ["YOLOv10m+ByteTrack过线计数→交通流分析/模型拟合→间断波预警+10分钟密度预测", "入出流差积分→K占用率与上下游条件", "固定30%容量增益假设→启用前后拥堵时长", "移B至下游E+可选内部F热图利用率→补全开闭条件"],
+      "reported_numbers": [{"pages": [36], "label": "AdaBoost测试", "values": {"total_samples": 134, "train_samples": 94, "test_samples": 40, "MAE_veh_per_km": 11.2, "RMSE_veh_per_km": 19.9, "R2": 0.968}}, {"pages": [51, 52], "label": "假设容量提高30%的策略情景", "values": {"assumed_capacity_gain_percent": 30, "before_minutes": 58, "after_minutes": 30, "reported_reduction_percent": 48.3, "after_peak_K": 0.917}}],
+      "transferable": ["从简单预测基线的实际误差决定改进", "开闭双阈值与下游容量约束", "新增观测点补充可计算状态并回接决策", "保留差模型指标"],
+      "gaps": ["测试是否时间留后与平滑泄漏未交代", "策略效益依赖未验证的30%容量增益", "事件时间与持续分钟存在不一致", "只获附件清单未获代码", "未复现"]
+    },
+    {
+      "id": "F24102870082",
+      "university": "南京航空航天大学",
+      "award": "提名奖",
+      "title": "X射线脉冲星光子到达时间建模",
+      "pdf_pages": 44,
+      "boundaries": {"abstract": [2, 2], "contents": [3, 4], "body": [5, 40], "references": [41, 41], "appendix": [41, 44], "shared_boundary_note": "参考文献与附录同在PDF第41页"},
+      "features": {
+        "question_alignment": {"status": "present", "pages": [5, 7, 8, 16, 19, 28], "evidence": "四问为轨道状态、几何时延、精确时延、光子仿真与改进，逐级复用。"},
+        "domain_mechanism": {"status": "present", "pages": [11, 12, 18, 20, 21, 22, 28, 29], "evidence": "轨道旋转、参考架偏差、光行时投影、时间尺度转换、Shapiro等物理项和NHPP强度模型。"},
+        "method_comparison": {"status": "present", "pages": [39], "evidence": "NHPP与高斯生成方法100次Monte Carlo平均Pearson分别0.6992和0.7079；未报方差或置信区间。"},
+        "validation": {"status": "present", "pages": [14, 15, 24, 33, 34, 39], "evidence": "逆解轨道参数、STK工具对照、文献量级、模拟与标准轮廓比较、重复仿真。"},
+        "sensitivity": {"status": "present", "pages": [24, 25, 26, 27, 32, 35], "evidence": "真实实施距离/角度/航天器位置/天体位置扰动；位置噪声各重复50次，L取32到1024多个值看轮廓。"},
+        "quantified_abstract": {"status": "present", "pages": [2], "evidence": "摘要包含位置速度、277.924906451826s、473.898426161676s、Pearson0.6992/0.7079等最终值。"},
+        "visual_results": {"status": "present", "pages": [12, 25, 26, 32, 33, 34, 35, 37, 38, 39], "evidence": "状态位置图、误差曲面/曲线、光子序列与轮廓比较、分箱数扫描、高斯拟合。"},
+        "limitations": {"status": "present", "pages": [35, 36, 40], "evidence": "指出分箱噪声/频域信息权衡，未考虑高阶后牛顿及四极矩，尖峰复杂轮廓的高斯拟合困难，长时间尺度更多误差未纳入。"},
+        "appendix_code": {"status": "present", "pages": [41, 42, 43, 44], "evidence": "有MATLAB轨道/时延代码片段，主光子生成和100次实验完整代码未见，函数依赖未齐。"}
+      },
+      "structural_features": {
+        "connected_questions": {"status": "present", "pages": [12, 18, 22, 23, 28, 30, 31], "evidence": "问题一状态进入二/三问时延，第三问时延逆解进入第四问SSB到探测器序列，再归算并折叠。"},
+        "actual_comparison": {"status": "present", "pages": [15, 35, 39], "evidence": "STK数值对照，分箱数图示，NHPP与高斯100次均值。"},
+        "actionable_output": {"status": "present", "pages": [12, 18, 23, 24, 35, 38, 39], "evidence": "给出状态矢量、时延分项、L=256、八项高斯参数和两方法相关系数。"}
+      },
+      "question_chain": ["轨道根数→近焦点→J2000→GCRS并逆解/STK验证", "星历/自行→单位视线与卫星SSB坐标→几何时延", "时间尺度+空间尺度分项→总时延与位置误差扰动", "NHPP光子序列→时空变换→折叠→高斯轮廓采样改进"],
+      "reported_numbers": [{"pages": [23, 24], "label": "精确时延及主要分项", "values": {"total_s": 473.898426161676, "Roemer_s": 473.898276832532, "time_scale_s": 0.0000525979}}, {"pages": [39], "label": "10秒100次重复均值", "values": {"NHPP_Pearson": 0.6992, "Gaussian_Pearson": 0.7079, "absolute_difference": 0.0087}}],
+      "transferable": ["先列物理误差预算再精化模型", "逆变换/独立工具/数量级/仿真分层验证", "随机实验重复取均值", "分辨率与噪声真实扫描"],
+      "gaps": ["方法提升缺波动区间与导航终端指标", "高斯拟合负幅度如何转合法混合概率需原实现", "正文与附录地球矢量分量不一致", "部分误差表数值待核", "未获光子生成比较的完整代码", "未复现"]
+    },
+    {
+      "id": "F24910020063",
+      "university": "国防科技大学",
+      "award": "提名奖",
+      "title": "X射线脉冲星时间转换建模与光子序列仿真",
+      "pdf_pages": 53,
+      "boundaries": {"abstract": [2, 3], "contents": null, "body": [4, 38], "references": [38, 39], "appendix": [40, 53], "shared_boundary_note": "正文评价与参考文献同在PDF第38页"},
+      "features": {
+        "question_alignment": {"status": "present", "pages": [4, 5, 6, 7, 8, 28], "evidence": "四问串联轨道、时延、精确修正、序列及轮廓，明确将仿真精度分为物理、数值、算法三层。"},
+        "domain_mechanism": {"status": "present", "pages": [10, 13, 14, 18, 23, 24, 29, 32], "evidence": "开普勒/坐标旋转/视线投影、引力与运动、自行、相位及NHPP等明确进入模型；准确性需独立核对。"},
+        "method_comparison": {"status": "present", "pages": [35, 36, 37], "evidence": "初始反变换生成、折叠和组合高精度改进提供前后图；多因素同时变化且展示时长不同，无统一误差指标，属弱图示对照。"},
+        "validation": {"status": "present", "pages": [16, 17, 22, 35, 36, 37], "evidence": "守恒一致性、角度遍历和模拟折叠轮廓对照。内部一致性及仿真存在，不表示独立科学正确性已确认。"},
+        "sensitivity": {"status": "present", "pages": [21, 22, 43, 44], "evidence": "实际遍历赤经[-180,180]、赤纬[-90,90]，步长0.1度，绘传播时间差响应。另有步长改动但单位冲突且无单因素量化。"},
+        "quantified_abstract": {"status": "present", "pages": [2, 3], "evidence": "状态向量、-277.924847535s和-473.8988344182142s等最终数值；摘要声称更新步长1s到0.033s。"},
+        "visual_results": {"status": "present", "pages": [22, 26, 33, 34, 35, 36, 37], "evidence": "角度-传播差曲面、天体分布、位移、相位、原始/折叠/改进轮廓。"},
+        "limitations": {"status": "present", "pages": [35, 38], "evidence": "第35页明确说背景噪声掩盖规律性相位移动；第38页仅概括考虑有所欠缺、可用频域算法。不存在详细局限清单。"},
+        "appendix_code": {"status": "present", "pages": [40, 41, 42, 43, 44, 45, 49, 50, 51, 52, 53], "evidence": "按Q1/Q2/Q3/Q4列MATLAB片段；关键类/函数未包含、事件生成主体被注释，不能直接视为可运行包。"}
+      },
+      "structural_features": {
+        "connected_questions": {"status": "present", "pages": [16, 21, 23, 28, 29, 31], "evidence": "轨道状态给几何时延，第三问精确时延及卫星位移给接收端强度，第四问反向修正相位并折叠。"},
+        "actual_comparison": {"status": "present", "pages": [35, 36, 37], "evidence": "初始序列、折叠后及高精度组合改进均有实际图；没有公平统一协议或可量化独立增益。"},
+        "actionable_output": {"status": "present", "pages": [16, 27, 30, 31, 32, 37], "evidence": "状态/时延分项数值、NHPP与折叠伪代码、组合精化方案；步长0.033s/0.033ms需先纠正。"}
+      },
+      "question_chain": ["轨道根数→轨道平面→GCRS状态与守恒检验", "星历坐标平移+视线几何→时延及角度扫描", "加性路径差与乘性时间因子→自行/引力/运动分项", "移动接收端强度→NHPP反变换→相位折叠→频率/多普勒/时间步/事件生成组合改进"],
+      "reported_numbers": [{"pages": [2, 3], "label": "摘要报告时延", "values": {"geometric_delay_s": -277.924847535, "corrected_delay_s": -473.8988344182142}}, {"pages": [3, 37], "label": "位置更新步长表述冲突", "values": {"initial_s": 1, "abstract_target_s": 0.033, "body_target_ms": 0.033}}],
+      "transferable": ["将提高仿真精度落到具体缺失物理量及数值误差", "算法写输入输出伪代码", "守恒量快速自检", "考虑观测时段内运动而非静止平台"],
+      "gaps": ["守恒自洽不能替代独立工具验证", "多因素一起改且时长不同，不能归因", "均匀反变换并非天然不如指数等待时间", "更新步长单位冲突", "代码依赖未齐且生成主体为注释", "未复现"]
+    }
+  ],
+  "cross_paper_comparison": {
+    "shared": ["四篇都有跨问题变量传递", "四篇都有实际数值或图示方案对照，但强度不同", "四篇给出最终值或可执行配置", "模型选择与题目对象机制相联系"],
+    "differences": ["E题重在感知、时序预测与政策决策衔接，F题重在物理量、尺度和随机仿真", "E两篇未找到参数扰动敏感性实验，F两篇有实际扫描", "E005仅附件清单；其余有代码片段，四篇均未证明可直接复现", "NUAA重复仿真有均值但无区间，NUDT主要图示组合改进"],
+    "prohibited_inference": "不能据获奖身份推断官方评分因果，不能据4篇存在特征推成全部13篇共同特征，不能把作者报告当本次复现结果。"
+  }
+}

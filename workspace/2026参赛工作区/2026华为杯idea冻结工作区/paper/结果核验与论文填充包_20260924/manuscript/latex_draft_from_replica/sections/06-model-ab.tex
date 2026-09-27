@@ -1,0 +1,84 @@
+\section{问题一、问题二模型建立与求解}
+\subsection{问题一：驻留域边界与 Task 激活}
+\subsubsection{结构搬运量}
+设张量 $t$ 的大小为 $b_t$，计算消费者集合为 $C(t)$。对输入张量，记接收 Task 集合为
+\begin{equation}
+I_A(t)=\{g(v):v\in C(t)\}.
+\end{equation}
+对有计算生产者 $u(t)$ 的张量，记外部消费者 Task 集合为
+\begin{equation}
+R_A(t)=\{g(v):v\in C(t),\ g(v)\ne g(u(t))\}.
+\end{equation}
+集合自动合并同一 Task 内的多个消费者。若 $o_t$ 表示该张量需要最终写回 DDR，则场景 A 的结构搬运量为
+\begin{equation}\label{eq:qa}
+Q_A^0=\sum_{t\in T_{\rm in}}b_t|I_A(t)|+
+\sum_{t\in T_{\rm prod}}b_t\left(|R_A(t)|+\mathbf 1\{|R_A(t)|>0\ \text{或}\ o_t=1\}\right).
+\end{equation}
+第一项计入输入在不同驻留域中的读取次数；第二项计入跨域读入以及源端写出。式 \eqref{eq:qa} 只描述结构字节，最终 Makespan 仍由官方模拟中的共享 DDR 带宽和并发搬运决定。
+
+\subsubsection{Task 激活约束}
+设 Task $s$ 的激活和完成时刻为 $B_s,E_s$，$p(s)$ 为同核前一个 Task，$\mathrm{Pred}(s)$ 为前驱 Task 集合，则
+\begin{equation}\label{eq:activate-a}
+B_s\ge\max\left\{0,\max_{q\in\mathrm{Pred}(s)}E_q,
+\max_{q\in\mathrm{Pred}(s):a(q)\ne a(s)}(E_q+1000),E_{p(s)}+100\right\}.
+\end{equation}
+不存在的约束项省略。式 \eqref{eq:activate-a} 将题面的跨核前驱等待和同核 Task 切换等待放在同一最大值中，避免在轻量骨架中把并行收益与等待收益重复计算。
+
+\subsubsection{起点、局部编辑与方案选择}
+四类起点如下：A0 为整图单子图；A1 将独立计算分量装入 $K$ 个箱；A2 沿确定性拓扑序切成最多 $2K$ 块；A3 沿关键路径优先序切成最多 $4K$ 块。每个起点先进行方案合法性检查和轻量估时，再对展开评分较优的方案执行官方核内展开。局部编辑包括迁移一个计算块、拆分或合并相邻块、移动边界操作以及改变同核顺序。
+
+普通改善链只接受轻量目标严格下降的候选；容量代表和时序代表独立保存，不因轻量时间暂时变差而提前丢弃。成功候选的完整选择遵循
+\begin{equation}
+X_A^*=\arg\min_X\bigl(F_A(X),Q_A^{\rm add}(X),\operatorname{key}(X)\bigr),
+\end{equation}
+其中前两项按字典序比较，最后一项是确定性的规范化计划键。该表达式是候选集合内的选择规则，不表示已经证明全局最优。
+
+\subsection{问题二：同核驻留与容量约束}
+\subsubsection{核心驻留域的结构搬运}
+场景 B 将每个核心上的子图合并为一个 Task。定义
+\begin{equation}
+I_B(t)=\{a(g(v)):v\in C(t)\},\qquad
+R_B(t)=\{a(g(v)):v\in C(t),\ a(g(v))\ne a(g(u(t)))\}.
+\end{equation}
+在官方构图规则下，跨核结果需要源端写出和目标端读入，因此
+\begin{equation}\label{eq:qb}
+Q_B^0=Q_C^0=\sum_{t\in T_{\rm in}}b_t|I_B(t)|+
+\sum_{t\in T_{\rm prod}}b_t\bigl(2|R_B(t)|+o_t\bigr).
+\end{equation}
+同一核心上的消费者共享驻留副本，不产生边界 COPY；跨核边界仍按式 \eqref{eq:qb} 计量。跨核 COPY\_IN 的就绪时刻满足
+\begin{equation}
+S_{\rm in}\ge D_{\rm out}+500,
+\end{equation}
+其中 $S_{\rm in}$ 和 $D_{\rm out}$ 分别为目标端开始和源端完成时刻。
+
+\subsubsection{片上容量和 Spill 搬运}
+对物理张量版本 $\tilde t$，令 $A_{\tilde t},L_{\tilde t}$ 为申请和释放时刻，$m$ 为 L1 或 UB。任意时刻 $\tau$ 的容量约束为
+\begin{equation}\label{eq:capacity}
+\sum_{\tilde t:A_{\tilde t}\le\tau<L_{\tilde t}}
+b_{\tilde t}\mathbf 1\{\operatorname{core}(\tilde t)=k,\operatorname{pos}(\tilde t)=m\}
+\le C_m.
+\end{equation}
+当当前操作申请输出空间会违反式 \eqref{eq:capacity} 时，从不属于当前输入/输出且未来仍需使用的张量中，优先选择下一次使用最晚者换出。若 DDR 尚无有效副本，先写出再恢复；若已有副本，只插入恢复。令第 $e$ 次恢复大小为 $b_e$，$z_e$ 表示是否需要先建立 DDR 副本，则
+\begin{equation}
+Q^{\rm spill}=\sum_e b_e(1+z_e),\qquad
+Q^{\rm sched}=Q_B^0+Q^{\rm spill},\qquad
+Q^{\rm add}=Q^{\rm sched}-Q^{\rm orig}.
+\end{equation}
+容量压力指标只用于候选排序；最终 Spill 和 Makespan 以官方核内展开和多核模拟为准。
+
+\subsubsection{问题二候选与两次完整评估}
+B0、B1 沿用整图和连通分量装箱，B2 沿关键路径序切块，B3 沿优先释放容量的序切块。四个起点去重后先展开一次，选择展开评分较优的初始化方案；围绕该方案运行普通局部编辑，同时独立保存容量压力下降代表。第一次完整评估和第二次完整评估均保留运行状态、计划哈希和来源类别。若所有候选失败，结果记录失败原因，不将失败当作零时间或零搬运。
+
+\begin{algorithm}[H]\caption{问题一、二的候选生成与选择}\begin{algorithmic}[1]
+\REQUIRE 计算图 $G$、核数 $K$、场景 $r\in\{A,B\}$
+\ENSURE 合法候选及其来源记录
+\STATE 生成四类起点并规范化方案
+\STATE 检查节点覆盖、依赖无环和同核顺序
+\FOR{每个未重复起点}
+\STATE 计算结构搬运和轻量时间
+\STATE 调用官方核内展开，记录容量与 Spill 状态
+\ENDFOR
+\STATE 从最佳起点生成普通、容量和顺序编辑候选
+\STATE 对入选候选调用官方多核评估
+\STATE 按 Makespan、额外搬运和计划键保存选择结果
+\end{algorithmic}\end{algorithm}

@@ -1,0 +1,49 @@
+## 2026-09-27：方案 B 新实验切换记录
+
+当前论文唯一主工程为 `deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/`。本轮采用方案 B：正文算法、图表、附录代码和支撑记录均以 `2026华为杯idea冻结工作区/实验数据/v7_fast_reports_complete_20260927/` 的 `main_results.csv`（final_selection）为正式结果源；候选级 `timing.csv` 不作为主矩阵。主矩阵覆盖100图、1--5核、A/B/C共1500条，全部 `AI_VERIFIED`。五核平均速度比为 A=3.4383、B=3.4738、C=3.5533；Cache五核硬件/适配/综合效应为1.0146/1.0139/1.0289。
+
+正文已删除旧的“评价后逐图继承”主算法口径，改为 mandatory anchors、profile、场景化候选和官方事件评价后的逐组合 final_selection；附录源代码同步到 `support/experiment/v7_fast_20260927/`，逐图表改由 `generated/v7_*` 生成。Cache敏感性采用 `v7_fast_sensitivity_report_complete_20260927`：24组固定计划全部成功，37条重优化候选全部成功，四变体各3/6组改变计划。
+
+证据边界：228个尾部组合来自 fast-profile 补齐；solver文件与主矩阵哈希存在漂移；case_054/5核、case_062/4核、case_085/5核有三个B/C初始计划不一致项。上述事实保留在支撑记录中。当前尚未重新编译本轮PDF。
+
+# 2026华为杯A题论文：Final Idea 实验版
+
+## 当前主工作区与阅读入口（2026-09-26）
+
+最新人工预审 PDF 为 `output/main-2026.pdf`，当前为73页；每次重新编译后以该文件和 `build/compile-report.json` 为准。当前版本已同步核心数据口径、逐图继承、基线与受控消融、L2参数灵敏度和评价预算灵敏度；预算实验使用六张代表图，不外推为100图全矩阵。第四章保留总路线图，三问末尾各有结果与灵敏度分析；第9.2节将A0速度比与B/C受控配对比值分列，避免混用分母。
+
+`frontmatter.pdf`由原封面页加 XeLaTeX 单页摘要组成，封面页与修改前的120 dpi渲染逐像素一致。摘要内容同步保存在 `frontmatter.docx`、`sections/abstract-prose.tex` 和 `docs/abstract-content.json`；Word/LibreOffice的分页与最终PDF不同，预审以主PDF为准。第一页按用户要求保留，最终由用户手动替换。
+
+本目录是当前唯一真实编辑源。活动工作区中的 `paper/latex_draft_from_replica` 只是指向本目录的兼容软链接；以后正文、摘要、图表、附表、支撑代码和 PDF 的改动均在本目录完成。
+
+当前PDF为封面1页、摘要1页、目录2页，随后连续承载第1--9章正文、AI工具说明、参考文献和附录。摘要题目保持单行，首段缩进两字，逐问标签、模型和关键结果加粗；目录文字保持黑色，正文超链接保持蓝色。封面使用此前登记的西交利物浦大学、参赛队号`20260079630`及三名队员信息，本轮未改封面。
+
+当前 v7 raw final_selection 主矩阵直接按每个$(case, cores, scene)$组合的最终官方评价结果统计，五核平均速度比分别为 A `3.4383`、B `3.4738`、C `3.5533`；Cache 五核硬件、调度适配和综合效应分别为 `1.0146/1.0139/1.0289`。旧的逐图继承结果仍保留在历史证据目录中，不进入当前正文。
+
+当前版本借鉴用户指定的 2023 年论文 `C23105320040 - 副本(7).pdf` 的章序和逐问展开方式，借鉴 2024 年冠军论文中有依据的 `Step 1/Step 2` 叙述与模型命名；A 题的公式、数据和结论仍以 Final Idea、实际代码及冻结结果包为准。第 1--9 章依次为问题重述、思路分析、符号说明与基本假设、模型的准备、问题一、问题二、问题三、整体灵敏度与鲁棒性分析、模型的评价与总结。第四章包含原始 100 图的保真预处理、结构画像表和数据可视化；问题三新增硬件效应与调度适配的交叉分类。各问伪代码后紧接算法流程图。
+
+正文排版日志没有溢出盒或未定义引用；`xeCJK` 仍报告三条字体族重定义提示。参考文献为10篇英文会议/期刊论文和2篇经MIT学位论文库核实的英文博士论文，均在正文引用；题面与官方附件的来源在正文和附件索引中说明。出版入口及实际支撑点见`文献核验与正文落位_20260924.md`。科学结论来自 CPU 执行的官方 Python 事件模拟与有限候选，不能解释为 NPU 实机测量或全局最优证明；队员人工科学审阅和平台提交尚未完成。
+
+## 最新图表版本（2026-09-24）
+
+本版本的图表由 `scripts/build_final_evidence.py` 从 `data/final_idea_v2/` 的冻结 CSV 复现。柱状图使用浅色填充、深色边框、纹理、柱顶数值和灰色虚线网格；三问折线图共用置信带和数值口径，但采用不同的阅读结构：问题一右侧为4至5核局部放大，问题二直接标出4至5核关键拐点，问题三在主图内嵌4至5核窗口。问题三新增 `figures/cache_hw_effect_pie.pdf/png`，展示五核Cache硬件效应的分层立体饼图，并把被突出显示的“改善”扇区按提升幅度继续拆解。该饼图只用二维扇区表示比例，分层厚度是视觉效果，不代表第三维数据。
+
+新增图的数据由脚本断言校验：五核100组中改善54图、持平46图、退化0图；改善幅度五档为`<1%` 36图、`1--3%` 11图、`3--5%` 1图、`5--10%` 3图、`>=10%` 3图。正文引用位于 `sections/08-model-de.tex` 的图8.6。重建前的图表快照保存在 `../Each Stage Review Work/20260924_final_idea_paper_update/figures_before_style/`。
+
+正式阅读入口为 `output/main-2026.pdf`。论文继承指定 2025 年 D 题复刻母版的排版接口，章节次序按本轮 2023 年参照论文调整；数学内容及数值来自 Final Idea 和 2026 年 9 月 24 日冻结的 v2 主矩阵、敏感性报告。
+
+方法题目为《张量驻留与查询时序驱动的神经网络处理器多核调度》。三问依次处理Task边界、核心级驻留与共享只读Cache；C从同图同核的B最终方案出发，按同计划硬件效应、C内调度适配和综合工期比分解收益。实验覆盖100图、1—5核、三问的1500条最终官方模拟；100组整图单核基准、1500组初始/最终比较、500组Cache配对均纳入。六图四变体的24组固定敏感性计算完成。
+
+工程中的主要入口：
+
+- `body.tex` 与 `sections/01-background.tex`、`02-problem.tex`、`03-symbols.tex`、`04-preparation.tex`、`06-model-ab.tex`、`07-model-c.tex`、`08-model-de.tex`、`08-overall-sensitivity.tex`、`09-evaluation.tex`：九章正文。
+- sections/source-code.tex、sections/appendices.tex、generated/：9份作者源码的22处关键节选（约680行）、100图逐例表、Cache配对与敏感性。完整作者代码与10份官方评估器保存在支撑目录，官方文件明确标明为赛题附件，不在论文中全文排印。
+- data/final_idea_v2/：权威报告CSV及核验文件的副本。
+- scripts/build_final_evidence.py：校验配对、重算统计、绘制PDF/PNG及附表。
+- scripts/update_abstract.py：从保留四个校徽/标志的官方母版更新Word与TeX摘要。
+- support/experiment/：Final Idea、当前算法和官方评估器副本；原始图和全部候选时间线由冻结实验工作区追溯。
+- support/REPRODUCE.md：结果来源、程序入口和证据边界。
+
+仅修改正文时，直接运行 `../../.venv/bin/python build.py --only main-2026`。修改摘要时，先运行 `scripts/update_abstract.py` 同步 Word 与 TeX 文字，再用 XeLaTeX 编译 `frontmatter-abstract.tex`，把生成的单页摘要与当前 `frontmatter.pdf` 的第一页封面合并为新的两页 `frontmatter.pdf`，核对中文、加粗、页码及封面后再运行 `build.py`。Word/LibreOffice 导出的摘要会分页成两页，不能直接覆盖当前两页的 `frontmatter.pdf`。`build.py` 不重新运行全量求解；完整构建还可输出 `main-reference.pdf` 与 `main-overleaf.pdf`。
+
+单核A/B曲线点按题面规定为1，但实际单核选中方案工期仍保存在 CSV。Cache 敏感性 24 组固定计划均完成，重优化候选中 36 条通过评价、12 条因依赖环失败；Apple MPS 只用于轻量候选负载排序，工期由 CPU 事件评估程序给出。结果对应有限候选集合，不表述为全局最优或 NPU 实机测量。

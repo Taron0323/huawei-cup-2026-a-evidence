@@ -1,0 +1,73 @@
+{
+  "checked_on": "2026-09-21",
+  "scope": "Public full papers for the 2025 Huawei Cup graduate mathematical modeling Shumo Star award; not ordinary prize papers, undergraduate contests, or earlier years.",
+  "outcome": "No verified 2025 Shumo Star full-paper PDF or archive was obtained in this search. This describes this search, not a claim that no public copy exists.",
+  "sources": [
+    {
+      "url": "https://math.cumt.edu.cn/81/6f/c19212a688495/pagem.htm",
+      "title": "CUMT official 2025 champion announcement",
+      "access": "Rendered through the Google Translate proxy after the direct campus page was problematic",
+      "observed": "2025-12-08 announcement names the paper as 基于 Frangi 滤波与蒙特卡洛模拟的钻孔裂隙识别与三维概率重构 and team members 周缘、牛敏学、王聪. The rendered page contains announcement text and two images, with no full-paper attachment observed.",
+      "status": "AWARD_AND_TITLE_EVIDENCE_ONLY"
+    },
+    {
+      "url": "https://blog.csdn.net/2601_96407637/article/details/164192035",
+      "title": "华为杯研究生数学建模历年真题及优秀论文（2010-2025年）",
+      "linked_share": "https://pan.baidu.com/s/1_ezm5JXyuNk3x1HkOpeNoA?pwd=1234",
+      "observed": "The linked share was opened in the browser. The excellent-paper folder named 华为杯优秀论文（2010-2025年） actually showed 13 year folders, 2011 through 2023, with no 2024 or 2025 folder.",
+      "status": "REJECTED_YEAR_COVERAGE_MISMATCH"
+    },
+    {
+      "url": "https://github.com/xieyouxixi/hwb-math-modeling-skills",
+      "observed": "README and 数模资料/README.md explicitly state that the repository contains text indexes and documents only, without original papers, problems, or datasets. The index describes 21 local 2025 paper PDFs but gives local archive placeholders. Releases API returned an empty list. Historical hwb-math-modeling-skills.zip at commit c8ea98ae074e7d974c5eb6f9cae1b0b2108caab4 was 676476 bytes and is a skills archive.",
+      "status": "INDEX_ONLY_NO_ORIGINAL_DOWNLOAD"
+    },
+    {
+      "url": "https://github.com/TobeMagic/mathmatic_modeling",
+      "observed": "The source register lists the 2024 zhanwen Baidu paper archive and a 2025 CUMT champion university announcement, but no 2025 Shumo Star full-paper source. The PDF corpus contains earlier years. Its only 2025 extracted paper is the Nanjing Tech second-prize C paper.",
+      "source_register": "https://github.com/TobeMagic/mathmatic_modeling/blob/master/research/huawei-cup/source-register.yaml",
+      "status": "NO_TARGET_FULL_PAPER"
+    },
+    {
+      "url": "https://github.com/NikolaStarx/huawei-cup-presentation",
+      "observed": "Repository tree includes 2025E_武汉大学_国一.pdf and 2025C_南京工业大学_国二.pdf. README and assets/PROVENANCE.md identify the Wuhan paper as E25104860052 and the Nanjing Tech paper as second prize. Provenance refers to a teacher's local materials, not a public full collection link. No Shumo Star identity established; these papers were not added to the requested collection.",
+      "status": "ORDINARY_PRIZE_PAPERS_OUTSIDE_SCOPE"
+    },
+    {
+      "url": "https://github.com/HaoyuZhao31415/MathModel",
+      "observed": "README states that its 2025 A paper placed seventh and received a Huawei special second prize. Not established as a Shumo Star paper; not added to the requested collection.",
+      "status": "ORDINARY_PRIZE_PAPER_OUTSIDE_SCOPE"
+    },
+    {
+      "url": "https://github.com/linshenyoung/2025MathModel",
+      "observed": "2025 preparation repository points to DongZhouGu/MathModel-Pretrain as a Shumo Star source. The D题-上海大学-论文.pdf blob is 0d9e4d6c62cab847cd85af3238a9f37fcaca0830, identical to the source repository's Shumo Star paper. The source README explicitly identifies it as the 2021 D paper, not 2025.",
+      "upstream": "https://github.com/DongZhouGu/MathModel-Pretrain",
+      "status": "REJECTED_WRONG_YEAR"
+    },
+    {
+      "url": "https://github.com/Alnita-M/huawei-cup-skill",
+      "observed": "No original paper PDF or archive was present in the inspected recursive repository tree. README refers to partial evidence and omitted original datasets and papers.",
+      "status": "NO_ORIGINAL_PAPERS"
+    },
+    {
+      "url": "https://github.com/woai66/graduate-math-modeling",
+      "observed": "Inspected recursive repository tree was not truncated and contained no paper PDF or archive.",
+      "status": "NO_ORIGINAL_PAPERS"
+    },
+    {
+      "url": "https://github.com/IrinaSinclair/math-modeling",
+      "observed": "Inspected recursive repository tree was not truncated and contained no paper PDF or archive.",
+      "status": "NO_ORIGINAL_PAPERS"
+    },
+    {
+      "url": "https://github.com/donkey1030/Graduate-Math-Modeling-2020-2025",
+      "observed": "Repository API returned HTTP 409 for an empty Git repository despite its archive-like description.",
+      "status": "EMPTY_REPOSITORY"
+    }
+  ],
+  "artifact_status": {
+    "target_full_papers_downloaded": 0,
+    "project_files_modified_by_this_search_agent": false,
+    "temporary_partial_file": "wuhan_blob.json is a failed partial GitHub API response for an out-of-scope ordinary-prize PDF; it is not a usable paper and is not a deliverable."
+  }
+}

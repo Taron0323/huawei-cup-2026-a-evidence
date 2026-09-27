@@ -1,0 +1,52 @@
+{
+  "failures": [
+    {
+      "candidate": "r1_move_g19_c4_p0",
+      "error": "task schedule: dependency cycle; 1 -[subgraph dependency]-> 2; 2 -[subgraph dependency]-> 19; 19 -[core 4 task order]-> 17; 17 -[subgraph dependency]-> 1",
+      "error_type": "EvaluationValidationError"
+    }
+  ],
+  "representatives": [],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "profile_score": [
+        3157277,
+        13401600,
+        0
+      ]
+    },
+    {
+      "candidate": "A2_base",
+      "profile_score": [
+        3233665,
+        19493376,
+        0
+      ]
+    },
+    {
+      "candidate": "A3_base",
+      "profile_score": [
+        1627258,
+        83907072,
+        0
+      ]
+    },
+    {
+      "candidate": "L2_base",
+      "profile_score": [
+        1832275,
+        20806656,
+        0
+      ]
+    },
+    {
+      "candidate": "L3_base",
+      "profile_score": [
+        2055816,
+        99122688,
+        0
+      ]
+    }
+  ]
+}

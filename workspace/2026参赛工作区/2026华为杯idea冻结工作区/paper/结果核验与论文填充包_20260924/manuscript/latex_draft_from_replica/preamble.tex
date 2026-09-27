@@ -1,0 +1,44 @@
+\documentclass[a4paper,zihao=-4,fontset=fandol]{ctexart}
+\usepackage[left=22.5mm,right=22.5mm,top=25mm,bottom=25mm,footskip=12mm]{geometry}
+\usepackage{amsmath,amssymb,bm,booktabs,tabularx,longtable,array,float}
+\usepackage{caption,fancyvrb,algorithm,algorithmic,hyperref}
+\hypersetup{hidelinks,pdftitle={通用神经网络处理器下的多核调度问题：论文正文初稿 v0.1},pdfauthor={},pdfsubject={2026华为杯A题准备稿}}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+% Bind the same CJK fonts as the verified template, with a bundled fallback.
+\IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/Simsun.ttc}{%
+  \setCJKmainfont[Path=/Applications/Microsoft Word.app/Contents/Resources/DFonts/,BoldFont=Simsun.ttc]{Simsun.ttc}%
+  \setCJKsansfont[Path=/Applications/Microsoft Word.app/Contents/Resources/DFonts/]{SimHei.ttf}%
+}{%
+  \IfFileExists{/Users/futaoran/Library/TinyTeX/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf}{%
+    \setCJKmainfont[Path=/Users/futaoran/Library/TinyTeX/texmf-dist/fonts/opentype/public/fandol/,BoldFont=FandolSong-Bold.otf]{FandolSong-Regular.otf}%
+    \setCJKsansfont[Path=/Users/futaoran/Library/TinyTeX/texmf-dist/fonts/opentype/public/fandol/]{FandolHei-Regular.otf}%
+  }{}
+}
+\IfFileExists{build/fonts.tex}{\input{build/fonts}}{}
+\ifcontest
+  \linespread{1.0}
+\else
+  \geometry{top=30mm}
+  \linespread{1.38}
+\fi
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\ctexset{section={format=\centering\heiti\bfseries\zihao{4},beforeskip=18bp,afterskip=12.4bp},
+subsection={format=\bfseries\zihao{-4},beforeskip=12bp,afterskip=6.8bp},
+subsubsection={format=\bfseries\zihao{-4},beforeskip=10bp,afterskip=6bp}}
+\pagestyle{plain}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\captionsetup{font=normalsize,labelsep=quad,skip=8bp}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}
+\renewcommand{\algorithmicensure}{\textbf{输出：}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\pending}{\textbf{待补当前运行结果}}
+\newcommand{\slot}[1]{\textbf{【#1】}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\resultbox}[2]{\begin{figure}[H]\centering\fbox{\begin{minipage}{0.88\linewidth}\centering\vspace{#1}\textbf{#2}\vspace{#1}\end{minipage}}\caption{#2}\end{figure}}
+\newcommand{\AIDataNote}{\par\noindent\textit{本稿实验结果尚未写入；正式结果生成后，在数据分析结果附近补充真实 AI 工具四字段及队伍复核记录。}\par}

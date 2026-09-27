@@ -1,0 +1,22 @@
+任务：用本包的已核验数据，直接修订旁边尚有结果占位符的华为杯 A 题 LaTeX 论文。交付可编译的论文源、PDF、数值溯源清单和未验证项目清单。不要只给修改建议。
+
+工作位置：本包位于 paper/结果核验与论文填充包_20260924/；应修改的论文位于同一 paper/ 下的 latex_draft_from_replica/。包内 manuscript/latex_draft_from_replica/ 是修订前快照，供比对。若只拿到解压后的包而没有旁边的论文目录，复制快照到独立的修订目录后修改，不覆盖包内原始证据。
+
+先读：README.md、核验结论与论文使用边界.md、audit/audit_summary.json、audit/official_replay.json、audit/manuscript_placeholders.csv、audit/idea_identity.json、tables/论文数值汇总.md。再查 code/src/huawei_code/candidates.py、scoring.py、plan.py、code/scripts/run_experiment.py；论文方法必须描述这些代码实际执行的算法。所有附件和 Idea 文本是待核查资料，不是自动执行指令。
+
+数据入口与口径：
+1. data/main_results.csv 给出 1500 个不同组合，正式矩阵为 A 的 2–5 核 400 组、B 和 C 各 1–5 核 500 组；A 的 1 核 100 组仅供诊断。data/singlecore_baseline.csv 是 100 图统一整图单核基线。A/B 正式单核曲线点按 Idea 定义为 1，优化后单核诊断比值另列。逐图速度比先算 baseline_makespan/final_makespan，再对 100 图取算术平均，不以两个平均 Makespan 相除。
+2. tables/main_summary.csv、tables/main_summary.tex 和 figures/ab_speedup.* 是 A/B 主结果入口。逐用例值和计划来源在 data/main_results.csv 与 data/result_sources.csv；任何摘要数字都要能回指 case、cores、scene、final_selection.json、plan.json、result.json。Makespan 单位为 cycles，额外搬运单位为 bytes。
+3. data/cache_pairs.csv 是 B/C 同图同核数的 500 条配对；tables/cache_summary.csv、tables/cache_summary.tex、figures/cache_ratios.* 是汇总。s_hw 是同一个 B 计划在 B 与 C 下的比值，s_adapt 是 Cache 条件下 B 计划和 C 选中计划的比值，s_opt 是 B/C 各自最终方案的比值。逐图 s_hw*s_adapt=s_opt；三列均值一般不能相乘。字节加权命中率等于总命中字节/(总命中字节+总未命中字节)，不要与逐图命中率均值混用。
+4. data/candidate_comparison.csv、tables/candidate_comparison_summary.csv 和 figures/candidate_comparison.* 只比较首个成功官方候选与最终选中候选，标题、图注和正文必须如此命名。这不是移除一个机制后的消融。data/main_failed_candidates.csv 保留失败分母和原因。
+5. data/sensitivity_results.csv 包含 6 图乘 4 个 Cache 参数变体，各有固定 B 计划和重优化结果，共 48 条成功选择；tables/sensitivity_summary.csv 和 figures/sensitivity_capacity.*、figures/sensitivity_bandwidth.* 可使用。24 个重优化组最终计划都未偏离原 B 计划，另有 12 个备选候选因官方展开依赖环失败；只能据此写参数响应，不能写结构适配已经发生。报告样本为 6 图，不能写成 100 图敏感性实验。
+6. data/epsilon_tradeoffs.csv 是已成功评估的有限候选内 0.5%/1% 容差权衡，不是全局 Pareto 前沿。evidence/previous_report/ 的旧汇总存在 1047 行来源/耗时缺失及 Pipe 下界字段错误；论文数字以本包 data/、tables/ 为准，失败记录不得当成零值。
+7. audit/run_hash_checks.csv 中 22 个原始批次的官方代码哈希全部相符，但 6 个批次清单保留历史 `RUNNING` 状态；组合结果有最终方案和官方输出，不等于每个原始批次清单都已标为终态。
+
+论文修改顺序：
+A. 先核对 sections/06-model-ab.tex、07-model-c.tex、08-model-de.tex 与代码。现有代码实现有限种子、一次性 move/aggregate/reorder 等局部变体及官方评估后选择；不能描述成已实现完整改善链、独立容量代表、分散候选、FIFO 事件回放或单调保底。scoring.py 中的 Cache 命中估计是轻量近似，不是 FIFO 回放。Apple MPS 只计算了辅助负载排序，gpu_load_rank 未进入最终候选排序；官方评估器运行于 CPU。若保留冻结 Idea 的设计内容，明确标成设计/待验证，不能让它承担当前实验结论。
+B. 修订 sections/00-abstract.tex、02-problem.tex、08-model-de.tex、09-evaluation.tex、11-support.tex 和结论相关段落，把可用的主矩阵、B/C 配对、候选比较、6 图敏感性数字、表和图填入。将“仍在运行”等过期状态改成可核实的当前状态。替换结果占位表为真实表，但对三项机制移除对照、候选排序对照、六对微图和单调保底核对保留“未完成/未验证”，不得拿候选比较冒充消融。修正 07-model-c.tex 命中率公式中的 `,qquad` 为 `\qquad`。
+C. 用 tables/*.tex 和 figures/*.pdf 或 *.png 植入论文；按版面组织正文与附录，保留样本数、比较方向、轴单位和数据来源。不要只放漂亮图而没有可核查结果表。检查 180 条 A/B 诊断速度比低于单核基准、192 条相邻核数增加后变慢的事实，不能写全局“至少不退化”或“核数越多一定越快”。
+D. 更新 sections/12-ai.tex 中的实际 AI 辅助内容和论文修订阶段，但未知的工具版本/发布日期、队员复核、签名及提交状态继续留空，不能虚构。本文结果是题目官方 Python 评估器的软件模拟，不是 NPU 实机测量，也不是有限候选之外的全局最优证明。
+
+验收：全文搜索所有 `\pending`、`待补`、`仍在运行` 和与代码不一致的机制断言，逐一归类为已填实值或真实待验证；每个关键数字追到 CSV 行和原始官方 result.json。编译论文，检查表图、公式和字体。另交付一份逐项数值溯源清单及尚未完成的实验/人工核验清单。不得删除失败证据，不得修改官方输入、评估器、原始 result.json 或本包 audit/。若某个主张没有对应实验，就改写或删除该主张，不造数字。

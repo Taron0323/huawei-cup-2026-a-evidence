@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        531670,
+        118511.43333333333,
+        -753664,
+        0,
+        "base_base"
+      ],
+      "plan_sha256": "46bb63415fe721d86cbf0462d79174d3a17c62a0fff874f3cc85090f8748d624",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "base_disperse_tid_1000000003_node_17_core_2_pos_0",
+      "expanded_rank": [
+        535330,
+        119057.56666666667,
+        -786432,
+        0,
+        "base_disperse_tid_1000000003_node_17_core_2_pos_0"
+      ],
+      "plan_sha256": "adbc481fbd2b850b6f05cd534e22a452c969667e144a6a6247b42935567cd55f",
+      "source": "disperse"
+    },
+    {
+      "candidate": "base_split_release_g5_p4",
+      "expanded_rank": [
+        532182,
+        121788.3,
+        -753664,
+        196612,
+        "base_split_release_g5_p4"
+      ],
+      "plan_sha256": "04da643eec8f212b8662de056ec6f9bc70d103e3daac83a35626b3f8d1b12866",
+      "source": "timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 531,
+  "winner": "base_base"
+}

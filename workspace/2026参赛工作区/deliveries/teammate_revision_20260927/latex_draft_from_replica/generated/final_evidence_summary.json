@@ -1,0 +1,23 @@
+{
+  "source": "data/v7_fast_20260927/main_results.csv",
+  "selection_policy": "raw final_selection from v7_fast_reports_complete_20260927",
+  "rows": 1500,
+  "unique_keys": 1500,
+  "status_counts": {
+    "AI_VERIFIED": 1500
+  },
+  "cases": 100,
+  "cores": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "scenes": [
+    "A",
+    "B",
+    "C"
+  ],
+  "old_inherited_results_used": false
+}

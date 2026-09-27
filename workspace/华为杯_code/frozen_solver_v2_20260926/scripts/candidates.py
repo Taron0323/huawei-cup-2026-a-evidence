@@ -1,0 +1,566 @@
+"""Fresh finite candidate search for the final idea."""
+
+from __future__ import annotations
+
+from collections import defaultdict
+import copy
+from typing import Any
+
+from .plan import canonical_plan, groups_from_plan, plan_key, seed_plans, validate_plan
+from .scoring import light_score
+
+
+def _group_maps(plan):
+    groups = defaultdict(list)
+    for node, group in plan["node_to_subgraph"].items():
+        groups[int(group)].append(int(node))
+    core_of = {int(group): core for core, sequence in enumerate(plan["core_schedules"]) for group in sequence}
+    return groups, core_of
+
+
+def _rebuild(mapping, schedules, view, cores):
+    candidate = canonical_plan(mapping, schedules)
+    validate_plan(view, candidate, cores)
+    return candidate
+
+
+def _loads(view, plan):
+    groups, _ = _group_maps(plan)
+    return {
+        core: sum(max(1, int(view["ops"][str(node)].get("cycles", 0))) for group in sequence for node in groups[int(group)])
+        for core, sequence in enumerate(plan["core_schedules"])
+    }
+
+
+def _move_node(view, base, node, target_core, position, cores):
+    """Split one consumer operation into a new group on another core."""
+    mapping = {int(key): int(value) for key, value in base["node_to_subgraph"].items()}
+    source_group = mapping[int(node)]
+    schedules = [list(sequence) for sequence in base["core_schedules"]]
+    source_core = next(core for core, sequence in enumerate(schedules) if source_group in sequence)
+    if source_core == target_core:
+        return None
+    source_position = schedules[source_core].index(source_group)
+    mapping[int(node)] = max(mapping.values(), default=-1) + 1
+    schedules[source_core].remove(source_group)
+    remaining_nodes = [key for key, value in mapping.items() if value == source_group]
+    if remaining_nodes:
+        schedules[source_core].insert(min(source_position, len(schedules[source_core])), source_group)
+    position = max(0, min(int(position), len(schedules[target_core])))
+    schedules[target_core].insert(position, mapping[int(node)])
+    try:
+        return _rebuild(mapping, schedules, view, cores)
+    except ValueError:
+        return None
+
+
+def _move_group_position(view, base, group, position):
+    schedules = [list(sequence) for sequence in base["core_schedules"]]
+    core = next((index for index, sequence in enumerate(schedules) if int(group) in sequence), None)
+    if core is None:
+        return None
+    sequence = schedules[core]
+    sequence.remove(int(group))
+    sequence.insert(max(0, min(int(position), len(sequence))), int(group))
+    try:
+        return _rebuild(base["node_to_subgraph"], schedules, view, len(schedules))
+    except ValueError:
+        return None
+
+
+def _move_group_core(view, base, group, target_core, position, cores):
+    schedules = [list(sequence) for sequence in base["core_schedules"]]
+    source_core = next((index for index, sequence in enumerate(schedules) if int(group) in sequence), None)
+    if source_core is None or source_core == target_core:
+        return None
+    schedules[source_core].remove(int(group))
+    schedules[target_core].insert(max(0, min(int(position), len(schedules[target_core]))), int(group))
+    try:
+        return _rebuild(base["node_to_subgraph"], schedules, view, cores)
+    except ValueError:
+        return None
+
+
+def _group_dependency_maps(view, plan):
+    """Return group membership, core placement, and contracted predecessors."""
+    mapping = {int(node): int(group) for node, group in plan["node_to_subgraph"].items()}
+    groups, core_of = _group_maps(plan)
+    group_preds = {int(group): set() for group in groups}
+    for node, parents in view["preds"].items():
+        node = int(node)
+        if node not in mapping:
+            continue
+        target = mapping[node]
+        for parent in parents:
+            parent = int(parent)
+            if parent in mapping and mapping[parent] != target:
+                group_preds[target].add(mapping[parent])
+    return mapping, groups, core_of, group_preds
+
+
+def _group_reuse_scores(view, plan, config):
+    """Score groups that expose repeated small-tensor reads after a split."""
+    mapping, groups, core_of, _ = _group_dependency_maps(view, plan)
+    sizes = {int(tid): int(size) for tid, size in view["tensor_sizes"].items()}
+    capacity = int(config["cache"]["capacity"])
+    reuse = defaultdict(int)
+    shared = defaultdict(int)
+    for tid, users in view["tensor_consumers"].items():
+        tid = int(tid)
+        size = sizes.get(tid, 0)
+        if size <= 0 or size > capacity:
+            continue
+        user_groups = defaultdict(list)
+        for node in users:
+            node = int(node)
+            if node in mapping:
+                user_groups[core_of[mapping[node]]].append(mapping[node])
+        for core, group_ids in user_groups.items():
+            unique = sorted(set(group_ids))
+            if len(unique) > 1:
+                for group in unique:
+                    reuse[group] += size * (len(unique) - 1)
+            if len(user_groups) > 1:
+                for group in unique:
+                    shared[group] += size * (len(user_groups) - 1)
+    return reuse, shared
+
+
+def _reorder_core(view, base, core, mode, cores, config):
+    """Topologically reorder one core with a deterministic reuse priority."""
+    schedules = [list(sequence) for sequence in base["core_schedules"]]
+    sequence = schedules[core]
+    if len(sequence) < 2:
+        return None
+    _mapping, groups, core_of, group_preds = _group_dependency_maps(view, base)
+    reuse, shared = _group_reuse_scores(view, base, config)
+    ops = view["ops"]
+    weights = {
+        group: sum(max(1, int(ops[str(node)].get("cycles", 0))) for node in nodes)
+        for group, nodes in groups.items()
+    }
+    ranks = {int(node): index for index, node in enumerate(map(int, view["r_order"]))}
+    node_rank = {
+        group: min((ranks.get(node, len(ranks)) for node in nodes), default=len(ranks))
+        for group, nodes in groups.items()
+    }
+    local = set(sequence)
+    predecessors = {group: {parent for parent in group_preds[group] if parent in local} for group in local}
+    ready = {group for group in local if not predecessors[group]}
+    ordered = []
+    while ready:
+        if mode == "cache":
+            key = lambda group: (-shared[group], -reuse[group], node_rank[group], group)
+        elif mode == "release":
+            key = lambda group: (-reuse[group], weights[group], node_rank[group], group)
+        else:
+            key = lambda group: (weights[group], node_rank[group], group)
+        group = min(ready, key=key)
+        ready.remove(group)
+        ordered.append(group)
+        for child in local:
+            if group in predecessors[child]:
+                predecessors[child].remove(group)
+                if not predecessors[child]:
+                    ready.add(child)
+    if len(ordered) != len(sequence) or ordered == sequence:
+        return None
+    schedules[core] = ordered
+    try:
+        return _rebuild(base["node_to_subgraph"], schedules, view, cores)
+    except ValueError:
+        return None
+
+
+def split_same_core_variants(view, base, cores, config):
+    """Split a resident group while retaining one core, exposing new timing states.
+
+    The official Step2 spill pass is sensitive to the resulting operation order.
+    Splitting is therefore limited to a few high-weight groups and legal
+    topological orders; the official evaluator remains the authority.
+    """
+    _mapping, groups, core_of, _ = _group_dependency_maps(view, base)
+    topo_orders = [
+        ("topo", [int(node) for node in view["topological"]]),
+        ("release", [int(node) for node in view["r_order"]]),
+        ("height", [int(node) for node in view["h_order"]]),
+    ]
+    ops = view["ops"]
+    ranked_groups = sorted(
+        groups,
+        key=lambda group: (
+            -sum(max(1, int(ops[str(node)].get("cycles", 0))) for node in groups[group]),
+            -len(groups[group]),
+            group,
+        ),
+    )
+    variants = []
+    seen = set()
+    for group in ranked_groups[:6]:
+        source_core = core_of[group]
+        group_nodes = set(groups[group])
+        for order_name, order in topo_orders:
+            ordered_nodes = [node for node in order if node in group_nodes]
+            if len(ordered_nodes) < 4:
+                continue
+            for parts in (2, 4):
+                if len(ordered_nodes) < parts:
+                    continue
+                mapping = {int(node): int(value) for node, value in base["node_to_subgraph"].items()}
+                schedules = [list(sequence) for sequence in base["core_schedules"]]
+                position = schedules[source_core].index(group)
+                chunk_ids = [max(mapping.values(), default=-1) + index + 1 for index in range(parts)]
+                for index, node in enumerate(ordered_nodes):
+                    chunk = min(parts - 1, index * parts // len(ordered_nodes))
+                    mapping[node] = chunk_ids[chunk]
+                schedules[source_core][position:position + 1] = chunk_ids
+                try:
+                    candidate = _rebuild(mapping, schedules, view, cores)
+                except ValueError:
+                    continue
+                key = plan_key(candidate)
+                if key in seen:
+                    continue
+                seen.add(key)
+                variants.append((f"split_{order_name}_g{group}_p{parts}", candidate, "timing"))
+                if len(variants) >= 24:
+                    return variants
+    return variants
+
+
+def core_order_variants(view, base, cores, config):
+    """Try reuse-aware legal orders on cores that already have several groups."""
+    variants = []
+    seen = set()
+    for core in range(cores):
+        for mode in ("cache", "release", "short"):
+            candidate = _reorder_core(view, base, core, mode, cores, config)
+            if candidate is None:
+                continue
+            key = plan_key(candidate)
+            if key in seen:
+                continue
+            seen.add(key)
+            variants.append((f"order_{mode}_core_{core}", candidate, "timing"))
+    return variants
+
+
+def local_variants(view, base, cores, scene):
+    """Generate deterministic ordinary, capacity and timing representatives."""
+    variants = [("base", base, "seed")]
+    groups, core_of = _group_maps(base)
+    schedules = [list(x) for x in base["core_schedules"]]
+    # Move the first movable block to the least loaded other core.
+    if len(groups) > 1 and cores > 1:
+        loads = {core: sum(int(view["ops"][str(node)].get("cycles", 0)) for g in seq for node in groups[g]) for core, seq in enumerate(schedules)}
+        source = max(range(cores), key=lambda c: (loads[c], -c))
+        target = min((c for c in range(cores) if c != source), key=lambda c: (loads[c], c))
+        if schedules[source]:
+            moved = schedules[source][0]
+            edited = [list(x) for x in schedules]
+            edited[source].remove(moved)
+            edited[target].append(moved)
+            try:
+                variants.append(("move", _rebuild(base["node_to_subgraph"], edited, view, cores), "ordinary"))
+            except ValueError:
+                pass
+    # Merge adjacent blocks on one core.  This is the resident-domain move.
+    for core, seq in enumerate(schedules):
+        if len(seq) >= 2:
+            left, right = seq[0], seq[1]
+            mapping = dict(base["node_to_subgraph"])
+            for node, group in mapping.items():
+                if int(group) == int(right):
+                    mapping[node] = int(left)
+            edited = [list(x) for x in schedules]
+            edited[core] = [x for x in edited[core] if x != right]
+            try:
+                variants.append(("aggregate", _rebuild(mapping, edited, view, cores), "aggregate"))
+            except ValueError:
+                pass
+            break
+    # Reorder adjacent blocks for a capacity or FIFO timing alternative.
+    for core, seq in enumerate(schedules):
+        if len(seq) >= 2:
+            edited = [list(x) for x in schedules]
+            edited[core][0], edited[core][1] = edited[core][1], edited[core][0]
+            try:
+                variants.append(("reorder", _rebuild(base["node_to_subgraph"], edited, view, cores), "timing" if scene == "C" else "capacity"))
+            except ValueError:
+                pass
+            break
+    unique = []
+    seen = set()
+    for name, plan, source in variants:
+        key = plan_key(plan)
+        if key not in seen:
+            unique.append((name, plan, source))
+            seen.add(key)
+    return unique
+
+
+def capacity_variants(view, base, cores, config):
+    """Generate a bounded, explicitly labelled capacity-risk portfolio.
+
+    The light pressure value is only a ranking signal.  These candidates move
+    groups touching large tensors to the front or back of their current core,
+    changing the operation-level lifetime proxy and giving the official Step2
+    spill pass an actual opportunity to confirm or reject the edit.  Keeping
+    this source separate prevents capacity pressure from disappearing behind a
+    three-way lexicographic tie-break.
+    """
+    mapping, groups, core_of, _ = _group_dependency_maps(view, base)
+    sizes = {int(tid): int(size) for tid, size in view["tensor_sizes"].items()}
+    scores = defaultdict(int)
+    for tid, users in view["tensor_consumers"].items():
+        tid = int(tid)
+        size = sizes.get(tid, 0)
+        if size <= 0:
+            continue
+        touched = {mapping[int(node)] for node in users if int(node) in mapping}
+        if len(touched) < 2:
+            continue
+        # A large tensor consumed across several groups is a direct source of
+        # overlapping residency; retain it even when the current peak proxy
+        # happens to be below the configured capacity.
+        for group in touched:
+            scores[group] += size * (len(touched) - 1)
+    if not scores:
+        # Preserve an explicit capacity source for ordinary multi-group plans
+        # so the selector can report that the quota was considered.
+        for group, nodes in groups.items():
+            scores[group] = sum(max(1, int(view["ops"][str(node)].get("cycles", 0))) for node in nodes)
+    variants = []
+    seen = set()
+    for group, _risk in sorted(scores.items(), key=lambda item: (-item[1], item[0]))[:12]:
+        core = core_of[group]
+        sequence_len = len(base["core_schedules"][core])
+        if sequence_len < 2:
+            continue
+        for position, label in ((0, "front"), (sequence_len, "back")):
+            candidate = _move_group_position(view, base, group, position)
+            if candidate is None:
+                continue
+            key = plan_key(candidate)
+            if key in seen or key == plan_key(base):
+                continue
+            seen.add(key)
+            variants.append((f"capacity_g{group}_{label}", candidate, "capacity"))
+            if len(variants) >= 24:
+                return variants
+    return variants
+
+
+def generate_candidates(view, cores, scene, config, *, base_plan=None, incumbent_plan=None):
+    if base_plan is None:
+        seeds = seed_plans(view, cores, scene)
+        # Keep B's selected plan as the first-class C incumbent while retaining
+        # one unedited representative from each other legal start.  The
+        # incumbent receives the expensive C-specific edits; alternatives are
+        # kept as bounded escape routes so the portfolio does not explode.
+        if scene == "C" and incumbent_plan is not None:
+            seeds = {"incumbent": incumbent_plan, **seeds}
+    else:
+        seeds = {"base": base_plan}
+    candidates = []
+    seen = set()
+    for seed_name, seed in seeds.items():
+        if scene == "C" and incumbent_plan is not None and seed_name != "incumbent":
+            variants = [("base", seed, "seed")]
+        else:
+            # Capacity candidates are inserted first so an identical plan is
+            # retained under the explicit source label rather than silently
+            # deduplicated as an ordinary timing edit.
+            variants = capacity_variants(view, seed, cores, config)
+            variants.extend(local_variants(view, seed, cores, scene))
+        if scene == "C" and (incumbent_plan is None or seed_name == "incumbent"):
+            variants.extend(cache_variants(view, seed, cores))
+            variants.extend(disperse_variants(view, seed, cores, config))
+            variants.extend(timing_variants(view, seed, cores, config))
+            variants.extend(split_same_core_variants(view, seed, cores, config))
+            variants.extend(core_order_variants(view, seed, cores, config))
+        for name, plan, source in variants:
+            key = plan_key(plan)
+            if key in seen:
+                continue
+            item_source = "incumbent" if scene == "C" and seed_name == "incumbent" and name == "base" else source
+            item = {
+                "candidate": f"{seed_name}_{name}",
+                "source": item_source,
+                "plan": plan,
+                "mandatory": (
+                    (name == "base" and scene != "C")
+                    or (scene == "C" and seed_name == "incumbent" and name == "base")
+                ),
+                "light": light_score(view, plan, scene, config),
+            }
+            candidates.append(item)
+            seen.add(key)
+    if incumbent_plan is not None and not (scene == "C" and base_plan is None):
+        key = plan_key(incumbent_plan)
+        if key not in seen:
+            candidates.append({
+                "candidate": "incumbent_base",
+                "source": "incumbent",
+                "plan": incumbent_plan,
+                "mandatory": True,
+                "light": light_score(view, incumbent_plan, scene, config),
+            })
+            seen.add(key)
+    if scene == "C":
+        candidates.sort(key=lambda item: (
+            tuple(item["light"]["score"]),
+            -int(item["light"].get("cache_hit_bytes", 0)),
+            -float(item["light"].get("cache_expected_gain", 0.0)),
+            item["candidate"],
+        ))
+    else:
+        candidates.sort(key=lambda item: (tuple(item["light"]["score"]), item["candidate"]))
+    return candidates
+
+
+def cache_variants(view, base, cores):
+    """Generate explicit aggregate/disperse/cache-timing candidates from B."""
+    mapping = {int(node): int(group) for node, group in base["node_to_subgraph"].items()}
+    groups, core_of = _group_maps(base)
+    schedules = [list(x) for x in base["core_schedules"]]
+    variants = []
+    shared = []
+    for tid, users in view["tensor_consumers"].items():
+        consumer_cores = {core_of[mapping[int(node)]] for node in users if int(node) in mapping}
+        if len(consumer_cores) >= 2:
+            shared.append((int(view["tensor_sizes"].get(str(tid), 0)), int(tid), users, consumer_cores))
+    for _size, _tid, users, consumer_cores in sorted(shared, reverse=True)[:8]:
+        target = min(consumer_cores)
+        moved_groups = {mapping[int(node)] for node in users if int(node) in mapping and core_of[mapping[int(node)]] != target}
+        if moved_groups:
+            edited = [list(seq) for seq in schedules]
+            for source in consumer_cores:
+                if source == target:
+                    continue
+                for group in list(edited[source]):
+                    if group in moved_groups:
+                        edited[source].remove(group)
+                        edited[target].append(group)
+            try:
+                variants.append((f"aggregate_tid_{_tid}", _rebuild(mapping, edited, view, cores), "aggregate"))
+            except ValueError:
+                pass
+        # A timing alternative keeps the domains but moves the relevant group
+        # to the opposite end of its current core list.
+        for group in sorted({mapping[int(node)] for node in users if int(node) in mapping}):
+            core = core_of[group]
+            if group in schedules[core] and len(schedules[core]) >= 2:
+                edited = [list(seq) for seq in schedules]
+                edited[core].remove(group)
+                edited[core].append(group)
+                try:
+                    variants.append((f"timing_tid_{_tid}_group_{group}", _rebuild(mapping, edited, view, cores), "timing"))
+                except ValueError:
+                    pass
+                break
+    return variants
+
+
+def _shared_tensors(view, base, config):
+    mapping = {int(node): int(group) for node, group in base["node_to_subgraph"].items()}
+    _, core_of = _group_maps(base)
+    capacity = int(config["cache"]["capacity"])
+    shared = []
+    for tid, users in view["tensor_consumers"].items():
+        tid = int(tid)
+        size = int(view["tensor_sizes"].get(str(tid), 0))
+        if size <= 0 or size > capacity:
+            continue
+        valid_users = [int(node) for node in users if int(node) in mapping]
+        if len(valid_users) < 2:
+            continue
+        user_cores = {core_of[mapping[node]] for node in valid_users}
+        potential = size * max(0, len(user_cores) - 1)
+        structural = size * (len(valid_users) - 1)
+        shared.append((potential, structural, size, tid, valid_users, user_cores))
+    return sorted(shared, reverse=True)
+
+
+def disperse_variants(view, base, cores, config):
+    """Create legal candidates that deliberately create repeated cross-core reads."""
+    if cores < 2:
+        return []
+    variants = []
+    seen = set()
+    loads = _loads(view, base)
+    for _potential, _structural, size, tid, users, user_cores in _shared_tensors(view, base, config)[:24]:
+        groups, core_of = _group_maps(base)
+        mapping = {int(node): int(group) for node, group in base["node_to_subgraph"].items()}
+        consumer_groups = sorted(
+            {mapping[int(node)] for node in users if int(node) in mapping},
+            key=lambda group: (
+                sum(max(1, int(view["ops"][str(node)].get("cycles", 0))) for node in groups[group]),
+                group,
+            ),
+        )
+        target_order = sorted(range(cores), key=lambda core: (loads.get(core, 0), core))
+        for group in consumer_groups[:4]:
+            source_core = core_of[group]
+            for target in [core for core in target_order if core != source_core][: min(3, max(0, cores - 1))]:
+                schedule_len = len(base["core_schedules"][target])
+                for position in sorted({0, schedule_len // 2, schedule_len}):
+                    candidate = _move_group_core(view, base, group, target, position, cores)
+                    if candidate is None:
+                        continue
+                    key = plan_key(candidate)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    variants.append((f"disperse_group_tid_{tid}_group_{group}_core_{target}_pos_{position}", candidate, "disperse"))
+                    if len(variants) >= 160:
+                        return variants
+        node_order = sorted(users, key=lambda node: (-int(view["ops"][str(node)].get("cycles", 0)), node))[:4]
+        for node in node_order:
+            source_core = next(core for core, sequence in enumerate(base["core_schedules"]) if mapping[int(node)] in sequence)
+            targets = [core for core in target_order if core != source_core]
+            for target in targets[: min(3, len(targets))]:
+                schedule_len = len(base["core_schedules"][target])
+                positions = sorted({0, schedule_len // 2, schedule_len})
+                for position in positions:
+                    candidate = _move_node(view, base, node, target, position, cores)
+                    if candidate is None:
+                        continue
+                    key = plan_key(candidate)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    variants.append((f"disperse_tid_{tid}_node_{node}_core_{target}_pos_{position}", candidate, "disperse"))
+                    if len(variants) >= 160:
+                        return variants
+    return variants
+
+
+def timing_variants(view, base, cores, config):
+    """Move the groups serving repeated tensors to both ends of their cores."""
+    variants = []
+    seen = set()
+    mapping = {int(node): int(group) for node, group in base["node_to_subgraph"].items()}
+    for _potential, _structural, _size, tid, users, _user_cores in _shared_tensors(view, base, config)[:24]:
+        groups = sorted({mapping[int(node)] for node in users if int(node) in mapping})
+        for group in groups:
+            core = next((index for index, sequence in enumerate(base["core_schedules"]) if group in sequence), None)
+            if core is None or len(base["core_schedules"][core]) < 2:
+                continue
+            sequence_len = len(base["core_schedules"][core])
+            for position, label in ((0, "front"), (sequence_len, "back")):
+                candidate = _move_group_position(view, base, group, position)
+                if candidate is None:
+                    continue
+                key = plan_key(candidate)
+                if key in seen:
+                    continue
+                seen.add(key)
+                variants.append((f"timing_tid_{tid}_group_{group}_{label}", candidate, "timing"))
+    return variants[:96]
+
+
+def choose_light(candidates):
+    if not candidates:
+        raise ValueError("no legal candidate")
+    return candidates[0]

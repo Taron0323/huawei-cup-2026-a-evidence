@@ -1,0 +1,74 @@
+{
+  "selected": [
+    "r2_boundary_n1044_c1_p0",
+    "L2_base"
+  ],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "score": [
+        151725,
+        1741140,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A1_base",
+      "score": [
+        76755,
+        1741140,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A2_base",
+      "score": [
+        76755,
+        1741140,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A3_base",
+      "score": [
+        140481,
+        8428840,
+        430082,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "L2_base",
+      "score": [
+        75962,
+        1782126,
+        0,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L3_base",
+      "score": [
+        128944,
+        7736616,
+        545466,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+% 110 页原样影印入口。页面内容来自原 PDF，不是可编辑论文正文。
+\documentclass[a4paper]{article}
+\usepackage[paperwidth=595.28bp,paperheight=841.89bp,margin=0pt]{geometry}
+\usepackage{graphicx,eso-pic}
+\pagestyle{empty}
+\newcount\sourcepage
+\begin{document}
+\sourcepage=1
+\loop
+\edef\nextpage{\noexpand\AddToShipoutPictureBG*{\noexpand\AtPageLowerLeft{\noexpand\includegraphics[page=\the\sourcepage,scale=1]{sources/reference.pdf}}}}
+\nextpage\null\newpage
+\advance\sourcepage by 1
+\ifnum\sourcepage<111\repeat
+\end{document}

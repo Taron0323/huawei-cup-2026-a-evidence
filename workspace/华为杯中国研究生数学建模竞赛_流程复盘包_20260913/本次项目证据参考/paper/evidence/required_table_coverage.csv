@@ -1,0 +1,15 @@
+﻿question,requirement,label,paper_table,pdf_page,source,status
+问题一,题面表1：指定购电及日合计,tab:q1-purchase,2,9,paper/latex/generated/v1.2-visual-redesign/q1-purchase.tex,PRESENT
+问题一,题面表2：六块充放电及首末储能,tab:q1-storage,3,10,paper/latex/generated/v1.2-visual-redesign/q1-storage.tex,PRESENT
+问题二,题面表1：指定购电及日合计,tab:q2-purchase,4,13,paper/latex/generated/v1.2-visual-redesign/q2-purchase.tex,PRESENT
+问题二,题面表2：六块充放电及首末储能,tab:q2-storage,5,14,paper/latex/generated/v1.2-visual-redesign/q2-storage.tex,PRESENT
+问题二,题面表3：四日期紧急购电事件,tab:q2-events,6,15,paper/latex/generated/v1.2-visual-redesign/q2-events.tex,PRESENT
+问题三,题面表1：指定购电及日合计,tab:q3-purchase,7,18,paper/latex/generated/v1.2-visual-redesign/q3-purchase.tex,PRESENT
+问题三,题面表2：六块充放电及首末储能,tab:q3-storage,8,19,paper/latex/generated/v1.2-visual-redesign/q3-storage.tex,PRESENT
+问题三,题面表3：四日期紧急购电事件,tab:q3-events,9,20,paper/latex/generated/v1.2-visual-redesign/q3-events.tex,PRESENT
+问题四日前,题面表1：指定购电及日合计,tab:q42-purchase,10,22,paper/latex/generated/v1.2-visual-redesign/q42-purchase.tex,PRESENT
+问题四日前,题面表2：六块充放电及首末储能,tab:q42-storage,11,23,paper/latex/generated/v1.2-visual-redesign/q42-storage.tex,PRESENT
+问题四日前,题面表3：四日期紧急购电事件,tab:q4-events,14,26,paper/latex/generated/v1.2-visual-redesign/q4-events.tex,PRESENT
+问题四日内,题面表1：指定购电及日合计,tab:q43-purchase,12,24,paper/latex/generated/v1.2-visual-redesign/q43-purchase.tex,PRESENT
+问题四日内,题面表2：六块充放电及首末储能,tab:q43-storage,13,25,paper/latex/generated/v1.2-visual-redesign/q43-storage.tex,PRESENT
+问题四日内,题面表3：四日期紧急购电事件,tab:q4-events,14,26,paper/latex/generated/v1.2-visual-redesign/q4-events.tex,PRESENT

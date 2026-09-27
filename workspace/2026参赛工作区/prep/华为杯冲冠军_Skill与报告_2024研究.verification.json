@@ -1,0 +1,310 @@
+{
+  "status": "PASS",
+  "file_count": 60,
+  "zip_bytes": 3183824,
+  "zip_sha256": "6b1c035295d634ca003828d065a6b3e642124a765fb22c0a95d7f021311dcd5a",
+  "crc_verified": true,
+  "all_entry_hashes_verified": true,
+  "files": [
+    {
+      "path": "evidence/analyses/AB_features.json",
+      "bytes": 24571,
+      "sha256": "b50005fddf1b957fd7e89815b114d17ca209fddb585af0dd531a26b1d8911222"
+    },
+    {
+      "path": "evidence/analyses/AB_提名分析.md",
+      "bytes": 14445,
+      "sha256": "4df7349835a66969bd8bf071cf8a49c74f74cb0c6e3d0b7414f2771f43071fa9"
+    },
+    {
+      "path": "evidence/analyses/CD_features.json",
+      "bytes": 20015,
+      "sha256": "ad999060cb41324b7995bbd70cf24d909f9f9ce2e30e3c7f53791cc28693e75e"
+    },
+    {
+      "path": "evidence/analyses/CD_提名分析.md",
+      "bytes": 15334,
+      "sha256": "a7d2dd5efea7362c40d71156ac45aebd85c291ed95578e9ccb9c6e53ba95b13f"
+    },
+    {
+      "path": "evidence/analyses/EF_features.json",
+      "bytes": 17601,
+      "sha256": "e735babcb5c1dc6eef1594f4ef4b6be099b9899e992dd413daac81d91fc0017c"
+    },
+    {
+      "path": "evidence/analyses/EF_提名分析.md",
+      "bytes": 19948,
+      "sha256": "291c781cfdf3ced6c2cc368cf766e10d418a2695bcfe0ed761e5ead137283afe"
+    },
+    {
+      "path": "evidence/corpus/A24103350007.json",
+      "bytes": 162183,
+      "sha256": "3c26cb95324ce816d4fe776731f4fde076ecbd072f351f876cae2f948ababb6c"
+    },
+    {
+      "path": "evidence/corpus/A24103350007.txt",
+      "bytes": 157973,
+      "sha256": "9b9807b49e6019a662c8bade27a0c522255942c9c9366e50a5c8382939471a74"
+    },
+    {
+      "path": "evidence/corpus/A24107120016.json",
+      "bytes": 139032,
+      "sha256": "b7b64bb012c6b778bca2ff85dab32c5c639d390034b5e34c174676349251d91c"
+    },
+    {
+      "path": "evidence/corpus/A24107120016.txt",
+      "bytes": 136134,
+      "sha256": "b9e68258ce8ccb05b29ecaa515b8a4c6fcfde32716ff617e6cbb4a46714fe198"
+    },
+    {
+      "path": "evidence/corpus/B24102860287.json",
+      "bytes": 208956,
+      "sha256": "584d2631400dc6f84d80a5cddf725c67a1046deabaa6e5de479647bd86a139e3"
+    },
+    {
+      "path": "evidence/corpus/B24102860287.txt",
+      "bytes": 203100,
+      "sha256": "d52694cf85fd2298d5a5acddbcedd26a7ddd35ffe16208c7c7277bc98146daf5"
+    },
+    {
+      "path": "evidence/corpus/B24116640167.json",
+      "bytes": 133505,
+      "sha256": "8195a9e8871c407d47261b19c00fc017199bdde374e436337be74c4e5791588f"
+    },
+    {
+      "path": "evidence/corpus/B24116640167.txt",
+      "bytes": 129759,
+      "sha256": "07ea35ea7185f4cfbd91ef19f6a1e00bc2f4b749a7f72ab8fe86891fdd0b2e5e"
+    },
+    {
+      "path": "evidence/corpus/C24102890089.json",
+      "bytes": 127487,
+      "sha256": "53ee465e007b3f17e1eb3aeed87d4ebe370380c7ffc7ad94ec2796b4c86b1902"
+    },
+    {
+      "path": "evidence/corpus/C24102890089.txt",
+      "bytes": 122455,
+      "sha256": "e90a124778603383a80441199c4f1b57fb6dbadb0527e3bfdf25f992cc5d5c8a"
+    },
+    {
+      "path": "evidence/corpus/C24103860012.json",
+      "bytes": 152507,
+      "sha256": "221d3046b5b819861547df384e970126f6a1023a942ed35eeed75b7ffdda3a9d"
+    },
+    {
+      "path": "evidence/corpus/C24103860012.txt",
+      "bytes": 147693,
+      "sha256": "7fe17796d69425434d8a89c5bc145f83f63492e8613c336b19585fc055ad0434"
+    },
+    {
+      "path": "evidence/corpus/C24104220149.json",
+      "bytes": 140871,
+      "sha256": "ab3564cb7fd9eec69882a242edbc584e51a6b401101267b371c04c41e736ecb7"
+    },
+    {
+      "path": "evidence/corpus/C24104220149.txt",
+      "bytes": 136658,
+      "sha256": "12773f084073ce99ceea52a52150c469e4cf7768b36e69aa487bfb80a99e2835"
+    },
+    {
+      "path": "evidence/corpus/D24103850092.json",
+      "bytes": 264220,
+      "sha256": "8b3d7f9abf2a5cc884c538898e865d7b3a787388774ae9f57a489bc395787e99"
+    },
+    {
+      "path": "evidence/corpus/D24103850092.txt",
+      "bytes": 257272,
+      "sha256": "08fed379fe802d4f76c8dbdd8d7478e94a5f5929493b8d1155654a36d84b2838"
+    },
+    {
+      "path": "evidence/corpus/D24104460003.json",
+      "bytes": 178004,
+      "sha256": "e9228bf3b9318ce4b7b47f24b765121cac9413bef68f841e3d5edeb789088684"
+    },
+    {
+      "path": "evidence/corpus/D24104460003.txt",
+      "bytes": 172082,
+      "sha256": "388ba72c84687e2f23f44cf0222c0535260e0aec477a97dd972a1c8da3a9102f"
+    },
+    {
+      "path": "evidence/corpus/E24101480006.json",
+      "bytes": 150168,
+      "sha256": "df68d18b3c70ed6ef6c0beb655061b358c5674f0984765fd00a0a9e4bb581f06"
+    },
+    {
+      "path": "evidence/corpus/E24101480006.txt",
+      "bytes": 144709,
+      "sha256": "04e6316c32b775975738d6ba4874db62ae11670694b92cfd597e55298bb1c422"
+    },
+    {
+      "path": "evidence/corpus/E24102910005.json",
+      "bytes": 120950,
+      "sha256": "907ae4b3b84ab4622d855e1950ad874a755fee5b4647a97e56ef9eaa0307a3b0"
+    },
+    {
+      "path": "evidence/corpus/E24102910005.txt",
+      "bytes": 117885,
+      "sha256": "dca5269d9073f41f53dfd030f4a8d8e557310b2c545bca4f266fdf58195a0e9f"
+    },
+    {
+      "path": "evidence/corpus/F24102870082.json",
+      "bytes": 112764,
+      "sha256": "db2feda1034ce0382fbf2d51f68ca989466f38214649a8c8acd68256f2d211e9"
+    },
+    {
+      "path": "evidence/corpus/F24102870082.txt",
+      "bytes": 109878,
+      "sha256": "74d6cc3cf97f41ebdc080beeabe8c523107d49a960e29fdc19d4af98f47a1360"
+    },
+    {
+      "path": "evidence/corpus/F24910020063.json",
+      "bytes": 98197,
+      "sha256": "1f6c7beff8c9e0ae581e10b411db62dd649de8a719ead0adccaa33d53b19963f"
+    },
+    {
+      "path": "evidence/corpus/F24910020063.txt",
+      "bytes": 94465,
+      "sha256": "3bc935c65d4e94c91f3d99f02537645a83f58d847d32fd99d81260763692df9b"
+    },
+    {
+      "path": "evidence/github_publication.json",
+      "bytes": 1287,
+      "sha256": "92691b1323945c01a7d407375d1f66900a7d94e564f2479dfca12a46acd3f3f5"
+    },
+    {
+      "path": "evidence/independent_review.md",
+      "bytes": 6063,
+      "sha256": "7411cc7e2838d1cffe884df73bf06675b352f694d0a29daf1ccb55dd153bb265"
+    },
+    {
+      "path": "evidence/report_pdf_qa/QA.md",
+      "bytes": 1897,
+      "sha256": "cfbb0a9e47202927fb8ef851beebc2460ea081f94d9c710ccb78e91f7357f352"
+    },
+    {
+      "path": "evidence/report_pdf_qa/extracted.txt",
+      "bytes": 24590,
+      "sha256": "f13abe642109681ea0d292e7e127d539ae8a8d1d77490f32d1f26e4222868662"
+    },
+    {
+      "path": "evidence/report_pdf_qa/verification.json",
+      "bytes": 1698,
+      "sha256": "1c49dd47fb85455f9db3b63504009a4ab14168e85063ff76f0cbb1233ef029d5"
+    },
+    {
+      "path": "evidence/skill_behavior_test.md",
+      "bytes": 4444,
+      "sha256": "a46a86ad368053b8df17cc0f4226804f07f3ae436a04b1341a13043e8d277bbb"
+    },
+    {
+      "path": "evidence/source_manifest.json",
+      "bytes": 4658,
+      "sha256": "0883f807dc40891ed7f301c87a083fbf12299233b0dff7ec4192a4bb0af2c9f8"
+    },
+    {
+      "path": "evidence/交付验证.md",
+      "bytes": 3992,
+      "sha256": "8658df48a6630e4a9d2beda8a149079178ee95d634e5c6df1349accce71959f9"
+    },
+    {
+      "path": "evidence/共性核对表.json",
+      "bytes": 23854,
+      "sha256": "7ba5ae9e3022bb71084c280355f5f93b584a031ff8bd2b9f339a1141b3e07bc6"
+    },
+    {
+      "path": "evidence/共性核对表.md",
+      "bytes": 2282,
+      "sha256": "aa3103b303805734ee4ca45a10e8c56712f1a938e91c14709c5515527de582df"
+    },
+    {
+      "path": "evidence/冠亚季军_features.json",
+      "bytes": 2145,
+      "sha256": "825cc97d47fef88f8a47d9347a70b979f5f30bcde082b873e8663a97e1367abc"
+    },
+    {
+      "path": "evidence/冠亚季军_证据卡.md",
+      "bytes": 7207,
+      "sha256": "f2b3697b5fdae3b6ce6334cfeb62038196b7cb447852cef82011c430687b3ab2"
+    },
+    {
+      "path": "evidence/官方依据/2024_奖项核对.json",
+      "bytes": 8128,
+      "sha256": "f7c755f93f2d23cc127c51b87b5ad343e90cef24103eb0b5c436922ea84c2a5f"
+    },
+    {
+      "path": "evidence/官方依据/2024_官方获奖名单.xlsx",
+      "bytes": 1532390,
+      "sha256": "846cbdd1057beded8d53df42892fdf5fa5d2610b7ce998a83e1f042af2a65976"
+    },
+    {
+      "path": "evidence/官方依据/华为杯评阅标准检索报告_20260923.md",
+      "bytes": 18297,
+      "sha256": "d68b7a596c05213261a117c6b4d946648b94cb51016d7a839da2452f7467c757"
+    },
+    {
+      "path": "huawei-cup-champion/SKILL.md",
+      "bytes": 4851,
+      "sha256": "a6dbe58fc63c2931ba69723058722c3c5505436a4f6d7b2754f5f77f647d2883"
+    },
+    {
+      "path": "huawei-cup-champion/agents/openai.yaml",
+      "bytes": 355,
+      "sha256": "82a40a18dc5ba11c6c1dfa8c248abae9896620f18534dd70beead165c3ec4e17"
+    },
+    {
+      "path": "huawei-cup-champion/references/2024-patterns.md",
+      "bytes": 4287,
+      "sha256": "2942c193e5ec3d6a0f1213cfe5669d9e9d576911cfde12d5236dc3e390d4abe1"
+    },
+    {
+      "path": "huawei-cup-champion/references/execution.md",
+      "bytes": 4875,
+      "sha256": "125439720be8f71c8ee378448cc2114a01abb99ddeb00f89dd254db3bd51538c"
+    },
+    {
+      "path": "huawei-cup-champion/references/paper-and-defense.md",
+      "bytes": 3423,
+      "sha256": "7c8ec21cbe67585d2f8fc1f4aa95a65c387709f23bfcad63685f62a8864be0c5"
+    },
+    {
+      "path": "scripts/build_evidence_index.mjs",
+      "bytes": 4995,
+      "sha256": "15436d9ab701744b9658eb0b42746e35df6b3564573feed0f5cf502ef4c47d76"
+    },
+    {
+      "path": "scripts/extract_corpus.py",
+      "bytes": 1800,
+      "sha256": "5d0d255c8c4dd9ace87e419f3fba283d8ebbf1e91df84d480c2ffef222c53c68"
+    },
+    {
+      "path": "scripts/package_delivery.py",
+      "bytes": 2411,
+      "sha256": "dd0e2bfe726834bb8128735443de4b6b6ff8d0342f8b0d8cc5b91b81d8f0d62e"
+    },
+    {
+      "path": "scripts/render_report.py",
+      "bytes": 16471,
+      "sha256": "dac2abb569627d96a26e1c8a9d8cb0c501686e0130a347cde1817a514095683d"
+    },
+    {
+      "path": "scripts/verify_publication.mjs",
+      "bytes": 2959,
+      "sha256": "c04f30fe89848d64689fc53b3150e0cee6af0f5773e36f32787d0977ddea29ea"
+    },
+    {
+      "path": "交付说明.md",
+      "bytes": 2522,
+      "sha256": "00097ab78d798ee102f25795a76e0ecab9103e8c69dd29804d66a07a375ee3fa"
+    },
+    {
+      "path": "华为杯冲冠军报告.md",
+      "bytes": 24742,
+      "sha256": "dccd1aeb6b7e0a7610133e169cb32e4cf711df2b6935f59441265b04ce5a26ec"
+    },
+    {
+      "path": "华为杯冲冠军报告.pdf",
+      "bytes": 510585,
+      "sha256": "93063aff3a7883b1bbf2ab789fd02272e1569b6aa3601f2a05ad6d87f645e608"
+    }
+  ]
+}

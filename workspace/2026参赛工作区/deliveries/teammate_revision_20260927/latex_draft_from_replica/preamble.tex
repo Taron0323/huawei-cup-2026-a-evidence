@@ -1,0 +1,55 @@
+\documentclass[a4paper,zihao=-4,fontset=fandol]{ctexart}
+\usepackage[left=25mm,right=25mm,top=25mm,bottom=25mm,footskip=12mm]{geometry}
+\usepackage{amsmath,amssymb,bm,graphicx,booktabs,tabularx,longtable,array,float}
+\usepackage{caption,fancyvrb,fvextra,algorithm,algorithmic,hyperref}
+\usepackage{xurl,tikz,pdfpages,placeins}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,filecolor=blue,menucolor=blue,runcolor=blue,pdftitle={张量驻留与查询时序驱动的神经网络处理器多核调度},pdfauthor={},pdfsubject={2026 A题论文初稿}}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\input{font-config}
+\ifcontest
+  \linespread{1.0}
+\else
+  \geometry{top=30mm}
+  \linespread{1.38}
+\fi
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\ctexset{section={name={,、},number=\chinese{section},aftername={},
+  format=\centering\sffamily\zihao{4},beforeskip=18bp,afterskip=12.4bp},
+subsection={format=\zihao{-4},titleformat=\sffamily,beforeskip=12bp,afterskip=6.8bp},
+subsubsection={format=\zihao{-4},titleformat=\sffamily,beforeskip=10bp,afterskip=6bp}}
+\pagestyle{plain}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{equation}}
+\captionsetup{font=normalsize,labelsep=quad,skip=8bp}
+\captionsetup[figure]{font={small,bf},labelsep=space,position=bottom,skip=4bp}
+\captionsetup[table]{font={small,bf},labelsep=space,position=top,skip=4bp}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}
+\renewcommand{\algorithmicensure}{\textbf{输出：}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\pending}{\textbf{待计算}}
+\newcommand{\slot}[1]{\textbf{【#1】}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\samplefigure}[3]{%
+  \begin{figure}[H]\centering
+  \includegraphics[width=0.91\linewidth,height=0.43\textheight,keepaspectratio]{figures/#1.pdf}
+  \caption{#2}\label{#3}\end{figure}}
+\newcounter{extrafigure}
+\renewcommand{\theextrafigure}{S.\arabic{extrafigure}}
+\newcommand{\auxfigure}[3]{%
+  \begin{figure}[H]\centering
+  \includegraphics[width=0.91\linewidth,height=0.40\textheight,keepaspectratio]{figures/#1.pdf}
+  \refstepcounter{extrafigure}\caption*{图\theextrafigure\quad #2}\label{#3}\end{figure}}
+\newcommand{\auxtablecaption}[1]{\caption{#1}}
+\newcommand{\aitool}{OpenAI Codex}
+\newcommand{\aimodel}{GPT-6（本文修订）；原实验精确型号待核实}
+\newcommand{\aideveloper}{OpenAI}
+\newcommand{\aireleased}{待核实}
+\newcommand{\Case}[1]{\texttt{case\_#1}}
+\tikzset{abox/.style={draw,align=center,text width=3.5cm,minimum height=1cm,inner sep=5pt},alink/.style={-{Stealth[length=2mm]},thick}}
+\newcommand{\modelcard}[4]{\subsection{#1}#2\par\textbf{基本形式：}#3\par\textbf{选择与检验：}#4\par}

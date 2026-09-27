@@ -1,0 +1,71 @@
+{
+  "failures": [],
+  "representatives": [
+    {
+      "candidate": "r2_path_n52_c2_p0",
+      "profile_score": [
+        13430078,
+        268861440,
+        247861376
+      ]
+    },
+    {
+      "candidate": "r2_move_g2_c3_p1",
+      "profile_score": [
+        25168892,
+        272955776,
+        255710080
+      ]
+    }
+  ],
+  "starts": [
+    {
+      "candidate": "B0_base",
+      "profile_score": [
+        63662046,
+        270497536,
+        264449408
+      ]
+    },
+    {
+      "candidate": "B1_base",
+      "profile_score": [
+        13462750,
+        268798208,
+        247863680
+      ]
+    },
+    {
+      "candidate": "B2_base",
+      "profile_score": [
+        62794191,
+        202811136,
+        159434752
+      ]
+    },
+    {
+      "candidate": "B3_base",
+      "profile_score": [
+        38863479,
+        145546240,
+        75760640
+      ]
+    },
+    {
+      "candidate": "L2_base",
+      "profile_score": [
+        43870867,
+        207213184,
+        192663552
+      ]
+    },
+    {
+      "candidate": "L3_base",
+      "profile_score": [
+        52187542,
+        218007936,
+        178411008
+      ]
+    }
+  ]
+}

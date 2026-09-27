@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        7703056,
+        79190.7,
+        -425984,
+        655360,
+        "base_base"
+      ],
+      "plan_sha256": "03da0b47a1a75f2ff482f833cdb9eb23554517ec97c8a07e9c4669d1f35f24e3",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "base_move",
+      "expanded_rank": [
+        7703056,
+        85744.3,
+        -425984,
+        655360,
+        "base_move"
+      ],
+      "plan_sha256": "a5af09d492f82f63a78775426c836f96d8cdd34c839ebdddbcdc551ca9b2b6ca",
+      "source": "ordinary"
+    },
+    {
+      "candidate": "base_disperse_tid_1000002265_node_2259_core_1_pos_0",
+      "expanded_rank": [
+        7703033,
+        78098.43333333333,
+        -425984,
+        655360,
+        "base_disperse_tid_1000002265_node_2259_core_1_pos_0"
+      ],
+      "plan_sha256": "6d6434de9c3ef3ce26d1ae7f99555457339f55d779d89363ccbbf36dce152590",
+      "source": "disperse"
+    },
+    {
+      "candidate": "base_split_release_g2_p4",
+      "expanded_rank": [
+        7703056,
+        79190.7,
+        -425984,
+        655360,
+        "base_split_release_g2_p4"
+      ],
+      "plan_sha256": "da25e11f5f97bede88ad56d7a765a6a6cb5d323602f630d4ebe3d2252fcfed76",
+      "source": "timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 7703,
+  "winner": "base_disperse_tid_1000002265_node_2259_core_1_pos_0"
+}

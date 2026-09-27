@@ -1,0 +1,78 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        12718,
+        9248.3,
+        -53568,
+        0,
+        "base_base"
+      ],
+      "plan_sha256": "74e2f48a02bc0da889d9ecfa1e9a1620e41c58aa5959111496f36eec5e3f8b21",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "r2_boundary_n2193_c4_p0",
+      "expanded_rank": [
+        12718,
+        9286.7,
+        -53568,
+        0,
+        "r2_boundary_n2193_c4_p0"
+      ],
+      "plan_sha256": "66a23644e61d6ef348b53596132f2f84d524d4d89136379286e1db2a15685828",
+      "source": "ordinary_chain"
+    },
+    {
+      "candidate": "base_aggregate_tid_1769",
+      "expanded_rank": [
+        23310,
+        9248.3,
+        -25344,
+        0,
+        "base_aggregate_tid_1769"
+      ],
+      "plan_sha256": "6dfb13e9366b73a40eea5ad3665423bbd77edb918beb981ef7543d033b2f108b",
+      "source": "aggregate"
+    },
+    {
+      "candidate": "base_disperse_tid_2186_node_2208_core_2_pos_1",
+      "expanded_rank": [
+        18763,
+        9286.7,
+        -53568,
+        0,
+        "base_disperse_tid_2186_node_2208_core_2_pos_1"
+      ],
+      "plan_sha256": "519879969b4ca04d30c7efd5c95242c08011e1f8d114a2827456167005aeb6cd",
+      "source": "disperse"
+    },
+    {
+      "candidate": "event_timing_tid_1766_miss_2_bytes_12288_front",
+      "expanded_rank": [
+        12718,
+        9248.3,
+        -53568,
+        0,
+        "event_timing_tid_1766_miss_2_bytes_12288_front"
+      ],
+      "plan_sha256": "4b293d7da5a1ffae9b39529d488931796e59c19b6739a2bda984e891e0acf9a2",
+      "source": "event_timing"
+    },
+    {
+      "candidate": "base_split_release_g1_p4",
+      "expanded_rank": [
+        12718,
+        9248.3,
+        -53568,
+        0,
+        "base_split_release_g1_p4"
+      ],
+      "plan_sha256": "6b18636d8116b2a0c1f1e184782d5d66a0d613c3ac9bc7d22196371685b20ae1",
+      "source": "timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 12,
+  "winner": "base_base"
+}

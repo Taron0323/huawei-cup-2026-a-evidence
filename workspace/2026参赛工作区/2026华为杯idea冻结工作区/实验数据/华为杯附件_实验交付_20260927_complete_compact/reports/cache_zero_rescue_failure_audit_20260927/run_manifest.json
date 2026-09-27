@@ -1,0 +1,10 @@
+{
+  "status": "COMPUTED",
+  "main_matrix_modified": false,
+  "failure_rows": 24,
+  "runs": [
+    "v7_cache_zero_rescue_20260927_1100",
+    "v7_cache_zero_rescue_deep_20260927_1130"
+  ],
+  "created_at": 1790449925.3265831
+}

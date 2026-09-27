@@ -1,0 +1,65 @@
+% Fonts remain in their installed location; no proprietary font is redistributed.
+\newcommand{\modelcjkfrompath}[1]{%
+  \IfFileExists{#1Kaiti.ttf}{%
+    \setCJKmainfont{Simsun.ttc}[Path={#1},FontIndex=0,AutoFakeBold=2.2,ItalicFont=Kaiti.ttf]
+  }{%
+    \setCJKmainfont{Simsun.ttc}[Path={#1},FontIndex=0,AutoFakeBold=2.2,AutoFakeSlant=0.2]
+  }%
+  \setCJKfamilyfont{zhsong}{Simsun.ttc}[Path={#1},FontIndex=0,AutoFakeBold=2.2]
+  \typeout{MODELFONTS-SONG: SimSun}
+  \IfFileExists{#1SimHei.ttf}{%
+  \setCJKsansfont{SimHei.ttf}[Path={#1},AutoFakeBold=1.5]
+  \setCJKfamilyfont{zhhei}{SimHei.ttf}[Path={#1},AutoFakeBold=1.5]
+  \typeout{MODELFONTS-HEI: SimHei}%
+  }{\typeout{MODELFONTS-HEI: FandolHei fallback}}%
+  \IfFileExists{#1Kaiti.ttf}{%
+  \setCJKfamilyfont{zhkai}{Kaiti.ttf}[Path={#1},AutoFakeBold=2]
+  \typeout{MODELFONTS-KAI: KaiTi}%
+  }{\typeout{MODELFONTS-KAI: FandolKai fallback}}}
+
+\ifmodelportablefonts
+  \typeout{MODELFONTS-CJK: Fandol portable mode}
+\else
+\IfFileExists{fonts/Simsun.ttc}{%
+  \modelcjkfrompath{fonts/}%
+}{%
+  \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/Simsun.ttc}{%
+    \modelcjkfrompath{/Applications/Microsoft Word.app/Contents/Resources/DFonts/}%
+  }{%
+    \IfFontExistsTF{SimSun}{%
+      \setCJKmainfont{SimSun}[AutoFakeBold=2.2]
+      \setCJKfamilyfont{zhsong}{SimSun}[AutoFakeBold=2.2]
+      \IfFontExistsTF{SimHei}{\setCJKsansfont{SimHei}\setCJKfamilyfont{zhhei}{SimHei}}{}
+      \IfFontExistsTF{KaiTi}{\setCJKfamilyfont{zhkai}{KaiTi}[AutoFakeBold=2]}{}
+      \typeout{MODELFONTS-CJK: system fonts, verify individual family availability}%
+    }{\typeout{MODELFONTS-CJK: Fandol fallback, not identical to the reference}}%
+  }%
+}
+\fi
+
+\ifmodelportablefonts
+  \setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,
+    BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+  \typeout{MODELFONTS-LATIN: TeX Gyre Termes portable mode}
+\else
+\IfFontExistsTF{Times New Roman}{%
+  \setmainfont{Times New Roman}
+  \typeout{MODELFONTS-LATIN: Times New Roman}%
+}{%
+  \setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,
+    BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+  \typeout{MODELFONTS-LATIN: TeX Gyre Termes fallback}%
+}
+\fi
+\setsansfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,
+  BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setmonofont{lmmono10-regular.otf}[Scale=0.88]
+
+% Keep the mathematical alphabet in the standard LaTeX/Computer Modern family
+% for both local reference and portable builds.
+\setmathfont{latinmodern-math.otf}
+\ifmodelportablefonts
+  \typeout{MODELFONTS-MATH: Latin Modern Math portable mode}
+\else
+  \typeout{MODELFONTS-MATH: Latin Modern Math}
+\fi

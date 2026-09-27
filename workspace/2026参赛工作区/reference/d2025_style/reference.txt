@@ -1,0 +1,4585 @@
+                           中国研究生创新实践系列大赛
+                “华为杯”第二十二届中国研究生
+                    数学建模竞赛
+
+                 :
+
+
+
+
+                                              θ = T (1000/P )0.286
+      P (z) = Ps exp(−gz/Rd Tavg )                                                                  vr =
+u sin ϕ cos θ + v sin ϕ sin θ
+      ∂θ/∂z ≈ (θi+1 − θi−1 )/(zi+1 − zi−1 )
+                                  Ia = α1 exp(−βRi) + α2 · T KE/ max(T KE) + α3 · S/ max(S)
+                         Ri = gθ (∂u/∂z)∂θ/∂z
+                                         2 +(∂v/∂z)2                              T KE ≈ SW 2
+                             p
+                         S = (∂u/∂z)2 + (∂v/∂z)2
+                                  Ib = c1 · SW / max(SW ) + c2 · S/ max(S)
+         P
+   min       [Ia − Ib ]2 + λ(c21 + c22 )
+
+
+                                                                   a
+                                                        b
+
+
+                                                                                                b
+                     RMSE         7.85      5.12   R²       0.65       0.85
+                              RMSE=5.12     R²=0.854
+
+
+                                                   wdist,i = 1/[(xP −xi )2 +(yP −yi )2 +(γ(zP −zi ))2 ]
+      γ>1
+
+
+                                                    1
+                                                                                                                             2
+
+                                                                                         P                P
+                                                                                 TP =        w i T Di /       wi
+    wi = wdist,i · wsource,i · wtime,i
+                                                                      J(T ) = Jobs + λb Jb + λs Js
+               P K P Nk
+                           i=1 σk2 [Hk (T )(ri ) − Tk (ri )]
+                                1                   obs      2
+    Jobs =        k=1
+
+                                      Jb = |T − Tb |22                                     Js = λx |∂ 2 T /∂x2 |22 +
+λy |∂ 2 T /∂y 2 |22 + λz |∂ 2 T /∂z 2 |22
+
+
+
+
+ I(z) = I0 e−z/2000                   2km                             0.8                            0.87
+       0.143
+
+                                                                               1
+                                                            f (x, y) = (x2 −x1 )(y 2 −y1 )
+                                                                                           [(x2 −x)(y2 −y)f (x1 , y1 )+
+···]                                        F (zk ) = F (zm ) + F (zzm+1 )−F (zm )
+                                                                      m+1 −zm
+                                                                                   (zk − zm )             100
+          50
+                 NWP                                                                  WRF
+                                                                                                                   P
+               Idcol (z) = a(z)+b(z)Idraw +c(z)(Idraw )2                                                  min          [Idcol −
+Ic ]2 + λ(a2 + b2 + c2 )
+T (t + 1) = β0 + β1 U (t) + β2 V (t) + β3 Θ(t) + ε
+
+
+                                       A*                                                             Cost(ni , nj ) =
+T (ni )+T (nj )
+       2
+                × distance(ni , nj )
+
+
+
+                                                                 82                                                        35
+                          1
+
+1.1
+
+      2024
+                          1000
+
+
+
+
+                     2
+
+
+
+
+2.1
+
+
+  a                                            b
+             a           b
+
+
+
+
+2.2
+
+
+                                           c
+             100m   50m          2km
+
+
+
+
+                                       3
+2.3
+
+                                                                                                                     d
+                                                                                 e
+
+
+
+
+2.4
+
+
+
+
+                                                                                                                         a
+                                                                 Ia = α1 · f (Ri) + α2 · T KEnorm + α3 · Snorm
+                       Ri                            T KEnorm                 Snorm
+                                             b                                                       SW
+                                                                                           P
+              Ib = c1 · SWnorm + c2 · Snorm                                          min       [Ia − Ib ]2 + λ(c21 + c22 )
+
+
+
+
+                                                                          1
+                                                       f (x, y) = (x2 −x1 )(y 2 −y1 )
+                                                                                      [(x2 − x)(y2 − y)f (x1 , y1 ) +
+···]                                                                F (zk ) = F (zm ) + F (zzm+1 )−F (zm )
+                                                                                              m+1 −zm
+                                                                                                           (zk − zm )
+                                                                                  wi = wdist,i · wsource,i · wtime,i
+                       wdist,i = (xP −xi )2 +(yP −y1i )2 +(γ(zP −zi ))2
+
+
+
+                                    NWP                                      d                                 Idcol (z) =
+a(z) + b(z) · Idraw + c(z) · (Idraw )2                                                                   e
+
+
+T (t + 1) = β0 + β1 U (t) + β2 V (t) + β3 Θ(t) + β4 t + ε
+                                                                                  T (ni )+T (nj )
+                 A*                                            Cost(ni , nj ) =          2
+                                                                                                  × distance(ni , nj )
+
+
+
+
+                                                           4
+2.1
+
+
+
+      5
+                         3
+
+
+
+
+z                                 m
+T                                 K
+P                                hPa
+
+
+u, v, w                          m/s
+
+
+θ                                 K
+
+
+Ri                                –
+
+
+T KE                             m²/s²
+SW                               m/s
+
+
+S                                 s�¹
+Ia               a                –
+
+
+Ib               b                –
+
+
+α1 , α 2 , α 3   a                –
+
+
+c1 , c 2             b            –
+∆x, ∆y                            m
+∆z                                m
+
+
+
+
+                             6
+                                                4
+
+4.1        1
+
+
+           a
+                                                       Ia
+
+
+
+Ib                                                                              b           a
+                                 P
+                           min       [Ia − Ib ]2 + λ(c21 + c22 )
+
+
+
+
+4.2        2
+
+
+                                        wdist,i = (xP −xi )2 +(yP −y1i )2 +(γ(zP −zi ))2
+
+
+                                                        Isupr                        Dvv (r)                    Ig
+                                                                               J(T ) = Jobs + Jb + Js
+
+
+
+
+4.3        3
+
+
+                                                                                                 f (x, y)
+       F (zk )                               NWP
+                                                                                 NWP                   d
+           Idcol (z) = a(z)+b(z)·Idraw +c(z)·(Idraw )2                                                      e
+                                                                T (t+1) = β0 +β1 U (t)+β2 V (t)+β3 Θ(t)+ε
+
+                                                                T (ni )+T (nj )
+      A*                                Cost(ni , nj ) =               2
+                                                                                × distance(ni , nj )
+
+
+
+
+                                                        7
+                             5
+
+5.1
+
+
+      1.
+
+
+      2.                    SW       TKE
+
+
+      3.
+      4.           Ri
+      5.       a        b
+
+5.2
+
+
+      1.
+      2.
+      3.
+      4.
+      5.
+
+5.3
+
+
+      1.
+      2.
+      3. A*
+      4. NWP
+      5.
+
+
+
+
+                                 8
+6
+
+
+
+
+    6.2
+
+
+          9
+6.1
+
+6.1.1
+
+
+                                  zi (i = 1, 2, . . . , N )                                       zj′ (j = 1, 2, . . . , M ),
+                                                T (zj′ )
+                                                            zi                                            zj′     ′
+                                                                                                                 zj+1
+  zj′ ≤ zi ≤ zj+1
+              ′
+
+
+                              
+                              X(τi ) + X(τi+1 )−X(τi ) (tk − τi ), τi ≤ tk ≤ τi+1
+                                           τi+1 −τi
+                     X(tk ) =                                                                                           (6.1)
+                              NaN,
+
+                                                              ,
+
+
+
+
+                1
+               :                zi ,                  zj′              T (zj′ ),
+               :                Tinterp (zi )
+          1: for i = 1 to N do
+
+          2:               j           zj′ ≤ zi ≤ zj+1
+                                                   ′
+                                                                  T (zj′ ), T (zj+1
+                                                                                ′
+                                                                                    )
+          3:        if                   j      T (zj′ ), T (zj+1
+                                                              ′
+                                                                  )                     then
+                                                   T (z ′ )−T (zj′ )
+          4:             Tinterp (zi ) = T (zj′ ) + zj+1 ′     ′     (zi − zj′ )
+                                                         j+1 −zj
+
+          5:        else
+          6:             Tinterp (zi ) = NaN                                       ▷
+          7:        end if
+          8: end for
+
+          9: return Tinterp (zi )
+
+
+                                                                             Python      Matlab                          :
+
+
+
+
+                                                            10
+                            6.3
+
+
+
+                                       2025   8   2
+00:00-00:30               372
+
+
+        Python   Matlab
+
+
+
+
+                                  11
+                                6.4
+
+
+                                                                         100
+11.38
+
+
+                                                Python
+
+
+                       excel                                             Python
+
+                          6.1
+
+
+                                   /
+
+                   2025-08-02 00:00:00 - 00:30:00        –   30
+
+                                  372
+
+                          100.0 - 11,380.0
+
+                                11,280.0
+
+
+
+
+        2.37 m/s                                             0.010 m/s
+                                                -110.69
+
+                                           12
+          6.5
+
+
+
+
+    6.2
+
+
+
+
+  2.37 ± 1.21         m/s
+
+    0.010             m/s
+
+ 0.952 ± 0.719        m/s
+
+1259.6 ± 3307.0        dB
+
+   -110.686            –
+
+    3.552             m²/s²
+
+
+
+
+                 13
+                                         1259.6 dB                 5
+                                             0.952 m/s                     3.552 m²/s²
+
+
+
+
+6.1.2
+
+                     a       b
+    (1)
+             θ                                                  1000 hPa
+
+                                                         0.286
+                                                   1000
+                                        θ=T                                                                (6.2)
+                                                    P
+                 T                         K
+                                 TK = TC + 273.15           P                    hPa
+
+                                                                  
+                                                      gz
+                                   P (z) = Ps exp −                                                        (6.3)
+                                                    Rd Tavg
+
+        Ps                                                   1013.25 hPa      g = 9.8 m/s2
+                                                                                          (1) +T (2) +∆z
+    Rd = 287 J/kg/K                            Tavg                            Tavg = T        2
+                         Tavg ≈ 250 K
+
+
+                                                         z 
+                                 P (z) = 1013.25 × exp −                                                   (6.4)
+                                                         8400
+             z
+    (2)
+
+
+
+                            u                   v
+                                                    vr
+
+                            vr = u sin ϕ cos θ + v sin ϕ sin θ + w cos ϕ                                   (6.5)
+
+                                                   14
+                                          6.6
+
+
+                     ϕ                                  15◦   30◦    θ
+          90◦                    0◦                     w           cos ϕ
+                                                                                  vr,n
+                                      θ = 0◦      vr,n ≈ u sin ϕ            u≈
+                                                                                 sin ϕ
+                                                 vr,e
+θ = 90◦         vr,e ≈ v sin ϕ            v≈
+                                                sin ϕ
+
+
+
+
+                                                                                         100%
+
+
+U   V
+
+
+
+
+                                                 15
+              2
+             :                             vr ,       ϕ,             θ,
+             :                        u, v
+        1:                       : vr = A · [u, v, w]T (               w                )
+        2:                          A: Ak,1 = sin ϕk cos θk , Ak,2 = sin ϕk sin θk
+        3:                                   : [u, v]T = (AT A)−1 AT vr
+        4:                  :           vr
+        5:              :
+        6: return u, v
+
+
+
+ (3)
+
+
+
+                     zi (i = 2, . . . , N − 1)
+
+
+                                                  ∂θ      θi+1 − θi−1
+                                                        ≈                                           (6.6)
+                                                  ∂z zi   zi+1 − zi−1
+
+                                u      v
+                            ∂u      ui+1 − ui−1                   ∂v      vi+1 − vi−1
+                                  ≈             ,                       ≈                           (6.7)
+                            ∂z zi   zi+1 − zi−1                   ∂z zi   zi+1 − zi−1
+
+                                                        z1                zN
+
+
+                                ∂θ      θ2 − θ1              ∂θ      θN − θN −1
+                                      ≈         ,                  ≈                                (6.8)
+                                ∂z z1   z2 − z1              ∂z zN   zN − zN −1
+
+
+
+
+  4                   Ri
+
+
+                                                   g       ∂θ/∂z
+                                       Ri =                                                         (6.9)
+                                                   θ (∂u/∂z)2 + (∂v/∂z)2
+
+                                                   g = 9.8 m/s2                θ            ∂θ/∂z
+∂u/∂z        ∂v/∂z
+
+                                                             16
+                                                                                     (∂u/∂z)2 + (∂v/∂z)2
+    10−6         Ri < 0.25                                                 Ri > 1
+        5                          TKE
+
+
+
+
+                                                    1
+                                              T KE = (u′2 + v ′2 + w′2 )                                   (6.10)
+                                                    2
+                 u′ , v ′ , w ′
+        SW
+
+
+
+                                                     T KE ≈ SW 2                                           (6.11)
+
+
+
+       (6)                    S
+
+
+                                                    s        2               2
+                                                         ∂u                ∂v
+                                               S=                  +                                       (6.12)
+                                                         ∂z                ∂z
+       ∂u            ∂v
+       ∂z            ∂z
+                                      (4)
+
+6.2              a
+
+
+                                                          a                                         Ri
+ TKE                              S
+                                                                                           Ri
+                                                                   TKE                                        S
+                                                              a
+                                                         Ia
+
+                                      Ia = α1 · f (Ri) + α2 · T KEnorm + α3 · Snorm                        (6.13)
+
+                                  f (Ri) = exp(−βRi)               Ri
+                                                               T KE
+        RI                                      T KEnorm =
+                                                            max(T KE)
+                                                          S
+        TKE                                     Snorm =
+                                                        max(S)
+α1 , α 2 , α 3
+
+
+                                                           17
+     α1 + α2 + α3 = 1                                              0.3      0.5   0.2              β        Ri
+                                              0.5
+                                                                                        1
+              Ia                 [0,1]
+
+
+                                                                            TKE                    T KE = SW 2
+
+
+6.3                b
+
+                   b
+                                              SW)                  S                                   Ib
+
+
+                   b                                                                                         SW
+                                                                                                             S
+
+
+
+                   b
+
+                                               Ib = c1 · SWnorm + c2 · Snorm                                      (6.14)
+
+                                           SW
+                                SWnorm = max(SW )
+                                                                                                                 Snorm =
+  S
+max(S)
+c1       c2                                 c1 + c2 = 1                                      0.5
+                                                          b
+
+
+
+
+                           Ib (z, t) = c1 · SWnorm (z, t) + c2 · Snorm (z, t) + c3 · ∆Ib (z, t − ∆t)              (6.15)
+
+                   ∆Ib                                                 c3
+
+
+6.4                        a            b
+
+                       a           Ia                         b                   Ib        Ia
+
+
+
+
+                                                              18
+                           6.7
+
+
+6.4.1
+
+             b   a
+                                     X
+                            min            [Ia (z, t) − Ib (z, t)]2                (6.16)
+                            c1 ,c2
+                                     z,t
+
+
+                                                 c1        c2
+
+
+                          X
+                 min            [Ia (z, t) − Ib (z, t)]2 + λ(c21 + c22 )           (6.17)
+                 c1 ,c2
+                          z,t
+
+
+        λ
+
+6.4.2
+
+                                                                           u       v
+
+                                I0,opt = RF(SW, S, u, v)                           (6.18)
+
+        RF                                             a              Ia
+                                                                               b
+
+
+
+
+                                                 19
+                          6.8
+
+
+6.5
+
+              a                               b
+
+
+
+                                    RMSE                 MAE
+R                                RMSE
+      MAE
+
+
+ •          RMSE
+                               v
+                               u
+                               u1 X N
+                       RM SE = t       (Ia,i − Ib,i )2         (6.19)
+                                 N i=1
+
+             a     b
+
+
+ •           MAE
+
+
+
+
+                                   20
+                                                 1 X
+                                                       N
+                               M AE =                  |Ia,i − Ib,i |                         (6.20)
+                                                 N i=1
+
+     MAE
+
+
+ •               R
+                                         PN
+                                            i=1 (Ia,i − Ia )(Ib,i − Ib )
+                        R = qP                               qP                               (6.21)
+                                        i=1 (Ia,i − Ia )        i=1 (Ib,i − Ib )
+                                        N                2      N                2
+
+
+
+                                                                                     [-1,1]
+     1
+             N            Ia       Ib
+                                                       RMSE         MAE
+
+
+
+
+         ,                                                                                RMSE
+5.1234 R²        0.8543 MAE    2.8812
+
+
+
+
+                                    XGBoost                                             0-6000m
+         b                     a
+
+
+
+
+                                                  21
+                       6.9        a
+
+
+
+
+                       6.10       b
+
+
+
+          0    2000m          a            b
+      a        b
+
+6.6
+
+              Python
+
+
+                                      22
+ 6.11
+
+
+
+
+6.12    b
+
+
+
+
+        23
+                    6.13
+
+
+    a
+
+
+                     b(               )
+                      4000
+        a
+                                 b                       a
+b                            a
+        a
+
+                          6.3
+
+
+                   RMSE          R²        MAE
+
+            A      4.8500 0.8900 2.6500
+
+            B      7.8500 0.6500 4.1500
+
+                B 5.1234 0.8543 2.8812           A
+
+
+                                                     b
+
+                                      24
+                                         b                      b                        b
+                                                                                   a
+
+
+
+
+                               6.4
+
+
+                 Train_RMSE Test_RMSE Train_R² Test_R² Train_MAE Test_MAE
+
+                   9.7563              9.0521         0.5587    0.5593    7.0235       6.8342
+
+2                  7.2845              6.3125         0.7189    0.7812    4.5012       4.3987
+
+3                  6.5432              5.5876         0.7723    0.8256    3.6215       3.3124
+
+LASSO              9.8543              8.9543         0.4912    0.5701    7.1123       6.7231
+
+                   10.1023             9.3812         0.4712    0.5281    6.0345       5.9231
+
+                   13.4213             13.6543        0.0681    0.0032    8.3543       8.9543
+
+                   15.1543             15.8543        -0.1823   -0.3421   9.8543       10.9231
+
+                   6.6123              5.2012         0.7712    0.8512    3.4213       3.3212
+
+                   5.9345              5.1234         0.8154    0.8543    3.0543       2.8812
+
+                   0.4012              6.0345         0.9981    0.8001    3.0456       2.7123
+
+                   10.8123             10.3712        0.3912    0.4212    7.1234       7.1543
+
+
+
+
+                             6.5             Python
+
+
+        Python
+
+    1     problem1.py
+
+    2                .py           a         b                      b
+
+
+                                         3
+
+
+                                                25
+      3
+     :
+     :
+1:
+
+2:
+
+3:                        TKE
+4:        (ModelA, ModelB, OptimizedModelB)
+5:        (RMSE, R²)
+6:         CSV
+
+
+
+
+                        26
+       7
+
+7.14
+
+
+
+
+           7.14
+
+
+                  27
+7.1
+
+                                                                                      S          X
+
+
+            c
+
+7.1.1
+
+
+
+
+        1
+
+
+                                                                               
+                                       1 X
+                                            N
+                                                                   (t − ti )2
+                               xmiss =       w i xi ,   wi = exp −                                     (7.22)
+                                       N i=1                          2τ 2
+
+                  xmiss                            xi                           wi                          t
+                                  ti                         r
+
+
+        2
+
+
+
+                                          xdetrend = x − (a + bt + ct2 )                               (7.23)
+
+                a + bt + ct2                                               t                a, b, c
+
+
+        3                                                                                 MAD         Hampel
+                                  t                     7                       t-3   t+3
+
+
+
+                                          median = median(xt−3:t+3 )                                   (7.24)
+
+
+
+
+                               MAD = 1.4826 × median(|xt−3:t+3 − median|)                              (7.25)
+
+                     1.4826              MAD
+
+
+
+                                      |xt − median| > 3 × MAD ⇒                                        (7.26)
+
+
+
+                                                        28
+7.1.2
+
+
+
+
+        ,
+                                               XN              
+                                                       t k − τi
+                                  T (X, tk ) =     ϕ              X(τi )                (7.27)
+                                               i=1
+                                                          ∆τ
+
+
+
+
+                              
+                              
+                              
+                              
+                              
+                                1
+                                  |x|3 − |x|2 + 23 ,               |x| ≤ 1
+                              3
+                        ϕ(x) = − 61 |x|3 + |x|2 − 2|x| + 34 ,      1 < |x| ≤ 2          (7.28)
+                              
+                              
+                              
+                              
+                              0,                                  |x| > 2
+
+                    |x|≤2
+            |x|>2
+                X(τi )                                  tk                     τi         ∆τ
+
+
+
+
+7.1.3
+
+
+
+
+                                                      x−µ
+                                             xstd =                                     (7.29)
+                                                       σ
+            μ                 σ                                            0        1
+
+
+
+
+                                                   29
+                                        s        2               2               2
+                                             ∆x                ∆y                ∆z
+                             daniso =                  +                 +                            (7.30)
+                                             Lx                Ly                Lz
+
+            Lx , L y , L z
+
+
+
+
+                                       1 X
+                                                  N (h)
+                              γ(h) =            [z(xi ) − z(xi + h)]2                                 (7.31)
+                                     2N (h) i=1
+
+        h                    N(h)                 h                                        γ(h)   h
+
+
+7.1.4
+
+
+
+
+                                                       SNR
+
+
+
+                                         
+                                         1,       SNR ≥ SNR threshold
+                              MSN R =                                                                 (7.32)
+                                         0,       SNR < SNR threshold
+
+            ηSNR                                                SNR
+MSNR = 1
+
+
+                                    3σ
+                                                                                 
+                                              1 X
+                                                       N
+                                                                vi − v̄
+                               Mconsistency =                           <3                            (7.33)
+                                              N i=1               σv
+
+            v̄     σv                                                    δ(·)
+  1
+
+
+
+
+                                     ∂ 2v ∂ 2v ∂ 2v
+                                 ∇v=2
+                                        2
+                                          + 2 + 2 < ∇2max                                             (7.34)
+                                     ∂x    ∂y  ∂z
+
+                                                       30
+                                     7.15
+
+
+                                            ∇2max
+
+
+                                                                                    5.15
+
+
+7.1.5
+
+
+
+
+                                                          Ω                    λ           φ      h
+                                 Ω
+
+
+
+                             Ω = [λmin , λmax ] × [ϕmin , ϕmax ] × [hmin , hmax ]              (7.35)
+
+               λmin   λmax                                             ϕmin     ϕmax
+hmin    hmax
+
+
+                                              Ω
+
+
+
+
+                                                     31
+ •                        [λmin , λmax ]        Nx
+
+                           λi = λmin + i · ∆λ,       i = 0, 1, . . . , Nx − 1
+
+ •
+
+                          ϕj = ϕmin + j · ∆ϕ,        j = 0, 1, . . . , Ny − 1
+
+ •                           [hmin , hmax ]             Nz
+
+                          hk = hmin + k · ∆h,        k = 0, 1, . . . , Nz − 1
+
+          ∆λ     ∆ϕ   ∆h
+           Nx × Ny × Nz
+                                                                                     100
+            ∆x = ∆y = 100 m                                                     50
+         ∆z = 50 m
+0-2000
+
+
+7.1.6
+
+
+                            (x0 , y0 , z0 )
+
+                                       xijk = x0 + i · ∆x                              (7.36)
+
+
+                                       yijk = y0 + j · ∆y                              (7.37)
+
+
+                                       zijk = z0 + k · ∆z                              (7.38)
+
+          (i, j, k)               ∆x       ∆y   ∆z
+
+
+
+
+7.1.7
+
+
+
+
+                                                   i · ∆x
+                                     λij = λ0 +                                        (7.39)
+                                                  Re cos ϕ0
+
+                                                32
+                   7.16
+
+                                j · ∆y
+                   ϕij = ϕ0 +                  (7.40)
+                                  Re
+
+                      hk = k · ∆z              (7.41)
+
+(λ0 , ϕ0 )                Re
+
+
+
+
+                                        
+              x      (Rc + h) cos ϕ cos λ
+                                        
+             y  =  (Rc + h) cos ϕ sin λ    (7.42)
+                                        
+              z         (Rc + h) sin ϕ
+
+                           33
+                                                r2     r3
+                                  reff = r +        −                                     (7.43)
+                                               2Rc k 24Rc3 k 3
+
+
+                                                            r
+                           αtrue = αobs + δα,       δα =        tan αobs                  (7.44)
+                                                           Rc k
+
+
+                      Re          6371 km                             k        4/3
+                           λ        ρ           σ                                    σ0
+                                     r
+
+
+7.1.8
+
+
+
+
+                                                 1/σ 2
+                                         w k = PK k 2                                     (7.45)
+                                                j=1 1/σj
+
+        σk2           k                             K
+
+
+
+                                                    ρk
+                                        wdensity = PK                                     (7.46)
+                                                     j=1 ρj
+
+        ρk            k
+
+
+
+
+                               wtotal = αwerror + (1 − α)wdensity                         (7.47)
+
+        α                                  [0,1]
+                  α
+              α                                                            α
+
+
+                           5.17    5.18
+
+                                                34
+                                      7.17
+
+
+7.2
+
+
+                    ”       -              -             ”
+
+
+7.2.1
+
+        1
+
+
+
+        2
+
+
+                                      Z H "        2               2 #1/2
+                                  1            ∂u                ∂v
+                        Isupr =                          +                      dz       (7.48)
+                                  H    0       ∂z                ∂z
+
+            u   v                                                        z           H
+
+
+
+                                                35
+                   7.18
+
+
+
+3
+
+                                               
+                            σv             z
+                    Iσupr =    exp       −          (7.49)
+                            U              Hσ
+    σv             U                     Hσ
+
+
+
+
+                            1 2              
+                   T KE =     σu + σv2 + σw2        (7.50)
+                            2
+    σu   σv   σw
+
+
+
+                                36
+                             Tupr = α1 · Isupr + α2 · Iσupr + α3 · T KE                          (7.51)
+
+            α1     α2   α3
+
+
+    4
+
+
+    5
+
+
+
+                             Dvv (r) = Cv2 r2/3 = ⟨[v(x + r) − v(x)]2 ⟩                          (7.52)
+
+            r                        Cv2                                                          Kol-
+mogorov
+
+
+    6
+
+                                                             3/2
+                                                      σv2
+                                           ε=                                                    (7.53)
+                                                    α2 L2/3
+            σv                   L                             α                       0.5-0.6
+
+
+
+    7     Ellrod               Ellrod
+
+
+                                           √
+                                  TI =         V ERT _SHR · DEF                                  (7.54)
+
+    8
+
+
+
+                               Tradar = β1 · ε1/3 + β2 · T I + β3 · σv                           (7.55)
+
+            β1     β2   β3
+
+
+
+
+                                                    s         2                2
+                                                          ∂u                 ∂v
+                             V ERT _SHR =                            +                           (7.56)
+                                                          ∂z                 ∂z
+
+                                                     37
+                                s                 2                  2
+                                         ∂u ∂v                  ∂v ∂u
+                    DEF =                  −            +         +                 (7.57)
+                                         ∂x ∂y                  ∂x ∂y
+
+        9
+
+                               7.6
+
+
+
+
+                                                            Umax − Umean
+                                                    Ig =
+                                                             Umean + ϵ
+                                            ∂θ                   ∂θ   θ2m − θ0.5m
+                                  Iθ =         · f (Ri)             =
+                                            ∂z                   ∂z       ∆z
+                                                    u∗             κ
+                                           Iu∗ =        =
+                                                    U10   ln(z/z0 ) − Ψm (ζ)
+
+                                           Tsurf = γ1 · Ig + γ2 · Iθ + γ3 · Iu∗
+
+
+7.2.2                            Anisotropic IDW
+
+
+                             P (x, y, z)
+                                            PN
+                                               i=1 wi · TDi
+                                     TP =      PN                                   (7.58)
+                                                  i=1 wi
+
+            wi        T Di           i                                  N
+
+
+7.2.3
+
+
+
+                                 J(T ) = Jobs + Jb + Js                             (7.59)
+
+
+7.2.4
+
+
+
+                               wi = wdist,i · wsource,i · wtime,i                   (7.60)
+
+
+
+                                                      1
+                 wdist,i =                                                          (7.61)
+                             (xP − xi )2 + (yP − yi )2 + (γ(zP − zi ))2
+
+                                               38
+                    7.7
+
+
+
+
+                          P K P Nk                                              2
+                 Jobs =     k=1
+                                           1
+                                      i=1 σk2       Hk (T )(ri ) − Tkobs (ri )
+
+                 Jb = λb ∥T − Tb ∥22
+                                  2                      2                 2
+                            ∂2T                 ∂2T                 ∂2T
+                 Js = λs    ∂x2
+                                      + λy      ∂y 2
+                                                             + λz   ∂z 2
+                                  2                      2                 2
+
+
+
+                 γ>1                       10
+
+
+
+                                                          WS (WPR) = 1.0
+                           WS (DWR) = 0.8
+WS (AWS) = 0.6
+
+                                                                          
+                                   |tanalysis − tobservation,i |
+                   wtime,i = exp −                                                    (7.62)
+                                               τ
+
+  τ                               30
+
+                           7.8
+
+
+
+
+                                    1/σ 2
+                       wkerror = PK k 2
+                                   j=1 1/σj
+                                     ρk
+                       wkdensity = PK
+                                         ρ
+                                    j=1 j 
+                                         ∆t
+                       wtime = exp −
+                                          τ
+                       wk = αwkerror + βwkdensity + γwktime
+
+
+
+
+                                           39
+7.2.5
+
+
+                                      7.9
+
+
+
+
+                                         R∞
+                            Hup (T ) =      Kup (z, z ′ )T (z ′ )dz ′
+                                            0
+                                          RRR
+                            Hradar (T ) =     V
+                                                Kradar (r, r′ )T (r)d3 r′
+                                                                     
+                            Haux (T ) = T (z = 0) · exp − Haux    z
+
+
+
+
+                               7.10                     (Gradient Descent)
+
+
+               T0                     J(T )              α          ϵ        Nmax
+
+               T∗
+
+
+
+    1.         n←0          T current ← T 0
+    2.              n < Nmax           ∥∇J(T current )∥ > ϵ
+         (a)          g ← ∇J(T current )
+         (b)                          T new ← T current − α · g
+         (c)                 T current ← T new
+         (d)          n←n+1
+    3.          T current
+
+
+
+
+                                                   40
+                                  7.11                (Conjugate Gradient)
+
+
+                        T0               J(T )        ϵ                 Kmax
+
+                        T∗
+
+
+
+    1.
+            (a) k ← 0    Tk ← T0
+            (b) g k ← ∇J(T k )
+            (c) pk ← −g k
+    2.                       k < Kmax     ∥g k ∥ > ϵ
+                                           ∥g k ∥2
+            (a)                 αk ← k 2
+                                     ⟨p , ∇ J(T k )pk ⟩
+            (b)              T k+1
+                                   ← T k + αk pk
+            (c)                  g k+1 ← ∇J(T k+1 )
+                                           ∥g k+1 ∥2
+            (d)                     β ←
+                                      k
+                                            ∥g k ∥2
+            (e)                     p k+1
+                                          ← −g k+1 + β k pk
+            (f)                k ←k+1
+    3.                  Tk
+
+
+7.2.6
+
+        1                                Richardson Number, Ri
+
+
+                                                        ∂θ
+                                                      g ∂z
+                                           Ri =      
+                                                  ∂u 2
+                                                                 
+                                                              ∂v 2
+                                                                               (7.63)
+                                                  ∂z
+                                                       +      ∂z
+
+                                    ∂θ
+              g                     ∂z
+                                                                               Ri
+                        0.25
+        2
+
+
+
+                                            Ri = exp(ln(Ri))                   (7.64)
+
+                                          0.001 ≤ Ri ≤ 1000
+
+
+                                                    41
+                         Ri
+Ri > 0                                                    Ri ≤ 0
+
+                                                         
+                                        
+                                        Tmax · exp − Ri , Ri > 0
+                                                     Rinit
+                                  T =                                        (7.65)
+                                        
+                                        Tmax ,                    Ri ≤ 0
+
+        3
+                      Turbulence Kinetic Energy, TKE
+
+
+                                                  1 ′2             
+                                      T KE =        u + v ′2 + w′2           (7.66)
+                                                  2
+            u′ , v ′ , w ′
+
+
+                                           σv2
+
+
+
+
+                                                       3
+                                                 T KE = σv2                  (7.67)
+                                                       2
+        4
+
+
+
+
+                              T = wRi · f (Ri) + wT KE · T KE + wT I · T I   (7.68)
+
+
+
+
+7.2.7                                               TurbKF
+
+                                 -
+
+
+
+
+                                                     42
+                            Tt− = ΦTt−1                                    (7.69)
+                            Pt− = ΦPt−1 ΦT + Q                             (7.70)
+
+
+
+
+                     Kt = Pt− H T (HPt− H T + R)−1                         (7.71)
+
+
+
+
+                          Tt = Tt− + Kt (yt − HTt− )                       (7.72)
+                          Pt = (I − Kt H)Pt−                               (7.73)
+
+
+
+
+7.2.8
+
+
+
+
+  :
+              ,
+                                                                       ,
+
+
+                                                 Z t
+            dr
+               = U (r),     r(t − ∆t) = r(t) −           U (r(τ ))dτ       (7.74)
+            dt                                    t−∆t
+
+
+
+
+                     T (r, t) = T (r − U ∆t, t − ∆t)                       (7.75)
+
+7.2.9
+
+        1
+
+
+                                     43
+                         2        2      2         2
+                        σtotal = σobs + σinterp + σmodel   (7.76)
+
+
+
+
+                                        X
+                                        K
+                               2
+                              σobs =          wk2 σk2      (7.77)
+                                        k=1
+
+    σk2      k                                  wk
+
+
+
+
+                                     1 X           2
+                                        N
+                          2
+                         σinterp =         fi − fˆi        (7.78)
+                                     N i=1
+
+2
+
+
+
+
+                             X
+                             K            2 
+                                  1        d (r)
+                      I(r) =     2
+                                      exp − k 2            (7.79)
+                                σ (r)
+                             k=1 k
+                                            Lk
+
+    dk (r)                             Lk
+
+
+                     [0,1]
+                                       I(r) − Imin
+                             C(r) =                        (7.80)
+                                       Imax − Imin
+                 1
+
+
+3
+
+                                        44
+                   T (x, y, z, t)                                                        F
+{Xobs
+  k }               θ                   U
+                                                                                
+                                                         k }, θ, U, . . .
+                                    T (x, y, z, t) = F {Xobs                                     (7.81)
+
+
+
+                C(x, y, z, t)                                                   G            {σk2 }
+        {dk }               {Lk }
+                                                                                
+                                    C(x, y, z, t) = G {σk2 }, {dk }, {Lk }                       (7.82)
+
+    4
+
+
+
+
+                                      v
+                                      u
+                                      u1 X N
+                            RM SECV = t       (T−i (ri ) − T obs (ri ))2                         (7.83)
+                                        N i=1
+
+
+
+
+                                        PN         pred
+                                            i=1 (Ti     − T̄pred )(Tiobs − T̄obs )
+                         R = qP                                P                                 (7.84)
+                                               pred
+                                        N
+                                        i=1 (Ti     − T̄pred )2 Ni=1 (Ti
+                                                                        obs
+                                                                            − T̄obs )2
+
+
+
+                                                                                Ticlim
+
+
+                                                    PN
+                                                           (Tipred − Tiobs )2
+                                      SS = 1 − PN
+                                                i=1
+                                                                                                 (7.85)
+                                                       i=1 (Ti
+                                                              clim
+                                                                   − Tiobs )2
+
+
+
+
+                                                        45
+7.3
+
+      1
+
+
+
+ln(Ri) = 2.1831−0.0007·u+0.2840·sin(θ)+1.2335·cos(θ)−0.1447·vr +0.4042·σv −0.2530·h
+                                                                               (7.86)
+          u          m/s   θ                                                  vr
+          m/s   σv             m/s   h           km
+      2
+
+
+
+
+                                                  3
+
+
+
+                                                      ,                    (0-2km)
+
+
+
+
+                ”     ”
+
+
+
+      3
+
+
+
+
+                                              0.143              0.098
+                                                          R2       0.756
+                           75.6%
+
+
+
+
+                                         46
+  7.19
+
+
+
+                         7.12   Python
+
+
+          Python
+
+      1             .py
+
+      2            .py
+
+      3             .py
+
+      4             .py
+
+
+                         8
+
+8.1
+
+
+
+
+                                47
+                                                                                          P                         (x, y)
+                                        Q11 (x1 , y1 )     Q12 (x1 , y2 )     Q21 (x2 , y1 )   Q22 (x2 , y2 )
+                             P                           f (x, y)
+                      1
+f (x, y) =                        [(x2 − x)(y2 − y)f (x1 , y1 ) + (x2 − x)(y − y1 )f (x1 , y2 )
+             (x2 − x1 )(y2 − y1 )
+                                        +(x − x1 )(y2 − y)f (x2 , y1 ) + (x − x1 )(y − y1 )f (x2 , y2 )] (8.87)
+
+             f (xi , yj )                        Qij                                                            x
+                             y
+
+
+                        zk                                                                               zm         zm+1
+zm ≤ zk < zm+1                      zk                              F (zk )
+
+                                                         F (zm+1 ) − F (zm )
+                             F (zk ) = F (zm ) +                             · (zk − zm )                               (8.88)
+                                                             zm+1 − zm
+
+         F (zm )            F (zm+1 )                     zm        zm+1
+
+
+
+                                          8.13
+
+
+
+
+                                    (∆x, ∆y)                                  100
+
+                                    (∆z)                                      50
+
+                                                                        2000              40
+
+                                    (∆t)                                    30
+
+
+
+
+                                                               48
+                                         8.14
+
+
+
+
+          f (x, y)                            (x, y)
+
+          F (z)                      z
+
+          x1 , x 2 , y 1 , y 2
+
+
+          zm , zm+1                      zk
+
+
+          zk
+
+
+8.2
+
+                                 +
+
+
+
+      4
+ 1:
+
+ 2:                   NWP
+ 3:
+
+ 4:
+
+ 5:
+
+ 6:
+
+ 7:
+
+ 8:
+
+ 9:
+
+10:
+
+11:
+
+12:
+
+13:
+
+14:
+
+15:
+
+16:
+
+
+
+                                                       49
+8.2.1             NWP                      d
+
+                     NWP
+
+
+
+
+        1
+                                                     500m
+              400m            ,
+  WRF
+
+
+
+
+                           8.20 WRF
+
+
+        2
+            WRF                                TKE
+
+
+
+                                      50
+        3
+
+
+                             z
+
+
+                                 Idcol (z) = a(z) + b(z) · Idraw + c(z) · (Idraw )2                         (8.89)
+
+
+
+
+                   X                                               2                              
+             min             Idcol (x, y, z, t) − Ic (x, y, z, t)        + λ · a(z)2 + b(z)2 + c(z)2        (8.90)
+                   t,x,y,z
+
+                        0.200        05:00                               xyz
+                                                                                                    02:00   04:30
+                                                                04:30             05:00
+                                         5
+
+
+                             Levenberg-Marquardt
+
+8.2.2                                                                         e
+
+
+                                         e
+
+
+
+
+        1
+
+                                                        PN
+                                                           i=1 wi · TDi
+                                               TP =        PN                                               (8.91)
+                                                              i=1 wi
+
+               wi
+
+                                          wi = wdist,i · wsource,i · wtime,i                                (8.92)
+
+
+                                                                    1
+                             wdist,i =                                                                      (8.93)
+                                         (xP − xi )2 + (yP − yi )2 + (γ(zP − zi ))2
+            γ>1
+        2
+                                                                          5
+
+                                                           51
+1.
+
+                                            T (t) = at + b                                            (8.94)
+
+2.
+
+                                                 1X
+                                                      n−1
+                                     T (t + 1) =       T (t − k)                                      (8.95)
+                                                 n k=0
+
+3.
+
+                                      St = αTt + (1 − α)St−1                                          (8.96)
+
+4.
+
+                     T (t + 1) = β0 + β1 U (t) + β2 V (t) + β3 Θ(t) + β4 t + ε                        (8.97)
+
+5.      -
+
+                Ti (t + 1) = wtemp · ftemp (Ti (t)) + wspatial · fspatial (Tneighbors (t))            (8.98)
+
+                  2-3
+                                                                         e
+
+
+
+                                      RMSE        0.1634 MAE          .1289 R2               0.7542
+
+
+
+            -                        RMSE=0.1698 R2 =0.7281
+                                                                                              R2 =0.6834
+
+
+                                                            RMSE=0.1612 R2 =0.7693
+
+
+     RMSE
+
+
+                                                                                              3.5
+                                                                     0.04-0.88
+                0.06-0.69
+
+
+
+                                                 52
+    8.15
+
+
+                  RMSE        MAE   R2     RMSE
+
+                  0.1847 0.1425 0.6834   0.1692
+
+                  0.2156 0.1738 0.5429   0.1983
+
+                  0.1923 0.1502 0.6547   0.1756
+
+                  0.1634 0.1289 0.7542   0.1521
+
+-                 0.1698 0.1347 0.7281   0.1589
+
+                  0.1612 0.1271 0.7693   0.1498
+
+
+
+
+           8.21
+
+
+
+                         53
+8.2.3
+
+                                                               A*
+
+                   T (ni )+T (nj )
+Cost(ni , nj ) =          2
+                                   × distance(ni , nj )
+
+
+
+
+                                             8.22
+
+
+
+
+                                                          54
+                                         8.23
+
+
+                                                                  WRF
+
+
+
+
+8.2.4
+
+                              (ST-GCN)
+
+
+                                                                         
+                                  H (l+1) = σ D̂−1/2 ÃD̂−1/2 H (l) W (l)                  (8.99)
+
+                                   Ã = A + I                                         D̂
+                 P
+        D̂ii =       j Ãij                                   l               H (l)
+W (l)                                                     σ
+
+
+                                                     55
+                                                                 
+                                  exp LeakyReLU aT [W hi ∥W hj ]
+                         αij = P                                                              (8.100)
+                                 k∈Ni exp (LeakyReLU (a [W hi ∥W hk ]))
+                                                       T
+
+
+                                 a                                                        ∥
+                                 i                   Ni
+
+8.2.5
+
+
+
+                                       u′i = u + δi ,     δi ∼ N (0, Σ)                       (8.101)
+
+                 Σ
+
+                                       1 X
+                                            N
+                                  Σ=           (ui − ū)(ui − ū)T                            (8.102)
+                                     N − 1 i=1
+
+
+
+                                                    1 X
+                                                             N
+                              P (I > Ithreshold ) =       I(Ii > Ithreshold )                 (8.103)
+                                                    N i=1
+
+        I
+
+
+                               90%
+
+                                     [IP 05 , IP 95 ] = [Q0.05 (I), Q0.95 (I)]                (8.104)
+
+8.3
+
+8.3.1
+
+
+                 Z T
+        J(p) =           [w1 (t) · I(p(t))p + w2 · 1 + w3 · κ(p(t))2 ] dt + w4 · Ttotal       (8.105)
+                     0
+
+                                      p(t) = (x(t), y(t), z(t))                               I(p(t))
+                     κ(p(t))                                                     Ttotal
+        p=2
+
+
+1.               |ż| ≤ γmax               γmax = 5 m/s
+2.               |ψ̇| ≤ ψmax                ψmax = 30◦ /s
+3.          p(t) ∈ Ωflyable
+4.          I(p(t)) ≤ Isafe
+
+                                                        56
+8.3.2           A*
+
+
+
+                           g(n) = g(parent) + d(parent, n) · [I(n)p + α]       (8.106)
+
+            d(parent, n)
+
+
+
+                           h(n) = d(n, goal) · min[E[I(v)] + k · σI (v)]       (8.107)
+                                                     v∈V
+
+            k                                k=2
+
+                                                                          
+                                                         Imax (t) − Iavg
+                               w1 (t) = w10 ·       1+α·                       (8.108)
+                                                            Imax (t)
+
+
+
+8.3.3
+
+                     -
+
+                                   min{E[J(p)] + λ · Var[J(p)]}                (8.109)
+
+            λ
+
+
+
+                                      P (I(p(t)) > Icritical ) ≤ ε             (8.110)
+
+
+
+8.3.4
+
+    section
+        1        d
+
+
+                                                    r
+                                                        1 X
+                                   RM SE =                  (Id − Ic )2        (6.121)
+                                                        N
+                                            P
+                                              (Id − Ic )2
+                                      R =1− P
+                                         2
+                                                                               (6.122)
+                                              (Ic − Ic )2
+
+                                                        H
+                                        CSI =                                  (6.123)
+                                                     H +M +F
+
+                                                        57
+            H                                                                         M
+                                                           F
+                                                                  RMSE            0.3
+                                                                     R²         0.8
+                                                            CSI           0.6
+
+
+8.3.5       e
+
+
+
+                                     2        2        2          2
+                                    σtotal = σmodel + σinitial + σboundary                (8.111)
+
+
+
+                                     1 X  P 50
+                   Preliability =       I |Ie − Ic | < k · (IeP 90 − IeP 10 )             (8.112)
+                                     N
+        k          1.0-1.5
+
+8.4
+
+8.4.1
+
+
+
+
+        Score(p) = ws · Ssafety + we · Seﬀiciency + wc · Scomfort + wr · Srobustness      (8.113)
+
+                             [0,1]
+
+
+
+                      µgood (p) = min{µsafe (p), µeﬀicient (p), µcomfortable (p)}         (8.114)
+
+        μ
+
+8.4.2
+
+
+                                       exp(−α · RM SEd (t))
+                 wd (t) =                                                                 (8.115)
+                             exp(−α · RM SEd (t)) + exp(−α · RM SEe (t))
+
+
+
+                             pnew = arg min[J(p) + β · d(p, pcurrent )]                   (8.116)
+
+        β
+
+                                                     58
+8.4.3
+
+        1
+
+
+                                                    XN              
+                                                            t k − τi
+                                       T (X, tk ) =     ϕ              X(τi )                       (8.117)
+                                                    i=1
+                                                               ∆τ
+
+                 T (X, tk )                      tk                         X(τi )        τi
+                       ϕ                      Epanechnikov
+                              ∆τ
+        2
+                                                        2
+                                                   1      u
+                                           ϕ(u) = √ exp −                                           (8.118)
+                                                   2π     2
+
+        3
+
+                                            ∆τopt = 1.06 · σ̂ · N −1/5                              (8.119)
+
+            σ̂                         N
+
+8.4.4
+
+
+                                                      Z ∞                       
+                                                1                          t−b
+                                    W (a, b) = √               I(t)ψ                 dt             (8.120)
+                                                 a        −∞                a
+
+                              a                                                                       b
+                                                                       ψ
+                              EMD
+                                                    X
+                                                    n
+                                           I(t) =         IM Fi (t) + rn (t)                        (8.121)
+                                                    i=1
+
+                           IM Fi (t)                                                       rn (t)
+
+
+8.4.5
+
+        1
+
+
+
+                                             R(r) = ⟨I(x)I(x + r)⟩                                  (8.122)
+
+
+                                                            59
+                             D(r) = ⟨[I(x + r) − I(x)]2 ⟩             (8.123)
+
+                   Kolmogorov
+
+                                      D(r) = C · (εr)2/3              (8.124)
+
+          C   Kolmogorov          ε
+      2
+
+
+
+                                  R(τ ) = ⟨I(t)I(t + τ )⟩             (8.125)
+
+
+                                            Z ∞
+                             S(f ) =               R(τ )e−i2πf τ dτ   (8.126)
+                                             −∞
+
+
+
+
+                                        S(f ) ∝ f −5/3                (8.127)
+
+8.5
+
+
+
+                           8.16                   Python
+
+
+
+
+               1                      .py          WRF
+
+               2                  .py                WRF
+
+               3                      .py
+
+               4                            .py
+
+
+
+
+                                                  60
+          8.24
+
+
+                 9
+
+9.1
+
+                              a
+                          -
+      b
+
+
+
+
+9.2
+
+
+
+
+                     61
+9.3
+
+
+      NWP
+
+
+
+
+      62
+[1]                                                                                  2018
+[2]                                                                                      38(04)
+      5-7+11   2021
+[3] Sharman, R., Tebaldi, C., Wiener, G., and Wolff, J., An Integrated Approach to Mid- and
+      Upper-Level Turbulence Forecasting, Weather and Forecasting 21       268-287   2006
+[4] Fang, Q., Chu, K., Zhou, B., Chen, X., Peng, Z., Zhang, C., Luo, M., and Zhao, C., Observed
+      Turbulent Dissipation Rate in a Landfalling Tropical Cyclone Boundary Layer, Journal of the
+      Atmospheric Sciences    80   1739-1754    2023
+[5] Frehlich, R., and Sharman, R., Estimates of Turbulence from Numerical Weather Prediction
+      Model Output with Applications to Turbulence Diagnosis and Data Assimilation, Monthly
+      Weather Review 132      2308-2324     2004
+[6]                                                                                  53(09) 28-
+      31+45    2025
+[7]
+      11(08)   86-88   2025
+[8]                                                                          2024
+
+
+
+
+                                               63
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+import os
+import re
+import pandas as pd
+import numpy as np
+from datetime import datetime
+from pathlib import Path
+import pickle
+import glob
+
+
+
+class WindProfilerProcessor:
+   """Wind profiler radar data processor class"""
+
+
+   def __init__(self, data_path: str):
+      """
+      Initialize processor
+
+
+      Args:
+         data_path (str): Path to data files
+      """
+      self.data_path = Path(data_path)
+      self.wind_profiler_data = {}
+
+
+   def extract_wind_profiler_data(self) -> dict:
+      """
+      Extract wind profiler radar data for turbulence calculation
+
+
+      Returns:
+         dict: Dictionary containing data for all time points
+      """
+
+
+      print("Starting wind profiler data extraction...")
+
+
+
+                                64
+# Get all file lists
+rad_files = list(self.data_path.glob('*RAD.TXT')) # Radial
+   data files
+robs_files = list(self.data_path.glob('*ROBS.TXT')) #
+   Product data files
+
+
+print(f"Found {len(rad_files)} radial data files")
+print(f"Found {len(robs_files)} product data files")
+
+
+# Process data for each time point
+for rad_file in rad_files:
+   # Extract timestamp
+   time_str = self._extract_time_from_filename(rad_file.name)
+   print(f"Processing time: {time_str}")
+
+
+   # Read radial data file
+   radial_data = self._parse_radial_data(rad_file)
+
+
+   # Read corresponding product data file
+   corresponding_robs =
+       self._find_corresponding_robs_file(rad_file, robs_files)
+   product_data = None
+   if corresponding_robs:
+       product_data =
+          self._parse_product_data(corresponding_robs)
+
+
+   # Store data
+   self.wind_profiler_data[time_str] = {
+       'radial_data': radial_data,
+       'product_data': product_data,
+       'timestamp': time_str
+   }
+
+
+print("Data extraction completed!")
+
+
+# Save data
+self._save_extracted_data()
+
+
+return self.wind_profiler_data
+
+
+                          65
+def _extract_time_from_filename(self, filename: str) -> str:
+   """Extract timestamp from filename"""
+   parts = filename.split('_')
+   if len(parts) >= 6:
+      time_str = parts[4]
+      return f'T{time_str}'
+   else:
+      time_match = re.search(r'(\d{14})', filename)
+      if time_match:
+           return f'T{time_match.group(1)}'
+      else:
+           return f'T{filename}'
+
+
+def _find_corresponding_robs_file(self, rad_file: Path,
+   robs_files: list) -> Path:
+   """Find corresponding ROBS file"""
+   rad_time = self._extract_time_from_filename(rad_file.name)
+
+
+   for robs_file in robs_files:
+      robs_time =
+           self._extract_time_from_filename(robs_file.name)
+      if rad_time == robs_time:
+           return robs_file
+
+
+   return None
+
+
+def _parse_radial_data(self, filename: Path) -> dict:
+   """Parse radial data file (*RAD.TXT)"""
+
+
+   radial_data = {}
+
+
+   try:
+      with open(filename, 'r', encoding='utf-8',
+           errors='ignore') as f:
+           lines = f.readlines()
+   except UnicodeDecodeError:
+      with open(filename, 'r', encoding='gbk',
+           errors='ignore') as f:
+
+
+                              66
+      lines = f.readlines()
+
+
+if not lines:
+   return radial_data
+
+
+line_idx = 0
+
+
+# Read header information
+if line_idx < len(lines) and 'WNDRAD' in lines[line_idx]:
+   version_parts = lines[line_idx].strip().split()
+   radial_data['version'] = version_parts[1] if
+     len(version_parts) > 1 else ''
+   line_idx += 1
+
+
+# Read station parameters
+if line_idx < len(lines):
+   station_parts = lines[line_idx].strip().split()
+   if len(station_parts) >= 5:
+      radial_data['station_id'] = station_parts[0]
+      radial_data['longitude'] =
+        self._safe_float(station_parts[1])
+      radial_data['latitude'] =
+        self._safe_float(station_parts[2])
+      radial_data['altitude'] =
+        self._safe_float(station_parts[3])
+      radial_data['radar_type'] = station_parts[4]
+   line_idx += 1
+
+
+# Skip radar performance and observation parameters
+line_idx += 2
+
+
+# Read beam data
+beam_names = ['FIRST', 'SECOND', 'THIRD', 'FOURTH',
+  'FIFTH']
+radial_data['beams'] = {}
+
+
+for beam_name in beam_names:
+   beam_data = self._parse_beam_data(lines, line_idx,
+     beam_name)
+
+
+                        67
+      if beam_data:
+         radial_data['beams'][beam_name] = beam_data[0]
+         line_idx = beam_data[1]
+
+
+  return radial_data
+
+
+def _parse_beam_data(self, lines: list, start_idx: int,
+  beam_name: str) -> tuple:
+  """Parse data for a single beam"""
+
+
+  line_idx = start_idx
+
+
+  # Find beam start marker
+  while line_idx < len(lines):
+      line = lines[line_idx].strip()
+      if f'RAD {beam_name}' in line or (beam_name == 'SECOND'
+        and 'RAD SENCOND' in line):
+         line_idx += 1
+         break
+      line_idx += 1
+
+
+  if line_idx >= len(lines):
+      return None
+
+
+  # Read beam data
+  beam_data = {
+      'height': [],
+      'spectrum_width': [],
+      'snr': [],
+      'radial_velocity': []
+  }
+
+
+  while line_idx < len(lines):
+      line = lines[line_idx].strip()
+      if 'NNNN' in line:
+         line_idx += 1
+         break
+
+
+      # Parse data line
+
+
+                           68
+      data_parts = line.split()
+      if len(data_parts) >= 4:
+          height = self._safe_float(data_parts[0])
+          spectrum_width = self._safe_float(data_parts[1])
+          snr = self._safe_float(data_parts[2])
+          radial_vel = self._safe_float(data_parts[3])
+
+
+          # Handle missing values
+          if not np.isnan(height):
+             beam_data['height'].append(height)
+             beam_data['spectrum_width'].append(spectrum_width)
+             beam_data['snr'].append(snr)
+             beam_data['radial_velocity'].append(radial_vel)
+
+
+      line_idx += 1
+
+
+   # Convert to numpy arrays
+   for key in beam_data:
+      beam_data[key] = np.array(beam_data[key])
+
+
+   return beam_data, line_idx
+
+
+def _parse_product_data(self, filename: Path) -> dict:
+   """Parse product data file (*ROBS.TXT)"""
+
+
+   product_data = {}
+
+
+   try:
+      with open(filename, 'r', encoding='utf-8',
+          errors='ignore') as f:
+          lines = f.readlines()
+   except UnicodeDecodeError:
+      with open(filename, 'r', encoding='gbk',
+          errors='ignore') as f:
+          lines = f.readlines()
+
+
+   if not lines:
+      return product_data
+
+
+
+
+                            69
+line_idx = 0
+
+
+# Read header
+if line_idx < len(lines) and 'WNDROBS' in lines[line_idx]:
+   version_parts = lines[line_idx].strip().split()
+   product_data['version'] = version_parts[1] if
+      len(version_parts) > 1 else ''
+   line_idx += 1
+
+
+# Read station parameters
+if line_idx < len(lines):
+   station_parts = lines[line_idx].strip().split()
+   if len(station_parts) >= 6:
+      product_data['station_id'] = station_parts[0]
+      product_data['longitude'] =
+         self._safe_float(station_parts[1])
+      product_data['latitude'] =
+         self._safe_float(station_parts[2])
+      product_data['altitude'] =
+         self._safe_float(station_parts[3])
+      product_data['radar_type'] = station_parts[4]
+      product_data['obs_time'] = station_parts[5]
+   line_idx += 1
+
+
+# Find product data start marker
+while line_idx < len(lines):
+   if 'ROBS' in lines[line_idx]:
+      line_idx += 1
+      break
+   line_idx += 1
+
+
+# Initialize data arrays
+product_data['height'] = []
+product_data['wind_direction'] = []
+product_data['wind_speed'] = []
+product_data['vertical_velocity'] = []
+product_data['horizontal_confidence'] = []
+product_data['vertical_confidence'] = []
+product_data['cn2'] = []
+
+
+                        70
+# Read product data
+while line_idx < len(lines):
+  line = lines[line_idx].strip()
+  if 'NNNN' in line:
+     break
+
+
+  # Parse data line
+  data_parts = line.split()
+  if len(data_parts) >= 7:
+     height = self._safe_float(data_parts[0])
+     wind_dir = self._safe_float(data_parts[1])
+     wind_speed = self._safe_float(data_parts[2])
+     vertical_vel = self._safe_float(data_parts[3])
+     h_confidence = self._safe_float(data_parts[4])
+     v_confidence = self._safe_float(data_parts[5])
+     cn2_str = data_parts[6]
+
+
+     # Handle scientific notation for Cn2
+     cn2_val = self._parse_scientific_notation(cn2_str)
+
+
+     # Store data (exclude missing values)
+     if not np.isnan(height):
+        product_data['height'].append(height)
+        product_data['wind_direction'].append(wind_dir)
+        product_data['wind_speed'].append(wind_speed)
+        product_data['vertical_velocity'].append(vertical_vel)
+        product_data['horizontal_confidence'].append(h_confidence)
+        product_data['vertical_confidence'].append(v_confidence)
+        product_data['cn2'].append(cn2_val)
+
+
+  line_idx += 1
+
+
+# Convert to numpy arrays
+for key in ['height', 'wind_direction', 'wind_speed',
+  'vertical_velocity',
+        'horizontal_confidence', 'vertical_confidence',
+             'cn2']:
+  if key in product_data:
+
+
+                         71
+          product_data[key] = np.array(product_data[key])
+
+
+   return product_data
+
+
+def _safe_float(self, value_str: str) -> float:
+   """Safely convert to float"""
+   try:
+      return float(value_str)
+   except (ValueError, TypeError):
+      return np.nan
+
+
+def _parse_scientific_notation(self, value_str: str) -> float:
+   """Parse scientific notation"""
+   try:
+      if 'e' in value_str.lower():
+          return float(value_str)
+      else:
+          return np.nan
+   except (ValueError, TypeError):
+      return np.nan
+
+
+def _save_extracted_data(self):
+   """Save extracted data"""
+   with open('wind_profiler_extracted_data.pkl', 'wb') as f:
+      pickle.dump(self.wind_profiler_data, f)
+   print("Data saved to wind_profiler_extracted_data.pkl")
+
+
+def load_extracted_data(self) -> dict:
+   """Load extracted data"""
+   try:
+      with open('wind_profiler_extracted_data.pkl', 'rb') as f:
+          self.wind_profiler_data = pickle.load(f)
+      return self.wind_profiler_data
+   except FileNotFoundError:
+      raise FileNotFoundError("Please run
+          extract_wind_profiler_data() first")
+
+
+# Data post-processing functions
+def calculate_wind_components(self, wind_direction:
+
+
+                            72
+  np.ndarray,
+                       wind_speed: np.ndarray,
+                       vertical_velocity: np.ndarray) ->
+                          tuple:
+  """
+  Calculate wind components
+
+
+  Args:
+     wind_direction: Wind direction (degrees)
+     wind_speed: Wind speed (m/s)
+     vertical_velocity: Vertical velocity (m/s)
+
+
+  Returns:
+     tuple: (u, v, w) - east-west, north-south, vertical
+          components
+  """
+  # Convert wind direction to radians
+  wind_dir_rad = np.deg2rad(wind_direction)
+
+
+  # Calculate horizontal wind components
+  u = wind_speed * np.sin(wind_dir_rad) # East-west component
+  v = wind_speed * np.cos(wind_dir_rad) # North-south
+     component
+  w = vertical_velocity # Vertical component
+
+
+  return u, v, w
+
+
+def calculate_wind_shear(self, u: np.ndarray, v: np.ndarray,
+                   w: np.ndarray, height: np.ndarray) ->
+                       tuple:
+  """
+  Calculate wind shear
+
+
+  Args:
+     u, v, w: Wind components
+     height: Height levels
+
+
+  Returns:
+     tuple: (dudz, dvdz, dwdz) - wind shear components
+
+
+                            73
+      """
+      if len(height) < 2:
+         return np.full_like(u, np.nan), np.full_like(v,
+            np.nan), np.full_like(w, np.nan)
+
+
+      # Calculate vertical gradients
+      dudz = np.gradient(u, height)
+      dvdz = np.gradient(v, height)
+      dwdz = np.gradient(w, height)
+
+
+      return dudz, dvdz, dwdz
+
+
+
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from scipy.interpolate import griddata
+import pickle
+import warnings
+import os
+
+
+warnings.filterwarnings('ignore')
+
+
+plt.rcParams['figure.dpi'] = 100
+
+
+class RichardsonCalculator:
+   def __init__(self):
+      self.station_info = None
+      self.grid_info = None
+      self.richardson_vals = None
+      self.obs_points = None
+      self.interp_vars = None
+
+
+   def run_calc(self):
+
+
+                                74
+print('=== Start Richardson Calculation ===')
+
+
+print('Loading data...')
+if not self.load_station_info():
+   print('No data found, trying CSV...')
+   if not self.load_csv_info():
+      self.make_test_data()
+
+
+grid_setup = self.set_grid()
+print('Grid size: ' + str(grid_setup['nx']) + 'x' +
+  str(grid_setup['ny']) + 'x' + str(grid_setup['nz']))
+
+
+print('Getting observation points...')
+self.obs_points = self.get_obs_points()
+
+
+if self.obs_points is None or len(self.obs_points['lon'])
+  == 0:
+   print('Warning: No valid points, using test data')
+   self.make_default_obs()
+
+
+print('Found ' + str(len(self.obs_points['lon'])) + '
+  points')
+
+
+print('Making 3D grid...')
+self.grid_info = self.make_3d_grid(grid_setup)
+
+
+print('Starting interpolation...')
+self.interp_vars = self.do_interpolation()
+
+
+print('Calculating Richardson numbers...')
+self.richardson_vals = self.calc_richardson()
+
+
+print('Saving results...')
+self.save_output()
+
+
+self.show_summary()
+self.draw_results()
+
+
+print('\n=== Calculation Finished ===')
+
+
+                       75
+  print('Results saved to:
+     C:\\Users\\ljw\\Desktop\\        \\          \\richardson_3d_results.pkl
+
+
+  return self.grid_info, self.richardson_vals
+
+
+def load_station_info(self):
+  try:
+     data_path = r'E:\       \   \D          \D        \python'
+     station_file = os.path.join(data_path,
+         'station_radar_records.pkl')
+
+
+     if os.path.exists(station_file):
+         with open(station_file, 'rb') as f:
+            data = pickle.load(f)
+
+
+         print("Data keys: " + str(list(data.keys())))
+
+
+         if 'station_records' in data:
+            self.station_info = data['station_records']
+            print("Found station_records")
+            return True
+         else:
+            self.station_info = data
+            return True
+
+
+     return False
+  except Exception as e:
+     print('Load failed: ' + str(e))
+     return False
+
+
+def load_csv_info(self):
+  try:
+     data_path = r'E:\       \   \D          \D        \python'
+     product_file = os.path.join(data_path,
+         'wind_profiler_product_data.csv')
+     radial_file = os.path.join(data_path,
+         'wind_profiler_radial_data.csv')
+
+
+     if os.path.exists(product_file):
+
+
+                           76
+          print("Found CSV data, reading...")
+
+
+          product_data = pd.read_csv(product_file)
+
+
+          if os.path.exists(radial_file):
+             radial_data = pd.read_csv(radial_file)
+          else:
+             radial_data = pd.DataFrame()
+
+
+          self.change_csv_to_obs(product_data, radial_data)
+          return True
+
+
+   except Exception as e:
+       print('CSV read failed: ' + str(e))
+
+
+   return False
+
+
+def change_csv_to_obs(self, product_data, radial_data):
+   obs_data = {
+       'lon': [],
+       'lat': [],
+       'height': [],
+       'wind_speed': [],
+       'wind_direction': [],
+       'radial_velocity': [],
+       'spectrum_width': []
+   }
+
+
+   def_lon = 118.9
+   def_lat = 31.3
+
+
+   print("Processing " + str(len(product_data)) + " entries")
+
+
+   for idx, row in product_data.iterrows():
+       if pd.notna(row['WindSpeed_ms']) and
+         pd.notna(row['Height_m']):
+          obs_data['lon'].append(def_lon + np.random.normal(0,
+             0.01))
+          obs_data['lat'].append(def_lat + np.random.normal(0,
+
+
+                              77
+           0.01))
+        obs_data['height'].append(row['Height_m'])
+        obs_data['wind_speed'].append(row['WindSpeed_ms'])
+        obs_data['wind_direction'].append(row.get('WindDirection_deg',
+           180))
+        obs_data['radial_velocity'].append(row.get('VerticalVelocity_ms
+           0))
+
+
+        spec_width = 1.0
+        if not radial_data.empty:
+           match = radial_data[
+                 np.abs(radial_data['Height_m'] -
+                     row['Height_m']) < 50
+                 ]
+           if not match.empty:
+                 spec_width = match['SpectrumWidth_ms'].iloc[0]
+                 if pd.isna(spec_width):
+                     spec_width = 1.0
+
+
+        obs_data['spectrum_width'].append(spec_width)
+
+
+  for key in obs_data:
+     obs_data[key] = np.array(obs_data[key])
+
+
+  self.obs_points = obs_data
+  print("Converted " + str(len(obs_data['lon'])) + " points")
+
+
+def make_test_data(self):
+  print("Creating test data...")
+  self.make_default_obs()
+
+
+def make_default_obs(self):
+  n_points = 50
+
+
+  obs_data = {
+     'lon': np.random.uniform(118.85, 118.95, n_points),
+     'lat': np.random.uniform(31.25, 31.35, n_points),
+     'height': np.random.uniform(100, 2000, n_points),
+     'wind_speed': np.random.normal(8, 3, n_points),
+
+
+                             78
+      'wind_direction': np.random.uniform(0, 360, n_points),
+      'radial_velocity': np.random.normal(0, 2, n_points),
+      'spectrum_width': np.random.gamma(2, 0.5, n_points)
+  }
+
+
+  obs_data['wind_speed'] = np.abs(obs_data['wind_speed'])
+  obs_data['spectrum_width'] =
+      np.abs(obs_data['spectrum_width'])
+
+
+  self.obs_points = obs_data
+  print("Made " + str(n_points) + " test points")
+
+
+def set_grid(self):
+  params = {
+      'lon_min': 118.8, 'lon_max': 118.95,
+      'lat_min': 31.225, 'lat_max': 31.375,
+      'height_min': 0, 'height_max': 2000,
+
+
+      'lon_res': 0.002,
+      'lat_res': 0.002,
+      'height_res': 100
+  }
+
+
+  params['lon_grid'] = np.arange(params['lon_min'],
+      params['lon_max'] + params['lon_res'],
+      params['lon_res'])
+  params['lat_grid'] = np.arange(params['lat_min'],
+      params['lat_max'] + params['lat_res'],
+      params['lat_res'])
+  params['height_grid'] = np.arange(params['height_min'],
+      params['height_max'] + params['height_res'],
+                            params['height_res'])
+
+
+  params['nx'] = len(params['lon_grid'])
+  params['ny'] = len(params['lat_grid'])
+  params['nz'] = len(params['height_grid'])
+
+
+  return params
+
+
+
+
+                           79
+def get_obs_points(self):
+  if hasattr(self, 'obs_points') and self.obs_points is not
+      None:
+      return self.obs_points
+
+
+  obs_data = {
+      'lon': [],
+      'lat': [],
+      'height': [],
+      'wind_speed': [],
+      'wind_direction': [],
+      'radial_velocity': [],
+      'spectrum_width': []
+  }
+
+
+  if self.station_info is None:
+      return obs_data
+
+
+  print("Data type: " + str(type(self.station_info)))
+
+
+  if isinstance(self.station_info, dict):
+      print("Dict keys: " +
+         str(list(self.station_info.keys())))
+
+
+      for key, value in self.station_info.items():
+         try:
+              if isinstance(value, dict):
+                 if self.check_station_data(value):
+                    self.handle_station_data(value, obs_data)
+         except Exception as e:
+              print('Error with key ' + str(key) + ': ' +
+                str(e))
+              continue
+
+
+  for key in obs_data:
+      obs_data[key] = np.array(obs_data[key]) if
+         obs_data[key] else np.array([])
+
+
+  return obs_data
+
+
+                             80
+def check_station_data(self, data):
+   need_keys = ['ground_observations', 'radar_data']
+   return all(key in data for key in need_keys)
+
+
+def handle_station_data(self, station_data, obs_data):
+   try:
+      ground_obs = station_data['ground_observations']
+      radar_data = station_data['radar_data']
+
+
+      st_lon = ground_obs.get('lon', 118.9)
+      st_lat = ground_obs.get('lat', 31.3)
+      st_wind_spd = ground_obs.get('wind_speed', 5.0)
+      st_wind_dir = ground_obs.get('wind_direction', 180.0)
+
+
+      if 'S_band' in radar_data:
+          self.handle_radar_obs(
+              radar_data['S_band'], st_lon, st_lat,
+              st_wind_spd, st_wind_dir, obs_data
+          )
+      else:
+          for band_key in radar_data:
+              if 'X_band' in band_key:
+                self.handle_radar_obs(
+                    radar_data[band_key], st_lon, st_lat,
+                    st_wind_spd, st_wind_dir, obs_data
+                )
+                break
+
+
+   except Exception as e:
+      print('Error processing station data: ' + str(e))
+
+
+def handle_radar_obs(self, radar_obs, lon, lat, wind_spd,
+  wind_dir, obs_data):
+   if not radar_obs.get('in_range', False):
+      return
+
+
+   observations = radar_obs.get('radar_observations', {})
+   if not observations:
+
+
+                            81
+      return
+
+
+   radial_vel = observations.get('radial_velocity', {})
+   if 'elevation_data' in radial_vel:
+      elev_data = radial_vel['elevation_data']
+
+
+      for point in elev_data:
+         if not np.isnan(point.get('radar_value', np.nan)):
+            obs_data['lon'].append(lon)
+            obs_data['lat'].append(lat)
+            obs_data['height'].append(point.get('target_height',
+                 500))
+            obs_data['wind_speed'].append(wind_spd)
+            obs_data['wind_direction'].append(wind_dir)
+            obs_data['radial_velocity'].append(point['radar_value'])
+
+
+            spec_width = self.find_spec_width(
+                 observations, point.get('elevation_angle', 0)
+            )
+            obs_data['spectrum_width'].append(spec_width)
+
+
+def find_spec_width(self, observations, elev_angle):
+   spec_data = observations.get('spectrum_width', {})
+   if 'elevation_data' not in spec_data:
+      return 1.0
+
+
+   elev_data = spec_data['elevation_data']
+
+
+   best = None
+   min_diff = float('inf')
+
+
+   for point in elev_data:
+      diff = abs(point.get('elevation_angle', 0) - elev_angle)
+      if diff < min_diff:
+         min_diff = diff
+         best = point
+
+
+   if best and min_diff < 0.1:
+      val = best.get('radar_value', 1.0)
+
+
+                             82
+       if val != -9999 and np.isfinite(val):
+          return val
+
+
+   return 1.0
+
+
+def make_3d_grid(self, params):
+   LON_GRID, LAT_GRID, HEIGHT_GRID = np.meshgrid(
+       params['lon_grid'],
+       params['lat_grid'],
+       params['height_grid'],
+       indexing='ij'
+   )
+
+
+   grid_data = {
+       'lon_grid': params['lon_grid'],
+       'lat_grid': params['lat_grid'],
+       'height_grid': params['height_grid'],
+       'LON_GRID': LON_GRID,
+       'LAT_GRID': LAT_GRID,
+       'HEIGHT_GRID': HEIGHT_GRID,
+       'nx': params['nx'],
+       'ny': params['ny'],
+       'nz': params['nz']
+   }
+
+
+   return grid_data
+
+
+def do_interpolation(self):
+   vars_list = ['wind_speed', 'wind_direction',
+       'radial_velocity', 'spectrum_width']
+   interp_results = {}
+
+
+   for var in vars_list:
+       print(' Interpolating: ' + var)
+
+
+       if var in self.obs_points and len(self.obs_points[var])
+          > 0:
+          interp_results[var] = self.interp_3d(var)
+       else:
+
+
+                             83
+          print(' Warning: No ' + var + ' data, using
+              default')
+          defaults = {
+              'wind_speed': 5.0,
+              'wind_direction': 180.0,
+              'radial_velocity': 0.0,
+              'spectrum_width': 1.0
+          }
+          interp_results[var] = np.full_like(
+              self.grid_info['LON_GRID'],
+              defaults[var]
+          )
+
+
+   return interp_results
+
+
+def interp_3d(self, var_name):
+   obs_lon = self.obs_points['lon']
+   obs_lat = self.obs_points['lat']
+   obs_h = self.obs_points['height']
+   obs_vals = self.obs_points[var_name]
+
+
+   valid = ~np.isnan(obs_vals) & np.isfinite(obs_vals)
+   obs_lon = obs_lon[valid]
+   obs_lat = obs_lat[valid]
+   obs_h = obs_h[valid]
+   obs_vals = obs_vals[valid]
+
+
+   if len(obs_vals) < 4:
+      print(' Warning: Not enough ' + var_name + ' data,
+          using average')
+      return np.full_like(self.grid_info['LON_GRID'],
+          np.mean(obs_vals) if len(obs_vals) > 0 else 1.0)
+
+
+   print(' Using ' + str(len(obs_vals)) + ' points')
+
+
+   try:
+      points = np.column_stack((obs_lon, obs_lat, obs_h))
+      grid_pts = np.column_stack((
+          self.grid_info['LON_GRID'].ravel(),
+
+
+                              84
+          self.grid_info['LAT_GRID'].ravel(),
+          self.grid_info['HEIGHT_GRID'].ravel()
+     ))
+
+
+     interp_vals = griddata(
+          points, obs_vals, grid_pts,
+          method='linear', fill_value=np.nan
+     )
+
+
+     nan_mask = np.isnan(interp_vals)
+     if np.any(nan_mask):
+          near_vals = griddata(
+              points, obs_vals, grid_pts,
+              method='nearest'
+          )
+          interp_vals[nan_mask] = near_vals[nan_mask]
+
+
+     interp_var =
+          interp_vals.reshape(self.grid_info['LON_GRID'].shape)
+
+
+     print(' Done, range: ' + str(np.nanmin(interp_var)) +
+          ' - ' + str(np.nanmax(interp_var)))
+
+
+     return interp_var
+
+
+  except Exception as e:
+     print(' Warning: ' + var_name + ' interp failed: ' +
+          str(e))
+     return np.full_like(self.grid_info['LON_GRID'],
+          np.mean(obs_vals))
+
+
+def calc_richardson(self):
+  wind_spd = self.interp_vars['wind_speed']
+  wind_dir = self.interp_vars['wind_direction']
+  rad_vel = self.interp_vars['radial_velocity']
+  spec_width = self.interp_vars['spectrum_width']
+  h = self.grid_info['HEIGHT_GRID']
+
+
+  wind_dir_rad = np.deg2rad(wind_dir)
+
+
+                             85
+      wind_dir_sin = np.sin(wind_dir_rad)
+      wind_dir_cos = np.cos(wind_dir_rad)
+
+
+      h_km = h / 1000
+
+
+      log_rich = (2.1831 - 0.0007 * wind_spd +
+                 0.2840 * wind_dir_sin +
+                 1.2335 * wind_dir_cos -
+                 0.1447 * rad_vel +
+                 0.4042 * spec_width -
+                 0.2530 * h_km)
+
+
+      richardson = np.exp(log_rich)
+
+
+      richardson[~np.isfinite(richardson)] = np.nan
+      richardson[richardson > 1000] = 1000
+      richardson[richardson < 0.001] = 0.001
+
+
+      print('Richardson range: ' + str(np.nanmin(richardson)) +
+         ' - ' + str(np.nanmax(richardson)))
+
+
+
+
+# -*- coding: utf-8 -*-
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy import interpolate
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+import os
+import glob
+import chardet
+import warnings
+warnings.filterwarnings("ignore")
+
+
+# ----------------- Plot Configuration -----------------
+plt.style.use('seaborn-v0_8-whitegrid')
+
+
+                                  86
+plt.rcParams['font.family'] = ['DejaVu Sans', 'Arial']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
+
+# ----------------- Data Parser Classes -----------------
+class WindProfilerParser:
+   def __init__(self, file_path):
+      self.file_path = file_path
+      self.observation_data = {}
+
+
+   def parse_float_value(self, value_str, default=np.nan):
+      if value_str is None or '////' in str(value_str) or
+         str(value_str).strip() == '':
+         return default
+      try:
+         return float(value_str)
+      except (ValueError, TypeError):
+         return default
+
+
+   def parse_radial_format(self):
+      encoding_list = ['gbk', 'utf-8', 'gb2312']
+      file_content = None
+      for encoding in encoding_list:
+         try:
+             with open(self.file_path, 'r', encoding=encoding,
+                errors='ignore') as file:
+                file_content = file.readlines()
+             break
+         except:
+             continue
+
+
+      operation_mode = None
+      current_beam = None
+      beam_counter = 0
+
+
+                               87
+for line in file_content:
+   line_text = line.strip()
+   if 'low' in line_text.lower():
+      operation_mode = 'low'
+   elif 'medium' in line_text.lower():
+      operation_mode = 'medium'
+   elif 'high' in line_text.lower():
+      operation_mode = 'high'
+
+
+   if line_text.startswith('RAD'):
+      elements = line_text.split()
+      if len(elements) >= 2:
+         beam_identifier = elements[1].lower()
+         current_beam =
+            f"{operation_mode}_{beam_identifier}"
+         self.observation_data[current_beam] = []
+         beam_counter += 1
+   elif line_text and any(char.isdigit() or char in ['-',
+      '.', '/'] for char in line_text[:10]):
+      if current_beam and len(line_text.split()) >= 4:
+         data_elements = line_text.split()
+         altitude = self.parse_float_value(data_elements[0])
+         spectral_width =
+            self.parse_float_value(data_elements[1])
+         signal_noise_ratio =
+            self.parse_float_value(data_elements[2])
+         radial_velocity =
+            self.parse_float_value(data_elements[3])
+
+
+         if not np.isnan(altitude):
+            self.observation_data[current_beam].append({
+                 'altitude': altitude,
+                 'spectral_width': spectral_width,
+                 'signal_noise_ratio': signal_noise_ratio,
+                 'radial_velocity': radial_velocity,
+                 'beam_name': current_beam
+            })
+return self.observation_data
+
+
+                          88
+def parse_product_format(self):
+  encoding_list = ['gbk', 'utf-8', 'gb2312']
+  file_content = None
+  for encoding in encoding_list:
+     try:
+        with open(self.file_path, 'r', encoding=encoding,
+            errors='ignore') as file:
+            file_content = file.readlines()
+        break
+     except:
+        continue
+
+
+  product_records = []
+  data_section_active = False
+
+
+  for line in file_content:
+     line_text = line.strip()
+     if line_text == 'ROBS':
+        data_section_active = True
+        continue
+     elif line_text == 'NNNN':
+        data_section_active = False
+        break
+
+
+     if data_section_active and len(line_text.split()) >= 7:
+        data_elements = line_text.split()
+        try:
+            cn2_value =
+                self.parse_float_value(data_elements[6])
+            product_records.append({
+                'altitude':
+                   self.parse_float_value(data_elements[0]),
+                'wind_direction':
+                   self.parse_float_value(data_elements[1]),
+                'wind_speed':
+                   self.parse_float_value(data_elements[2]),
+                'vertical_velocity':
+                   self.parse_float_value(data_elements[3]),
+
+
+                              89
+                     'horizontal_confidence':
+                        self.parse_float_value(data_elements[4]),
+                     'vertical_confidence':
+                        self.parse_float_value(data_elements[5]),
+                     'cn2': cn2_value
+                })
+             except (ValueError, IndexError):
+                continue
+      return product_records
+
+
+class MicrowaveRadiometerParser:
+   def __init__(self, file_path):
+      self.file_path = file_path
+      self.measurement_data = {}
+
+
+   def detect_file_encoding(self):
+      try:
+         with open(self.file_path, 'rb') as file:
+             raw_bytes = file.read(10000)
+             encoding_result = chardet.detect(raw_bytes)
+             return encoding_result['encoding']
+      except:
+         return 'gbk'
+
+
+   def parse_measurement_data(self):
+      try:
+         file_encoding = self.detect_file_encoding()
+         try:
+             data_frame = pd.read_csv(self.file_path,
+                encoding=file_encoding, skiprows=0)
+         except:
+             data_frame = pd.read_csv(self.file_path,
+                encoding=file_encoding, header=None)
+
+
+         data_frame = data_frame.replace('-',
+             np.nan).replace('////', np.nan).replace('', np.nan)
+
+
+         height_columns = []
+         temperature_frame = pd.DataFrame()
+
+
+                                 90
+  for column in data_frame.columns:
+     if isinstance(column, str) and
+          column.strip().upper().startswith('H'):
+          height_columns.append(column)
+
+
+  if height_columns:
+     temperature_frame = data_frame[height_columns]
+     numeric_altitudes = []
+     for column in temperature_frame.columns:
+          try:
+             index_val =
+                 int(column.strip().upper().lstrip('H'))
+             numeric_altitudes.append(index_val * 200)
+          except:
+             numeric_altitudes.append(len(numeric_altitudes)
+                 * 200)
+     self.measurement_data = {
+          'temperature_profiles': temperature_frame,
+          'altitude_levels': numeric_altitudes,
+          'complete_dataset': data_frame
+     }
+  else:
+     self.measurement_data = {
+          'temperature_profiles': pd.DataFrame({
+             'H1':[20.0], 'H2':[19.5], 'H3':[19.0],
+                 'H4':[18.5], 'H5':[18.0]
+          }),
+          'altitude_levels': [1000, 2000, 3000, 4000, 5000],
+          'complete_dataset': data_frame
+     }
+  return self.measurement_data
+except Exception as error:
+  print(f"Radiometer data parsing error, using sample
+     data: {error}")
+  return {
+     'temperature_profiles': pd.DataFrame({
+          'H1':[20.0], 'H2':[19.5], 'H3':[19.0],
+             'H4':[18.5], 'H5':[18.0]
+
+
+                           91
+             }),
+             'altitude_levels': [1000, 2000, 3000, 4000, 5000],
+             'complete_dataset': pd.DataFrame()
+         }
+
+
+# ----------------- Atmospheric Physics Calculations
+  -----------------
+class AtmosphericPhysicsCalculator:
+   @staticmethod
+   def compute_potential_temperature(temperature_kelvin,
+     pressure_hpa, reference_pressure=1000.0):
+      kappa_constant = 0.286
+      return temperature_kelvin * (reference_pressure /
+         pressure_hpa) ** kappa_constant
+
+
+   @staticmethod
+   def compute_richardson_number(potential_temp_profile,
+     u_wind_profile, v_wind_profile, altitude_levels):
+      potential_temp = np.array(potential_temp_profile,
+         dtype=float)
+      u_component = np.array(u_wind_profile, dtype=float)
+      v_component = np.array(v_wind_profile, dtype=float)
+      altitude = np.array(altitude_levels, dtype=float)
+
+
+      valid_mask = ~(np.isnan(potential_temp) |
+         np.isnan(u_component) | np.isnan(v_component) |
+         np.isnan(altitude))
+      richardson_number = np.full_like(altitude, np.nan,
+         dtype=float)
+
+
+      if np.sum(valid_mask) < 3:
+         return richardson_number
+
+
+      theta_valid = potential_temp[valid_mask]
+      u_valid = u_component[valid_mask]
+      v_valid = v_component[valid_mask]
+      z_valid = altitude[valid_mask]
+
+
+      sort_order = np.argsort(z_valid)
+
+
+                               92
+   z_sorted = z_valid[sort_order]
+   theta_sorted = theta_valid[sort_order]
+   u_sorted = u_valid[sort_order]
+   v_sorted = v_valid[sort_order]
+
+
+   dtheta_dz = np.gradient(theta_sorted, z_sorted)
+   du_dz = np.gradient(u_sorted, z_sorted)
+   dv_dz = np.gradient(v_sorted, z_sorted)
+
+
+   shear_squared = du_dz**2 + dv_dz**2
+   epsilon = 1e-6
+   shear_squared[shear_squared < epsilon] = epsilon
+
+
+   gravity = 9.80665
+   theta_sorted[theta_sorted <= 0] = 1.0
+
+
+   ri_values = (gravity / theta_sorted) * dtheta_dz /
+      shear_squared
+   richardson_number[valid_mask] = ri_values
+   return richardson_number
+
+
+@staticmethod
+def compute_turbulent_kinetic_energy(spectral_width):
+   spectral_data = np.array(spectral_width, dtype=float)
+   spectral_data[np.isnan(spectral_data)] = 0.0
+   return spectral_data**2
+
+
+@staticmethod
+def compute_wind_shear(u_wind_profile, v_wind_profile,
+   altitude_levels):
+   u_component = np.array(u_wind_profile, dtype=float)
+   v_component = np.array(v_wind_profile, dtype=float)
+   altitude = np.array(altitude_levels, dtype=float)
+
+
+   valid_mask = ~(np.isnan(u_component) |
+      np.isnan(v_component) | np.isnan(altitude))
+   shear_profile = np.full_like(altitude, np.nan, dtype=float)
+
+
+   if np.sum(valid_mask) < 2:
+
+
+                             93
+          return shear_profile
+
+
+       u_valid = u_component[valid_mask]
+       v_valid = v_component[valid_mask]
+       z_valid = altitude[valid_mask]
+
+
+       sort_order = np.argsort(z_valid)
+       z_sorted = z_valid[sort_order]
+       u_sorted = u_valid[sort_order]
+       v_sorted = v_valid[sort_order]
+
+
+       du_dz = np.gradient(u_sorted, z_sorted)
+       dv_dz = np.gradient(v_sorted, z_sorted)
+       shear_magnitude = np.sqrt(du_dz**2 + dv_dz**2)
+
+
+       shear_profile[valid_mask] = shear_magnitude
+       return shear_profile
+
+
+# ----------------- Data Processing Functions -----------------
+def interpolate_missing_values(data_array,
+  interpolation_method='linear'):
+   data_array = np.array(data_array, dtype=float)
+   data_length = len(data_array)
+   if data_length < 2:
+       return data_array
+
+
+   valid_mask = ~np.isnan(data_array)
+   if np.sum(valid_mask) == 0:
+       return np.zeros_like(data_array)
+   if np.sum(valid_mask) == 1:
+       return np.full_like(data_array, data_array[valid_mask][0])
+
+
+   indices = np.arange(data_length)
+   interpolation_function = interpolate.interp1d(
+       indices[valid_mask], data_array[valid_mask],
+       kind=interpolation_method, bounds_error=False,
+          fill_value="extrapolate"
+   )
+   return interpolation_function(indices)
+
+
+                                 94
+def compute_wind_components(radar_dataframe):
+   if radar_dataframe is None or radar_dataframe.empty:
+      return np.array([]), np.array([]), np.array([]),
+        np.array([]), np.array([])
+
+
+   if 'altitude' not in radar_dataframe.columns:
+      return np.array([]), np.array([]), np.array([]),
+        np.array([]), np.array([])
+
+
+   unique_altitudes =
+     np.unique(radar_dataframe['altitude'].dropna().astype(float))
+   unique_altitudes = np.sort(unique_altitudes)
+
+
+   u_component_list = []
+   v_component_list = []
+   w_component_list = []
+   spectral_width_list = []
+
+
+   for altitude_val in unique_altitudes:
+      data_block = radar_dataframe[radar_dataframe['altitude']
+        == altitude_val]
+      if data_block.empty:
+         u_component_list.append(np.nan)
+         v_component_list.append(np.nan)
+         w_component_list.append(np.nan)
+         spectral_width_list.append(np.nan)
+         continue
+
+
+      if 'radial_velocity' in data_block.columns and not
+        data_block['radial_velocity'].isna().all():
+         radial_velocity_mean =
+           np.nanmean(data_block['radial_velocity'])
+         u_component = radial_velocity_mean * 0.7
+         v_component = radial_velocity_mean * 0.7
+         vertical_velocity = radial_velocity_mean * 0.2
+      elif 'wind_speed' in data_block.columns and
+        'wind_direction' in data_block.columns:
+         wind_speed_val = np.nanmean(data_block['wind_speed'])
+
+
+                              95
+         wind_direction_val =
+              np.nanmean(data_block['wind_direction'])
+         u_component = wind_speed_val *
+              np.sin(np.radians(wind_direction_val))
+         v_component = wind_speed_val *
+              np.cos(np.radians(wind_direction_val))
+         vertical_velocity =
+              np.nanmean(data_block['vertical_velocity']) if
+              'vertical_velocity' in data_block.columns else 0.0
+      else:
+         u_component = np.nan
+         v_component = np.nan
+         vertical_velocity = np.nan
+
+
+      spectral_width_val =
+         np.nanmean(data_block['spectral_width']) if
+         'spectral_width' in data_block.columns else np.nan
+
+
+      u_component_list.append(u_component)
+      v_component_list.append(v_component)
+      w_component_list.append(vertical_velocity)
+      spectral_width_list.append(spectral_width_val)
+
+
+   u_component_array =
+     interpolate_missing_values(np.array(u_component_list))
+   v_component_array =
+     interpolate_missing_values(np.array(v_component_list))
+   w_component_array =
+     interpolate_missing_values(np.array(w_component_list))
+   spectral_width_array =
+     interpolate_missing_values(np.array(spectral_width_list))
+
+
+   return unique_altitudes, u_component_array,
+     v_component_array, w_component_array, spectral_width_array
+
+
+def interpolate_to_target_grid(source_values, source_altitudes,
+  target_altitudes):
+   source_altitudes = np.array(source_altitudes, dtype=float)
+   source_values = np.array(source_values, dtype=float)
+
+
+                                96
+   target_altitudes = np.array(target_altitudes, dtype=float)
+
+
+   valid_mask = ~np.isnan(source_values) &
+     ~np.isnan(source_altitudes)
+   if np.sum(valid_mask) < 2:
+      return np.full_like(target_altitudes, np.nan, dtype=float)
+
+
+   try:
+      interpolation_function = interpolate.interp1d(
+          source_altitudes[valid_mask], source_values[valid_mask],
+          bounds_error=False, fill_value="extrapolate"
+      )
+      return interpolation_function(target_altitudes)
+   except Exception:
+      return np.full_like(target_altitudes, np.nan, dtype=float)
+
+
+# ----------------- Turbulence Models -----------------
+class ReferenceTurbulenceModel:
+   def __init__(self, ri_weight=0.3, tke_weight=0.5,
+     shear_weight=0.2, ri_decay=0.5):
+      self.ri_weight = ri_weight
+      self.tke_weight = tke_weight
+      self.shear_weight = shear_weight
+      self.ri_decay = ri_decay
+
+
+   def compute_turbulence(self, richardson_number,
+     turbulent_kinetic_energy, wind_shear):
+      valid_mask = ~(np.isnan(richardson_number) |
+          np.isnan(turbulent_kinetic_energy) |
+          np.isnan(wind_shear))
+      turbulence_output = np.full_like(richardson_number, 0.5,
+          dtype=float)
+
+
+      if np.sum(valid_mask) == 0:
+          return turbulence_output
+
+
+      ri_valid = richardson_number[valid_mask]
+      tke_valid = turbulent_kinetic_energy[valid_mask]
+      shear_valid = wind_shear[valid_mask]
+
+
+                                97
+     ri_suppression = np.exp(-self.ri_decay * ri_valid)
+
+
+     tke_normalized = tke_valid / (np.nanmax(tke_valid) if
+        np.nanmax(tke_valid) > 0 else 1.0)
+     shear_normalized = shear_valid / (np.nanmax(shear_valid)
+        if np.nanmax(shear_valid) > 0 else 1.0)
+
+
+     turbulence_values = self.ri_weight * ri_suppression +
+        self.tke_weight * tke_normalized + self.shear_weight *
+        shear_normalized
+     turbulence_output[valid_mask] = turbulence_values
+     return np.clip(turbulence_output, 0.0, 1.0)
+
+
+class BasicTurbulenceModel:
+   def __init__(self, spectral_weight=0.5, shear_weight=0.5):
+     self.spectral_weight = spectral_weight
+     self.shear_weight = shear_weight
+
+
+   def compute_turbulence(self, spectral_width, wind_shear):
+     spectral_data = np.array(spectral_width, dtype=float)
+     shear_data = np.array(wind_shear, dtype=float)
+
+
+     valid_mask = ~(np.isnan(spectral_data) |
+        np.isnan(shear_data))
+     turbulence_output = np.full_like(spectral_data, 0.5,
+        dtype=float)
+
+
+     if np.sum(valid_mask) == 0:
+        return turbulence_output
+
+
+     spectral_valid = spectral_data[valid_mask]
+     shear_valid = shear_data[valid_mask]
+
+
+     spectral_normalized = spectral_valid /
+        (np.nanmax(spectral_valid) if np.nanmax(spectral_valid)
+        > 0 else 1.0)
+     shear_normalized = shear_valid / (np.nanmax(shear_valid)
+        if np.nanmax(shear_valid) > 0 else 1.0)
+
+
+                              98
+      turbulence_values = self.spectral_weight *
+        spectral_normalized + self.shear_weight *
+        shear_normalized
+      turbulence_output[valid_mask] = np.clip(turbulence_values,
+        0.0, 1.0)
+      return turbulence_output
+
+
+class OptimizedTurbulenceModel:
+   def __init__(self):
+      self.regression_model =
+        RandomForestRegressor(n_estimators=20, random_state=42,
+        max_depth=2)
+      self.model_trained = False
+
+
+   def train_model(self, feature_matrix, target_values):
+      feature_matrix = np.array(feature_matrix)
+      target_values = np.array(target_values)
+
+
+      valid_mask = ~(np.isnan(feature_matrix).any(axis=1) |
+        np.isnan(target_values))
+      if np.sum(valid_mask) < 6:
+         self.model_trained = False
+         return
+
+
+      self.regression_model.fit(feature_matrix[valid_mask],
+        target_values[valid_mask])
+      self.model_trained = True
+
+
+   def predict_turbulence(self, feature_matrix):
+      feature_matrix = np.array(feature_matrix)
+      if not self.model_trained:
+         basic_model = BasicTurbulenceModel()
+         spectral_data = feature_matrix[:,0] if
+            feature_matrix.shape[1] > 0 else
+            np.zeros(feature_matrix.shape[0])
+         shear_data = feature_matrix[:,1] if
+            feature_matrix.shape[1] > 1 else
+            np.zeros(feature_matrix.shape[0])
+
+
+                                99
+         return basic_model.compute_turbulence(spectral_data,
+            shear_data)
+
+
+      valid_mask = ~np.isnan(feature_matrix).any(axis=1)
+      turbulence_output = np.full(feature_matrix.shape[0], 0.5,
+         dtype=float)
+
+
+      if np.sum(valid_mask) == 0:
+         return turbulence_output
+
+
+      turbulence_output[valid_mask] =
+         self.regression_model.predict(feature_matrix[valid_mask])
+      return np.clip(turbulence_output, 0.0, 1.0)
+
+
+# ----------------- Main Execution -----------------
+def execute_analysis():
+   print("Starting turbulence analysis processing...")
+
+
+   radar_directory_a = "./data/question1/station_a/radar_data"
+   radiometer_file_a =
+      "./data/question1/station_a/radiometer_data.txt"
+
+
+   radar_directory_b = "./data/question1/station_b/radar_data"
+   radiometer_file_b =
+      "./data/question1/station_b/radiometer_data.txt"
+
+
+   os.makedirs('./figure_output', exist_ok=True)
+   os.makedirs('./result_output', exist_ok=True)
+
+
+   def read_radar_data_directory(radar_directory,
+      maximum_files=10):
+      file_list = glob.glob(os.path.join(radar_directory,
+         "*.TXT")) + glob.glob(os.path.join(radar_directory,
+         "*.txt"))
+      if not file_list:
+         return pd.DataFrame()
+
+
+      data_records = []
+      for file_path in file_list[:maximum_files]:
+
+
+                               100
+       radar_parser = WindProfilerParser(file_path)
+       parsed_data = radar_parser.parse_product_format()
+       if parsed_data:
+          data_records.extend(parsed_data)
+       else:
+          radial_data = radar_parser.parse_radial_format()
+          for beam_name, beam_data in radial_data.items():
+                for data_point in beam_data:
+                   data_records.append(data_point)
+  return pd.DataFrame(data_records)
+
+
+radar_data_a = read_radar_data_directory(radar_directory_a,
+  maximum_files=20)
+radar_data_b = read_radar_data_directory(radar_directory_b,
+  maximum_files=20)
+
+
+if radar_data_a.empty:
+  print("No radar data found for station A, using sample
+       data")
+  altitude_range = np.linspace(100, 5000, 50)
+  radar_data_a = pd.DataFrame({
+       'altitude': altitude_range,
+       'wind_speed': 5 + 1.5 * np.sin(altitude_range / 1000),
+       'wind_direction': 180 + 20 * np.cos(altitude_range /
+          800),
+       'spectral_width': 0.5 + 0.2 * np.sin(altitude_range /
+          1500),
+       'vertical_velocity': 0.1 * np.cos(altitude_range / 2000)
+  })
+
+
+if radar_data_b.empty:
+  print("No radar data found for station B, using sample
+       data")
+  altitude_range = np.linspace(150, 5200, 50)
+  radar_data_b = pd.DataFrame({
+       'altitude': altitude_range,
+       'wind_speed': 4 + 1.2 * np.sin(altitude_range / 1100),
+       'wind_direction': 170 + 25 * np.cos(altitude_range /
+          900),
+
+
+                              101
+        'spectral_width': 0.4 + 0.25 * np.sin(altitude_range /
+          1400),
+        'vertical_velocity': 0.08 * np.cos(altitude_range /
+          2100)
+   })
+
+
+print(f"Station A radar records: {len(radar_data_a)}, Station
+  B radar records: {len(radar_data_b)}")
+
+
+radiometer_parser_a =
+  MicrowaveRadiometerParser(radiometer_file_a)
+radiometer_parser_b =
+  MicrowaveRadiometerParser(radiometer_file_b)
+radiometer_data_a =
+  radiometer_parser_a.parse_measurement_data()
+radiometer_data_b =
+  radiometer_parser_b.parse_measurement_data()
+
+
+altitude_a, u_a, v_a, w_a, sw_a =
+  compute_wind_components(radar_data_a)
+altitude_b, u_b, v_b, w_b, sw_b =
+  compute_wind_components(radar_data_b)
+
+
+min_altitude = min(np.nanmin(altitude_a) if len(altitude_a) >
+  0 else 100,
+               np.nanmin(altitude_b) if len(altitude_b) > 0
+                   else 100)
+max_altitude = max(np.nanmax(altitude_a) if len(altitude_a) >
+  0 else 5000,
+               np.nanmax(altitude_b) if len(altitude_b) > 0
+                   else 5000)
+common_altitude_grid = np.linspace(min_altitude,
+  max_altitude, 60)
+
+
+u_a_interp = interpolate_to_target_grid(u_a, altitude_a,
+  common_altitude_grid) if len(u_a) > 0 else
+  np.full_like(common_altitude_grid, np.nan)
+v_a_interp = interpolate_to_target_grid(v_a, altitude_a,
+  common_altitude_grid) if len(v_a) > 0 else
+
+
+                               102
+  np.full_like(common_altitude_grid, np.nan)
+sw_a_interp = interpolate_to_target_grid(sw_a, altitude_a,
+  common_altitude_grid) if len(sw_a) > 0 else
+  np.full_like(common_altitude_grid, np.nan)
+
+
+u_b_interp = interpolate_to_target_grid(u_b, altitude_b,
+  common_altitude_grid) if len(u_b) > 0 else
+  np.full_like(common_altitude_grid, np.nan)
+v_b_interp = interpolate_to_target_grid(v_b, altitude_b,
+  common_altitude_grid) if len(v_b) > 0 else
+  np.full_like(common_altitude_grid, np.nan)
+sw_b_interp = interpolate_to_target_grid(sw_b, altitude_b,
+  common_altitude_grid) if len(sw_b) > 0 else
+  np.full_like(common_altitude_grid, np.nan)
+
+
+u_combined = np.nanmean(np.vstack([u_a_interp, u_b_interp]),
+  axis=0)
+v_combined = np.nanmean(np.vstack([v_a_interp, v_b_interp]),
+  axis=0)
+spectral_width_combined = np.nanmean(np.vstack([sw_a_interp,
+  sw_b_interp]), axis=0)
+
+
+u_combined = interpolate_missing_values(u_combined)
+v_combined = interpolate_missing_values(v_combined)
+spectral_width_combined =
+  interpolate_missing_values(spectral_width_combined)
+
+
+def extract_temperature_profile(radiometer_data):
+   if 'temperature_profiles' in radiometer_data and not
+      radiometer_data['temperature_profiles'].empty:
+      profile_row =
+         radiometer_data['temperature_profiles'].iloc[0]
+      altitude_levels = radiometer_data['altitude_levels']
+      temperature_values = []
+      for i in range(1, len(altitude_levels) + 1):
+         column_name = f'H{i}'
+         if column_name in profile_row:
+            temperature_values.append(profile_row[column_name])
+         else:
+
+
+                            103
+                 try:
+                   temperature_values.append(profile_row.iloc[i-1])
+                 except:
+                   temperature_values.append(np.nan)
+        return np.array(temperature_values, dtype=float),
+           np.array(altitude_levels, dtype=float)
+   else:
+        return np.array([]), np.array([])
+
+
+temp_values_a, temp_altitude_a =
+  extract_temperature_profile(radiometer_data_a)
+temp_values_b, temp_altitude_b =
+  extract_temperature_profile(radiometer_data_b)
+
+
+if len(temp_values_a) > 0:
+   temperature_altitude_a = temp_altitude_a
+   temperature_values_a = temp_values_a
+else:
+   temperature_altitude_a = np.array([1000, 2000, 3000, 4000,
+        5000])
+   temperature_values_a = np.array([20, 19.5, 19, 18.5, 18])
+
+
+if len(temp_values_b) > 0:
+   temperature_altitude_b = temp_altitude_b
+   temperature_values_b = temp_values_b
+else:
+   temperature_altitude_b = np.array([1000, 2000, 3000, 4000,
+        5000])
+   temperature_values_b = np.array([19, 18.5, 18, 17.5, 17])
+
+
+temp_a_interp =
+  interpolate_to_target_grid(temperature_values_a,
+  temperature_altitude_a, common_altitude_grid)
+temp_b_interp =
+  interpolate_to_target_grid(temperature_values_b,
+  temperature_altitude_b, common_altitude_grid)
+
+
+temperature_combined = np.nanmean(np.vstack([temp_a_interp,
+  temp_b_interp]), axis=0)
+
+
+                              104
+temperature_combined =
+   interpolate_missing_values(temperature_combined)
+
+
+temperature_kelvin = temperature_combined + 273.15
+pressure_profile = 1013.25 * np.exp(-common_altitude_grid /
+   8400.0)
+
+
+physics_calculator = AtmosphericPhysicsCalculator()
+potential_temperature_profile =
+   physics_calculator.compute_potential_temperature(temperature_kelvin,
+   pressure_profile)
+
+
+analysis_altitude = common_altitude_grid
+min_length = min(len(analysis_altitude), len(u_combined),
+   len(v_combined), len(spectral_width_combined),
+   len(potential_temperature_profile))
+analysis_altitude = np.array(analysis_altitude[:min_length])
+u_combined = np.array(u_combined[:min_length])
+v_combined = np.array(v_combined[:min_length])
+spectral_width_combined =
+   np.array(spectral_width_combined[:min_length])
+potential_temperature_profile =
+   np.array(potential_temperature_profile[:min_length])
+
+
+richardson_number =
+   physics_calculator.compute_richardson_number(potential_temperature_pr
+   u_combined, v_combined, analysis_altitude)
+richardson_number =
+   interpolate_missing_values(np.where(np.isfinite(richardson_number),
+   richardson_number, np.nan))
+richardson_number = np.clip(richardson_number, -10, 10)
+
+
+turbulent_kinetic_energy =
+   physics_calculator.compute_turbulent_kinetic_energy(spectral_width_co
+turbulent_kinetic_energy =
+   interpolate_missing_values(turbulent_kinetic_energy)
+
+
+wind_shear_profile =
+   physics_calculator.compute_wind_shear(u_combined,
+
+
+                             105
+   v_combined, analysis_altitude)
+wind_shear_profile =
+   interpolate_missing_values(wind_shear_profile)
+
+
+reference_model = ReferenceTurbulenceModel()
+turbulence_reference =
+   reference_model.compute_turbulence(richardson_number,
+   turbulent_kinetic_energy, wind_shear_profile)
+
+
+basic_model = BasicTurbulenceModel()
+turbulence_basic =
+   basic_model.compute_turbulence(spectral_width_combined,
+   wind_shear_profile)
+
+
+optimized_model = OptimizedTurbulenceModel()
+training_features = np.column_stack([spectral_width_combined,
+   wind_shear_profile, u_combined, v_combined])
+training_target = turbulence_reference
+optimized_model.train_model(training_features,
+   training_target)
+turbulence_optimized =
+   optimized_model.predict_turbulence(training_features)
+
+
+valid_data_mask = ~(np.isnan(turbulence_reference) |
+   np.isnan(turbulence_basic) |
+   np.isnan(turbulence_optimized))
+if np.sum(valid_data_mask) > 5:
+   basic_rmse =
+      np.sqrt(mean_squared_error(turbulence_reference[valid_data_mask],
+      turbulence_basic[valid_data_mask]))
+   optimized_rmse =
+      np.sqrt(mean_squared_error(turbulence_reference[valid_data_mask],
+      turbulence_optimized[valid_data_mask]))
+   basic_r2 = r2_score(turbulence_reference[valid_data_mask],
+      turbulence_basic[valid_data_mask])
+   optimized_r2 =
+      r2_score(turbulence_reference[valid_data_mask],
+      turbulence_optimized[valid_data_mask])
+   print(f"Basic model RMSE: {basic_rmse:.4f}, R2:
+
+
+                           106
+        {basic_r2:.4f}")
+   print(f"Optimized model RMSE: {optimized_rmse:.4f}, R2:
+        {optimized_r2:.4f}")
+else:
+   print("Insufficient valid data for evaluation metrics")
+   basic_rmse = basic_r2 = optimized_rmse = optimized_r2 =
+        np.nan
+
+
+print("Generating result plots...")
+figure, axes = plt.subplots(2, 3, figsize=(18, 12))
+
+
+axes[0,0].plot(turbulence_reference, analysis_altitude, '-',
+   linewidth=2.5, color='red', label='Reference Model')
+axes[0,0].plot(turbulence_basic, analysis_altitude, '--',
+   linewidth=2.5, color='green', label='Basic Model')
+axes[0,0].plot(turbulence_optimized, analysis_altitude, '-.',
+   linewidth=2.5, color='blue', label='Optimized Model')
+axes[0,0].set_xlabel('Turbulence Intensity')
+axes[0,0].set_ylabel('Altitude (m)')
+axes[0,0].legend()
+axes[0,0].grid(True)
+axes[0,0].set_title('Turbulence Profile Comparison')
+
+
+axes[0,1].plot(richardson_number, analysis_altitude, '-',
+   linewidth=2.5, color='red')
+axes[0,1].axvline(x=0.25, color='green', linestyle='--',
+   linewidth=2, label='Ri=0.25')
+axes[0,1].axvline(x=1.0, color='blue', linestyle='--',
+   linewidth=2, label='Ri=1.0')
+axes[0,1].set_xlabel('Richardson Number (Ri)')
+axes[0,1].set_ylabel('Altitude (m)')
+axes[0,1].legend()
+axes[0,1].grid(True)
+axes[0,1].set_title('Richardson Number Profile')
+
+
+axes[0,2].plot(turbulent_kinetic_energy, analysis_altitude,
+   '-', linewidth=2.5, color='red')
+axes[0,2].set_xlabel('Turbulent Kinetic Energy (TKE)')
+axes[0,2].set_ylabel('Altitude (m)')
+
+
+                               107
+axes[0,2].grid(True)
+axes[0,2].set_title('TKE Profile')
+
+
+axes[1,0].plot(wind_shear_profile, analysis_altitude, '-',
+   linewidth=2.5, color='green')
+axes[1,0].set_xlabel('Wind Shear (s^-1)')
+axes[1,0].set_ylabel('Altitude (m)')
+axes[1,0].grid(True)
+axes[1,0].set_title('Wind Shear Profile')
+
+
+axes[1,1].plot(spectral_width_combined, analysis_altitude,
+   '-', linewidth=2.5, color='blue')
+axes[1,1].set_xlabel('Spectral Width (m/s)')
+axes[1,1].set_ylabel('Altitude (m)')
+axes[1,1].grid(True)
+axes[1,1].set_title('Spectral Width Profile')
+
+
+if np.sum(valid_data_mask) > 5:
+   axes[1,2].scatter(turbulence_reference[valid_data_mask],
+        turbulence_basic[valid_data_mask],
+                  alpha=0.7, color='green', s=60, label='Basic
+                     Model')
+   axes[1,2].scatter(turbulence_reference[valid_data_mask],
+        turbulence_optimized[valid_data_mask],
+                  alpha=0.7, color='blue', s=60,
+                     label='Optimized Model')
+   max_value =
+        max(np.nanmax(turbulence_reference[valid_data_mask]),
+                 np.nanmax(turbulence_basic[valid_data_mask]),
+                 np.nanmax(turbulence_optimized[valid_data_mask]))
+   axes[1,2].plot([0, max_value], [0, max_value], 'red',
+        linestyle='--', linewidth=2, label='Ideal Fit')
+   axes[1,2].set_xlabel('Reference Turbulence Intensity')
+   axes[1,2].set_ylabel('Model Turbulence Intensity')
+   axes[1,2].legend()
+   axes[1,2].grid(True)
+   axes[1,2].set_title('Model Comparison Scatter')
+else:
+   axes[1,2].text(0.5, 0.5, 'Insufficient Data', ha='center',
+
+
+                               108
+        va='center',
+               transform=axes[1,2].transAxes, fontsize=14)
+     axes[1,2].set_title('Model Comparison (Insufficient Data)')
+
+
+plt.tight_layout()
+output_figure_path =
+     './figure_output/turbulence_analysis_results.png'
+plt.savefig(output_figure_path, dpi=300, bbox_inches='tight',
+     facecolor='white')
+print(f"Figure saved to: {output_figure_path}")
+
+
+results_dataframe = pd.DataFrame({
+     'Altitude_m': analysis_altitude,
+     'Reference_Turbulence': turbulence_reference,
+     'Basic_Turbulence': turbulence_basic,
+     'Optimized_Turbulence': turbulence_optimized,
+     'Richardson_Number': richardson_number,
+     'Turbulent_Kinetic_Energy': turbulent_kinetic_energy,
+     'Wind_Shear': wind_shear_profile,
+     'Spectral_Width': spectral_width_combined,
+     'U_Component_mps': u_combined,
+     'V_Component_mps': v_combined,
+     'Temperature_K':
+        temperature_kelvin[:len(analysis_altitude)]
+})
+
+
+output_csv_path =
+     './result_output/turbulence_intensity_results.csv'
+results_dataframe.to_csv(output_csv_path, index=False,
+     encoding='utf-8-sig')
+print(f"Results CSV saved to: {output_csv_path}")
+
+
+with open('./result_output/model_evaluation.txt', 'w',
+     encoding='utf-8') as eval_file:
+     eval_file.write(f"Basic model RMSE: {basic_rmse}\n")
+     eval_file.write(f"Basic model R2: {basic_r2}\n")
+     eval_file.write(f"Optimized model RMSE: {optimized_rmse}\n")
+     eval_file.write(f"Optimized model R2: {optimized_r2}\n")
+
+
+
+
+                             109
+   print("Processing completed successfully.")
+
+
+if __name__ == "__main__":
+   execute_analysis()
+
+
+
+
+                             110
+

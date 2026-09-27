@@ -1,0 +1,206 @@
+{
+  "jobs": 15,
+  "full_result_matches": 15,
+  "records": [
+    {
+      "job": [
+        "case_001",
+        2,
+        "B"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.045132166997063905,
+      "stored_makespan": 116868,
+      "replayed_makespan": 116868,
+      "source": "code/results/full_main_20260924/batch_04/cases/case_001/2core/B/candidates/B1_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_001",
+        2,
+        "C"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.04720245799398981,
+      "stored_makespan": 116868,
+      "replayed_makespan": 116868,
+      "source": "code/results/full_main_20260924/batch_04/cases/case_001/2core/C/candidates/base_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_001",
+        2,
+        "A"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.06975983301526867,
+      "stored_makespan": 116868,
+      "replayed_makespan": 116868,
+      "source": "code/results/full_main_20260924/batch_04/cases/case_001/2core/A/candidates/A1_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_100",
+        5,
+        "A"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.20744025000021793,
+      "stored_makespan": 58326,
+      "replayed_makespan": 58326,
+      "source": "code/results/full_main_fast_20260924/batch_08/cases/case_100/5core/A/candidates/A1_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_100",
+        5,
+        "B"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.08338729100069031,
+      "stored_makespan": 58326,
+      "replayed_makespan": 58326,
+      "source": "code/results/full_main_fast_20260924/batch_08/cases/case_100/5core/B/candidates/B1_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_100",
+        5,
+        "C"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.08361779098049738,
+      "stored_makespan": 58085,
+      "replayed_makespan": 58085,
+      "source": "code/results/full_main_fast_20260924/batch_08/cases/case_100/5core/C/candidates/base_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_076",
+        5,
+        "B"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 5.815395124984207,
+      "stored_makespan": 1240011,
+      "replayed_makespan": 1240011,
+      "source": "code/results/full_main_fast_split_20260924/case_076_5core/cases/case_076/5core/B/candidates/B1_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_014",
+        5,
+        "B"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 6.7436758750118315,
+      "stored_makespan": 3712893,
+      "replayed_makespan": 3712893,
+      "source": "code/results/full_main_20260924/batch_01/cases/case_014/5core/B/candidates/B1_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_051",
+        "cache_capacity_double",
+        "fixed_plan",
+        "fixed_B_plan"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.0868545409757644,
+      "stored_makespan": 627502,
+      "replayed_makespan": 627502,
+      "source": "evidence/sensitivity_raw/fixed_plan/case_051/cache_capacity_double/fixed_B_plan",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_051",
+        "cache_bandwidth_double",
+        "fixed_plan",
+        "fixed_B_plan"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.0858512080158107,
+      "stored_makespan": 627568,
+      "replayed_makespan": 627568,
+      "source": "evidence/sensitivity_raw/fixed_plan/case_051/cache_bandwidth_double/fixed_B_plan",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_051",
+        "cache_bandwidth_half",
+        "fixed_plan",
+        "fixed_B_plan"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.08506129201850854,
+      "stored_makespan": 627371,
+      "replayed_makespan": 627371,
+      "source": "evidence/sensitivity_raw/fixed_plan/case_051/cache_bandwidth_half/fixed_B_plan",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_051",
+        "cache_capacity_half",
+        "fixed_plan",
+        "fixed_B_plan"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 0.08529524999903515,
+      "stored_makespan": 627502,
+      "replayed_makespan": 627502,
+      "source": "evidence/sensitivity_raw/fixed_plan/case_051/cache_capacity_half/fixed_B_plan",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_014",
+        5,
+        "C"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 7.123463584022829,
+      "stored_makespan": 3700752,
+      "replayed_makespan": 3700752,
+      "source": "code/results/full_main_20260924/batch_01/cases/case_014/5core/C/candidates/base_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_091",
+        5,
+        "C"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 6.825005499995314,
+      "stored_makespan": 1876653,
+      "replayed_makespan": 1876653,
+      "source": "code/results/full_main_fast_split_20260924/case_091_5core/cases/case_091/5core/C/candidates/base_base",
+      "different_top_level_keys": []
+    },
+    {
+      "job": [
+        "case_014",
+        5,
+        "A"
+      ],
+      "full_result_equal": true,
+      "elapsed_seconds": 280.61081312497845,
+      "stored_makespan": 3712893,
+      "replayed_makespan": 3712893,
+      "source": "code/results/full_main_20260924/batch_01/cases/case_014/5core/A/candidates/A1_base",
+      "different_top_level_keys": []
+    }
+  ],
+  "coverage_note": "11 selected main results and 4 sensitivity results; this is a replay sample, not 1500 full replays"
+}

@@ -1,0 +1,5 @@
+added_copy_bytes,cache_hit_bytes,cache_hit_rate,cache_miss_bytes,case,elapsed_seconds,makespan,original_graph_copy_bytes,partition_added_copy_bytes,scheduled_copy_bytes,spill_added_copy_bytes,status
+1970176,0,0.0,0,case_018,0.3375502910002979,1004367,1592848,0,3563024,1970176,AI_VERIFIED
+0,0,0.0,0,case_064,0.11810074999993958,19116,37414,0,37414,0,AI_VERIFIED
+28280832,0,0.0,0,case_076,12.153865957998278,6185113,4270674,0,32551506,28280832,AI_VERIFIED
+0,0,0.0,0,case_081,1.2701442500001576,151795,1741140,0,1741140,0,AI_VERIFIED

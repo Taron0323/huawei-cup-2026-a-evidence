@@ -1,0 +1,74 @@
+\section{模型的评价与总结}
+\label{sec:evaluation}
+
+\subsection{统一基线与评价口径}
+对每张图$i$，以整图单Task、单核A0官方工期$T_{1,i}$作为统一基线，最终方案速度比为
+\begin{equation}
+S_{r,i,K}=\frac{T_{1,i}}{F_r(X^*_{r,i,K})},\qquad r\in\{A,B,C\}.
+\label{eq:eval-speedup}
+\end{equation}
+主矩阵保存100图、1--5核、A/B/C三场景共1500条最终选择记录，组合键唯一且全部为\texttt{AI\_VERIFIED}。A、B、C五核平均速度比分别为3.4383、3.4738和3.5533；这些数值直接来自v7报告的\texttt{final\_makespan}，不经过后验继承或手工修正。
+
+\subsection{基线、候选消融与Cache对照}
+候选消融保持图、核数、硬件参数和官方评价器不变，只比较同一候选台账中的初始方案与最终选择。五核A、B、C平均工期改善分别为58.6697\%、60.3622\%和1.1744\%，改善图数分别为89、98和38张。Cache对照则固定B计划和计划哈希，仅改变C场景的FIFO Cache；再在C场景比较重优化计划，从而分离硬件效应、调度适配和综合效应。
+\begin{table}[H]\centering\small
+\caption{统一基线与v7五核消融结果}\label{tab:baseline-ablation}
+\begin{tabular}{lrrr}\toprule
+对照层 & A速度比均值 & B速度比均值 & C速度比均值\\\midrule
+整图单Task单核基线 & 1.0000 & 1.0000 & 1.0000\\
+最终方案 & 3.4383 & 3.4738 & 3.5533\\
+初始至最终平均改善/\% & 58.6697 & 60.3622 & 1.1744\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]\centering\small
+\caption{Cache同计划三段效应（每核100图）}\label{tab:eval-cache-factors}
+\begin{tabular}{crrr}\toprule
+核数 & 硬件效应 & C内适配 & 综合效应\\\midrule
+1 & 1.0023 & 1.0145 & 1.0170\\
+2 & 1.0079 & 1.0142 & 1.0227\\
+3 & 1.0090 & 1.0127 & 1.0220\\
+4 & 1.0164 & 1.0092 & 1.0257\\
+5 & 1.0146 & 1.0139 & 1.0289\\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{逐问结果}
+\subsubsection{问题一}
+A场景五核平均速度比3.4383，中位数4.0343。候选改善在二至五核逐步增大，说明组移动、分组切分、合并和边界节点变体扩大了可评价的切分空间；静态搬运只用于排序，最终选择仍由官方事件工期决定。
+
+\subsubsection{问题二}
+B场景五核平均速度比3.4738，中位数4.0343。核心级接收域减少同核重复读入，但物理副本生存期可能增加容量恢复；因此结构搬运、Spill和工期需要联合观察。\Case{008}中结构字节相同的两份候选因Spill和事件次序不同而产生不同工期，说明容量模型对结果具有可检验的解释力。
+
+\subsubsection{问题三}
+C场景五核平均速度比3.5533，中位数4.2035。Cache三段效应在五核分别为1.0146、1.0139和1.0289；命中率变化只有在影响尾部关键事件时才转化为工期变化。六图扰动中，固定计划工期保持默认值，重优化后平均工期下降0.99\%--1.31\%。
+
+\subsection{算法效率与评价成本}
+候选阶段若产生$M$个计划，覆盖和依赖检查、计划规范化及轻量排序的复杂度可写为
+\begin{equation}
+O\!\left(M(C_{\rm graph}+C_{\rm pressure})+M\log M\right),
+\end{equation}
+其中$C_{\rm pressure}$包含张量接收域、物理副本区间和容量端点扫描。profile和完整事件评价的成本由展开后的Task、COPY及事件数决定；官方事件队列的排序开销近似为$O(E_{\rm ev}\log E_{\rm ev})$，容量和共享带宽状态更新另行计入。v7计时表按候选和最终选择分别保存profile、完整评价和总候选数，避免把MPS轻量排序时间误写成官方工期。
+
+\begin{table}[H]\centering\small
+\caption{v7算法阶段与计时字段}\label{tab:algorithm-timing}
+\begin{tabular}{lrrr}\toprule
+阶段 & 记录字段 & 计时含义 & 结果用途\\\midrule
+profile & \texttt{final\_profile\_seconds} & 计划展开与合法性检查 & 排除不可评价候选\\
+事件评价 & \texttt{final\_evaluation\_seconds} & 官方CPU事件模拟 & 产生Makespan和搬运\\
+候选排序 & \texttt{profile\_score}、\texttt{light\_time} & MPS轻量负载排序 & 安排评价顺序\\
+最终选择 & \texttt{final\_selection} & 按工期、搬运、名称选优 & 写入主矩阵\\\bottomrule
+\end{tabular}
+\end{table}
+
+A场景最大单组合评价时间约1198 s，属于超大图的候选评价开销；该值反映官方事件模拟，不能用轻量排序时间替代。工程上可对超大图设置候选上限、优先评价整图和mandatory anchors，并保留剩余候选的失败或未评状态；本论文主矩阵保留实际已完成的有限候选结果。
+
+\subsection{模型优点与适用条件}
+模型把三问的差异落实为可核验的事件规则：A按Task边界计量结构搬运，B按接收核心和物理副本区间计量容量恢复，C按查询、完成和FIFO淘汰事件区分Cache与DDR服务。候选层只负责生成和排序，正式结果统一由题给官方评估器返回，使公式、伪代码、主矩阵和附录代码保持同一接口。该方法适用于候选规模有限、计划必须通过官方合法性检查且工期由离散事件决定的切图调度问题。
+
+\subsection{局限与结果边界}
+主矩阵是有限候选启发式的官方评价结果，不构成全局最优证明；MPS仅用于候选负载排序，完整事件由CPU官方Python程序执行，也不等同于NPU实机测量。228个尾部组合来自fast-profile补齐，并在同一官方评价器下核验。solver文件与主矩阵哈希存在漂移、以及三个B/C初始计划差异已写入支撑记录；论文结论使用最终选择文件和最终报告，不把这些记录解释成新的实验结果。
+
+\subsection{模型总结}
+在统一基线下，v7主矩阵给出A、B、C五核平均速度比分别为3.4383、3.4738和3.5533；Cache五核硬件、调度适配和综合效应分别为1.0146、1.0139和1.0289。三种场景的结果均能回溯到候选台账、官方事件报告、计划哈希和附录逐图表，形成从模型、求解到验证的闭环。

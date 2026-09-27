@@ -1,0 +1,9 @@
+{
+  "phase": "SYNTHETIC_PRACTICE",
+  "supply": [7, 5],
+  "demand": [3, 4, 5],
+  "cost": [[2, 4, 5], [3, 1, 4]],
+  "flow_unit": "synthetic units",
+  "cost_unit": "synthetic currency per unit",
+  "provenance": "Manually specified demonstration; not official contest data"
+}

@@ -1,0 +1,85 @@
+{
+  "selected": [
+    "L1_base",
+    "r1_split_g3_h1_c2_p1"
+  ],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "score": [
+        67809,
+        554898,
+        765384,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A1_base",
+      "score": [
+        20952,
+        564690,
+        331120,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A2_base",
+      "score": [
+        19594,
+        680446,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A3_base",
+      "score": [
+        41014,
+        2460812,
+        159302,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "L1_base",
+      "score": [
+        13753,
+        608466,
+        158492,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L2_base",
+      "score": [
+        20202,
+        653886,
+        8150,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L3_base",
+      "score": [
+        43855,
+        2631286,
+        100436,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    }
+  ]
+}

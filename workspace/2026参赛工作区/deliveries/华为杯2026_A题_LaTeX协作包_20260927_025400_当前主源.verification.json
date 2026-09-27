@@ -1,0 +1,15 @@
+{
+  "archive": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_025400_当前主源.zip",
+  "source_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica",
+  "sha256": "b08e8505dbeb0ddcfe3c43f9db0b88eb57c52dbbdda3784c84029068bbb8595d",
+  "archive_bytes": 35442239,
+  "file_count": 3171,
+  "excluded": [
+    "build/**",
+    "**/.DS_Store",
+    "**/.pytest_cache/**",
+    "**/__pycache__/**"
+  ],
+  "source_pdf": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-2026.pdf",
+  "source_pdf_bytes": 1393337
+}

@@ -1,0 +1,161 @@
+\section{问题三的模型建立与求解}
+\label{sec:question-three}
+
+\subsection{问题分析与模型输入}
+问题二确定了每张图在各核数下的分核与核内顺序；问题三增加共享只读Cache，关键变化是同一份张量在不同核心上的读取时刻和读取来源。固定同图同核配对沿用问题二的最终计划$X_B^{(K)}$，其中$K$表示配对所用核数；C总体结果直接记为$X_C^*$，不追加后验继承。固定配对先在B、C两个场景评价$X_B^{(K)}$，再在C场景比较有限调度候选，由此得到$F_B(X_B^{(K)})$、$F_C(X_B^{(K)})$和$F_C(X_C^{(K)})$。
+
+共享只读Cache容量为1048576 B，读取带宽为250 B/cycle；DDR带宽仍为60 B/cycle，两个读取池独立。Cache初始为空，按先进先出规则淘汰。逻辑张量标识用于命中查询，实际COPY事件则来自问题二的完整核内展开，Spill产生的物理版本也由评估程序处理。这里的FIFO方程和三段比值属于模型层，有限候选的迁移、合并、调序与排序属于候选求解器，工期、命中和淘汰字段则只取C场景评估程序的事件结果。我们逐组保存B最终计划哈希、C初始计划哈希、三次评价的工期及命中/未命中字节，不以相同候选名称代替计划身份核验。
+\begin{table}[H]\centering\caption{问题三的固定输入和配对量}\label{tab:c-inputs}
+\begin{tabularx}{\linewidth}{lY}\toprule
+对象 & 值或判定条件\\\midrule
+同图同核起点 & 固定问题二计划$X_B^{(K)}$；B/C配对使用同一计划\\
+共享Cache & 容量1048576 B；读带宽250 B/cycle；初始队列为空\\
+外部存储 & DDR带宽60 B/cycle；写出与未命中读仍走DDR\\
+正式响应 & 总工期、结构与恢复搬运、命中和未命中字节、完整计划哈希\\
+选择预算 & mandatory anchors优先，其他候选按名义额度进入完整评价\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsection{基于查询与完成事件的FIFO模型}
+设$\mathcal C(\tau)$为时刻$\tau$按插入次序排列的逻辑张量队列。合格读入事件$e$在发射时刻$q_e$查询$t_e$，其读取来源由
+\begin{equation}
+H_e=\mathbf 1\{t_e\in\mathcal C(q_e)\},\qquad
+B_e=\begin{cases}250,&H_e=1,\\60,&H_e=0\end{cases}\ \mathrm{B/cycle}
+\label{eq:c-query}
+\end{equation}
+确定。命中读进入Cache池，未命中读进入DDR池；命中只改变本次读取所用的服务池，不把条目移到队尾，查询也不改变FIFO次序。在该COPY\_IN完成时，评估程序再尝试把张量插入队尾：若当前仍在队列中则不改变次序；若已经被其他完成事件淘汰，则可能重新插入；若大小超过容量则不插入；空间不足时先逐项淘汰队首。同一时刻的完成、插入和新发射按评估程序的固定事件次序处理，不能把尚未完成的在途读视为已命中。公式\eqref{eq:c-query}中的$B_e$只是事件选择的服务带宽，不是整图工期的直接除数。
+
+考虑容量为$2b$、三个张量$x,y,z$大小均为$b$的符号例。已有队列$[x,y]$，对$x$的命中不会将其移到队尾。随后$z$完成并插入，队列变为$[y,z]$；如果先前对$x$的在途读取此时才完成，它又能在队尾重新插入，队列变为$[z,x]$。同一组张量的访问次数并不足以确定这段队列演化，完成事件的先后与查询先后都必须考虑。
+
+更关键的是并发查询。两个核心在首个读入完成前向空Cache发射相同张量的请求，两次都未命中；只有后发请求在首次完成插入之后查询且条目未被淘汰，才可能命中。记合格读入总命中字节为$Q_L$，未命中字节为$Q_D$，则报告的字节命中率为
+\begin{equation}
+h_{\rm byte}=\frac{Q_L}{Q_L+Q_D}.
+\label{eq:hit-rate}
+\end{equation}
+分母为零时遵循结果字段的零值约定。这个指标描述读取服务来源，不从“额外搬运”中扣除$Q_L$；搬运量仍按实际生成的COPY事件统计。
+
+DDR和Cache两个共享服务池各自按活动请求分配参考工作量。若池$p$中同时有$m_p(\tau)$个未完成请求，请求$e$的剩余参考工作量$R_e$满足
+\begin{equation}
+\frac{\mathrm dR_e}{\mathrm d\tau}=-\frac{1}{m_p(\tau)},\qquad
+R_e(q_e)=\max\left\{1,\left\lceil\frac{b_e}{B_e}\right\rceil\right\}.
+\label{eq:c-service}
+\end{equation}
+一次命中既可能减轻DDR池竞争，也可能改变后继操作的发射时刻，从而改变关键路径、另一池负载及后续FIFO状态。因此即使$h_{\rm byte}>0$，总工期仍可能不变。
+
+\begin{algorithm}[H]\caption{C场景评估程序的只读FIFO事件规则}\label{alg:c-fifo}
+\begin{algorithmic}[1]
+\REQUIRE 已展开的核级执行图、COPY事件、Cache容量及两类带宽
+\ENSURE 完成时间线、Cache事件、命中与未命中字节
+\STATE 初始化空FIFO队列、DDR池与Cache读池
+\WHILE{仍有操作未完成}
+\STATE 按评估程序的事件次序处理当前完成事件，推进相应池的剩余工作量
+\FOR{当前完成的每个合格COPY\_IN}
+\IF{逻辑张量不在队列且大小不超过容量}
+\STATE 从队首淘汰至空间充足，并插入该张量
+\ENDIF
+\ENDFOR
+\STATE 更新依赖、流水线与跨核释放就绪状态
+\FOR{当前可发射的合格COPY\_IN}
+\STATE 在发射时查询队列，选择Cache读池或DDR池并累计字节
+\ENDFOR
+\STATE 重排两池的预计完成事件并推进事件时间
+\ENDWHILE
+\end{algorithmic}\end{algorithm}
+\subsubsection{Cache查询与完成时序}
+为把公式\eqref{eq:c-query}与事件先后联系起来，构造一个不参与100图统计的解析小例：三个核心各需读同一份60000 B张量$x$，Cache容量足以容纳$x$。独占DDR读取为$60000/60=1000$ cycle，独占Cache读取为$60000/250=240$ cycle。若三核在时刻0同时发射，三次查询都看到空队列，三个DDR请求平分服务，读取均在时刻3000完成，命中字节为0。若第一核在时刻0发射并于1000完成插入，其余两核在时刻1000才发射且$x$未被淘汰，则两次都命中；两个Cache请求平分读池，各需480 cycle，读取于1480完成。表\ref{tab:c-query-example}把发射、插入和完成三个状态明确分开。
+\begin{table}[H]\centering\caption{三核重复读取60000 B张量的解析时序}\label{tab:c-query-example}
+\begin{tabularx}{\linewidth}{lYrrr}\toprule
+情形 & 发射与插入顺序 & DDR读取 & Cache读取 & 最后一次读完成/cycle\\\midrule
+同时查询 & 三核均在0发射，首次插入发生在完成时 & 3次 & 0次 & 3000\\
+错峰查询 & 第一核0发射、1000插入，其余两核1000发射 & 1次 & 2次 & 1480\\\bottomrule
+\end{tabularx}\end{table}
+\begin{figure}[H]\centering
+\begin{tikzpicture}[x=1.65cm,y=.9cm,>=Stealth,every node/.style={font=\small}]
+\draw[->] (0,0)--(3.5,0) node[right] {$\tau/1000$ cycle};
+\foreach \x/\lab in {0/0,1/1,1.48/1.48,3/3}{\draw (\x,.06)--(\x,-.06) node[below] {\lab};}
+\node[left] at (0,1.0) {错峰查询};
+\node[left] at (0,2.4) {同时查询};
+\draw[blue!65!black,very thick] (0,2.4)--(3,2.4);
+\node[above] at (1.5,2.4) {3次DDR未命中并发};
+\draw[blue!65!black,very thick] (0,1.0)--(1,1.0);
+\node[above] at (.5,1.0) {1次DDR};
+\draw[green!55!black,very thick] (1,1.0)--(1.48,1.0);
+\node[anchor=west] at (1.58,1.0) {2次Cache命中};
+\draw[dashed] (1,.12)--(1,2.9);
+\node[anchor=west] at (1.65,3.25) {首读完成并插入：$\tau=1000$};
+\end{tikzpicture}
+\caption{相同访问次数下的两种查询顺序；仅为解析示例}\label{fig:c-query-timeline}
+\end{figure}
+这里的错峰发射是给定的时序条件，不是调度器可以免费插入的“空等”动作。在真实计划中，后续查询的延迟必须来自前置计算、依赖或队列中的其他操作；这些操作本身也占资源。解析例只证明查询时刻会改变命中与读完成时间，不给出真实图的整体工期。
+
+\subsection{共享输入方案与求解}
+\textbf{Step 1：生成候选。}以同图同核的B最终计划为起点，同时保留整图、分量装箱、拓扑切块和C场景的共享输入候选；围绕重复读取张量生成组移动、分组切分、合并、边界节点和核内调序变体。每个计划检查覆盖、商图无环、同核依赖和容量格式，非法方案不进入评价。
+
+\textbf{Step 2：轻量排序。}沿用路径、核心负载、结构COPY和容量压力元组；对C场景额外计算共享输入的查询压力和潜在命中收益。轻量层只安排profile和完整评价顺序，不模拟FIFO查询、完成插入或淘汰。
+
+\textbf{Step 3：官方评价与选优。}mandatory anchors先行，随后按排序元组使用名义评价额度调用官方C场景评估器。每个$(\text{图},K,C)$组合独立保存profile、候选台账、失败文本、命中/未命中字节和\texttt{final\_selection}；成功候选按$(F_C,D_C,\operatorname{name})$选优。B/C同计划配对只在计划哈希一致时计算三段效应，C最终计划仍由C场景重新评价。
+
+\begin{algorithm}[H]\caption{问题三FIFO候选选择与同计划对照}\label{alg:c-select}
+\begin{algorithmic}[1]
+\REQUIRE B场景最终计划、计算图、核数$K$及Cache参数
+\ENSURE C场景最终计划、命中字段和三段工期比
+\STATE 保留B最终计划、C场景mandatory anchors及共享输入候选
+\STATE 生成组移动、分组切分、合并、边界和核内调序变体并去重
+\STATE 计算路径、搬运、容量和查询压力排序元组
+\STATE 按锚点优先和排序元组调用C场景profile与官方事件模拟
+\STATE 在成功集合按$(F_C,D_C,\operatorname{name})$选$X_C^*$并保存哈希
+\STATE 以同一B计划的$F_B$、$F_C(X_B)$和$F_C(X_C)$计算式\eqref{eq:cache-factors}
+\end{algorithmic}\end{algorithm}
+
+伪代码把Cache的查询时序、完成插入和候选选择分开。工期、命中率和FIFO淘汰均取CPU官方事件模拟器的结果；MPS只参与轻量候选负载排序。
+
+\subsection{同计划对照与调度适配}
+同一图同一核数取得$F_B(X_B)$、$F_C(X_B)$和$F_C(X_C)$，并定义
+\begin{equation}
+S_{\rm hw}=\frac{F_B(X_B)}{F_C(X_B)},\quad S_{\rm adapt}=\frac{F_C(X_B)}{F_C(X_C)},\quad S_{\rm opt}=\frac{F_B(X_B)}{F_C(X_C)}=S_{\rm hw}S_{\rm adapt}.
+\label{eq:cache-factors}
+\end{equation}
+500组配对逐组核对计划哈希，乘积恒等式最大残差为$2.22\times10^{-16}$；表中各列是逐图比值的算术平均，列均值不再强行相乘。
+\begin{table}[H]\centering\small\caption{v7每核100图Cache三段效应}\label{tab:cache-factors}
+\begin{tabular}{crrrr}\toprule
+核数 & 硬件效应均值 & 适配效应均值 & 综合效应均值 & 配对数\\\midrule
+1 & 1.0023 & 1.0145 & 1.0170 & 100\\
+2 & 1.0079 & 1.0142 & 1.0227 & 100\\
+3 & 1.0090 & 1.0127 & 1.0220 & 100\\
+4 & 1.0164 & 1.0092 & 1.0257 & 100\\
+5 & 1.0146 & 1.0139 & 1.0289 & 100\\\bottomrule
+\end{tabular}
+\end{table}
+\samplefigure{cache_speedup_decomposition}{同计划硬件效应、C内调度适配及综合比值}{fig:cache-decomposition}
+
+\subsection{问题三结果}
+C场景直接读取各$(i,K,C)$组合的最终选择记录。五核平均速度比为3.5533，中位数为4.2035；1--5核平均值依次为1.0739、1.7998、2.4462、3.0448和3.5533。五核初始到最终平均改善为1.1744\%，38/100张图得到改善。
+\begin{table}[H]\centering\small\caption{问题三v7主矩阵逐核速度比与候选改善}\label{tab:c-results}
+\begin{tabular}{crrrr}\toprule
+核数 & 平均加速比 & 中位数 & 初始至最终平均改善/\% & 改善图数\\\midrule
+1 & 1.0739 & 1.0073 & 1.0777 & 49/100\\
+2 & 1.7998 & 1.9949 & 1.3230 & 47/100\\
+3 & 2.4462 & 2.8901 & 1.1666 & 46/100\\
+4 & 3.0448 & 3.6732 & 0.8289 & 32/100\\
+5 & 3.5533 & 4.2035 & 1.1744 & 38/100\\\bottomrule
+\end{tabular}
+\end{table}
+\samplefigure{speedup_C}{问题三逐核加速比：100图均值、中位数及均值95\%实例重采样区间}{fig:speedup-c}
+
+\subsection{问题三灵敏度分析：L2容量与带宽}
+六张代表图分别将Cache容量和读带宽减半、加倍。固定五核B计划的24组实验全部通过官方评价；重优化候选37条全部通过，24组均至少保留一个成功候选，四个变体各有3/6组改变计划。权威汇总见表\ref{tab:cache-sensitivity}和附录表\ref{tab:sensitivity-detail}。
+\begin{table}[H]\centering\small\caption{v7六图Cache扰动汇总}\label{tab:cache-sensitivity}
+\begin{tabular}{lrrrrr}\toprule
+配置 & 固定命中率 & 重优化命中率 & 重优化/默认工期比 & 改变计划 & 失败候选\\\midrule
+容量减半 & 2.0977\% & 3.4413\% & 0.9900 & 3/6 & 0\\
+容量加倍 & 8.1117\% & 13.0176\% & 0.9869 & 3/6 & 0\\
+带宽减半 & 4.7811\% & 7.2801\% & 0.9892 & 3/6 & 0\\
+带宽加倍 & 4.7811\% & 7.3484\% & 0.9885 & 3/6 & 0\\\bottomrule
+\end{tabular}
+\end{table}
+\samplefigure{sensitivity_makespan}{六图固定计划与重优化计划的Cache扰动工期}{fig:cache-sensitivity-time}
+\samplefigure{sensitivity_hit_rate}{六图Cache扰动的固定与重优化命中率}{fig:cache-sensitivity-hit}
+
+固定计划在四种扰动下六图平均工期均保持默认值；重优化后平均工期比下降0.99\%--1.31\%，容量加倍收益最大。命中率上升与尾部工期不必同步，说明真正决定方案取舍的是完成事件在关键路径和共享服务池中的位置。敏感性结果是六张代表图的有限候选实验，不外推为100图全矩阵。
+
+\subsection{问题三结论}
+FIFO Cache模型把发射查询、读取完成后的插入、先进先出淘汰和两类带宽服务放在同一事件链中。v7主矩阵的C场景五核平均速度比为3.5533；五核Cache三段逐图均值为1.0146、1.0139和1.0289。固定计划、重优化和参数扰动均由官方C场景评价器核验，结果文件、计划哈希和失败记录保存在\path{data/v7_fast_20260927/}。

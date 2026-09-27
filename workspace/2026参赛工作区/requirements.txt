@@ -1,0 +1,8 @@
+numpy>=1.26,<3
+scipy>=1.11,<2
+matplotlib>=3.8,<4
+beautifulsoup4>=4.12,<5
+python-docx>=1.1,<2
+pypdf>=5,<7
+pandas>=2.2,<3
+psutil>=7,<8

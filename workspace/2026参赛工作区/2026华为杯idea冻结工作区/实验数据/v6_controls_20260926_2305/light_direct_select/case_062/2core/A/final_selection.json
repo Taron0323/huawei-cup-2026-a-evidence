@@ -1,0 +1,8 @@
+{
+  "added_copy_bytes": 63387648,
+  "candidate": "A3_base",
+  "full_calls": 2,
+  "makespan": 2850260,
+  "plan_sha256": "ef7967fc81e3503c6a9269d503b46281762742177fac45785782b25c9524aaf9",
+  "source": "seed"
+}

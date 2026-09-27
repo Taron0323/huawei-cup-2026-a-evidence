@@ -1,0 +1,21 @@
+{
+  "category_counts": {
+    "final_has_cache_hit": 326,
+    "hit_alternative_in_main_search": 26,
+    "hit_found_in_rescue": 65,
+    "no_repeated_copy_in_final": 27,
+    "repeated_misses_no_hit_candidate": 8,
+    "single_core_no_repeated_copy_in_final": 48
+  },
+  "claim_boundary": "Official final selections remain makespan-first. Rescue and epsilon rows are separate cache-aware alternatives.",
+  "final_zero_hit_rows": 174,
+  "main_root_immutable": true,
+  "main_roots": [
+    "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_fast_equiv_20260927_0030"
+  ],
+  "multi_core_zero_hit_rows": 115,
+  "rescue_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据/v7_cache_zero_rescue_20260927_1100",
+  "rows": 500,
+  "run_id": "v7_cache_zero_audit_20260927_1100",
+  "status": "COMPUTED"
+}

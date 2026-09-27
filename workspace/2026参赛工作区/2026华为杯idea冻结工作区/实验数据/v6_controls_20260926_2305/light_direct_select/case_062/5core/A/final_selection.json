@@ -1,0 +1,8 @@
+{
+  "added_copy_bytes": 9286656,
+  "candidate": "r1_split_g1_h0_c4_p0",
+  "full_calls": 2,
+  "makespan": 1661180,
+  "plan_sha256": "360e445e1f7d04ea9a58ba3d8bc400d6df10eb57a8bfb5e917dd4b104777fb8d",
+  "source": "ordinary"
+}

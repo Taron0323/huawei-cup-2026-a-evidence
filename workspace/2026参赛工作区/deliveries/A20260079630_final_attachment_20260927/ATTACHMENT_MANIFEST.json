@@ -1,0 +1,776 @@
+{
+  "package": "A20260079630_final_attachment_20260927",
+  "source": "official_A_attachment_plus_v7_raw_solver",
+  "files": [
+    {
+      "path": "AI_USAGE_DISCLOSURE.md",
+      "bytes": 605,
+      "sha256": "90a81c53e398e224d7b500d05b2f1edf5dc58f754b2b2b6ec28567536aab6fa6"
+    },
+    {
+      "path": "NOTICE_official_code.md",
+      "bytes": 238,
+      "sha256": "173e380a31047438cb9d25dbbd4a6dc1152f19430c005068737ac0f58687a188"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5747,
+      "sha256": "d4aaa99648d10e4a11d1619d14dbf73ff6a8df8fa67c6f138949b2cbc3444775"
+    },
+    {
+      "path": "README_FINAL_ATTACHMENT.md",
+      "bytes": 2059,
+      "sha256": "d5f6cefab6a95d4a755674a8f3eebffc8f1c817a5dd9173842fc7f03f0d0570a"
+    },
+    {
+      "path": "code/contest_io.py",
+      "bytes": 12491,
+      "sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+    },
+    {
+      "path": "code/evaluation_validation.py",
+      "bytes": 10900,
+      "sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+    },
+    {
+      "path": "code/multicore_cut_evaluate_problem_1.py",
+      "bytes": 23213,
+      "sha256": "2095f188a6c24ce3899f156bef21d50dcd87cbd9368488046b1e77e2bf91af3f"
+    },
+    {
+      "path": "code/multicore_cut_evaluate_problem_2.py",
+      "bytes": 26123,
+      "sha256": "0b39f84d5ec0a7fba9a4c92a598a9044b97ab79c71393824c1ba130ecfe6c464"
+    },
+    {
+      "path": "code/multicore_cut_evaluate_problem_3.py",
+      "bytes": 32112,
+      "sha256": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0"
+    },
+    {
+      "path": "code/schedule_step1.py",
+      "bytes": 7304,
+      "sha256": "d8fe721ff3dbe036e34a20c00cce6430960860000a49eb467e63465f76b84034"
+    },
+    {
+      "path": "code/schedule_step2.py",
+      "bytes": 23989,
+      "sha256": "2836baac176f4e0bdd9eec59b8d9ce254e209e5f7a251e23837ab684312fa0c3"
+    },
+    {
+      "path": "code/schedule_step3.py",
+      "bytes": 30834,
+      "sha256": "50053db0436f1d166dd75436693ba3af49b5c339576beb6e7299477f6b69fc7a"
+    },
+    {
+      "path": "code/singlecore_evaluate.py",
+      "bytes": 4273,
+      "sha256": "446b753ee134ef1fec8e052356bb077a2602fbe95572ccd3dddd7928e894b77a"
+    },
+    {
+      "path": "code/stub_multicore_cut_and_schedule.py",
+      "bytes": 12415,
+      "sha256": "0a3a3b79b5173b466fc05fc8d33b72d11d90b4df78995435853d91c632a35892"
+    },
+    {
+      "path": "data/raw/A题/data/case_001.json",
+      "bytes": 353884,
+      "sha256": "a634cd1151c0e918dd3a143eba421b88907f7f0334bfe6a5ca0412342307f09f"
+    },
+    {
+      "path": "data/raw/A题/data/case_002.json",
+      "bytes": 784064,
+      "sha256": "578fceeb9f66a3c083b9f27d8464cf75c1e7602cbc7290920c02aa1aef7ca352"
+    },
+    {
+      "path": "data/raw/A题/data/case_003.json",
+      "bytes": 4869895,
+      "sha256": "2c80acfd37edcf811ce76b7e7b1f7194c706bd4d4aa6449e6a19e9eac1028ced"
+    },
+    {
+      "path": "data/raw/A题/data/case_004.json",
+      "bytes": 364607,
+      "sha256": "3e01adde3c4ad143ab3d7faabcf36d849f26b5428e7c8446a7e9f89345a55faa"
+    },
+    {
+      "path": "data/raw/A题/data/case_005.json",
+      "bytes": 1495150,
+      "sha256": "c2b378c882a3039e3d66bac6cbcba39317107339b6f38d5bce1b09379839799f"
+    },
+    {
+      "path": "data/raw/A题/data/case_006.json",
+      "bytes": 274573,
+      "sha256": "c68392cd599b63039669ca54360ab21b514c41285151cd69180ee9be99af1a48"
+    },
+    {
+      "path": "data/raw/A题/data/case_007.json",
+      "bytes": 1832496,
+      "sha256": "6e786044ca1fa5d4632f8b7d03e95364da8d88f4fff5e403d3ab8153da84b518"
+    },
+    {
+      "path": "data/raw/A题/data/case_008.json",
+      "bytes": 509065,
+      "sha256": "c93bb7ab5deec5112aff0cc001fbd76d001d3de5ea7463fba59b1f1ff2ba3e1d"
+    },
+    {
+      "path": "data/raw/A题/data/case_009.json",
+      "bytes": 2146447,
+      "sha256": "06b73d07c450878db8f6dace8ed08e362b45f5dd6e06fb80b098f165190f222a"
+    },
+    {
+      "path": "data/raw/A题/data/case_010.json",
+      "bytes": 256464,
+      "sha256": "fd0b07588473d8b2ce05fab4798808cbc7f60cf1638e05608adc3d62061b8775"
+    },
+    {
+      "path": "data/raw/A题/data/case_011.json",
+      "bytes": 332344,
+      "sha256": "2da7df4ccc8a4eb86347f0a567aacac628e7d30ab943cd99996f2c74620d80b9"
+    },
+    {
+      "path": "data/raw/A题/data/case_012.json",
+      "bytes": 430544,
+      "sha256": "1a07d3a4c6d1305bec2fbdc4d106fb5c0078ec098cbf09e1b8eaa5134968e079"
+    },
+    {
+      "path": "data/raw/A题/data/case_013.json",
+      "bytes": 1197680,
+      "sha256": "b95d97cf90bdd0fe64a0fd1ecd5a36a7b091ecadef204ef8c6ae430f6ccfac3c"
+    },
+    {
+      "path": "data/raw/A题/data/case_014.json",
+      "bytes": 14404567,
+      "sha256": "e27abb053ac57786e510ba80e60a6ec60a8b0df11b2a818010a1df17c29d94dd"
+    },
+    {
+      "path": "data/raw/A题/data/case_015.json",
+      "bytes": 423712,
+      "sha256": "d27dfc39289fa442f29f597191ab6b05142ce6ad68b4396056b2adccb9c93253"
+    },
+    {
+      "path": "data/raw/A题/data/case_016.json",
+      "bytes": 6110151,
+      "sha256": "76537aa7163cf0748adcff2ecbd84fbc9a02a2d129ffcecd2bfebb89685e71ef"
+    },
+    {
+      "path": "data/raw/A题/data/case_017.json",
+      "bytes": 576372,
+      "sha256": "282c5840d8e8581fb7827a6d4c996f90384bdfe566ffa665574721568b9dc85c"
+    },
+    {
+      "path": "data/raw/A题/data/case_018.json",
+      "bytes": 1128892,
+      "sha256": "70cf2a124573fe0ccad84b16d902efe7e28938761db791d2f4321ab2e98f0c0a"
+    },
+    {
+      "path": "data/raw/A题/data/case_019.json",
+      "bytes": 247397,
+      "sha256": "199ccf5f40c65b63ef88efcf05a0ccbf6b9368963d7a62cabd240d7b98847429"
+    },
+    {
+      "path": "data/raw/A题/data/case_020.json",
+      "bytes": 2576402,
+      "sha256": "932287c2c204e475df824a3914b7b179226625caf37ae288bac90716ffe16ec4"
+    },
+    {
+      "path": "data/raw/A题/data/case_021.json",
+      "bytes": 1694570,
+      "sha256": "d1b1b8a543eab9b359421f0d67baaee43f2890b2562bf2bfa1dfeb5fa5f87b37"
+    },
+    {
+      "path": "data/raw/A题/data/case_022.json",
+      "bytes": 501930,
+      "sha256": "b93af0605cda612b707a91a1e9fc76348b527284a03e779b65cbe55813e331e7"
+    },
+    {
+      "path": "data/raw/A题/data/case_023.json",
+      "bytes": 388009,
+      "sha256": "73e1a5d3abe5f7b36fb7a386d586e8ed492f7fae5e7a736c475b629ab6e12739"
+    },
+    {
+      "path": "data/raw/A题/data/case_024.json",
+      "bytes": 2014832,
+      "sha256": "f974fbf1a23b4a145b5f8c9c691eb1b247f93d8785d98bb46a9cdd8626399aec"
+    },
+    {
+      "path": "data/raw/A题/data/case_025.json",
+      "bytes": 8864067,
+      "sha256": "f27ba0f332109eb62541879ddbc9c9d283531c191afdd7299a365134af3e0deb"
+    },
+    {
+      "path": "data/raw/A题/data/case_026.json",
+      "bytes": 249536,
+      "sha256": "0ed6209c59170dc0da94703702b17402cee14c1a61624e666ed8938637b6765b"
+    },
+    {
+      "path": "data/raw/A题/data/case_027.json",
+      "bytes": 687076,
+      "sha256": "74ff3486f7a3fd5561250ac336ed57e02a998f4f34d3be742e9f3dceb98d402b"
+    },
+    {
+      "path": "data/raw/A题/data/case_028.json",
+      "bytes": 7081503,
+      "sha256": "89fe60e6529c5c02cf6ffd700254e003b1f51ceafc252140ef64add47ad2e212"
+    },
+    {
+      "path": "data/raw/A题/data/case_029.json",
+      "bytes": 392684,
+      "sha256": "997bcbaa3acdff628346af91df1c6ce0127372b10c71890967ec9dd685b7187b"
+    },
+    {
+      "path": "data/raw/A题/data/case_030.json",
+      "bytes": 4138350,
+      "sha256": "ad80a952c48ff4d7c339349167fa9054e515009787692608863240a3546c0f90"
+    },
+    {
+      "path": "data/raw/A题/data/case_031.json",
+      "bytes": 2487489,
+      "sha256": "a8d03d16b7eff2c3c84186b32994279143fd1628937e4e9bdf753f869a333f82"
+    },
+    {
+      "path": "data/raw/A题/data/case_032.json",
+      "bytes": 335704,
+      "sha256": "7b325807b10636edbb8ada6fe9086e639ece5d42d4aad151b0fc7cd8f6277385"
+    },
+    {
+      "path": "data/raw/A题/data/case_033.json",
+      "bytes": 1414590,
+      "sha256": "e14316f8ccbe3bf16bcee2bad80efc3a527cdc2488d9e3f616518b6e3aa9657b"
+    },
+    {
+      "path": "data/raw/A题/data/case_034.json",
+      "bytes": 1551151,
+      "sha256": "c4128788442a023c2224d582f7114181ca9e9439a5978deaec6a1c52c0d729d6"
+    },
+    {
+      "path": "data/raw/A题/data/case_035.json",
+      "bytes": 1397316,
+      "sha256": "ab4d5e39b4d3ad430a992d6d87d7510a869b6cb03a5d9a7ba124b039ba4486e2"
+    },
+    {
+      "path": "data/raw/A题/data/case_036.json",
+      "bytes": 1425385,
+      "sha256": "3924c8904db3f85eb38d4e4b345e55f689c9d908f329dbb8caf16a3774759d21"
+    },
+    {
+      "path": "data/raw/A题/data/case_037.json",
+      "bytes": 369696,
+      "sha256": "c5ce3776f9b28b17c7e1d23c9a47395ddfaeecf2533228ab0a5cf444e3f112e3"
+    },
+    {
+      "path": "data/raw/A题/data/case_038.json",
+      "bytes": 2552691,
+      "sha256": "69575019d0670552c74f386508042357a94419ed2f49d18a382a71a8cf39e5ac"
+    },
+    {
+      "path": "data/raw/A题/data/case_039.json",
+      "bytes": 2265714,
+      "sha256": "8e999d9db7fe3b1060baef4bff52304267c4034700290fe0a7520f777cbc78ed"
+    },
+    {
+      "path": "data/raw/A题/data/case_040.json",
+      "bytes": 1122765,
+      "sha256": "7d595de282221534f949ab7ffae0ff026d5c7652b9110c18c0031aa78400cc57"
+    },
+    {
+      "path": "data/raw/A题/data/case_041.json",
+      "bytes": 6768052,
+      "sha256": "97d875b7e79ef0257342689d0c348f86ab591d74dfa9a9c28a72f47abb531491"
+    },
+    {
+      "path": "data/raw/A题/data/case_042.json",
+      "bytes": 1986945,
+      "sha256": "c098a559bbb2f888a39d47b81fee2e93ae04365d4ce377982758cd3373ac33c5"
+    },
+    {
+      "path": "data/raw/A题/data/case_043.json",
+      "bytes": 3488481,
+      "sha256": "23270b8e711405157c6b29fd36a4a182bdccf090b2beb69f63d9580aa22e780c"
+    },
+    {
+      "path": "data/raw/A题/data/case_044.json",
+      "bytes": 502310,
+      "sha256": "9abd4468a4be365e384de47431ac914ee44fd6e7b6221dffc584561f388cd57e"
+    },
+    {
+      "path": "data/raw/A题/data/case_045.json",
+      "bytes": 604287,
+      "sha256": "64dff8e23ba176573a054ef2dc00a23a3487484bad65cb719acc4f087d611793"
+    },
+    {
+      "path": "data/raw/A题/data/case_046.json",
+      "bytes": 370394,
+      "sha256": "1917fbb2bfe1141fd8dc4bdac6119dd44014df9a13eb18faa3e55f25bcc91659"
+    },
+    {
+      "path": "data/raw/A题/data/case_047.json",
+      "bytes": 4991726,
+      "sha256": "7c6328650b8e50e4d15a0ddf1ad0715a40d64d51f3c86c2c3b9c22e4cbb6a83f"
+    },
+    {
+      "path": "data/raw/A题/data/case_048.json",
+      "bytes": 679300,
+      "sha256": "9932aaca8ab23d020c5f5102fa3d436dd3cdf3ca8d1ee458d4c235c556c11764"
+    },
+    {
+      "path": "data/raw/A题/data/case_049.json",
+      "bytes": 1482431,
+      "sha256": "444854fe118a208ddfa10fa0ddd48d7b5e6cfd3780a8049f2145fc1a9b674a08"
+    },
+    {
+      "path": "data/raw/A题/data/case_050.json",
+      "bytes": 1585294,
+      "sha256": "3b6b1abd65fbfbb2a40972bdbd643c43107c4b232512741740ff351c366367aa"
+    },
+    {
+      "path": "data/raw/A题/data/case_051.json",
+      "bytes": 479298,
+      "sha256": "884e8b12ac1f7a9b569958909680e8c2f6055966a59c9f929ffd5cee48aae43b"
+    },
+    {
+      "path": "data/raw/A题/data/case_052.json",
+      "bytes": 447395,
+      "sha256": "6196e8c72258ff26d0ab4dcee50c4f5b39f78142729a2223cfcbd4a9181ab7d0"
+    },
+    {
+      "path": "data/raw/A题/data/case_053.json",
+      "bytes": 4295523,
+      "sha256": "f3593af4c9aa960385c5fdfaf8ad98c396f05746d9e1fe6cc731adeae7019dbc"
+    },
+    {
+      "path": "data/raw/A题/data/case_054.json",
+      "bytes": 5766618,
+      "sha256": "4c874b67351e0a6d336af3117c1289099c54993581f90de11e8f49fb33bb9828"
+    },
+    {
+      "path": "data/raw/A题/data/case_055.json",
+      "bytes": 472661,
+      "sha256": "1121ee10f030be119d0930fe518d63aedd8cf65167627c7f66f1a7ffffd9d134"
+    },
+    {
+      "path": "data/raw/A题/data/case_056.json",
+      "bytes": 2816837,
+      "sha256": "fda213426382a3810afd172eadc10b9221330b906888537cb13b16369be3369d"
+    },
+    {
+      "path": "data/raw/A题/data/case_057.json",
+      "bytes": 342707,
+      "sha256": "89778038db7db919a13c5885aa555c8ae054a3f43845c73fe346b6123d12a525"
+    },
+    {
+      "path": "data/raw/A题/data/case_058.json",
+      "bytes": 6812100,
+      "sha256": "95027788c05772259091802889106c7104efdecdaaabd002ed11a87f8f2f209d"
+    },
+    {
+      "path": "data/raw/A题/data/case_059.json",
+      "bytes": 1199740,
+      "sha256": "50b062952359dc9aa22880856093e8ec7a69c66d358607de49fd5f559ac232e9"
+    },
+    {
+      "path": "data/raw/A题/data/case_060.json",
+      "bytes": 2236508,
+      "sha256": "29889cfaea8c831c2620d19191abf871694e61d4850ced26a9710847096c1e96"
+    },
+    {
+      "path": "data/raw/A题/data/case_061.json",
+      "bytes": 479208,
+      "sha256": "5da175170152a6beab3dcbda84a0910f72b079091c2ad1fdd489aaf5e31fcaf3"
+    },
+    {
+      "path": "data/raw/A题/data/case_062.json",
+      "bytes": 8651962,
+      "sha256": "fa99943eab55b174047687337a4bcd81c3967e052e22eaabf3fb7740914df2b4"
+    },
+    {
+      "path": "data/raw/A题/data/case_063.json",
+      "bytes": 3222074,
+      "sha256": "511c05c1ec9c19bb3cc108e173a46e7952b92fca9b1ac21728c43713056d429d"
+    },
+    {
+      "path": "data/raw/A题/data/case_064.json",
+      "bytes": 343656,
+      "sha256": "871f65b73fc1da6a48501998fbfde6684fc78e5dd022ddc68085d1384d2e2280"
+    },
+    {
+      "path": "data/raw/A题/data/case_065.json",
+      "bytes": 297029,
+      "sha256": "23342b7c3e75f58cec3d0bdaff89bf8d6f18de4930d35ec2ceade91670f0a400"
+    },
+    {
+      "path": "data/raw/A题/data/case_066.json",
+      "bytes": 2196525,
+      "sha256": "30e61f8760d7d595b0fc4ad76262b179c72509a0cb5b2be72333ebd9b926b465"
+    },
+    {
+      "path": "data/raw/A题/data/case_067.json",
+      "bytes": 3177332,
+      "sha256": "f49b5087689e18c6bf231843f8f3bbaca238a547ea5309b2492c76d5f170b542"
+    },
+    {
+      "path": "data/raw/A题/data/case_068.json",
+      "bytes": 2080289,
+      "sha256": "dfd9a58ef9d26a8a4567026b50af8b4499d87eebb3d98f8208b909b11e963c6d"
+    },
+    {
+      "path": "data/raw/A题/data/case_069.json",
+      "bytes": 379073,
+      "sha256": "9632392d98cfc04291ba0546accf1f4c3ede8ff71befd3cd0ae67caf27659e52"
+    },
+    {
+      "path": "data/raw/A题/data/case_070.json",
+      "bytes": 466830,
+      "sha256": "b645c07133b0d98a63ab192cdfe8b35bdc089ad49eb5a8f1e476196344b97aa0"
+    },
+    {
+      "path": "data/raw/A题/data/case_071.json",
+      "bytes": 275828,
+      "sha256": "437cc74cae9e0fc0cb89b05403c62062ceff8d5bc2224c8834c519e69524e897"
+    },
+    {
+      "path": "data/raw/A题/data/case_072.json",
+      "bytes": 11723255,
+      "sha256": "09ecc7be74ccdd06b00843fa6cd0696fb76ed623ca2ea3c9f36590450bc2749f"
+    },
+    {
+      "path": "data/raw/A题/data/case_073.json",
+      "bytes": 1746207,
+      "sha256": "aabaff04d990bac77150639be7f410acc46db644d19fd046367dc70725aea7f9"
+    },
+    {
+      "path": "data/raw/A题/data/case_074.json",
+      "bytes": 1480814,
+      "sha256": "a8a94915cbac32e098d7c54cfc73af8ea2050eb51199b949a92cfe18ae62162e"
+    },
+    {
+      "path": "data/raw/A题/data/case_075.json",
+      "bytes": 2745416,
+      "sha256": "5c24beddea6d09e1df3c8f8843d3593b90affb117ba38450fa9bea8a8db3351c"
+    },
+    {
+      "path": "data/raw/A题/data/case_076.json",
+      "bytes": 13180582,
+      "sha256": "543a082b17fe8de0dbab92b19f27335e4c8d1db389f75251378f1f4704368307"
+    },
+    {
+      "path": "data/raw/A题/data/case_077.json",
+      "bytes": 1733744,
+      "sha256": "b14c3c29f9427de1db1d12c6ebf5d15914a99299298d20a908d97285947e67b6"
+    },
+    {
+      "path": "data/raw/A题/data/case_078.json",
+      "bytes": 385171,
+      "sha256": "d30ea13a65ed4d85fd62753d3e300a04c17fdbe592b6ca19c52a3a744e4affdd"
+    },
+    {
+      "path": "data/raw/A题/data/case_079.json",
+      "bytes": 7708587,
+      "sha256": "ee341b011b5ff7f1c975fd6ba8f876217612ecd8d9e4e2127e617cecac1edad5"
+    },
+    {
+      "path": "data/raw/A题/data/case_080.json",
+      "bytes": 528981,
+      "sha256": "20b2fa1e14bf879ac7c5b0321f69731c8a8102bb65bbd96d7543f54f4974f98c"
+    },
+    {
+      "path": "data/raw/A题/data/case_081.json",
+      "bytes": 1601132,
+      "sha256": "7c642799a54f8083f56c74d1e260ec010e3a83c37702770c862d722408c7a41e"
+    },
+    {
+      "path": "data/raw/A题/data/case_082.json",
+      "bytes": 1498341,
+      "sha256": "f230fbc200ad75797f3024f84431d1d26f7747d6a284378ee83eabde77b7e70c"
+    },
+    {
+      "path": "data/raw/A题/data/case_083.json",
+      "bytes": 1389087,
+      "sha256": "26bebaecfa0ed9c4bcf57127779a198c367a5576eb7b40b9c56cc343621c5549"
+    },
+    {
+      "path": "data/raw/A题/data/case_084.json",
+      "bytes": 5110179,
+      "sha256": "1af22ac8dd69090ed25be62ae1bbb18a922ce99a8cffb2be4f89e7a1234794ee"
+    },
+    {
+      "path": "data/raw/A题/data/case_085.json",
+      "bytes": 7159265,
+      "sha256": "b63169e9cd0f21dc2da6617e7138472e95937465c703b7e4bf4dbc80125ed4f6"
+    },
+    {
+      "path": "data/raw/A题/data/case_086.json",
+      "bytes": 1908009,
+      "sha256": "ef91fda2692fd0add63db3c7f677e4e03c8d115d97db3cb959cffc62fff2434a"
+    },
+    {
+      "path": "data/raw/A题/data/case_087.json",
+      "bytes": 10397401,
+      "sha256": "a234839f266f63270c7d42c558eabd68085d415029ce73bfac9d3fc47d58de83"
+    },
+    {
+      "path": "data/raw/A题/data/case_088.json",
+      "bytes": 1190948,
+      "sha256": "2ff71575ba33875431f54823fc1f2214e018edcfc9d568edfb7c47b0f264b825"
+    },
+    {
+      "path": "data/raw/A题/data/case_089.json",
+      "bytes": 1848665,
+      "sha256": "9561e0638071147e99d937b802f61f8a67fe2b96985159c174b47a777fd6ce84"
+    },
+    {
+      "path": "data/raw/A题/data/case_090.json",
+      "bytes": 613299,
+      "sha256": "a91d3ad4c40e53d5731b81b3eb72bcf922f5ef06094e860b5c5729619cb2d312"
+    },
+    {
+      "path": "data/raw/A题/data/case_091.json",
+      "bytes": 12638901,
+      "sha256": "6fa7e61f09003382ba36061d74d4be90ed3acbe750a3d46c3b6d1e1fc27579f3"
+    },
+    {
+      "path": "data/raw/A题/data/case_092.json",
+      "bytes": 6333836,
+      "sha256": "ddb267b7178d1b240f76fb7ed508799fbc7621b45156064b2a229c5c0d90996d"
+    },
+    {
+      "path": "data/raw/A题/data/case_093.json",
+      "bytes": 334666,
+      "sha256": "3a68ca960cc21b10a94b0524f5c16d2ee4995f2e5a75e667d58099571a7cdc36"
+    },
+    {
+      "path": "data/raw/A题/data/case_094.json",
+      "bytes": 257869,
+      "sha256": "06e7b0eb1eecb9a98b6691dfe5f8039c6f7b21ab0f3ea8e6a072ade002a68fec"
+    },
+    {
+      "path": "data/raw/A题/data/case_095.json",
+      "bytes": 2189857,
+      "sha256": "99875b1d3025c71f87e04818e28c08915928813f495d080ae6436879f6cb540f"
+    },
+    {
+      "path": "data/raw/A题/data/case_096.json",
+      "bytes": 434276,
+      "sha256": "c26df1f4c6e282279a2f86c24d13be04e5c0e8b24b36149899bf7e7a91cf579a"
+    },
+    {
+      "path": "data/raw/A题/data/case_097.json",
+      "bytes": 2859868,
+      "sha256": "7dc5c8ebf92052dbdd1bf59794a8fcef74e3ab3c59d5f0b4e753bf38a741ffaf"
+    },
+    {
+      "path": "data/raw/A题/data/case_098.json",
+      "bytes": 494504,
+      "sha256": "8cc92ed83866234532487abacb106e0298a00cf309ef75fa12e413bfb17d58f8"
+    },
+    {
+      "path": "data/raw/A题/data/case_099.json",
+      "bytes": 2613016,
+      "sha256": "6a07bc2eba4657ec873f015cb53404696202df8fe912a94340cbdc674cbd7938"
+    },
+    {
+      "path": "data/raw/A题/data/case_100.json",
+      "bytes": 537404,
+      "sha256": "bb78167d482a9e1663bb947945def049c2d66392c3897613ce5cb145d3a2eb19"
+    },
+    {
+      "path": "data/raw/A题/data/config.txt",
+      "bytes": 341,
+      "sha256": "dcd10de54b23f8366428fb24e828812b1da9549e6eae4a3c3f38604fe5ae77b9"
+    },
+    {
+      "path": "docs/多核并行模拟执行算法.md",
+      "bytes": 10749,
+      "sha256": "bd7bf4fd5c0080d4e425bdf52b9cfa45e8e1e0c7ed0d2088bd22a017bc84b83d"
+    },
+    {
+      "path": "docs/核内调度算法.md",
+      "bytes": 52018,
+      "sha256": "f08c73566c1ebf24fce080b55ccc94015ea2308c1026d71f9550395865cc3231"
+    },
+    {
+      "path": "idea/A题_Final_idea_给codex运行.md",
+      "bytes": 570,
+      "sha256": "7ab39abbfca594d675d4d39bee9d3827c73a79144e8407bcedc2dc1532aaeeac"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 115,
+      "sha256": "74a46915d92c71599d972c18b175f9d489b78fbebb8ff830831ca7c578e2605b"
+    },
+    {
+      "path": "results/final_v7_raw/budget_sensitivity_20260927_v2/budget_aggregate.csv",
+      "bytes": 1014,
+      "sha256": "42e5b649e2f6d880a7d5435594026c0e7a327dc1b8be4da759e15a8d18b14f71"
+    },
+    {
+      "path": "results/final_v7_raw/budget_sensitivity_20260927_v2/budget_summary.csv",
+      "bytes": 8565,
+      "sha256": "70658845bd24d8fe08b9b9f9b023fed5de1233d91129f385f6bee00c943d0095"
+    },
+    {
+      "path": "results/final_v7_raw/budget_sensitivity_20260927_v2/run_manifest.json",
+      "bytes": 3595,
+      "sha256": "568295d0e73d77eda345ff14fa53dd137298a4abaacb76de6bc143cd758be7a2"
+    },
+    {
+      "path": "results/final_v7_raw/cache_pairs.csv",
+      "bytes": 169554,
+      "sha256": "baf6ab749290801910fdd896e488b327089f506f368e446fae62a163308dd594"
+    },
+    {
+      "path": "results/final_v7_raw/cache_zero_hit_diagnostics.csv",
+      "bytes": 61174,
+      "sha256": "52c47f461adce44ba946b9b48817a241b24c3a6bdaa108cab45cc1388e314aa2"
+    },
+    {
+      "path": "results/final_v7_raw/candidate_effects.csv",
+      "bytes": 175283,
+      "sha256": "b27c35b0d398f97aa9cf64c45ad75bfe9e09c93e5495da00dc1aff345cdf54d7"
+    },
+    {
+      "path": "results/final_v7_raw/final_evidence_summary.json",
+      "bytes": 10759,
+      "sha256": "fceb5ba7ab0d1f6f3ea5ffb7051d1016c81bc212ba872e5813ec6ea638ca4388"
+    },
+    {
+      "path": "results/final_v7_raw/main_results.csv",
+      "bytes": 679755,
+      "sha256": "2fd59acfb397e47d8da67ff01b12bf50950218a5943e4a4bd8378608dd7b9b1b"
+    },
+    {
+      "path": "results/final_v7_raw/paper_results.md",
+      "bytes": 2221,
+      "sha256": "dbba5ce372a83d2654bd1ea74bbc7e8ca045fb6036ab3c51d2442a57f7adf1fa"
+    },
+    {
+      "path": "results/final_v7_raw/report_manifest.json",
+      "bytes": 11624,
+      "sha256": "f9e6af11b804624fd6e1e3f65da3fdbe72192bc09c11fe663d80d9cda77e2c5d"
+    },
+    {
+      "path": "results/final_v7_raw/sensitivity_failures.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "results/final_v7_raw/sensitivity_results.md",
+      "bytes": 1026,
+      "sha256": "b2a9ade9045c005b35c951d62516fc112d1815b214a8bcfa690166fd1293037f"
+    },
+    {
+      "path": "results/final_v7_raw/sensitivity_summary.csv",
+      "bytes": 7512,
+      "sha256": "370e12347009022a2b1a15361a6284d57c5da288db518a0eaabb562c7e7dc3fd"
+    },
+    {
+      "path": "results/final_v7_raw/sensitivity_variant_summary.csv",
+      "bytes": 689,
+      "sha256": "bfc8c86c8d32524286b957813117487bcd000fb4daf6f34a0e5f13e201a1a623"
+    },
+    {
+      "path": "results/final_v7_raw/timing.csv",
+      "bytes": 819880,
+      "sha256": "bc7fb79e2034752b1d981676e6ce0d251973ac13eb9b65670deba2cb1e58041c"
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "bytes": 30330,
+      "sha256": "37b3197117ba645cc4292698ee3c0c346c0f95c5ad0dc949742ac7dd25a9a186"
+    },
+    {
+      "path": "scripts/run_full_matrix.py",
+      "bytes": 7962,
+      "sha256": "c557c9a2483d8bd08e89d5fc50950202b267e6f1bf54cba1bc5920e6979ea459"
+    },
+    {
+      "path": "src/huawei_code/__init__.py",
+      "bytes": 503,
+      "sha256": "01cff7edec07227b76780be3a2c7fe65cc1494d7b9f04a3c8b89a014ce082965"
+    },
+    {
+      "path": "src/huawei_code/candidates.py",
+      "bytes": 44529,
+      "sha256": "353eb4a2377d2aaec63bbd4009a5c521d8649197287e9cf4d9e79652a9cc6391"
+    },
+    {
+      "path": "src/huawei_code/gpu_score.py",
+      "bytes": 2058,
+      "sha256": "3f13bfa8eead0e256ba7f8b958ed1050deea5547c50f8ce450f43b2a4e55199f"
+    },
+    {
+      "path": "src/huawei_code/graph.py",
+      "bytes": 7643,
+      "sha256": "7896ab9ed8c0840163720f6b5f321b19cd276e52af719d1fecff8895ab47acb2"
+    },
+    {
+      "path": "src/huawei_code/official.py",
+      "bytes": 14666,
+      "sha256": "051b4657e2d1857d774b46c02cadc3a2966ebc3e568e4c8122d916c467bfa7d5"
+    },
+    {
+      "path": "src/huawei_code/plan.py",
+      "bytes": 12708,
+      "sha256": "4d1e6e590b5c6f4089696b2ec551846ad1349621693e2adf272b9de8019e6702"
+    },
+    {
+      "path": "src/huawei_code/scoring.py",
+      "bytes": 22637,
+      "sha256": "a55f2b53b08a9e9f6b5371747a92dc1647f38cab7ab34a7626a285bc1e8d0536"
+    },
+    {
+      "path": "src/huawei_code/verification.py",
+      "bytes": 1698,
+      "sha256": "e07cb7b9650e7538fe7379017d14a93b55bb584962efa99bfc27e9bf5c357812"
+    },
+    {
+      "path": "vendor/official_evaluator/contest_io.py",
+      "bytes": 12491,
+      "sha256": "d5936908e4c261c7003b78e783f30bd7d65cb38d6b53a269ea67f0103cac848e"
+    },
+    {
+      "path": "vendor/official_evaluator/evaluation_validation.py",
+      "bytes": 10900,
+      "sha256": "103206b8c5c25e37de50cc3193de3989d7c1e01d4a11cc5f509dedd8f9be9a64"
+    },
+    {
+      "path": "vendor/official_evaluator/multicore_cut_evaluate_problem_1.py",
+      "bytes": 23466,
+      "sha256": "1ee2522655aa6f41b51fbc26b9e17f79ca654585f68796e4ebd842d65a132e1a"
+    },
+    {
+      "path": "vendor/official_evaluator/multicore_cut_evaluate_problem_2.py",
+      "bytes": 26123,
+      "sha256": "0b39f84d5ec0a7fba9a4c92a598a9044b97ab79c71393824c1ba130ecfe6c464"
+    },
+    {
+      "path": "vendor/official_evaluator/multicore_cut_evaluate_problem_3.py",
+      "bytes": 32112,
+      "sha256": "eab1504dead881f4b67c0f0498cbc2dbbd9039dc3c9d198c6af58773c127eeb0"
+    },
+    {
+      "path": "vendor/official_evaluator/schedule_step1.py",
+      "bytes": 7304,
+      "sha256": "d8fe721ff3dbe036e34a20c00cce6430960860000a49eb467e63465f76b84034"
+    },
+    {
+      "path": "vendor/official_evaluator/schedule_step2.py",
+      "bytes": 23989,
+      "sha256": "2836baac176f4e0bdd9eec59b8d9ce254e209e5f7a251e23837ab684312fa0c3"
+    },
+    {
+      "path": "vendor/official_evaluator/schedule_step3.py",
+      "bytes": 30834,
+      "sha256": "50053db0436f1d166dd75436693ba3af49b5c339576beb6e7299477f6b69fc7a"
+    },
+    {
+      "path": "vendor/official_evaluator/singlecore_evaluate.py",
+      "bytes": 4273,
+      "sha256": "446b753ee134ef1fec8e052356bb077a2602fbe95572ccd3dddd7928e894b77a"
+    },
+    {
+      "path": "vendor/official_evaluator/stub_multicore_cut_and_schedule.py",
+      "bytes": 12415,
+      "sha256": "0a3a3b79b5173b466fc05fc8d33b72d11d90b4df78995435853d91c632a35892"
+    }
+  ]
+}

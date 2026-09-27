@@ -1,0 +1,48 @@
+{
+  "archive": "华为杯2026准备包_20260921.zip",
+  "sha256": "08f1150270df9c364ddb30d3bacabe8946fed7baae027b6acb21d8430eab9615",
+  "bytes": 20961828,
+  "entries": 196,
+  "crc": "PASS",
+  "extracted_hashes": "PASS",
+  "fresh_extraction_commands": [
+    {
+      "command": [
+        "python",
+        "tools/workspace.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"software_structure\": \"PASS\",\n  \"official_records\": 51,\n  \"inputs\": {\n    \"count\": 0,\n    \"status\": \"NOT_RECEIVED\"\n  },\n  \"evidence_rows\": {\n    \"ai_usage\": 0,\n    \"claims\": 0,\n    \"figures\": 0,\n    \"human_review\": 0,\n    \"parameters\": 0,\n    \"references\": 0,\n    \"requirements\": 0\n  },\n  \"formal_scientific_review\": \"NOT_ASSESSED\",\n  \"human_review\": \"NOT_ASSESSED\",\n  \"submission\": \"NOT_SUBMITTED\"\n}\n"
+    },
+    {
+      "command": [
+        "python",
+        "tools/test_workflow.py"
+      ],
+      "exit_code": 0,
+      "output": "test_claim_matches_cell_and_current_code (__main__.WorkflowTests.test_claim_matches_cell_and_current_code) ... ok\ntest_empty_inputs_are_not_received (__main__.WorkflowTests.test_empty_inputs_are_not_received) ... ok\ntest_empty_support_is_not_prepared (__main__.WorkflowTests.test_empty_support_is_not_prepared) ... ok\ntest_existing_freeze_not_overwritten (__main__.WorkflowTests.test_existing_freeze_not_overwritten) ... ok\ntest_external_manifest_path_rejected (__main__.WorkflowTests.test_external_manifest_path_rejected) ... ok\ntest_freeze_preserves_bytes_and_rejects_change (__main__.WorkflowTests.test_freeze_preserves_bytes_and_rejects_change) ... ok\ntest_registration_rejects_changed_original (__main__.WorkflowTests.test_registration_rejects_changed_original) ... ok\ntest_support_manifest_detects_missing_and_changed_file (__main__.WorkflowTests.test_support_manifest_detects_missing_and_changed_file) ... ok\ntest_unregistered_input_is_detected (__main__.WorkflowTests.test_unregistered_input_is_detected) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.019s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "practice/transport/run.py",
+        "--run-id",
+        "portable-check"
+      ],
+      "exit_code": 0,
+      "output": "{\"run_id\": \"portable-check\", \"objective\": 34.0, \"checks\": 6, \"passed\": true}\n"
+    },
+    {
+      "command": [
+        "python",
+        "tools/build_paper.py",
+        "latex"
+      ],
+      "exit_code": 0,
+      "output": "Built paper/preview/latex/template.pdf\n"
+    }
+  ],
+  "metric_reproducibility": "PASS",
+  "environment_note": "Fresh directory on the same machine, using the installed Python/system tools; not a second-machine test"
+}

@@ -1,0 +1,5 @@
+reference_id,authors,title,year,source_url,accessed_at,local_file,sha256,locator,paper_location,status
+problem,赛题及随题附件署名机构,通用神经网络处理器下的多核调度问题,2026,LOCAL_USER_SUPPLIED_ORIGINAL,2026-09-23,inputs/problem/A题/通用神经网络处理器下的多核调度问题.docx,d03f1d9a39f1fcae23467cc9fd384cbc61e4f13fc71f3567bdf44e1f3bab0b46,完整原件,参考文献[1],AI_VERIFIED_LOCAL_SOURCE
+evaluator,赛题及随题附件署名机构,README及题目评估器,2026,LOCAL_USER_SUPPLIED_ORIGINAL,2026-09-23,inputs/raw/A题/附件/README.md,d4aaa99648d10e4a11d1619d14dbf73ff6a8df8fa67c6f138949b2cbc3444775,完整原件,参考文献[2],AI_VERIFIED_LOCAL_SOURCE
+intra,赛题及随题附件署名机构,核内调度算法,2026,LOCAL_USER_SUPPLIED_ORIGINAL,2026-09-23,inputs/raw/A题/附件/docs/核内调度算法.md,f08c73566c1ebf24fce080b55ccc94015ea2308c1026d71f9550395865cc3231,完整原件,参考文献[3],AI_VERIFIED_LOCAL_SOURCE
+multi,赛题及随题附件署名机构,多核并行模拟执行算法,2026,LOCAL_USER_SUPPLIED_ORIGINAL,2026-09-23,inputs/raw/A题/附件/docs/多核并行模拟执行算法.md,bd7bf4fd5c0080d4e425bdf52b9cfa45e8e1e0c7ed0d2088bd22a017bc84b83d,完整原件,参考文献[4],AI_VERIFIED_LOCAL_SOURCE

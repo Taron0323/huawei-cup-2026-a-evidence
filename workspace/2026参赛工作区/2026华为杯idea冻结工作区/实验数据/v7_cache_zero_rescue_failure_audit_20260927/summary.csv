@@ -1,0 +1,3 @@
+run,status,case,error_type,count
+v7_cache_zero_rescue_20260927_1100,EVALUATION_FAILED,case_062,EvaluationValidationError,11
+v7_cache_zero_rescue_deep_20260927_1130,EVALUATION_FAILED,case_062,EvaluationValidationError,13

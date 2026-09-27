@@ -1,0 +1,51 @@
+{
+  "rows": [
+    {
+      "added_copy_bytes": 45082,
+      "cache_hit_bytes": 0,
+      "cache_hit_rate": 0.0,
+      "cache_miss_bytes": 0,
+      "candidate": "r2_boundary_n1044_c1_p0",
+      "case": "case_081",
+      "control": "light_direct_select",
+      "cores": 2,
+      "definition": "A starts and ordinary/capacity representatives are ranked directly by the light score without independent official profile selection.",
+      "evaluation_seconds": 0.8020811660007894,
+      "makespan": 154020,
+      "original_graph_copy_bytes": 1741140,
+      "partition_added_copy_bytes": 45082,
+      "plan_sha256": "d671d3e83d7cfaa9185f0f32bfba391a3b3fb31f8dbf892df4e212922f0643c4",
+      "rank": 1,
+      "scene": "A",
+      "scheduled_copy_bytes": 1786222,
+      "selected": true,
+      "source": "ordinary",
+      "spill_added_copy_bytes": 0,
+      "status": "AI_VERIFIED"
+    },
+    {
+      "added_copy_bytes": 40986,
+      "cache_hit_bytes": 0,
+      "cache_hit_rate": 0.0,
+      "cache_miss_bytes": 0,
+      "candidate": "L2_base",
+      "case": "case_081",
+      "control": "light_direct_select",
+      "cores": 2,
+      "definition": "A starts and ordinary/capacity representatives are ranked directly by the light score without independent official profile selection.",
+      "evaluation_seconds": 0.8094649579998077,
+      "makespan": 154073,
+      "original_graph_copy_bytes": 1741140,
+      "partition_added_copy_bytes": 40986,
+      "plan_sha256": "8e5d58043c4403a4d6abda2cc5b297a249fffd057af009462f1bebe0a06e4d29",
+      "rank": 2,
+      "scene": "A",
+      "scheduled_copy_bytes": 1782126,
+      "selected": false,
+      "source": "legacy_seed",
+      "spill_added_copy_bytes": 0,
+      "status": "AI_VERIFIED"
+    }
+  ],
+  "status": "COMPUTED"
+}

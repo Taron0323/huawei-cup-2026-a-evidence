@@ -1,0 +1,20 @@
+﻿file,line,text
+manuscript/latex_draft_from_replica/sections/00-abstract.tex,5,本稿当前为实验进行中的正文初稿。模型、公式、算法流程和验证协议已经写入；全量主矩阵、单核基线、消融、Cache 容量/带宽敏感性及其图表仍在运行，尚未写入任何实验数字。摘要中的关键结果位置统一保留为“\pending”，待对应运行目录完成、结果字段核对和队伍复核后再填入。本文不把程序运行状态、格式编译状态或历史试验结果当作本稿的科学结论。
+manuscript/latex_draft_from_replica/sections/01-background.tex,27,第 2 节给出三问输入、输出和统一计算链；第 3 节定义符号和评价量；第 4 节说明切图、分核和顺序之间的难点；第 5 节列出必要假设及失效条件；第 6、7 节分别建立问题一/二和问题三的模型；第 8 节说明三问共用的候选生成、官方展开和离散事件模拟；第 9 节给出待补结果的组织方式、稳健性检查和局限；后文列出来源、支撑材料和 AI 使用记录。
+manuscript/latex_draft_from_replica/sections/02-problem.tex,5,\begin{table}[H]\centering\caption{逐问交付接口（实验字段待补）}
+manuscript/latex_draft_from_replica/sections/02-problem.tex,7,问题 & 输入与硬约束 & 方法输出 & 待补的正式证据\\\midrule
+manuscript/latex_draft_from_replica/sections/07-model-c.tex,33,这三项对照的分子、分母、样本和核数必须分别记录，不能把不同方案的最好值拼成一个提升百分比。对应数值、图表和逐用例表在实验完成前均保持 `\pending`。
+manuscript/latex_draft_from_replica/sections/08-model-de.tex,24,主矩阵覆盖题面规定的全部图、1 至 5 核和 A/B/C 场景；单核基线由统一核内调度在整图上计算。实验脚本、运行号、参数、环境和代码哈希由 `华为杯\_code` 保存，冻结工作区通过符号链接只读查看。当前主矩阵仍在运行，本稿不读取其数值生成结论。
+manuscript/latex_draft_from_replica/sections/08-model-de.tex,26,实验结果进入正文前必须同时满足：运行状态为可解释的终态；结果字段通过程序检查；主矩阵与单核基线的样本和指标口径一致；逐用例缺失、失败和 PROFILE 状态有明确分母；图表由结果 CSV 重建；队伍完成科学复核。任何未满足的项在论文中保持 `\pending` 或“待补当前运行结果”。
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,4,\begin{table}[H]\centering\caption{实验结果待补清单}
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,7,问题一平均曲线 & $K=1\ldots5$ 的单核基准、Makespan、平均加速比 & \pending\\
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,8,问题二平均曲线 & 场景 B 的 Makespan、额外搬运和加速比 & \pending\\
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,9,问题三对照曲线 & 无 L2、有 Cache 及同核数 Cache 加速比 & \pending\\
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,10,逐用例附表 & 图 id、核数、方案、Makespan、额外搬运、状态 & \pending\\
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,11,Cache 诊断 & 查询字节、命中字节、命中率、DDR/Cache 服务量 & \pending\\
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,12,消融与敏感性 & 初始/最终方案、容量、带宽和候选来源 & \pending\\\bottomrule
+manuscript/latex_draft_from_replica/sections/09-evaluation.tex,22,截至本稿生成时，能够确定的是题面对象、配置语义、模型公式、候选生成规则和结果交付协议；全量主矩阵及其对照尚在运行，因而不能写出平均加速比、Cache 命中率、消融收益或任何“优于基线”的科学结论。实验结束后只从冻结的结果 CSV 和 manifest 读取数字，并同步摘要、正文、图注、结论和附录。
+manuscript/latex_draft_from_replica/sections/12-ai.tex,7,题面与 Idea 整理 & 结构提取、符号一致性初查 & \slot{待填真实四字段} & 队员逐项回看题面与 Idea\\
+manuscript/latex_draft_from_replica/sections/12-ai.tex,8,代码/目录核对 & 路径、状态和证据边界整理 & \slot{待填真实四字段} & 不执行实验，不以程序 PASS 代替科学复核\\
+manuscript/latex_draft_from_replica/sections/12-ai.tex,9,论文初稿 & LaTeX 结构与模型段落草拟 & \slot{待填真实四字段} & 队员核对公式、单位、题面和最终表述\\\bottomrule
+manuscript/latex_draft_from_replica/sections/12-ai.tex,11,正式实验结果写入后，应在相应结果段前后就近标注真实工具信息和队伍复核方式；未知字段保持待填，不编造版本、发布日期、签名或提交状态。

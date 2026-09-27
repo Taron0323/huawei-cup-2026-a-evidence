@@ -1,0 +1,164 @@
+\section{问题三模型的建立与求解}
+\subsection{数据预处理}
+问题三需要将历史观测场和数值天气预报放到相同的空间网格上，并保留各自的时间含义。对 NWP 数据首先核对起报时刻、预报有效时刻、压力单位与垂直坐标；例如模式中的扰动位温、基态气压和交错风速分量，需要依据该模式的字段说明恢复物理量。
+
+水平方向采用双线性插值。在包含目标点的矩形单元内，令 $a=(x-x_1)/(x_2-x_1)$、$b=(y-y_1)/(y_2-y_1)$，则
+\begin{equation}
+f(x,y)=(1-a)(1-b)f_{11}+(1-a)bf_{12}+a(1-b)f_{21}+abf_{22}.
+\end{equation}
+垂直方向在有效高度层之间线性插值，越界位置按缺测处理。上述操作统一数据坐标；原模式能够分辨的物理尺度仍由其原始网格和参数化方案决定。
+\begin{table}[H]\centering\caption{三维湍流场目标网格规格}
+\begin{tabularx}{\linewidth}{lY}\toprule
+参数 & 规格与约定\\\midrule
+水平间距 & $\Delta x=\Delta y=100$ m\\
+垂直间距 & $\Delta z=50$ m，高度低于 2 km\\
+垂直中心约定 & 25 m 至 1975 m，共 40 层；采用节点时另列节点数\\
+历史验证时段 & 02:00 至 05:00\\
+模型 d 预报时段 & 05:00 至 08:00\\
+模型 e 预报时段 & 05:00 至 06:00\\
+时间步长 & \slot{依据观测与预报输出确定}，两类模型使用可比较的时刻\\\bottomrule
+\end{tabularx}\end{table}
+\begin{table}[H]\centering\caption{插值算法中使用的符号说明}
+\begin{tabularx}{\linewidth}{lY}\toprule
+符号 & 描述\\\midrule
+$f_{ij}$ & 目标矩形单元四角的已知物理量\\
+$a,b$ & 目标位置在单元内的相对坐标，位于 $[0,1]$\\
+$z_m,z_{m+1}$ & 包含目标高度的相邻有效模式层\\
+$t_0,\tau$ & 起报时刻和预报时效，满足有效时刻 $t=t_0+\tau$\\
+$M(\bm r,t)$ & 数据有效性与边界影响的状态掩膜\\\bottomrule
+\end{tabularx}\end{table}
+\subsection{整体建模框架设计}
+整体框架由数据层、预报层、规划层和评价层组成。数据层统一坐标，预报层分别构建 d、e，规划层根据同一代价定义生成路径，评价层比较预报误差和路径累计风险。每一层保存可独立检查的输出，便于定位误差来自场预测还是路径搜索。
+\begin{algorithm}[H]\caption{低空飞行湍流预警与航路规划系统架构}
+\begin{algorithmic}[1]
+\REQUIRE 历史观测、NWP、地图、起终点、允许区域
+\ENSURE d、e 预报场及对应路径序列
+\STATE 根据时间边界处理输入，生成统一网格
+\STATE 在历史回报中选择 d、e 的参数及方法
+\STATE 用截至 05:00 的信息分别生成未来预报场
+\STATE 构建含到达时间的图和非负风险边权
+\STATE 搜索路径，检查沿线空域与独立风险积分
+\STATE 保存预报、路径、验证指标及复现配置
+\end{algorithmic}\end{algorithm}
+\subsubsection{构建基于NWP数据的湍流诊断模型（模型d）}
+首先使用数值模式中的风场与热力场计算切变、稳定度和变形等诊断量，再映射为原始指标 $I_d^{\rm raw}$。不同高度的系统偏差通过分层标定处理：
+\begin{equation}
+I_d^{\rm cal}(z)=a_z+b_zI_d^{\rm raw}+c_z(I_d^{\rm raw})^2.
+\end{equation}
+以 02:00 至 05:00 的模型 c 场为参照，拟合目标为
+\begin{equation}
+\min_{a_z,b_z,c_z}\sum_{i\in\mathcal D_{\rm tr}(z)}
+(I_{d,i}^{\rm cal}-I_{c,i})^2+\lambda(b_z^2+c_z^2).
+\end{equation}
+该表达式对系数是线性的，可用岭回归求解。样本不足的高度采用共享或平滑系数，测试时固定参数。为保持综合指标的范围，最终输出定义为
+\begin{equation}
+\widehat I_d=\operatorname{clip}_{[0,1]}(I_d^{\rm cal})
+=\min\{1,\max\{0,I_d^{\rm cal}\}\}.
+\end{equation}
+模型验证和路径规划均使用这一最终输出，并统计截断比例，以检查标定函数在边界处的表现。以历史后段验证早段拟合结果，再使用全部允许历史数据重新拟合最终模型，应用于 05:00 至 08:00 的 NWP 资料。
+\samplefigure{nwp}{WRF湍流强度时间序列分析}{fig:nwp}
+\subsubsection{构建基于观测数据外推的临近预报模型（模型e）}
+模型 e 使用截至起报时刻的观测重构场，不接入未来 NWP。首先建立持续性、线性趋势和指数平滑基线，再构建满足题面非线性要求的候选模型，例如滞后特征上的随机森林回归：
+\begin{equation}
+\widehat I_e(\bm r,t+\tau)=f_\tau\bigl(I_c(\bm r,t),I_c(\bm r,t-\Delta t),
+\nabla I_c(\bm r,t),\bm U(\bm r,t),z\bigr).
+\end{equation}
+其中 $f_\tau$ 随预报时效训练或共享参数。若采用递归预测，后续步骤的输入来自前一步预测，并在历史回报中采用同样的递归方式。样本构造不能把同一预报目标拆入训练与测试两侧。
+
+在只有三小时历史观测的情形下，时间上的有效独立样本有限。因此，以低维特征和正则化模型为主要候选，深度网络保留为具备额外合规历史样本时的扩展方案。不同方法的性能按照相同时效列示。
+\begin{table}[H]\centering\caption{湍流临近预报算法性能对比}
+\begin{tabularx}{\linewidth}{Ycccc}\toprule
+预测算法 & RMSE & MAE & $R^2$ & 分时效误差\\\midrule
+持续性预测 & \pending&\pending&\pending&\pending\\
+线性趋势外推 & \pending&\pending&\pending&\pending\\
+指数平滑 & \pending&\pending&\pending&\pending\\
+随机森林非线性回归 & \pending&\pending&\pending&\pending\\
+半拉格朗日平流 & \pending&\pending&\pending&\pending\\
+验证集确定权重的集成 & \pending&\pending&\pending&\pending\\\bottomrule
+\end{tabularx}\end{table}
+\samplefigure{forecast}{湍流预测系统分析图}{fig:forecast}
+\subsubsection{智能航路规划算法}
+将位置与到达时间组成节点 $n=(x,y,z,t)$。设相邻节点间的距离为 $\ell_{ij}$，风险在边上用端点平均或更细采样积分，则
+\begin{equation}\label{eq:pathcost}
+c_{ij}=\ell_{ij}\frac{I(n_i)+I(n_j)}2,\qquad
+C(\pi)=\sum_{(i,j)\in\pi}c_{ij}.
+\end{equation}
+单位为无量纲风险乘以米。若改用时间积分，应说明其与距离积分在速度变化时的差异。只有整个边段位于允许区域且满足时序约束时，才建立该边。
+
+采用 A* 时，启发函数可取 $h(n)=I_{\min}d(n,n_{\rm goal})$，其中 $I_{\min}$ 是所有可行后续边的单位距离风险下界。无法获得正下界时取 $h=0$，即 Dijkstra。验证阶段在小图上比较两种算法的目标值和路径可行性。
+\samplefigure{routes}{智能规划航线图}{fig:routes}
+\samplefigure{departure}{航班时间窗口优化分析}{fig:departure}
+图\ref{fig:routes}用于对照预报风险、基准路径与优化路径。图\ref{fig:departure}用于比较允许出发时刻下的累计风险；若题面固定出发时刻，则该分析作为补充，不改变主任务的起报边界。
+\subsubsection{深度学习增强的外推模型}
+在具有足够历史序列时，可以使用图卷积描述站点或网格之间的空间邻接，再结合因果时间卷积形成外推模型。单层空间传播为
+\begin{equation}
+H^{(l+1)}=\sigma\left(\widehat D^{-1/2}\widetilde A\widehat D^{-1/2}H^{(l)}W^{(l)}\right),
+\end{equation}
+其中 $\widetilde A=A+I$，$\widehat D$ 为相应度矩阵。时间模块仅访问当前与历史状态。参数规模、训练窗口、早停规则和预训练数据来源需要完整列出，最终是否采用由历史回报中的基线对比决定。
+\subsubsection{集合预报与不确定性量化}
+通过观测扰动、参数重采样或多个模型生成 $B$ 个预报场。对每个网格点，计算分位数区间 $[Q_{0.05},Q_{0.95}]$ 和阈值超越概率
+\begin{equation}
+\widehat P(I>I_{\rm thr})=\frac1B\sum_{b=1}^{B}\mathbf1\{I^{(b)}>I_{\rm thr}\}.
+\end{equation}
+阈值对应的物理或业务含义需有明确来源。预测区间的名义覆盖率通过留出时段检验，结果同时列出覆盖率与区间宽度。
+\subsection{问题三计算结果展示}
+本节先给出主目标下的寻路结果，再列出扩展目标、鲁棒方案和验证流程。主结果的目标始终为式\eqref{eq:pathcost}的湍流暴露量；扩展方案用于分析额外约束对路径的影响。
+\subsubsection{多目标优化框架}
+在需要研究航程或平滑性的扩展情形下，可建立
+\begin{equation}
+J(\pi)=w_IC(\pi)+w_LL(\pi)+w_K\sum_j\kappa_j^2\Delta s_j.
+\end{equation}
+各项先采用明确尺度归一化，再解释权重。主任务取 $w_L=w_K=0$，扩展实验单独报告风险、长度与转弯量，不能用扩展目标更小代替主目标更优。
+\subsubsection{改进A*算法实现}
+图搜索维护已知代价 $g(n)$ 和下界 $h(n)$，按 $g+h$ 扩展节点。每次松弛同时记录前驱位置与时间。启发函数有一致性条件时可直接使用相应关闭策略；否则发现更小代价时允许重新打开节点。最终路径由前驱回溯生成，并用独立程序重新积分风险。
+
+当边权含有零风险时，欧氏距离本身可能超过最小风险代价，因此采用已验证的风险下界缩放。动态场使用含时间的节点，静态场简化则应检查飞行期间场变化对路径排序的影响。
+\subsubsection{鲁棒优化模型}
+为分析预报不确定性，可在同一组情景场上计算每条路径的风险，并采用期望加风险项
+\begin{equation}
+\min_\pi\ \E[C(\pi)]+\lambda\operatorname{CVaR}_\alpha[C(\pi)].
+\end{equation}
+对给定情景代价，CVaR 写为 $\min_\eta\{\eta+[(1-\alpha)B]^{-1}\sum_b(C_b-\eta)_+\}$。情景构造和风险偏好参数需要给出依据，结果报告平均风险与高分位风险的变化。
+\subsubsection{模型验证与优化流程}
+模型 d 在历史时间块上与模型 c 比较；模型 e 采用滚动起报检验。除连续量误差外，按预先固定阈值统计命中数 $H$、漏报数 $M$ 和空报数 $F$，计算
+\begin{equation}
+\mathrm{CSI}=\frac{H}{H+M+F}.
+\end{equation}
+当分母为零时报告无事件并保留计数。阈值和模型参数在训练或验证部分选取，测试部分只计算最终指标。路径验证包括边段空域检查、到达时间一致性、小图最优值以及网格加密敏感性。
+\subsubsection{模型e可靠性评估}
+可靠性按照预报时效、空间位置和观测覆盖分组报告。对每个时效，计算 RMSE、区间覆盖率及平均区间宽度；通过时间块重采样估计指标的波动范围。若误差随时效上升，进一步比较持续性基线与平流基线，分析误差来自局地生消还是空间位移。
+\subsection{航路规划决策系统}
+\subsubsection{多准则决策框架}
+在主任务中，先筛除违反空域和时间约束的路径，再按累计湍流暴露量选择路径。风险相同的候选可以用路径长度作为明确的并列判据。若另行比较安全、效率与平稳性，应列出各指标原始值和权重，避免归一化后的综合分数掩盖实际差异。
+\subsubsection{实时自适应调整}
+当新的有效观测到达时，可重新生成预报场并从当前位置重规划。重规划触发规则由风险变化、观测更新或可行性变化决定，比较时使用当时可获得的信息。扩展目标中若加入路径偏离惩罚，需要记录其尺度，并单独分析它对主风险目标的影响。
+\subsubsection{时间序列分析与插值方法}
+局部核回归使用归一化权重，带宽通过按时间推进的验证选择。当前时刻的平滑与未来外推分别处理：内插可以由邻近观测约束，外推则依赖演化模型。对于核函数支持范围外的未来时刻，不能直接把内插形式解释为已有观测所支持的预报。
+\subsubsection{多尺度时间分析}
+小波变换与经验模态分解可用于识别历史序列中的不同变化尺度。小波变换表示为
+\begin{equation}
+W(a,b)=\frac1{\sqrt{|a|}}\int I(t)\psi^*\left(\frac{t-b}{a}\right)\,\mathrm dt.
+\end{equation}
+分析时记录母小波、尺度范围和边界影响区。若分解结果进入预测特征，应在每个训练或起报窗口内独立计算，避免全序列分解使用未来样本。
+\subsubsection{湍流场的时空统计特性}
+对中心化后的指标场，计算空间协方差、自相关和结构函数，比较不同高度的相关尺度。速度的惯性子区理论用于速度结构函数，综合无量纲风险指数的谱率则通过实际数据估计。将二者区分后，可讨论观测支持的尺度范围及插值产品中的平滑程度。
+\subsection{问题三计算结果展示}
+模型 d 和模型 e 的结果分别在图\ref{fig:finalresults}与表\ref{tab:q3result}中展示。对于\slot{时效范围}，模型\slot{名称}的误差为\slot{数值}；与\slot{基线}相比，变化主要集中在\slot{空间或时间条件}。对应航路的累计湍流暴露量为\slot{数值}，同一场上的基准路径为\slot{数值}，相对变化按二者的同一积分口径计算。
+\begin{table}[H]\centering\caption{问题三程序功能列表（拟交付接口）}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+模块 & 作用 & 预期输出\\\midrule
+\texttt{q3\_nwp.py} & 模式物理量恢复及 d 标定 & d 预报场\\
+\texttt{q3\_nowcast.py} & 观测外推与滚动检验 & e 预报场与误差\\
+\texttt{q3\_route.py} & 时空图搜索与路径检查 & 节点序列、风险与长度\\
+\texttt{q3\_plot.py} & 风险、路径及区间可视化 & 结果图和指标表\\\bottomrule
+\end{tabularx}\end{table}
+\samplefigure{finalresults}{总结果可视化处理}{fig:finalresults}
+\begin{table}[H]\centering\auxtablecaption{预报与航路结果汇总}\label{tab:q3result}
+\begin{tabularx}{\linewidth}{Ycccc}\toprule
+方案 & 预报 RMSE & 路径暴露量 & 路径长度 & 可行性检查\\\midrule
+d 场基准路径 & \pending&\pending&\pending&待检查\\
+d 场最优路径 & \pending&\pending&\pending&待检查\\
+e 场基准路径 & \pending&\pending&\pending&待检查\\
+e 场最优路径 & \pending&\pending&\pending&待检查\\\bottomrule
+\end{tabularx}\end{table}
+\AIDataNote

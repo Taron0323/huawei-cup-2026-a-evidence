@@ -1,0 +1,10 @@
+{
+  "attempt_count": 20,
+  "candidate_count": 205,
+  "case": "case_070",
+  "cores": 5,
+  "failed_count": 0,
+  "incumbent_plan_sha256": "5be92a69af59b6223e5a47338dea5f156bbabd3f166cba46056ad8de824bf9fd",
+  "scene": "C",
+  "verified_count": 20
+}

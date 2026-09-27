@@ -1,0 +1,27 @@
+{
+  "archive": "2025D论文复刻与2026LaTeX模板_20260922.zip",
+  "bytes": 49837299,
+  "sha256": "3fb5693bde904f61e885f7add4c199282f8457a5ccf08f95a238cb02d39a93ce",
+  "files": 128,
+  "crc": "PASS",
+  "extracted_hashes": "PASS",
+  "clean_build": {
+    "main-reference": {
+      "pages": 44,
+      "text_equal": true
+    },
+    "main-2026": {
+      "pages": 39,
+      "text_equal": true
+    },
+    "models": {
+      "pages": 8,
+      "text_equal": true
+    },
+    "facsimile": {
+      "pages": 110,
+      "text_equal": true
+    }
+  },
+  "status": "PASS"
+}

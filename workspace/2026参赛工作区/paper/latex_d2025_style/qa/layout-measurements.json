@@ -1,0 +1,32 @@
+{
+  "original": {
+    "body_line_gap_pt": [
+      [
+        19.87,
+        8
+      ],
+      [
+        19.88,
+        2
+      ]
+    ],
+    "body_x0": 63.78,
+    "body_x1": 531.5,
+    "body_first_top": 146.31
+  },
+  "editable": {
+    "body_line_gap_pt": [
+      [
+        19.87,
+        7
+      ],
+      [
+        19.88,
+        1
+      ]
+    ],
+    "body_x0": 63.78,
+    "body_x1": 531.5,
+    "body_first_top": 146.34
+  }
+}

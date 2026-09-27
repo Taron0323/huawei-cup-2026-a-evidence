@@ -1,0 +1,78 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        13462750,
+        4479970.133333334,
+        0,
+        247863680,
+        "base_base"
+      ],
+      "plan_sha256": "641a4ced7312dd343437d661ed65a184d94fef87d8de6543fdf114fc7ef96d84",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "base_move",
+      "expanded_rank": [
+        25677944,
+        3679296.0,
+        -52166400,
+        255711232,
+        "base_move"
+      ],
+      "plan_sha256": "595c4c90eb5edbf38b01d6ea2e0c8271d53294e8407b4f608e4a9c56b4595e81",
+      "source": "ordinary"
+    },
+    {
+      "candidate": "base_aggregate_tid_1000000059",
+      "expanded_rank": [
+        63662046,
+        4508292.266666667,
+        0,
+        264449408,
+        "base_aggregate_tid_1000000059"
+      ],
+      "plan_sha256": "83deeb6bc6baf3c6ed7b1569454e4711562cba32ac10ddc8c3e37c8abbcdc6dc",
+      "source": "aggregate"
+    },
+    {
+      "candidate": "base_disperse_group_tid_1000000059_group_3_core_1_pos_0",
+      "expanded_rank": [
+        24754104,
+        3617269.3333333335,
+        -55888000,
+        255711232,
+        "base_disperse_group_tid_1000000059_group_3_core_1_pos_0"
+      ],
+      "plan_sha256": "13ddd535df42eda9d160d8ff71b18d0988b3f545122de2fd34665e4307fc9931",
+      "source": "disperse"
+    },
+    {
+      "candidate": "event_timing_tid_1000000043_miss_71_bytes_20938752_core_0",
+      "expanded_rank": [
+        26012574,
+        4487050.666666667,
+        0,
+        252010112,
+        "event_timing_tid_1000000043_miss_71_bytes_20938752_core_0"
+      ],
+      "plan_sha256": "d22dfa3c8ad15a41a5f54099ce8bc6174ff8be9701b5996dd5c5d159e33b6364",
+      "source": "event_timing"
+    },
+    {
+      "candidate": "base_split_height_g1_p4",
+      "expanded_rank": [
+        13377050,
+        3222771.2,
+        -74108928,
+        246540672,
+        "base_split_height_g1_p4"
+      ],
+      "plan_sha256": "cce18458b3a5d656f81cad82e3d6fb9859d5becc9a8a06d68bc5f8780d352b85",
+      "source": "timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 13462,
+  "winner": "base_split_height_g1_p4"
+}

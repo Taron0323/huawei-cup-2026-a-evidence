@@ -1,0 +1,409 @@
+{
+  "package": "华为杯中国研究生数学建模竞赛_流程复盘包_20260913",
+  "created": "2026-09-13",
+  "manifest_excludes_self": true,
+  "manifest_file_count": 80,
+  "zip_entry_count": 81,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2423,
+      "sha256": "7df1aa953ffbf4fdbdd5ffeb5c2cad5fce81e317c7ea8b9c17b72c59b8b73bb0"
+    },
+    {
+      "path": "inventory.md",
+      "bytes": 15731,
+      "sha256": "1158529f9670ca335ff3dbc918dd9c4f7c0dba3a9dfe33542b0b38a9deb13bf6"
+    },
+    {
+      "path": "下一届总控Goal提示词.md",
+      "bytes": 2126,
+      "sha256": "d390e6c3360a16ce88fdf914eba8d5b03c49468a6911955627552c3609e3fb11"
+    },
+    {
+      "path": "下一届执行清单.md",
+      "bytes": 3369,
+      "sha256": "5f3a6b25a79b7977d912ad130d6f50f3b9ba139a798464f4623e294b456891a9"
+    },
+    {
+      "path": "华为杯迁移手册.md",
+      "bytes": 11442,
+      "sha256": "50ec93ce2ea4d7860da5069a67b5306a81a236ed1dfc359843fcfa247f9ffaf1"
+    },
+    {
+      "path": "团队协作与证据规则.md",
+      "bytes": 1694,
+      "sha256": "eb9a77bce4e17df3d72d1476d2e4ffb83e1038d888280a915fd5816bac5e06f0"
+    },
+    {
+      "path": "当前项目资产索引.md",
+      "bytes": 1339,
+      "sha256": "3cd8c479b5f170da2f289b351e8bfe9bdb2cb349c55c30e77d333f7b3cebbefb"
+    },
+    {
+      "path": "提示词/00_controller.md",
+      "bytes": 1913,
+      "sha256": "e224dc0e00014bd717043728e99a04f067d28e45d13e8d8487067c3f21976bff"
+    },
+    {
+      "path": "提示词/01_intake.md",
+      "bytes": 930,
+      "sha256": "370b2d4d9bc4fab8cac01bd65654240c6d82992f9cd62a2bbf6ced080a45d96a"
+    },
+    {
+      "path": "提示词/02_selection.md",
+      "bytes": 709,
+      "sha256": "cb936e91b6b6228251557d16c70e5543506ff5877cbb525500044680c27ba4a1"
+    },
+    {
+      "path": "提示词/03_data_audit.md",
+      "bytes": 923,
+      "sha256": "639b08a83cc531b5c20ff40f1190e61e697311e856b75f85cfbb935cbd582c60"
+    },
+    {
+      "path": "提示词/04_research.md",
+      "bytes": 900,
+      "sha256": "738d5db788a0eb29a1e099d949d67efaf14253f954685df2da8289b44478e98a"
+    },
+    {
+      "path": "提示词/05_routes.md",
+      "bytes": 823,
+      "sha256": "0baed36aac0b424afa539eab2a6d963f542cdc1ee4b111d263fbba972160238e"
+    },
+    {
+      "path": "提示词/06_idea.md",
+      "bytes": 914,
+      "sha256": "a1716f3f946024529538bb8d265b84d5e5e75884dccb458e17b4955f75123af4"
+    },
+    {
+      "path": "提示词/07_outline.md",
+      "bytes": 812,
+      "sha256": "913e8bf5645e3aee8dae6c8bcd1c69754b2f6166c63b31b9cd7fcfe852f88ff2"
+    },
+    {
+      "path": "提示词/08_implementation.md",
+      "bytes": 917,
+      "sha256": "64dca07146b2059303642c59b5bca09891f52c81c7aa06095fcb1252fbb92f99"
+    },
+    {
+      "path": "提示词/09_verification.md",
+      "bytes": 872,
+      "sha256": "b59e7e01912990a76eaa24edfb8cd06a3bc28bcb33f035d0f76cc5fce1cdb696"
+    },
+    {
+      "path": "提示词/10_experiments.md",
+      "bytes": 878,
+      "sha256": "ccbddecf5c6c7413d1f62a97b80c42562ad994a22755277e68fba9fcdaffd479"
+    },
+    {
+      "path": "提示词/11_figures.md",
+      "bytes": 865,
+      "sha256": "76866f08ce1b1dd175cef0e15795efd281a8adab96212ccd888952d8eb8848f3"
+    },
+    {
+      "path": "提示词/12_writing.md",
+      "bytes": 815,
+      "sha256": "6c70dd977b0fd78e573fa6e480cba408d66eba206bd92a548b221e9c91597693"
+    },
+    {
+      "path": "提示词/13_abstract.md",
+      "bytes": 997,
+      "sha256": "61b82cd2c26b027d94133c261893a0f84cb1daff61badfd1bb96e6e637ef03d3"
+    },
+    {
+      "path": "提示词/14_review.md",
+      "bytes": 854,
+      "sha256": "3526a99135f980e8b46b7bb52d933a6f74573b02274d605b699b439909429619"
+    },
+    {
+      "path": "提示词/15_consistency.md",
+      "bytes": 961,
+      "sha256": "93178ff5f41d81072dfca9d8a24264045841843d604759176d817ba5ed53bf76"
+    },
+    {
+      "path": "提示词/16_references.md",
+      "bytes": 705,
+      "sha256": "ca2f467080def6308a1b2f75ae2544e6afa9a4e0952d09822d76c088d4525621"
+    },
+    {
+      "path": "提示词/17_delivery.md",
+      "bytes": 1722,
+      "sha256": "94d3e113b90daa3291dc40704cb7aef0b129ed14384438efd001178cdd28e6ce"
+    },
+    {
+      "path": "提示词/18_resume.md",
+      "bytes": 674,
+      "sha256": "2970e19c56509b2b2b4de88c151a15acaaee2e2f265968f6c2f76d1f84bd8454"
+    },
+    {
+      "path": "提示词/19_recovery.md",
+      "bytes": 1388,
+      "sha256": "d59032a331f4381a6b338901770bb17feac7adfb76fd05e19f069a0797a0543d"
+    },
+    {
+      "path": "提示词/20_preflight.md",
+      "bytes": 1585,
+      "sha256": "2c90aaf122359ce7789158363dfc8daf38efb94f840639b20a91bba010843c0b"
+    },
+    {
+      "path": "提示词/21_learn_examples.md",
+      "bytes": 1415,
+      "sha256": "cfb491ff3f4980fb6c49dfbf77c81f092ad968af2480f99f0ed51532625cc653"
+    },
+    {
+      "path": "提示词/README.md",
+      "bytes": 3358,
+      "sha256": "b9d5551b12e0b6a2727c64adfb00549d73b8dcef1afc5ad6d13207128f668355"
+    },
+    {
+      "path": "提示词/c-topic-idea-v0.1-to-pro-followup.md",
+      "bytes": 3013,
+      "sha256": "3b832d36ab42205aa977f728fbc51448d2b4ce9b09cb7d5b6167aa5b017e2a78"
+    },
+    {
+      "path": "提示词/common.md",
+      "bytes": 2179,
+      "sha256": "dda97a3f611392a9ffcb80590ea385948546899c5e5555dba080f5708eeae811"
+    },
+    {
+      "path": "提示词/goal-c-topic-v1.1-human-review-revision.md",
+      "bytes": 25652,
+      "sha256": "48f7daa56127ebc5ade4f94781f1131d8e5cec8025318c4eb4811e2eb215b69c"
+    },
+    {
+      "path": "提示词/goal-c-topic-v1.10-human-review-ribbon-and-layout.md",
+      "bytes": 8241,
+      "sha256": "1592d8317d00aeb951475803a22a22d3b5e843e7510792e8657013c7d8344f2f"
+    },
+    {
+      "path": "提示词/goal-first-draft-v1.0.md",
+      "bytes": 8957,
+      "sha256": "da6b77afe1394d87efe5360bc3a9c87458ff9a38eddaefe75b41dc80e3d7ef3b"
+    },
+    {
+      "path": "提示词/goal-v1.1-execution.md",
+      "bytes": 7256,
+      "sha256": "9e4df20f6f507138df5d6d2939203a51fd1471fea23b5377ba9f1325eb52f318"
+    },
+    {
+      "path": "提示词/modes/max.md",
+      "bytes": 714,
+      "sha256": "2ccbc6355175ea01f514cf261c3f59aed8b578add666a0deb83d39bdce5d39c6"
+    },
+    {
+      "path": "提示词/modes/ultra.md",
+      "bytes": 692,
+      "sha256": "cff9e3bf982521058cbc51b4e16e2fec768dd03e43baae661f1e3e467fd6b6eb"
+    },
+    {
+      "path": "提示词/reviews/engineering.md",
+      "bytes": 344,
+      "sha256": "8fabac175ef153e450181d140b3a9f9c63de4df89371e0ff70806e9d169ab616"
+    },
+    {
+      "path": "提示词/reviews/mathematics.md",
+      "bytes": 311,
+      "sha256": "19565c674d0556311d11a87a664e49a061b835fe47252e817a8127f2bf3acdab"
+    },
+    {
+      "path": "提示词/reviews/quick_screen.md",
+      "bytes": 320,
+      "sha256": "0289dbd3476f4e9c8959a40a06676e6e4812f4d760281c0fbac499d1bbd0fa4e"
+    },
+    {
+      "path": "提示词/reviews/red_team.md",
+      "bytes": 508,
+      "sha256": "748b421db054228b8f8d70391b65cc6fba5b463af0c1dc22226d2f71983e5ec8"
+    },
+    {
+      "path": "提示词使用说明.md",
+      "bytes": 1487,
+      "sha256": "88e4dabfc12683cf2761fa955cd5e159c1338532c89487f93392e6ec3cd83687"
+    },
+    {
+      "path": "本次C题流程复盘.md",
+      "bytes": 5710,
+      "sha256": "ecc03afc45b370235548cb83f6e8ad9d66cda033e76de3cdfbe19d4676ae5fb1"
+    },
+    {
+      "path": "本次C题阶段映射.csv",
+      "bytes": 1889,
+      "sha256": "dd2976ede08fbc29ff84ddd804a77bcaf5f1dcd7ea13ea70a011e320a8caed97"
+    },
+    {
+      "path": "本次项目证据参考/00_使用指南_从这里开始.md",
+      "bytes": 25816,
+      "sha256": "d2e2071a6d16a49254b1cd53fea4be2bd95ee90a21749d829439473f97737956"
+    },
+    {
+      "path": "本次项目证据参考/AGENTS.md",
+      "bytes": 6204,
+      "sha256": "c6a076c337593eac8c9cb74a093fb5fbf9bc451737de88f34aa1669a8106977c"
+    },
+    {
+      "path": "本次项目证据参考/Each Stage Review Work-索引.md",
+      "bytes": 43292,
+      "sha256": "41079a8bb1b6a683ef53a7f37159ba2ad5c85178a697824a8980cb1fe0626350"
+    },
+    {
+      "path": "本次项目证据参考/paper/evidence/ai_usage.csv",
+      "bytes": 2814,
+      "sha256": "1a5dab4f4acca650ce300fb16516d993a53a4cc84460e88dfc297f521ebf8cd2"
+    },
+    {
+      "path": "本次项目证据参考/paper/evidence/claims.csv",
+      "bytes": 79275,
+      "sha256": "903261568147bcf90e80494892d71ce9723e141ed9327dd7bd66b030beb298b3"
+    },
+    {
+      "path": "本次项目证据参考/paper/evidence/figures.csv",
+      "bytes": 6542,
+      "sha256": "4189a5a16c869003e1e93cf0285e727232aeb09669a399a07cd64a7a95d4a0ae"
+    },
+    {
+      "path": "本次项目证据参考/paper/evidence/required_table_coverage.csv",
+      "bytes": 2049,
+      "sha256": "6efeb4d2ea116c9afe369f23170c8ae6c4ddb2f02f0c430ba00cce9ab62a0d55"
+    },
+    {
+      "path": "本次项目证据参考/paper/requirements.csv",
+      "bytes": 17572,
+      "sha256": "1eb4126d7887eba7c49715fe754363f0339b30bf4fb0858c94cec73b2ca8b18e"
+    },
+    {
+      "path": "本次项目证据参考/prep/PLAN.md",
+      "bytes": 1740,
+      "sha256": "5ad94221672516532915824ee38fcd25f379cc38f23b7a865c8a833ca80bb2c5"
+    },
+    {
+      "path": "本次项目证据参考/prep/astra/official-source-verification.json",
+      "bytes": 2977,
+      "sha256": "a6bc0489861c16c7c5783c0bb6beeec060a2160237978efa4892d070faa4608e"
+    },
+    {
+      "path": "本次项目证据参考/prep/astra/validation-report.md",
+      "bytes": 10927,
+      "sha256": "2d46373de925a45adb211b411236d65ac41af4a0d68badf131c9e0ca37c56d13"
+    },
+    {
+      "path": "本次项目证据参考/prep/team_checklist.md",
+      "bytes": 1913,
+      "sha256": "7fc8431141271ad52c646885ec70acde82627efd41f4ac47f724b63a9b261cbf"
+    },
+    {
+      "path": "本次项目证据参考/数学建模-AI全流程工作法-GPT6-Astra-Max-Ultra版.md",
+      "bytes": 63567,
+      "sha256": "581861d6ff0d667227891830350c99fb825001f77060fbe21eb7d1cbf5966b23"
+    },
+    {
+      "path": "本次项目证据参考/数学建模项目文件夹完全说明与比赛使用手册.md",
+      "bytes": 4067495,
+      "sha256": "7b1cdf0f09ca481a1a8a7bb75c98fffd36950810cb1ea6941995b0fab5cea057"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-153-c-topic-required-tables.md",
+      "bytes": 2785,
+      "sha256": "4eaa257d5b133b63cf3132331c0685ef2ef943c4802c97b3ea4eafc344bf50fb"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-154-c-topic-storage-turning-points.md",
+      "bytes": 1786,
+      "sha256": "4d76e4f0563d582873c02c971d91468b05c955aedc96a6b2a2f2cb4b19e0c52d"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-156-c-topic-workflow-vector-v9.md",
+      "bytes": 2508,
+      "sha256": "110b565a2e54aade9f883ca0127989d52402226375721562dedc96858424dd7f"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-157-c-topic-continuation-tables.md",
+      "bytes": 2154,
+      "sha256": "a3ac1536f223e0b4f375e6c3e8ebe8e4d193527f613dca44f38e82f222bfc369"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-159-c-topic-ai-declaration.md",
+      "bytes": 1290,
+      "sha256": "ea7c8487055bf57acf2e9af24971622b083189df3eb01a47eb0f7b7e1ff74311"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-161-c-topic-support-package.md",
+      "bytes": 3898,
+      "sha256": "5923f462534965bf77305b3fbf95ffbd230de09de07dc457c2f872017bc8b0d6"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-162-c-topic-section43-compact.md",
+      "bytes": 2546,
+      "sha256": "77be5db5167a6facba058a861d0ba903830a44e9a3e8392c27392900dd5f0a60"
+    },
+    {
+      "path": "本次项目证据参考/阶段记录/20260913-163-huawei-cup-adaptation.md",
+      "bytes": 1471,
+      "sha256": "6fef94fdfdd2e2a6c771b8f6fab12cad41a62ccd9b4234e8e81f1a7f720d25ff"
+    },
+    {
+      "path": "模板/ai/AI工具使用详情.pdf",
+      "bytes": 61213,
+      "sha256": "d72055fc41dd45e02bb839f70b324931c43e33ee036ed0f9c2be41d2e04d1aec"
+    },
+    {
+      "path": "模板/ai/AI工具使用详情.record.json",
+      "bytes": 457,
+      "sha256": "bd8defe1babd679796e6e5a977cdc82516439d86fe9a2e8e55859a0566d439d5"
+    },
+    {
+      "path": "模板/ai/README.md",
+      "bytes": 2538,
+      "sha256": "61665040c15c616de8937e1b0eb42cdb9334ea5472dae55530780c5b7b1440f0"
+    },
+    {
+      "path": "模板/latex/.latexmkrc",
+      "bytes": 131,
+      "sha256": "f8efef568c43d6bf60da5d238138217923a2db3a7cd6aabb8619ac12f6335762"
+    },
+    {
+      "path": "模板/latex/README.md",
+      "bytes": 4811,
+      "sha256": "4f17927c5b29d197ea939d3101d673a60cd46606da00a66c0cd05d5287db87e0"
+    },
+    {
+      "path": "模板/latex/STYLE_REVIEW.md",
+      "bytes": 3178,
+      "sha256": "c452893e7d8295ac2e69ecc69a3e3f65842601243066e9a3539fc2d83e89e622"
+    },
+    {
+      "path": "模板/latex/demo.tex",
+      "bytes": 10650,
+      "sha256": "db1c0341801475f53d4a153dab8ca96ba0c08cb383f8438af0779475956362ee"
+    },
+    {
+      "path": "模板/latex/fonts.tex",
+      "bytes": 2715,
+      "sha256": "d78873e4d2d4d8e190dedf6474f4328ff24e339bcb902f63a172e7a7725bff4c"
+    },
+    {
+      "path": "模板/latex/main.tex",
+      "bytes": 571,
+      "sha256": "58187961d55b75869182c46d11d5e8336fd6c22cf6fc5cb1b123317ae3b5b2bd"
+    },
+    {
+      "path": "模板/latex/mathmodel.sty",
+      "bytes": 4992,
+      "sha256": "f4ba09d9ddd6dd74807ac332dafeb35c790d5bf16f670a0e5e47f8f63e25d5c8"
+    },
+    {
+      "path": "模板/word/README.md",
+      "bytes": 1300,
+      "sha256": "81f23c1337647c5b108b9e81af4f6d3cd81735b3385a03b549f90928e9b4d897"
+    },
+    {
+      "path": "版本与状态说明.md",
+      "bytes": 1319,
+      "sha256": "e63abf932784319e2d44647ab38f206d3c0cebe393da50b8344235b4195c41c5"
+    },
+    {
+      "path": "论文与支撑材料交付模板.md",
+      "bytes": 1847,
+      "sha256": "739fb77240ed39e5f1c005c8afb425c8d00408a8c8d4a20385356afebf4082c6"
+    }
+  ]
+}

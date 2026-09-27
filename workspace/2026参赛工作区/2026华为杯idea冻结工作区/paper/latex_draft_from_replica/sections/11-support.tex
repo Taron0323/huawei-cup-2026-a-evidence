@@ -1,0 +1,19 @@
+\clearpage
+\section*{附件与支撑材料索引}
+本稿的实验代码、运行数据和实时结果与论文工程分离保存。当前只记录可追溯入口，不把正在写入的实验目录复制到论文源中。
+\begin{table}[H]\centering\caption{支撑材料与论文内容的对应关系}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+类别 & 当前路径或入口 & 论文用途与状态\\\midrule
+题面与原始附件 & \textnormal{活动项目登记的 2026 A 题原始目录/A题/} & 题面、固定配置和评估语义；只读\\
+canonical Idea & \textnormal{incoming/A题\_Final\_Idea\_canonical\_20260924.md} & 模型主线与候选规则；已登记\\
+代码 & \textnormal{华为杯\_code/src、scripts} & 实现、运行和报告脚本；只读核对\\
+实时结果 & \textnormal{实验数据/full\_main\_fast\_20260924} & 全量矩阵符号链接；由用户实验工作区维护，本稿不读取数值\\
+单核基线 & \textnormal{results/baseline\_20260924} & 未来计算加速比；当前只登记入口\\
+代表图运行 & \textnormal{results/representative\_v3} & 未来机制核对；不外推到全量\\
+论文工程 & 当前目录 \textnormal{paper/latex\_draft\_from\_replica/} & 本次无实验结果正文初稿\\\bottomrule
+\end{tabularx}\end{table}
+
+正式结果进入论文前，需要将主矩阵、单核基线、消融、敏感性、图表、manifest 和验证记录以同一运行版本登记到实验数据目录，并在写作对照与验收记录中记录每个表格和结论的来源。不得只从 PDF 图片读数，也不得用历史试验结果填补当前运行的空位。
+
+\subsection*{复现接口（待实验终态后更新）}
+程序入口、参数、环境、代码哈希和输出字段由 \textnormal{华为杯\_code} 的运行 manifest 保存。正文只引用稳定的结果文件名和字段，不在论文中写入机器专属绝对路径、进程号或实时日志内容。正式附件是否需要压缩、扩展名和命名，以比赛系统的实际要求为准。

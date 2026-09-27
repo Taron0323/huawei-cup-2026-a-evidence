@@ -1,0 +1,70 @@
+{
+  "copy_in_logical_tids": {
+    "0:1000001442": 1000000001,
+    "0:1000001444": 1000000003,
+    "0:1000001446": 1000000005,
+    "0:1000001448": 1000000007,
+    "0:1000001450": 1000000009,
+    "0:1000001452": 1000000011,
+    "0:1000001454": 1000000013,
+    "0:1000001456": 1000000015,
+    "0:1000001458": 1000000017,
+    "0:1000001460": 1000000019,
+    "0:1000001462": 1000000021,
+    "0:1000001464": 1000000023
+  },
+  "cross_links": 0,
+  "cross_task_traffic": 0,
+  "ddr_cycles": 6554,
+  "elapsed_seconds": 0.2175279170005524,
+  "expanded_cache_hit_bytes": 0,
+  "expanded_cache_work": 0,
+  "expanded_copy_in_queries": 12,
+  "expanded_ddr_work": 6565,
+  "expanded_ops": 1429,
+  "expanded_reference_makespan": 607628,
+  "movement": {
+    "added_copy_bytes": 0,
+    "original_graph_copy_bytes": 393218,
+    "partition_added_copy_bytes": 0,
+    "scheduled_copy_bytes": 393218,
+    "spill_added_copy_bytes": 0
+  },
+  "profile_score": [
+    607628,
+    6553.633333333333,
+    0,
+    0
+  ],
+  "profile_score_method": "expanded_dependency_path_and_one_fifo_replay",
+  "reference_makespan": 610436,
+  "scene": "C",
+  "spill_ops": 0,
+  "task_profiles": {
+    "0": {
+      "core_id": 0,
+      "ddr_ops": 13,
+      "expanded_ops": 1429,
+      "makespan": 610436,
+      "memory_peak": {
+        "L1": 393216,
+        "UB": 65544
+      },
+      "spill_ops": 0,
+      "task_id": 0
+    },
+    "1": {
+      "core_id": 1,
+      "ddr_ops": 0,
+      "expanded_ops": 0,
+      "makespan": 0,
+      "memory_peak": {
+        "L1": 0,
+        "UB": 0
+      },
+      "spill_ops": 0,
+      "task_id": 1
+    }
+  },
+  "tasks": 2
+}

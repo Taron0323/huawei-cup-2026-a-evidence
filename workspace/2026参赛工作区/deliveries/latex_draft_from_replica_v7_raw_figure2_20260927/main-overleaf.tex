@@ -1,0 +1,9 @@
+% Overleaf: XeLaTeX, main document main-overleaf.tex.
+\newif\ifcontest
+\contesttrue
+\input{preamble}
+\begin{document}
+\includepdf[pages=-,pagecommand={\thispagestyle{empty}}]{frontmatter.pdf}
+\input{frontmatter-count}
+\input{body}
+\end{document}

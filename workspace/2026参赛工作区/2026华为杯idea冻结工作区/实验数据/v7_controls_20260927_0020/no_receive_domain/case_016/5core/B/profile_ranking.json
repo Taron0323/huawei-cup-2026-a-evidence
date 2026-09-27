@@ -1,0 +1,46 @@
+{
+  "failures": [],
+  "representatives": [],
+  "starts": [
+    {
+      "candidate": "B0_base",
+      "profile_score": [
+        7715523,
+        393218,
+        0
+      ]
+    },
+    {
+      "candidate": "B2_base",
+      "profile_score": [
+        7626039,
+        13762698,
+        0
+      ]
+    },
+    {
+      "candidate": "B3_base",
+      "profile_score": [
+        7752528,
+        6554046,
+        0
+      ]
+    },
+    {
+      "candidate": "L2_base",
+      "profile_score": [
+        7705727,
+        6291474,
+        0
+      ]
+    },
+    {
+      "candidate": "L3_base",
+      "profile_score": [
+        7735025,
+        4128970,
+        0
+      ]
+    }
+  ]
+}

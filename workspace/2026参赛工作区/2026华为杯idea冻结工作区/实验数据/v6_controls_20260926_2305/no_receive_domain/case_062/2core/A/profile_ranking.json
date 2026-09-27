@@ -1,0 +1,61 @@
+{
+  "failures": [
+    {
+      "candidate": "r1_capacity_g7_front",
+      "error": "task schedule: dependency cycle; 1 -[subgraph dependency]-> 2; 2 -[subgraph dependency]-> 7; 7 -[core 1 task order]-> 5; 5 -[subgraph dependency]-> 1",
+      "error_type": "EvaluationValidationError"
+    }
+  ],
+  "representatives": [
+    {
+      "candidate": "r1_path_n53_c1_p0",
+      "profile_score": [
+        2676413,
+        75841536,
+        0
+      ]
+    }
+  ],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "profile_score": [
+        3157277,
+        13401600,
+        0
+      ]
+    },
+    {
+      "candidate": "A2_base",
+      "profile_score": [
+        3215988,
+        18442752,
+        0
+      ]
+    },
+    {
+      "candidate": "A3_base",
+      "profile_score": [
+        2676713,
+        75841536,
+        0
+      ]
+    },
+    {
+      "candidate": "L2_base",
+      "profile_score": [
+        3222096,
+        19069440,
+        0
+      ]
+    },
+    {
+      "candidate": "L3_base",
+      "profile_score": [
+        3135837,
+        89232384,
+        0
+      ]
+    }
+  ]
+}

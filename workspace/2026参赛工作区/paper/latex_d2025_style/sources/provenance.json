@@ -1,0 +1,20 @@
+[
+  {
+    "file": "problem-cnblogs.html",
+    "url": "https://www.cnblogs.com/li-zi-ke-yan/articles/19103763",
+    "retrieved_on": "2026-09-21",
+    "archived_at": "2026-09-22T00:20:39.289719+08:00",
+    "sha256": "7151428db6b315b16f6a40d623a6c446c5970db134e5a0c08d49297933ba6d36",
+    "bytes": 41012,
+    "source_type": "public_reprint"
+  },
+  {
+    "file": "search-bing.html",
+    "url": "https://cn.bing.com/search?q=%22%E4%BD%8E%E7%A9%BA%E6%B9%8D%E6%B5%81%22&count=10",
+    "retrieved_on": "2026-09-21",
+    "archived_at": "2026-09-22T00:20:39.290679+08:00",
+    "sha256": "5f8a4ad553da2b749241b60c14119fb84ccbdfa5c202aafaaa3e8aeb25d34d3b",
+    "bytes": 100830,
+    "source_type": "search_result"
+  }
+]

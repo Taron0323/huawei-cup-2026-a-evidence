@@ -1,0 +1,2 @@
+check_id,scope,evidence_file,reviewer,reviewed_at,outcome,note
+HUMAN-01,模型、代码、数值、论文和AI标注,review/auto_solve/20260923_120249/03_validation/claim_verification.json,,,NOT_ASSESSED,没有实际队员审核记录，不填签名或日期

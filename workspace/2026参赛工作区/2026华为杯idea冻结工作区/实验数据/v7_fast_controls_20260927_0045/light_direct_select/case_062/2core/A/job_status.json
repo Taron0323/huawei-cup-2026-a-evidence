@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "candidate": "r1_split_g4_h0_c1_p0",
+      "case": "case_062",
+      "control": "light_direct_select",
+      "cores": 2,
+      "definition": "A starts and ordinary/capacity representatives are ranked directly by the light score without independent official profile selection.",
+      "error": "task schedule: dependency cycle; 1 -[subgraph dependency]-> 2; 2 -[subgraph dependency]-> 3; 3 -[subgraph dependency]-> 8; 8 -[core 1 task order]-> 7; 7 -[subgraph dependency]-> 1",
+      "error_type": "EvaluationValidationError",
+      "evaluation_seconds": 0.40864945799876295,
+      "plan_sha256": "1206c258783cb5e7c08c670b51c6770a1fa60b3d40bf9396cd2277830de52eeb",
+      "rank": 1,
+      "scene": "A",
+      "selected": false,
+      "source": "ordinary",
+      "status": "EVALUATION_FAILED"
+    },
+    {
+      "added_copy_bytes": 63387648,
+      "cache_hit_bytes": 0,
+      "cache_hit_rate": 0.0,
+      "cache_miss_bytes": 0,
+      "candidate": "A3_base",
+      "case": "case_062",
+      "control": "light_direct_select",
+      "cores": 2,
+      "definition": "A starts and ordinary/capacity representatives are ranked directly by the light score without independent official profile selection.",
+      "evaluation_seconds": 16.372522124998795,
+      "makespan": 2850260,
+      "original_graph_copy_bytes": 13401600,
+      "partition_added_copy_bytes": 63387648,
+      "plan_sha256": "ef7967fc81e3503c6a9269d503b46281762742177fac45785782b25c9524aaf9",
+      "rank": 2,
+      "scene": "A",
+      "scheduled_copy_bytes": 76789248,
+      "selected": true,
+      "source": "seed",
+      "spill_added_copy_bytes": 0,
+      "status": "AI_VERIFIED"
+    }
+  ],
+  "status": "PARTIAL"
+}

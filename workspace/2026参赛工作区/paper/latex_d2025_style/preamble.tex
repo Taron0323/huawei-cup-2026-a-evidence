@@ -1,0 +1,54 @@
+\documentclass[a4paper,zihao=-4,fontset=fandol]{ctexart}
+\usepackage[left=22.5mm,right=22.5mm,top=25mm,bottom=25mm,footskip=12mm]{geometry}
+\usepackage{amsmath,amssymb,bm,graphicx,booktabs,tabularx,longtable,array,float}
+\usepackage{caption,fancyvrb,algorithm,algorithmic,hyperref}
+\hypersetup{hidelinks,pdftitle={低空湍流监测与航路优化：可编辑写作模板},pdfauthor={},pdfsubject={2025 D题历史题写作演练}}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\IfFileExists{build/fonts.tex}{\input{build/fonts}}{}
+\ifcontest
+  \linespread{1.0}
+\else
+  \geometry{top=30mm}
+  \linespread{1.38}
+\fi
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\ctexset{section={format=\centering\heiti\bfseries\zihao{4},beforeskip=18bp,afterskip=12.4bp},
+subsection={format=\bfseries\zihao{-4},beforeskip=12bp,afterskip=6.8bp},
+subsubsection={format=\bfseries\zihao{-4},beforeskip=10bp,afterskip=6bp}}
+\pagestyle{plain}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\captionsetup{font=normalsize,labelsep=quad,skip=8bp}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}
+\renewcommand{\algorithmicensure}{\textbf{输出：}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\pending}{\textbf{待计算}}
+\newcommand{\slot}[1]{\textbf{【#1】}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\samplefigure}[3]{%
+  \begin{figure}[H]\centering
+  \includegraphics[width=0.91\linewidth,height=0.43\textheight,keepaspectratio]{figures/#1.pdf}
+  \caption{#2（示意占位图）}\label{#3}\end{figure}}
+\newcounter{extrafigure}
+\renewcommand{\theextrafigure}{S.\arabic{extrafigure}}
+\newcommand{\auxfigure}[3]{%
+  \begin{figure}[H]\centering
+  \includegraphics[width=0.91\linewidth,height=0.40\textheight,keepaspectratio]{figures/#1.pdf}
+  \refstepcounter{extrafigure}\caption*{图\theextrafigure\quad #2（补充示意占位图）}\label{#3}\end{figure}}
+\newcounter{extratable}
+\renewcommand{\theextratable}{S.\arabic{extratable}}
+\newcommand{\auxtablecaption}[1]{\refstepcounter{extratable}\caption*{表\theextratable\quad #1}}
+\newcommand{\aitool}{\slot{工具名称}}
+\newcommand{\aimodel}{\slot{版本或型号}}
+\newcommand{\aideveloper}{\slot{开发机构}}
+\newcommand{\aireleased}{\slot{版本发布日期}}
+\newcommand{\AIDataNote}{\ifcontest\par\noindent
+  AI 辅助数据分析标注：本处涉及的工具为\aitool，版本或型号为\aimodel，
+  开发机构为\aideveloper，版本发布日期为\aireleased；采用内容为\slot{实际采用内容}，
+  队伍复核方式为\slot{具体复核方法与结果}。\par\fi}
+\newcommand{\modelcard}[4]{\subsection{#1}#2\par\textbf{基本形式：}#3\par\textbf{选择与检验：}#4\par}

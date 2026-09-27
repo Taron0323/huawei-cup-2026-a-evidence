@@ -1,0 +1,54 @@
+{
+  "failures": [],
+  "representatives": [],
+  "starts": [
+    {
+      "candidate": "B0_base",
+      "profile_score": [
+        151795,
+        1741140,
+        0
+      ]
+    },
+    {
+      "candidate": "B1_base",
+      "profile_score": [
+        30415,
+        1741140,
+        0
+      ]
+    },
+    {
+      "candidate": "B2_base",
+      "profile_score": [
+        128011,
+        7396800,
+        3440640
+      ]
+    },
+    {
+      "candidate": "B3_base",
+      "profile_score": [
+        119183,
+        6751336,
+        2627792
+      ]
+    },
+    {
+      "candidate": "L2_base",
+      "profile_score": [
+        145535,
+        8375636,
+        163880
+      ]
+    },
+    {
+      "candidate": "L3_base",
+      "profile_score": [
+        145811,
+        8342592,
+        174080
+      ]
+    }
+  ]
+}

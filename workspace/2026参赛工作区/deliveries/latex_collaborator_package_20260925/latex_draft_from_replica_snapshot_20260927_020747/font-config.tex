@@ -1,0 +1,13 @@
+% Derived from the D-template font configuration; portable font detection.
+\ifcontest
+  \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/Simsun.ttc}{
+    \setCJKmainfont[AutoFakeBold=2,Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/}]{Simsun.ttc}
+    \setCJKsansfont[AutoFakeBold=2,Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/}]{SimHei.ttf}
+    \setCJKmonofont[Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/}]{Simsun.ttc}
+  }{\IfFontExistsTF{SimSun}{
+    \setCJKmainfont[AutoFakeBold=2]{SimSun}\setCJKsansfont[AutoFakeBold=2]{SimHei}\setCJKmonofont{SimSun}
+  }{\setCJKmainfont{FandolSong-Regular}\setCJKsansfont{FandolHei-Regular}\setCJKmonofont{FandolSong-Regular}
+    \typeout{A-PAPER FONT MODE: Fandol preview; official Song/Hei fonts are unavailable.}
+  }}
+\fi
+\newcommand{\xinweifont}{\kaishu}

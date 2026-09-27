@@ -1,0 +1,63 @@
+{
+  "selected": [
+    "r1_merge_g1_2",
+    "A2_base"
+  ],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "score": [
+        607080,
+        393218,
+        28181582,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A2_base",
+      "score": [
+        303540,
+        1572878,
+        13894186,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A3_base",
+      "score": [
+        303540,
+        3145758,
+        6816024,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "L2_base",
+      "score": [
+        303540,
+        1572878,
+        13894188,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L3_base",
+      "score": [
+        303540,
+        3145758,
+        6816024,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    }
+  ]
+}

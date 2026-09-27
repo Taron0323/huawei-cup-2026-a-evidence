@@ -1,0 +1,32 @@
+{
+  "page_basis": "PDF physical page, cover=1",
+  "papers": [
+    {
+      "id": "C24104220149",
+      "structural_features": {
+        "connected_questions": {"status": "present", "pages": [47,48], "evidence": "问四损耗预测模型成为问五目标函数。"},
+        "actual_comparison": {"status": "present", "pages": [25,26,27,28,43], "evidence": "原公式寻优、温度修正、预测模型均有表格对照。"},
+        "actionable_output": {"status": "present", "pages": [46,50,53], "evidence": "指定样本预测、工况与目标值；可行性及版本一致性另有缺口。"}
+      },
+      "appendix_code": {"status": "present", "pages": [57,62,66,69], "evidence": "有四组Python代码片段，不等于完整工程。"}
+    },
+    {
+      "id": "C24102890089",
+      "structural_features": {
+        "connected_questions": {"status": "present", "pages": [40,41,45,46,47], "evidence": "温度修正扩展到12段模型，再进入优化。"},
+        "actual_comparison": {"status": "present", "pages": [27,28,29,30], "evidence": "修正方程指标及初值变化有实际结果。"},
+        "actionable_output": {"status": "present", "pages": [44,47,49], "evidence": "指定样本预测和优化工况；最终温度文字/表格有冲突。"}
+      },
+      "appendix_code": {"status": "present", "pages": [53,58,68,71], "evidence": "有预处理、拟合和优化片段，未执行。"}
+    },
+    {
+      "id": "B24102860287",
+      "structural_features": {
+        "connected_questions": {"status": "present", "pages": [17,26], "evidence": "前问发送机会参与后续速率分析与吞吐量建模。"},
+        "actual_comparison": {"status": "present", "pages": [24,25], "evidence": "25分类退化图与转用PHY速率的报告结果形成替代方案对照。"},
+        "actionable_output": {"status": "present", "pages": [15,24,29,35], "evidence": "按测试与AP编号给发送时长、MCS/NSS、吞吐量。"}
+      },
+      "appendix_code": {"status": "present", "pages": [43,69,73,75,76,90], "evidence": "结果表后有多组代码片段，指标定义与正文存在对应缺口。"}
+    }
+  ]
+}

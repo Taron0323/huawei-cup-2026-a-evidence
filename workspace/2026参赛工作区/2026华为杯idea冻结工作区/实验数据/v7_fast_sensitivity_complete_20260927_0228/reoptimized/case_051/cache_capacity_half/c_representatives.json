@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        531670,
+        131072.5,
+        0,
+        0,
+        "base_base"
+      ],
+      "plan_sha256": "23f9b112319e3936a068ccb03a1cd5b513fedf05827230057b5884ab0315e322",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "base_move",
+      "expanded_rank": [
+        531670,
+        137626.1,
+        0,
+        0,
+        "base_move"
+      ],
+      "plan_sha256": "4651bfb7789ab19588c69d25bc9d2af89ecab3e009e7fa96773e5dce5095ab92",
+      "source": "ordinary"
+    },
+    {
+      "candidate": "base_split_topo_g5_p4",
+      "expanded_rank": [
+        531670,
+        131072.5,
+        0,
+        0,
+        "base_split_topo_g5_p4"
+      ],
+      "plan_sha256": "8ab93a3cedb5d40269adf74c01ae3fd22c52f9dbc0897cc5c71f54d558f49e67",
+      "source": "timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 531,
+  "winner": "base_base"
+}

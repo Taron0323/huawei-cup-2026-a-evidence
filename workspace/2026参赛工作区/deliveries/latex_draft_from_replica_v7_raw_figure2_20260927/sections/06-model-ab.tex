@@ -1,0 +1,193 @@
+\section{问题一模型建立与求解}
+\label{sec:question-one}
+
+问题一的决策从原计算图出发，依次确定计算操作的子图边界、各子图所在核心与核内先后。切分增加了可并行的Task，也改变张量读写次数、片上存活区间和Task激活时刻。为把这些作用放在同一口径下，本节先建立提交方案和执行约束，再由张量接收Task推导结构搬运，最后将有限候选送入官方事件评价，按返回结果选出每张图的方案。
+
+\subsection{两级约束与评价目标}
+\subsubsection{调度变量与执行约束}
+第一层决定划分与次序：式\eqref{eq:plan-coverage}给出操作和子图覆盖，式\eqref{eq:plan-sequence-unique}要求每个非空子图在核内序列中恰好出现一次；若$s\in\sigma_k$，则$a(s)=k$。跨子图依赖形成的商图必须无环，同核序列还须遵守商图依赖；这两项检查在A、B、C三个场景共用。给定合法计划$X$后，评估程序展开Task与COPY，依次执行核内Step1排序、Step2换出恢复和Step3流水线及内存复用依赖构图，再模拟共享带宽事件。记这一展开为$\Psi_r(G,X)$，事件模拟为$\Phi_r$，其中$r\in\{A,B,C\}$。展开产生的操作集合记$\mathcal O_r(X)$，操作$o$的开始、结束时刻分别为$s_o,e_o$。数据或内存依赖$u\to v$要求$s_v\ge e_u$；带延迟的释放边要求$s_v\ge e_u+\delta_{uv}$。四条每核流水线M、V、MTE2和MTE3各自串行，不同流水线满足依赖后可重叠执行。
+
+容量也属于第二层。逻辑张量在换出与恢复后可有不同物理版本$\tilde t$。若版本在核心$k$的存储区$q$上从$A_{\tilde t}$占用至$L_{\tilde t}$，任何时刻$\tau$均须满足
+\begin{equation}
+\sum_{\tilde t\in\mathcal T_{kq}} b_{\tilde t}
+\mathbf1\{A_{\tilde t}\le\tau<L_{\tilde t}\}\le C_q,\qquad
+C_{\rm L1}=524288,\quad C_{\rm UB}=131072\ \mathrm{B}.
+\label{eq:capacity}
+\end{equation}
+这里的集合按物理版本而非逻辑张量计数。一个张量直到最后一个读者结束才释放，读者也包括向DDR写回的COPY。Step2在空间不足时生成换出恢复，Step3再为复用同一位置的操作补充先后约束。因此，改变Task边界不仅改变结构COPY，还可能改变物理版本的存活区间与恢复次数。
+
+表\ref{tab:q1-hardware}列出执行递推所用的题设参数。原始文件的COPY操作周期是占位值；新生成的COPY独占参考工作量由字节数和带宽计算。问题一每个子图独立成Task，同核连续Task间隔100 cycle，跨核依赖Task释放延迟1000 cycle。后两问沿用容量与DDR参数，改变Task组织并在问题三加入Cache。
+\begin{table}[H]\centering\caption{官方配置中的容量、带宽与Task等待}\label{tab:q1-hardware}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+项目 & 数值 & 在执行递推中的作用\\\midrule
+每核L1、UB & 524288 B、131072 B & 分存储区约束物理版本的同时驻留\\
+共享DDR & 60 B/cycle & 各核COPY读写共同占用同一服务池\\
+问题一同核等待 & 100 cycle & 同核前一Task结束后才能激活后一Task\\
+问题一跨核等待 & 1000 cycle & 跨核前驱Task结束后延迟释放\\
+问题二、三跨核延迟 & 500 cycle & 源端写出后目标COPY\_IN等待\\
+问题三只读Cache & 1048576 B、250 B/cycle & 独立读池与FIFO容量，详见问题三\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsubsection{共享DDR服务下的工期}
+给定一次COPY的字节数$b_o$，其独占DDR参考工作量为$w_{o,D}=\max\{1,\lceil b_o/60\rceil\}$。若时刻$\tau$有$m_D(\tau)$个在途DDR搬运，各自剩余参考工作量$R_o(\tau)$按
+\begin{equation}
+R_o(s_o)=w_{o,D},\qquad
+\frac{\mathrm dR_o(\tau)}{\mathrm d\tau}=-\frac{1}{m_D(\tau)}
+\quad\bigl(o\text{正在DDR池服务}\bigr)
+\label{eq:ddr-share}
+\end{equation}
+推进。一个搬运完成或新搬运发射后，$m_D$改变，其余搬运的预测完成时刻随之重算；随题官方多核模拟程序按整数周期规则处理事件。完整工期由该事件模拟确定：相同字节量的方案可能在关键路径上遇到不同的竞争，静态总字节与各COPY独占时间之和仅作量纲参考。
+
+由此定义场景$r$的工期及额外搬运：
+\begin{equation}
+F_r(X)=\max_{o\in\mathcal O_r(X)}e_o,\qquad
+D_r(X)=Q_r^{\rm sched}(X)-Q^{\rm orig}.
+\label{eq:objective}
+\end{equation}
+以$\mathcal F_{r,K}$表示满足操作覆盖、商图无环、同核依赖顺序以及式\eqref{eq:capacity}物理容量约束的计划集合；Task等待和带宽服务按场景$r$由$\Psi_r$与$\Phi_r$确定。优化模型为
+\begin{equation}
+X^*_{r,K}\in\operatorname*{arg\,min}^{\rm lex}_{X\in\mathcal F_{r,K}}
+\bigl(F_r(X),D_r(X)\bigr).
+\label{eq:lex-objective}
+\end{equation}
+主目标是工期，工期相同时比较额外搬运；候选名仅用于程序的确定性平局处理。在仅有两核、每核一个Task、无依赖与搬运的特例中，各独立M操作的周期为正整数，判定工期能否不超过总周期的一半等价于将这些周期分成两个等和集合，即Partition判定。该特例已是弱NP完全问题，因此求解器生成有限候选，再以事件模拟评价可行计划。
+
+\subsubsection{工期下界}
+设$L_G$为计算依赖的加权最长路，$W_M,W_V$分别为两条计算流水线的总工作量；$Q_{\min}$为图输入至少一次读入与最终输出至少一次写出的最低字节数，$B_D=60$~B/cycle为共享DDR服务带宽。忽略Task等待、容量恢复、流水线排序和争用，先分别得到计算侧和IO侧下界
+\begin{equation}
+LB_{\rm comp}(K)=\max\left\{L_G,\frac{W_M}{K},\frac{W_V}{K}\right\},
+\qquad
+LB_{\rm io}=\frac{Q_{\min}}{B_D}.
+\label{eq:lower-bound-components}
+\end{equation}
+综合松弛下界取两侧瓶颈中的较大者：
+\begin{equation}
+LB(K)=\max\left\{LB_{\rm comp}(K),LB_{\rm io}\right\}.
+\label{eq:lower-bound}
+\end{equation}
+其中$LB_{\rm comp}$由依赖串行段和两条计算流水线的吞吐约束共同给出，$LB_{\rm io}$只刻画最低DDR服务量；$LB$保留两侧中较大的不可绕过瓶颈。该下界由依赖最长路、M/V工作量和最低DDR服务量构成，未计入Task等待、容量恢复、流水线排序与共享带宽争用；$F/LB$用于诊断方案与理想瓶颈的距离。各场景加速比使用同图整图单Task、单核A0的官方工期$T_{1,i}$作为统一速度比基准，使问题二、三的收益与问题一比较时具有一致起点。
+
+\subsection{Task驻留域与结构搬运}
+\subsubsection{Task划分与边界搬运}
+问题一中每个子图形成独立Task。Task内部可以让同一张量服务多个计算消费者；跨Task时，即使两个Task安排在同一核心，后一个Task也要经过DDR边界重新读入。结构搬运按接收Task数量计量，跨核依赖边数不足以给出完整通信量。对输入张量$t$，记$I_A(t)=\{g(v):v\in U(t)\}$；对计算产生的张量，记$R_A(t)=\{g(v):v\in U(t),\ g(v)\ne g(p(t))\}$。集合消除了同一Task内的重复消费者。由官方Task构图规则可逐张量列账：输入对每个接收Task读入一次；内部结果若有外部接收Task，源Task写出一次，各目标Task各读入一次；最终输出仍需源Task写出。因此，不含容量恢复的结构COPY字节数为
+\begin{equation}
+Q_A^0=\sum_{t\in\mathcal T_{\rm in}}b_t|I_A(t)|
++\sum_{t\in\mathcal T_{\rm prod}}b_t
+\left[|R_A(t)|+\mathbf1\{|R_A(t)|>0\text{ 或 }o_t=1\}\right].
+\label{eq:a-bytes}
+\end{equation}
+例如，大小为$b$的内部张量由一个Task生产，在另外两个Task各有一个消费者，且不是最终输出。其结构搬运为一次写出与两次读入，共$3b$；将两个消费Task合并后变为$2b$；连同生产者一起合并则这部分边界搬运为零。若只把两个消费Task放到同一核心而不合并，问题一仍保留$3b$。这说明计算均衡和边界数并非同一目标：切开一条并行支路时，应同时检查边界附近的大张量。
+
+实际调度COPY还包含容量不足时的换出与恢复。将官方字段对应到模型，得到
+\begin{equation}
+Q_A^{\rm sched}=Q_A^0+Q_A^{\rm spill},\qquad
+D_A=\underbrace{(Q_A^0-Q^{\rm orig})}_{\text{划分新增搬运}}
++\underbrace{Q_A^{\rm spill}}_{\text{容量恢复搬运}}.
+\label{eq:a-copy-breakdown}
+\end{equation}
+式\eqref{eq:a-bytes}计算切图决定的逻辑边界，式\eqref{eq:a-copy-breakdown}将其与片上容量造成的物理搬运分开。即使结构搬运降低，张量生产和末次使用之间的间隔变长，也可能在Step2产生更多恢复字节；反之，适度切分虽增加边界COPY，却可能缩短张量的单Task存活区间。最终是否加速取决于这些COPY落在何时和哪条依赖路径上。
+
+\subsubsection{Task激活时刻}
+令Task $s$的激活、完成时刻为$B_s,E_s$，同核前一个Task为$\operatorname{prev}(s)$，其计算数据前驱Task集合为$\operatorname{Pred}(s)$。激活需同时等待本核前一Task、所有数据前驱和跨核释放延迟：
+\begin{equation}
+B_s\ge\max\left\{0,\ E_{\operatorname{prev}(s)}+100,\
+\max_{t\in\operatorname{Pred}(s)}E_t,\
+\max_{\substack{t\in\operatorname{Pred}(s)\\a(t)\ne a(s)}}(E_t+1000)\right\},
+\label{eq:a-wait}
+\end{equation}
+不存在的前驱项省略；各核心第一个无前驱Task可在零时刻激活。式中取最大值而非求和：若同核等待和数据依赖同时发生，较晚的一项决定可激活时刻。切分使不同核心出现并行机会，也可能把一个原本位于Task内部的依赖改成相隔1000 cycle的跨核释放。该等待与结构COPY在同一切点出现，故应把二者连同计算负载一起比较。
+
+切块程序沿固定拓扑序按非COPY操作数均分，得到可复查的连续块；块内操作仍按拓扑可行顺序提交。生成完整计划后，轻量分数只用于安排候选的试评顺序，工期取式\eqref{eq:objective}的事件模拟结果。若同一张量被多个新Task消费，式\eqref{eq:a-bytes}中的$|R_A(t)|$随接收Task数增加。
+
+\subsection{方案构造与求解}
+\subsubsection{场景化候选生成}
+新实验采用 ``fresh\_final\_idea\_review\_v0.7\_mandatory\_anchors'' 候选流程。A场景从整图分配、弱连通分量装箱和拓扑切块出发；在此基础上生成组移动、分组切分、相邻合并和边界节点调整变体。候选计划先规范化操作映射和核心序列，再检查操作覆盖、商图无环、同核直接依赖、空核列表和容量字段。每一张图、每一个核数和每一个场景均独立生成候选，候选结果由该组合自己的官方评价记录决定。
+
+候选生成中保留三类信息：整图和低核锚点用于提供稳定可行解，profile候选用于快速排除不能展开的计划，局部编辑候选用于探索切点和核内顺序。A、B使用不同的整图、分量装箱和低核锚点；C场景额外保留B场景incumbent作为起点。因而C的候选集合包含问题二方案的可复用信息，但最终仍在C场景重新评价，不能把B的工期直接当作C的结果。
+
+\subsubsection{候选排序与官方评价}
+令$\widehat L(X)$、$\widehat Q(X)$和$\widehat\Pi(X)$分别表示依赖路径、结构搬运和容量压力的轻量估计，候选排序元组取
+\begin{equation}
+\widehat\kappa_r(X)=\left(\max\left\{\widehat L(X),\max_k L_k,\left\lceil\frac{\widehat Q(X)}{60}\right\rceil\right\},\widehat Q(X),\widehat\Pi(X),\operatorname{name}(X)\right).
+\label{eq:v7-light-score}
+\end{equation}
+轻量排序只确定profile和完整评价的先后，不代替官方事件模拟。每个组合先评价mandatory anchors，再按照排序元组使用名义评价额度安排其余候选；profile失败与完整事件评价失败分别记录，成功候选按\((F_r(X),D_r(X),\operatorname{name}(X))\)选优。这里的$\operatorname{name}(X)$只用于完全相同工期和搬运量的确定性平局。
+
+\begin{algorithm}[H]
+\caption{问题一场景化候选生成与官方评价}
+\begin{algorithmic}[1]
+\REQUIRE 原始图$G$、核数$K$、场景$r$
+\ENSURE 最终映射、核心序列、工期和搬运字段
+\STATE 预处理生产消费关系、拓扑序、分量、张量大小和容量区间
+\STATE 生成整图、分量装箱、拓扑切块及场景$r$的mandatory anchors
+\STATE 对每个起点生成组移动、分组切分、相邻合并和边界节点变体
+\STATE 规范化计划，检查覆盖、商图无环、同核依赖和容量格式并去重
+\STATE 计算路径、计算负载、结构COPY和容量压力的轻量排序元组
+\FOR{mandatory anchors及排序靠前的候选}
+\STATE 运行profile；失败则保存错误并继续
+\STATE 运行官方事件模拟；保存工期、搬运、计划哈希或失败文本
+\ENDFOR
+\STATE 在成功结果中按$(F_r,D_r,\operatorname{name})$选取该组合的最终计划
+\STATE 将结果写入final\_selection和主矩阵；不再追加后验继承步骤
+\end{algorithmic}
+\end{algorithm}
+
+伪代码中的最终选择发生在每个$(\text{图},K,r)$组合内部。低核方案可以作为候选锚点进入较高核数的搜索，但其是否入选必须再次通过目标组合的合法性检查和官方评价；主矩阵不把较低核结果事后复制为目标核数结果。主矩阵、候选台账和附录代码因此共享同一选择链。
+
+\subsubsection{实现模块与证据记录}
+图预处理由\texttt{graph.py}完成，计划规范化、流水线切块和\texttt{plan\_key}由\texttt{plan.py}完成；场景化候选由\texttt{candidates.py}生成，容量与Cache轻量代理由\texttt{scoring.py}完成。\texttt{run\_experiment.py}记录profile、候选评价额度、失败原因、\texttt{final\_selection.json}和结果哈希。MPS仅用于轻量候选负载排序，完整工期仍由CPU官方事件模拟器给出。
+
+\begin{table}[H]\centering\small
+\caption{问题一新算法的模块与证据输出}\label{tab:a-code-map}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+模块 & 作用 & 主要输出\\\midrule
+\texttt{graph.py} & 依赖、分量、生产消费关系和拓扑信息 & 图索引与张量关联\\
+\texttt{plan.py} & 计划规范化、切块、核心序列与哈希 & 合法计划和\texttt{plan\_sha256}\\
+\texttt{candidates.py} & 场景化起点、组变换、切分、合并与边界变体 & 候选台账\\
+\texttt{scoring.py} & 路径、搬运、容量和Cache轻量排序 & 排序元组\\
+\texttt{run\_experiment.py}与官方评估器 & profile、事件模拟和最终选优 & \texttt{final\_selection}、工期、搬运和状态\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsection{结果口径与分析}
+\subsubsection{结果指标与速度比}
+三问均以同一张图的整图单Task、单核A0官方工期$T_{1,i}$作基准，主矩阵按每个$(i,K,r)$组合独立保存最终选择。速度比定义为
+\begin{equation}
+S_{r,i,K}=T_{1,i}/F_r(X^*_{r,i,K}),qquad \overline S_{r,K}=\frac1{100}\sum_{i=1}^{100}S_{r,i,K}.
+\label{eq:a-speedup}
+\end{equation}
+题面曲线可将A单核点显示为1，但表中保留主矩阵实际选择；所有非基准数值均由最终工期逐图计算，再对100张图取算术平均。浅色带表示固定100图有放回重采样1500次的经验区间。
+\begin{table}[H]\centering\small\caption{问题一v7主矩阵逐核速度比与候选改善}\label{tab:a-results}
+\begin{tabularx}{\linewidth}{cYYYYY}\toprule
+核数 & 平均加速比 & 中位数 & 95\%实例区间 & 初始至最终改善/\% & 改善图数\\\midrule
+1 & 1.0220 & 1.0000 & [1.0098,1.0383] & 1.7900 & 44/100\\
+2 & 1.7432 & 1.9650 & [1.6700,1.8135] & 38.5943 & 90/100\\
+3 & 2.3742 & 2.8407 & [2.2220,2.5225] & 50.0193 & 90/100\\
+4 & 2.9520 & 3.6710 & [2.7178,3.1771] & 55.5842 & 90/100\\
+5 & 3.4383 & 4.0343 & [3.1280,3.7451] & 58.6697 & 89/100\\\bottomrule
+\end{tabularx}\end{table}
+\samplefigure{speedup_A}{问题一加速比：100图均值、中位数及均值95\%实例重采样区间}{fig:speedup-a}
+
+五核平均速度比为3.4383，中位数为4.0343；从四核到五核平均增加0.4863。初始方案到最终方案的改善在二至五核明显增加，说明场景化候选和官方评价共同改变了入围方案。该改善只表示同一组合内的候选选择收益，不能解释为单一机制的独立消融。
+
+\subsubsection{搬运量分解}
+表\ref{tab:a-copy-results}由v7主矩阵的官方字段计算，结构新增与容量恢复分别列出。\begin{table}[H]\centering\small\caption{问题一额外搬运的结构与容量分解（100图均值，MiB）}\label{tab:a-copy-results}
+\begin{tabular}{crrrr}\toprule
+核数 & 划分新增 & 容量恢复 & 额外搬运合计 & 有容量恢复图数\\\midrule
+1 & 1.687 & 10.064 & 11.751 & 39\\
+2 & 1.508 & 11.156 & 12.664 & 35\\
+3 & 2.815 & 10.647 & 13.461 & 33\\
+4 & 3.462 & 10.229 & 13.691 & 30\\
+5 & 3.659 & 9.895 & 13.554 & 28\\\bottomrule
+\end{tabular}
+\end{table}
+
+结构搬运、容量恢复和工期由同一事件时间线共同决定。五核平均额外搬运略低于四核，但这只是100图均值；是否缩短尾部工期仍取决于搬运所在关键路径、Task等待和共享DDR并发数。
+
+\subsubsection{典型算例与合法性检查}
+\Case{001}含600个非COPY操作。v7最终五核方案把操作分成多个连续块并分配到不同核心；官方结果记录其工期、结构搬运和计划哈希，具体字段见附录逐图表。\Case{053}则显示容量约束会使结构搬运与工期出现不同步：其最终Spill和物理副本生存期由B场景事件模拟逐项给出，不能用旧的低核继承口径替代。
+
+每个最终方案回代\texttt{node\_to\_subgraph}和\texttt{core\_schedules}，检查全部非COPY操作恰好归属一次、子图不空且在核心列表中恰好出现一次，再由官方评估程序展开执行图。结果包对1500个组合键进行唯一性和状态检查，1500/1500条记录为\texttt{AI\_VERIFIED}；A、B、C各核数均为100条。
+
+\subsection{问题一灵敏度分析}
+问题一的核数灵敏度直接比较A场景各$(i,K)$组合的官方最终工期。均值由四核2.9520升至五核3.4383，增加0.4863；五核初始到最终平均改善58.6697\%。图\ref{fig:speedup-a}的重采样带和表\ref{tab:a-results}共同显示图集合组成对均值的影响。由于每个核数独立生成候选，不能将该变化解释为后验继承带来的单调性。
+

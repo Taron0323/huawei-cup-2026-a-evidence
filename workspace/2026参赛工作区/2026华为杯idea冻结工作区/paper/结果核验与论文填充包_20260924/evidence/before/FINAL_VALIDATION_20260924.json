@@ -1,0 +1,45 @@
+{
+  "status": "COMPUTED",
+  "validated_at": 1790240699.4828632,
+  "unit_tests": {
+    "command": "PYTHONPATH=src .venv/bin/python -m pytest -q tests",
+    "status": "3 passed"
+  },
+  "main_matrix": {
+    "rows": 1500,
+    "ai_verified": 1500,
+    "unique_combinations": 1500,
+    "expected": 1500
+  },
+  "ablation": {
+    "rows": 1500,
+    "expected": 1500
+  },
+  "cache_pairs": {
+    "rows": 500,
+    "expected": 500
+  },
+  "singlecore_baseline": {
+    "rows": 100,
+    "expected": 100
+  },
+  "sensitivity": {
+    "fixed_rows": 24,
+    "fixed_ai_verified": 24,
+    "reoptimized_rows": 48,
+    "reoptimized_ai_verified": 36,
+    "groups_with_success": 24,
+    "expected_groups": 24,
+    "failed_alternatives": 12
+  },
+  "candidate_result_checks": {
+    "files": 2828,
+    "ai_verified": 2828
+  },
+  "figures": {
+    "png_verified": 7,
+    "svg_count": 7
+  },
+  "active_experiment_processes": [],
+  "result_root": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/2026华为杯idea冻结工作区/实验数据"
+}

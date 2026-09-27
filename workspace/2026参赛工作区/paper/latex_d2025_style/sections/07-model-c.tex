@@ -1,0 +1,178 @@
+\clearpage
+\section{问题二模型建立与求解}
+问题二将不同设备的观测统一为区域内的三维湍流信息。根据地面、垂直廓线和雷达体扫各自的空间特点，先完成坐标与时刻对齐，再构造同一量纲下的诊断指标，通过空间融合得到规则网格产品。完整思路如图\ref{fig:q2flow}所示。
+\samplefigure{q2flow}{问题二思路流程图}{fig:q2flow}
+\subsection{数据预处理}
+\subsubsection{时间序列预处理}
+时间序列的质量处理包括重复记录识别、局地异常检查和短缺测处理。采用局部中位数 $m_t$ 与尺度 $s_t=1.4826\operatorname{median}|x-m_t|$ 标记异常候选；阈值超过并不直接证明记录错误，还需结合设备质量标志和相邻观测判断。对有效邻域内的短缺测，采用归一化核权重
+\begin{equation}
+\widehat x(t)=\frac{\sum_{i\in\mathcal N_t}K((t-t_i)/h)x_i}
+{\sum_{i\in\mathcal N_t}K((t-t_i)/h)}.
+\end{equation}
+分母为零时保留缺测。监测重建可使用分析窗内观测，预测实验则仅使用起报时刻之前的数据。趋势去除只用于需要平稳残差的统计模块，原始均值和趋势参数保存在结果中。
+\subsubsection{多源数据时间对齐}
+以共同分析时刻 $t_k$ 为基准，明确每种设备使用瞬时值、窗口均值还是最近有效扫描。对于风向，先转换为风速分量再聚合，避免跨越 $0^\circ$ 时产生错误均值。时间容差和窗口宽度通过设备采样间隔确定，并比较不同设置下的融合误差。
+
+对齐后数据表包含观测时刻、分析时刻、时间差、源设备与质量标志。这样可在后续权重中区分当前观测与较早观测，也便于发现把预报有效时刻误作模式起报时刻的问题。
+\subsubsection{空间数据预处理}
+水平与垂直方向具有不同的相关尺度。以 $(L_x,L_y,L_z)$ 表示三个方向的尺度，定义无量纲各向异性距离
+\begin{equation}
+d_i^2=\left(\frac{x-x_i}{L_x}\right)^2+
+\left(\frac{y-y_i}{L_y}\right)^2+
+\left(\frac{z-z_i}{L_z}\right)^2.
+\end{equation}
+使用方向半方差函数分析尺度：
+\begin{equation}
+\gamma(\bm h)=\frac1{2|N(\bm h)|}\sum_{(i,j)\in N(\bm h)}(I_i-I_j)^2.
+\end{equation}
+距离分箱、有效点对数量与设备类型同时记录。指标归一化参数由训练观测估计，融合与验证采用同一尺度。
+\subsubsection{数据质量控制}
+质量控制依次检查字段编码、单位、物理范围、信噪比和邻域一致性。对于雷达谱宽与径向速度，还需检查扫描方式、退模糊标志及波束遮挡信息。局地梯度过大可能来自真实强变化，因此邻域差异用于定位需复核的样本，最终掩膜由多项证据共同决定。
+\samplefigure{stationqc}{气象站与雷达数据分析图}{fig:stationqc}
+\subsubsection{空间坐标系统一}
+研究区域取包含全部地面站的矩形范围，地理信息和观测坐标统一到适合本区域的投影坐标系。高度需区分海拔高度、离地高度和雷达相对高度。若将海拔转为离地高度，应使用同一位置的地形高程并保留转换规则。
+
+转换后空间域记为 $\Omega=[x_{\min},x_{\max}]\times[y_{\min},y_{\max}]\times[0,2000)$。飞行区域掩膜与三维输出范围分别保存，地图显示的范围不会自动成为可飞行范围。
+\subsubsection{直角坐标系网格}
+规则网格的水平间距为 100 m，垂直间距为 50 m。若使用单元中心，则垂直中心为 $25,75,\ldots,1975$ m，共 40 层；若使用含两个边界的节点网格，则 $0,50,\ldots,2000$ m 对应 41 个节点。本文采用\slot{中心或节点}约定，并在数据文件中记录坐标数组。
+\begin{equation}
+x_i=x_{\min}+(i+\tfrac12)\Delta x,\quad
+y_j=y_{\min}+(j+\tfrac12)\Delta y,\quad
+z_k=(k+\tfrac12)\Delta z.
+\end{equation}
+\samplefigure{stations}{雷达站点分布图}{fig:stations}
+\subsubsection{球面坐标系网格}
+对于需要雷达极坐标转换的资料，先使用站点经纬度、海拔、斜距、方位角和仰角定位波束。采用等效地球半径 $k_eR_e$ 时，波束相对于雷达的高度可写为
+\begin{equation}
+h(r,\alpha)=\sqrt{r^2+(k_eR_e)^2+2rk_eR_e\sin\alpha}-k_eR_e.
+\end{equation}
+雷达海拔随后加入高度坐标。地表弧长使用对应球面几何关系计算，再转到统一投影坐标；折射系数按设备说明或验证方案设置。局部近似仅在已检查空间误差的范围内使用。
+\subsubsection{多源数据融合权重}
+在已统一指标定义的前提下，观测权重同时考虑误差、空间距离和时间差：
+\begin{equation}\label{eq:weights}
+\widetilde\omega_i=\frac{q_i\exp(-|t-t_i|/\tau)}
+{(\sigma_i^2+\epsilon_\sigma)(d_i^2+\epsilon_d)^{p/2}},\qquad
+\omega_i=\frac{\widetilde\omega_i}{\sum_j\widetilde\omega_j}.
+\end{equation}
+其中 $q_i\in[0,1]$ 表示质量权重，$\epsilon_\sigma$ 与 $\epsilon_d$ 分别具有相应的方差单位和无量纲单位。重复观测聚合后再赋权，避免高采样密度的单一设备占据全部权重。权重和尺度参数由留站验证选择。
+\samplefigure{weather}{气象要素分布图}{fig:weather}
+\subsection{问题二模型建立}
+三维重构采用由简到繁的两层方案。首先建立各向异性反距离加权基线，检查空间覆盖和指标连续性；随后引入观测误差及背景约束，构建变分融合模型。两种方法在同一留站划分上比较，选择依据为重构误差、误差区间与运行成本。
+\subsubsection{参数配置}
+不同设备的原始量具有不同单位，进入融合前应映射到共同指标。风廓线雷达可采用问题一的模型 b；地面站在有效时间窗内提供阵风与风速波动代理量；天气雷达依据校正谱宽或速度结构函数构造诊断量。只有满足采样尺度与物理假设时，才进行耗散率或 TKE 的估计。
+\samplefigure{weathercombined}{气象与雷达数据分布}{fig:weathercombined}
+\begin{table}[H]\centering\caption{地面站湍流指标汇总表}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+指标 & 定义形式 & 输入条件\\\midrule
+阵风因子 & $(U_{\max}-\overline U)/(\overline U+\epsilon_U)$ & 同一有效窗口的最大与平均风速\\
+风速波动 & $\operatorname{std}(U)/ (\overline U+\epsilon_U)$ & 采样频率与窗口明确\\
+温度梯度 & $(\theta_2-\theta_1)/(z_2-z_1)$ & 确有两个高度的热力观测\\
+综合指标 & $\sum_j\alpha_j\widetilde I_j$ & 同一标定尺度与有效性掩膜\\\bottomrule
+\end{tabularx}\end{table}
+只有单层温度时，无法从该站独立识别垂直温度梯度。对于缺少的输入，对应子指标不启用，并在权重归一化中记录实际参与项。
+\subsubsection{各向异性反距离加权插值（Anisotropic IDW）}
+目标点的基线风险由有效邻域观测加权得到：
+\begin{equation}
+I_{\rm IDW}(\bm r,t)=\sum_{i\in\mathcal N(\bm r,t)}\omega_i I_i.
+\end{equation}
+邻域由最大水平距离、最大垂直距离和时间容差共同约束。在已知观测点处，可直接使用聚合观测值；无有效邻居时输出缺测或预先定义的背景估计，并同步给出状态掩膜。
+\subsubsection{多源数据融合过程（变分融合模型）}
+将全部网格值组成向量 $\bm I$，定义
+\begin{equation}\label{eq:variational}
+J(\bm I)=\sum_k(H_k\bm I-\bm y_k)^\mathsf TR_k^{-1}(H_k\bm I-\bm y_k)
++\lambda_b\|\bm I-\bm I_b\|_2^2+\lambda_s\|L\bm I\|_2^2.
+\end{equation}
+其中，$H_k$ 将网格场映射到第 $k$ 类观测位置或采样体积，$R_k$ 表示误差协方差，$L$ 为按网格间距构造的平滑算子。背景场 $\bm I_b$ 可来自 IDW 或上一时刻预报，并明确其生成方式。
+\begin{table}[H]\centering\caption{变分同化系统中的代价函数分量}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+代价项 & 作用 & 参数与检查\\\midrule
+观测项 & 拟合各类有效观测 & $R_k$、观测残差和设备偏差\\
+背景项 & 约束弱观测区域 & $\lambda_b$、背景来源及留站误差\\
+平滑项 & 控制网格尺度的波动 & $\lambda_s$、方向尺度和边界条件\\\bottomrule
+\end{tabularx}\end{table}
+\subsubsection{权重优化}
+权重优化在训练站点上进行，留出站点不参与误差方差估计或超参数选择。对于空间尺度、背景强度和平滑强度，采用小规模网格搜索或有界优化，记录每组配置的误差和耗时。最终参数在测试划分中固定。
+\begin{table}[H]\centering\caption{权重计算公式汇总表}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+组成 & 表达式 & 解释\\\midrule
+距离权重 & $(d_i^2+\epsilon_d)^{-p/2}$ & 三方向尺度决定衰减\\
+误差权重 & $(\sigma_i^2+\epsilon_\sigma)^{-1}$ & 精度较高的观测占比更高\\
+时效权重 & $\exp(-|t-t_i|/\tau)$ & 控制旧观测贡献\\
+质量权重 & $q_i$ & 来源于有效质量标志\\\bottomrule
+\end{tabularx}\end{table}
+\subsubsection{观测算子设计}
+观测算子应反映设备实际测量对象。对于已转换到共同风险尺度的点观测，可使用邻近网格的插值权重；对于具有采样体积的雷达，使用体积平均算子。原始径向速度与风险指标属于不同变量，直接融合时需要另外建立从状态变量到径向速度的物理算子。
+\begin{table}[H]\centering\caption{观测算子公式汇总表}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+观测类别 & 算子形式 & 归一化条件\\\midrule
+点位指标 & $H_i\bm I=\sum_j a_{ij}I_j$ & $a_{ij}\ge0,\ \sum_j a_{ij}=1$\\
+垂直门平均 & $H_iI=\int K_i(z)I(z)\,\mathrm dz$ & $\int K_i(z)\,\mathrm dz=1$\\
+雷达体积平均 & $H_iI=\int_{V_i}K_i(\bm r)I(\bm r)\,\mathrm dV$ & 核函数与采样体积对应\\\bottomrule
+\end{tabularx}\end{table}
+在二次目标与线性观测算子的条件下，式\eqref{eq:variational}可化为对称线性系统。若背景正则使矩阵正定，可使用共轭梯度法；若增加 $0\le I_j\le1$ 约束，则使用有界二次规划或投影方法，并报告约束残差。
+\begin{table}[H]\centering\caption{梯度下降法（Gradient Descent）}
+\begin{tabularx}{\linewidth}{lY}\toprule
+步骤 & 运算\\\midrule
+初始化 & 给定 $\bm I_0$、最大迭代数与容差\\
+计算梯度 & $\bm g_k=\nabla J(\bm I_k)$\\
+选择步长 & 回溯或依据 Lipschitz 上界选择 $\eta_k$\\
+更新 & $\bm I_{k+1}=\bm I_k-\eta_k\bm g_k$；有界时执行投影\\
+停止 & 梯度、目标变化与约束残差满足预设标准\\\bottomrule
+\end{tabularx}\end{table}
+\begin{table}[H]\centering\caption{共轭梯度法（Conjugate Gradient）}
+\begin{tabularx}{\linewidth}{lY}\toprule
+步骤 & 运算\\\midrule
+初始化 & $\bm r_0=\bm b-A\bm I_0,\ \bm p_0=\bm r_0$\\
+步长 & $\eta_k=(\bm r_k^\mathsf T\bm r_k)/(\bm p_k^\mathsf TA\bm p_k)$\\
+更新场与残差 & $\bm I_{k+1}=\bm I_k+\eta_k\bm p_k,\quad\bm r_{k+1}=\bm r_k-\eta_k A\bm p_k$\\
+方向更新 & $\beta_k=\|\bm r_{k+1}\|^2/\|\bm r_k\|^2,\quad\bm p_{k+1}=\bm r_{k+1}+\beta_k\bm p_k$\\
+停止 & 相对残差满足容差，或达到迭代上限\\\bottomrule
+\end{tabularx}\end{table}
+\subsubsection{湍流强度计算过程}
+各类诊断量先按相同的标定规则转换到风险尺度，再执行融合。含热力资料的位置使用式\eqref{eq:ri}计算稳定度，只有雷达资料的位置采用模型 b 或经验证的雷达指标。负理查逊数保留其不稳定层结含义，不对其直接取对数。
+
+若利用速度结构函数估计耗散率，在惯性子区条件下采用
+\begin{equation}
+D_{vv}(r)=\E\{[v(\bm x+\bm r)-v(\bm x)]^2\}=C_2(\varepsilon r)^{2/3}.
+\end{equation}
+拟合时需识别有效尺度范围，处理测量噪声、平均剪切和径向投影的影响。由耗散率转为共同指标的映射在校准集上固定，空间变化再由融合模型估计。
+\subsubsection{时空平滑与外推过程（卡尔曼滤波（TurbKF）算法）}
+对于降维后的场状态 $\bm s_t$，构造状态空间模型 $\bm s_t=F\bm s_{t-1}+\bm\eta_t$、$\bm y_t=H\bm s_t+\bm\nu_t$。预测与更新为
+\begin{align}
+\bm s_t^-&=F\bm s_{t-1},&P_t^-&=FP_{t-1}F^\mathsf T+Q,\\
+K_t&=P_t^-H^\mathsf T(HP_t^-H^\mathsf T+R)^{-1},&
+\bm s_t&=\bm s_t^-+K_t(\bm y_t-H\bm s_t^-).
+\end{align}
+协方差更新采用 Joseph 形式以减小数值误差。高维网格不直接存储稠密全协方差，可使用局地、低秩或集合近似，并在文中给出实际状态维数和近似方式。
+\subsubsection{半拉格朗日平流方法}
+在短时平流占主导的假设下，从当前网格点反向追踪上一时刻的出发点：
+\begin{equation}
+\bm r_d=\bm r-\bm U\Delta t,\qquad
+I(\bm r,t+\Delta t)\approx\mathcal I[I(\cdot,t)](\bm r_d).
+\end{equation}
+其中 $\mathcal I$ 为指定空间插值算子。离开计算域的出发点按边界规则处理，并标记边界影响区域。标准半拉格朗日插值的数值耗散和守恒误差通过独立检查评估。
+\subsubsection{不确定性量化过程}
+对观测误差、插值误差和参数误差分别建立估计。若误差分量独立，可使用方差相加；若存在相关性，则保留协方差项。实际实现采用设备或时间块重采样，重复整个融合过程，生成网格点的中位数与分位数区间。
+
+覆盖质量由有效邻居数、最近观测距离和权重集中度描述。有效样本数可定义为 $N_{\rm eff}=1/\sum_i\omega_i^2$。该值是观测支撑程度的描述，概率区间覆盖率需通过留出观测另行校准。
+\subsection{问题二计算结果展示}
+首先比较不同高度层的空间分布。在\slot{时刻}的\slot{高度}截面中，高值区主要位于\slot{位置}，与\slot{观测或地形特征}相对应；该关系通过\slot{统计量或分组比较}进一步检验。垂直方向上的变化由实际剖面描述，分析中分别报告上升、下降和局地峰值，避免预设统一的单调规律。
+\samplefigure{fusion3d}{三维湍流强度空间分布示意图}{fig:fusion3d}
+\begin{table}[H]\centering\auxtablecaption{三维重构的验证与不确定性统计}
+\begin{tabularx}{\linewidth}{Ycccc}\toprule
+方法 & 留站 RMSE & MAE & 区间覆盖率 & 有效覆盖率\\\midrule
+各向同性 IDW & \pending&\pending&\pending&\pending\\
+各向异性 IDW & \pending&\pending&\pending&\pending\\
+变分融合 & \pending&\pending&\pending&\pending\\
+去掉单类设备 & \pending&\pending&\pending&\pending\\\bottomrule
+\end{tabularx}\end{table}
+\AIDataNote
+验证结果中，\slot{方法}的留站 RMSE 为\slot{数值}，相对于基线变化\slot{数值}。误差较大的区域集中在\slot{位置或条件}，同时其有效观测数为\slot{数值}。因此，后续航路分析同时使用风险场与不确定性场，并在超出观测覆盖的位置保留质量标记。
+\begin{table}[H]\centering\caption{问题二程序功能列表（拟交付接口）}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+模块 & 作用 & 预期输出\\\midrule
+\texttt{q2\_prepare.py} & 时间、坐标及质量处理 & 统一观测表\\
+\texttt{q2\_fusion.py} & IDW 与变分重构 & 网格场及掩膜\\
+\texttt{q2\_validate.py} & 留站、消融和重采样 & 逐点误差与区间\\
+\texttt{q2\_plot.py} & 地图、剖面及三维显示 & 图像及坐标说明\\\bottomrule
+\end{tabularx}\end{table}

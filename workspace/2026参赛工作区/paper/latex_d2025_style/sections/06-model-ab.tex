@@ -1,0 +1,187 @@
+\clearpage
+\section{问题一模型建立与求解}
+问题一按照数据对齐、物理参数计算、双模型构建、参数优化和结果检验的顺序展开。先固定模型 a 的参照定义，再比较模型 b 在不同输入和标定方法下的表现。整体结构如图\ref{fig:q1flow}所示。
+\samplefigure{q1flow}{问题一思路结构图}{fig:q1flow}
+\subsection{数据预处理}
+\subsubsection{高度对齐与缺测值处理}
+风廓线雷达与微波辐射计在不同高度层上采样，因此首先建立共同的高度坐标。设辐射计相邻有效层为 $z_j'$ 和 $z_{j+1}'$，当雷达高度 $z_i$ 位于该区间内时，按下式计算对齐温度：
+\begin{equation}
+T(z_i)=T(z_j')+\frac{z_i-z_j'}{z_{j+1}'-z_j'}\bigl[T(z_{j+1}')-T(z_j')\bigr].
+\end{equation}
+其中，两端温度均需有效，层间距不得超过预设容差。对于超出有效观测范围的高度，保留缺测标记；对于连续较长的缺测区间，单独记录其长度和位置。时间匹配采用相同原则，先依据设备时间说明统一时区和时间基准，再选择容差内的记录。
+\begin{algorithm}[H]\caption{微波辐射计数据插值到雷达高度层}
+\begin{algorithmic}[1]
+\REQUIRE 雷达高度、辐射计高度和温度、质量标志、最大层间距
+\ENSURE 对齐温度及有效性掩膜
+\STATE 按高度排序，检查重复高度与温度单位
+\FOR{每个雷达高度 $z_i$}
+\STATE 查找相邻有效高度 $z_j'\le z_i\le z_{j+1}'$
+\IF{两端有效且层间距满足容差}
+\STATE 计算线性插值并记录源记录编号
+\ELSE
+\STATE 记录缺测及原因
+\ENDIF
+\ENDFOR
+\end{algorithmic}\end{algorithm}
+经过上述处理，得到统一时间和高度索引的数据表。二维图用于观察连续缺测与局地异常，三维图用于比较不同变量随时间和高度的变化。图\ref{fig:parameters2d}与图\ref{fig:parameters3d}分别给出对应的排版位置；实际使用时，应以同一清洗数据版本生成两组图。
+\samplefigure{parameters2d}{参数二维可视化}{fig:parameters2d}
+\samplefigure{parameters3d}{参数三维可视化}{fig:parameters3d}
+\begin{table}[H]\centering\caption{风廓线雷达观测基本信息}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+观测项目 & 数值或范围 & 统计口径\\\midrule
+观测时段 & \slot{开始时刻至结束时刻} & 数据说明指定时间基准\\
+原始记录与有效记录数 & \slot{数量} / \slot{数量} & 质量控制前后分别统计\\
+有效高度范围 & \slot{最低高度至最高高度} m & 排除缺测及质量不合格记录\\
+配对记录数 & \slot{数量} & 满足时间与高度容差\\\bottomrule
+\end{tabularx}\end{table}
+\samplefigure{distribution}{数据分布图}{fig:distribution}
+\begin{table}[H]\centering\caption{风场与湍流物理参数}
+\begin{tabularx}{\linewidth}{lclY}\toprule
+参数 & 统计量 & 单位 & 解释依据\\\midrule
+水平风速 & \pending & m/s & 均值、标准差与分位数\\
+垂直速度 & \pending & m/s & 正负号约定与质量标志\\
+速度谱宽 & \pending & m/s & 原始值与校正值分别列示\\
+信噪比 & \pending & 依说明 & 先核实线性值、缩放整数或 dB\\
+理查逊数 & \pending & 1 & 分位数及小切变掩膜\\
+谱宽方差代理量 & \pending & $\mathrm{m^2/s^2}$ & 展宽校正方法\\\bottomrule
+\end{tabularx}\end{table}
+从统计结果可以进一步判断数据集中哪些变量需要分层处理。例如，若不同高度的谱宽分布存在明显差异，应将仪器分辨率、信号质量和大气条件分别检查；若少量记录形成极端尾部，应回到原始编码与质量标志核对。完成这些检查后，再讨论其对湍流指标的影响。
+\subsubsection{参数准备}
+\textbf{（1）位温计算。}位温消除了气压变化对温度比较的影响，定义为
+\begin{equation}
+\theta=T\left(\frac{p_0}{p}\right)^{R_d/c_p},\qquad p_0=1000\ \mathrm{hPa}.
+\end{equation}
+式中，$T$ 为绝对温度，摄氏温度需加上 273.15；$p$ 与 $p_0$ 使用相同单位。缺少完整气压廓线时，可在静力平衡假设下，利用地面气压和虚温廓线计算
+\begin{equation}
+p(z)=p(z_0)\exp\left[-\int_{z_0}^{z}\frac{g}{R_dT_v(\zeta)}\,\mathrm d\zeta\right].
+\end{equation}
+虚温未知时采用干空气近似，并将其作为热力参数的敏感性设置。地面气压优先使用有效观测，经验常数的采用需列出来源与影响范围。
+
+\textbf{（2）水平风速合成。}若输入已经包含可靠的风速产品，直接使用其风向约定和质量标志；若需要从径向速度反演，则定义仰角 $\alpha$ 从水平面起算、方位角 $\phi$ 从正北顺时针起算，有
+\begin{equation}
+v_r=u\cos\alpha\sin\phi+v\cos\alpha\cos\phi+w\sin\alpha.
+\end{equation}
+将多个波束堆叠为 $\bm v_r=A\bm U$，使用带权最小二乘求解 $\bm U=(u,v,w)^\mathsf T$。需要检查矩阵秩、条件数和有效波束数，病态样本保留质量标记。角度定义改变时，应同步改变设计矩阵，而不能直接沿用三角函数形式。
+\samplefigure{wind}{风场特征分布}{fig:wind}
+\begin{algorithm}[H]\caption{风廓线雷达风速合成算法}
+\begin{algorithmic}[1]
+\REQUIRE 波束径向速度、仰角、方位角、质量标志
+\ENSURE 风速分量及求解质量
+\STATE 剔除无效波束，按统一角度约定构造 $A$
+\STATE 检查矩阵秩和条件数
+\STATE 采用 QR 或 SVD 求解加权最小二乘
+\STATE 输出 $u,v,w$、残差与有效波束数
+\end{algorithmic}\end{algorithm}
+
+\textbf{（3）垂直梯度计算。}在等距网格的内部节点上，采用中心差分
+\begin{equation}
+\left.\frac{\partial\theta}{\partial z}\right|_i\approx
+\frac{\theta_{i+1}-\theta_{i-1}}{2\Delta z}.
+\end{equation}
+风速梯度采用相同格式，边界采用单边差分。非等距网格使用对应的三点非均匀差分权重。梯度计算要求邻域内连续有效，跨越长缺测段的差分不进入后续指标。
+
+\textbf{（4）理查逊数计算。}梯度理查逊数用于比较浮力作用与切变作用：
+\begin{equation}\label{eq:ri}
+Ri=\frac{g}{\theta}\frac{\partial\theta/\partial z}
+{(\partial u/\partial z)^2+(\partial v/\partial z)^2}.
+\end{equation}
+分母过小时，优先标记为小切变样本；若采用正则化分母，则参数必须具有 $\mathrm{s}^{-2}$ 的单位并接受敏感性检验。临界值用于指定理论条件下的稳定性诊断，湍流等级还需结合其他信息标定。
+
+\textbf{（5）湍流动能与谱宽代理量。}湍流动能定义为
+\begin{equation}
+\mathrm{TKE}=\tfrac12\left(\overline{u'^2}+\overline{v'^2}+\overline{w'^2}\right).
+\end{equation}
+雷达谱宽包含湍流及非湍流展宽。令可估计的波束、切变和仪器展宽方差分别为 $q_{\rm beam},q_{\rm shear},q_{\rm inst}$，定义
+\begin{equation}
+q_{SW}=\max\{SW^2-q_{\rm beam}-q_{\rm shear}-q_{\rm inst},0\}.
+\end{equation}
+本文使用 $q_{SW}$ 作为代理量。只有在局地各向同性、采样尺度适当且完成展宽校正等条件成立时，才进一步讨论 $\mathrm{TKE}\approx3q_{SW}/2$ 的估计关系。
+
+\textbf{（6）风切变计算。}水平风速随高度的变化强度由
+\begin{equation}
+S=\sqrt{(\partial u/\partial z)^2+(\partial v/\partial z)^2}
+\end{equation}
+给出，单位为 $\mathrm{s}^{-1}$。该量与稳定度、谱宽代理量共同进入综合指标。
+\subsection{模型a：融合数据湍流强度模型}
+为同时描述热力稳定性与动力变化，构建综合指标
+\begin{equation}\label{eq:modela}
+I_a=\alpha_1f(Ri)+\alpha_2\widetilde q_{SW}+\alpha_3\widetilde S,
+\quad \alpha_j\ge0,\quad\sum_{j=1}^{3}\alpha_j=1.
+\end{equation}
+其中，$f(Ri)=[1+\exp\{\beta(Ri-r_0)\}]^{-1}$ 是取值位于 $[0,1]$ 的稳定度映射，实际实现使用数值稳定的 sigmoid。$\widetilde q_{SW}$ 与 $\widetilde S$ 采用训练集分位数尺度归一化并截断至 $[0,1]$。这一形式延续多物理量加权的构造方式，同时使指标范围与后续风险代价一致。
+
+权重、映射斜率和分位数尺度在训练或标定阶段确定，验证时保持固定。若没有独立湍流观测，权重选择体现对不同物理过程的建模设定，应通过参数扰动报告指标变化。模型 a 的可靠程度与模型 b 的拟合误差分别讨论。
+\subsection{模型b：仅风廓线雷达湍流强度模型}
+模型 b 面向只有风廓线雷达资料的情形。以校正谱宽、风切变、风速及历史变化构成输入，先建立可解释的基线
+\begin{equation}
+I_b=\operatorname{clip}_{[0,1]}\left(c_0+c_1\widetilde q_{SW}+c_2\widetilde S+c_3\Delta_t\widetilde q_{SW}\right).
+\end{equation}
+其中，$\Delta_t$ 仅使用当前及过去观测。静态基线令 $c_3=0$，时间增强模型保留该项。通过共同的训练与测试划分，可比较时间信息是否改善模型对参照廓线的逼近，而不改变模型 b 的输入限制。
+\subsection{参照模型a对模型b优化过程}
+对齐同一时间和高度上的 $I_a$ 与雷达特征后，构造训练样本。图\ref{fig:profiles}展示基准、未标定模型和优化模型的廓线对照形式。
+\samplefigure{profiles}{三个模型湍流强度分布图}{fig:profiles}
+\subsubsection{参数优化法}
+采用带正则项的回归目标
+\begin{equation}
+\min_{\bm c}\ \frac1{N_{\rm tr}}\sum_{i\in\mathcal D_{\rm tr}}
+(I_{a,i}-\bm x_i^\mathsf T\bm c)^2+\lambda\|\bm c_{1:}\|_2^2.
+\end{equation}
+截距不参与惩罚，$\lambda$ 通过训练时间块内部验证选择。需要非负组合时加入系数约束，并采用相应约束求解器。参数优化完成后，再将同一套参数应用于留出时段。
+\subsubsection{机器学习法}
+为拟合雷达变量与参照指标之间的非线性关系，可选随机森林回归器
+\begin{equation}
+\widehat I_b=\frac1B\sum_{b=1}^{B}h_b(SW,S,u,v,\Delta_tSW,z).
+\end{equation}
+树的深度、叶节点最小样本数和树数在训练部分调节，模型输入始终满足仅使用雷达资料的约束。比较时同时列出岭回归、随机森林与持续性基线的误差和计算时间，模型的选择由验证结果决定。
+\samplefigure{learning}{机器学习映射与时间块验证结构}{fig:learning}
+\subsection{模型评估指标}
+误差幅度采用 RMSE 与 MAE 描述，变化趋势采用相关系数描述；决定系数 $R^2$ 与相关系数平方分别计算。设测试集有 $N$ 个样本，则
+\begin{align}
+\mathrm{RMSE}&=\sqrt{\frac1N\sum_i(\widehat I_i-I_{a,i})^2},&
+\mathrm{MAE}&=\frac1N\sum_i|\widehat I_i-I_{a,i}|,\\
+R^2&=1-\frac{\sum_i(\widehat I_i-I_{a,i})^2}{\sum_i(I_{a,i}-\overline I_a)^2}.
+\end{align}
+参照值方差为零时，$R^2$ 记为未定义并报告绝对误差。各项指标均在相同有效样本交集上计算，并按高度与时间分别列示。
+\samplefigure{fielda}{模型a湍流强度分布图}{fig:fielda}
+\samplefigure{fieldb}{模型b湍流强度分布图}{fig:fieldb}
+\subsection{模型计算结果分析}
+首先从垂直结构比较两种模型。对于\slot{高度范围}，模型 b 与参照模型的偏差表现为\slot{高估或低估及幅度}；经过\slot{标定方法}后，该范围内的误差变为\slot{数值}。结合谱宽和切变廓线，可以判断差异主要集中于\slot{对应观测条件}。这一分析需要同时引用廓线图、有效样本数和误差统计。
+\samplefigure{coefficients}{湍流强度系数分布图}{fig:coefficients}
+\samplefigure{residuals}{模型b拟合与残差分析}{fig:residuals}
+\samplefigure{field3d}{湍流强度三维分布图}{fig:field3d}
+\begin{table}[H]\centering\caption{模型性能对比}
+\begin{tabularx}{\linewidth}{lcccY}\toprule
+模型 & RMSE & $R^2$ & MAE & 参照与划分\\\midrule
+未标定模型 b & \pending & \pending & \pending & 模型 a；留出时间块\\
+约束回归模型 b & \pending & \pending & \pending & 同一测试样本\\
+随机森林模型 b & \pending & \pending & \pending & 同一测试样本\\\bottomrule
+\end{tabularx}\end{table}
+\AIDataNote
+从评估指标来看，\slot{模型名称}在\slot{指标}上的变化为\slot{数值}，分高度结果显示变化主要来自\slot{高度段}。训练与测试误差之差为\slot{数值}，结合时间块间波动，选取\slot{最终方法}作为问题一的输出模型。对于参照模型本身的物理误差，另用\slot{独立观测或物理检查}进行分析。
+\begin{table}[H]\centering\caption{模型性能评估指标对比}
+\begin{tabularx}{\linewidth}{Ycccc}\toprule
+备选模型 & 训练 RMSE & 测试 RMSE & 测试 MAE & 测试 $R^2$\\\midrule
+岭回归 & \pending&\pending&\pending&\pending\\
+二次多项式回归 & \pending&\pending&\pending&\pending\\
+LASSO 回归 & \pending&\pending&\pending&\pending\\
+随机森林回归 & \pending&\pending&\pending&\pending\\
+梯度提升回归 & \pending&\pending&\pending&\pending\\
+核支持向量回归 & \pending&\pending&\pending&\pending\\\bottomrule
+\end{tabularx}\end{table}
+\begin{table}[H]\centering\caption{问题一程序功能列表（拟交付接口）}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+模块 & 输入与功能 & 预期输出\\\midrule
+\texttt{q1\_prepare.py} & 解析原始资料、匹配时高网格 & 清洗数据与质量表\\
+\texttt{q1\_fit.py} & 计算 a、拟合 b 并验证 & 参数、逐点预测与指标\\
+\texttt{q1\_plot.py} & 读取已保存结果绘图 & 廓线、分布与残差图\\\bottomrule
+\end{tabularx}\end{table}
+\begin{algorithm}[H]\caption{大气湍流强度计算流程}
+\begin{algorithmic}[1]
+\REQUIRE 原始观测、字段说明、时间划分和参数配置
+\ENSURE a、b 廓线、逐点误差、指标表及图像
+\STATE 解析输入，记录单位、时间和高度基准
+\STATE 完成对齐、质量控制及物理参数计算
+\STATE 固定模型 a，在训练部分选择并拟合模型 b
+\STATE 在留出时段输出逐点结果与分层统计
+\STATE 保存参数、结果和图表来源关系
+\end{algorithmic}\end{algorithm}

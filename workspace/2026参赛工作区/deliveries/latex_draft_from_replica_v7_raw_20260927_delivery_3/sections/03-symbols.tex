@@ -1,0 +1,44 @@
+\section{符号说明与基本假设}
+\subsection{符号说明}
+本文以$X=(g,a,\sigma)$表示可提交调度计划，以$F$表示完成时间，以$Q$表示搬运字节。逻辑张量用于分析跨域通信，片上容量另需区分换出恢复后的物理版本。主要符号见表\ref{tab:symbols}；局部变量在首次使用处定义。
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}@{}>{\raggedright\arraybackslash}p{0.62\linewidth}@{}>{\raggedright\arraybackslash}p{0.10\linewidth}@{}}
+\caption{主要符号、含义及单位}\label{tab:symbols}\\
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+\endfirsthead
+\multicolumn{3}{c}{续表\thetable\quad 主要符号、含义及单位}\\
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{续下页}\\
+\endfoot
+\bottomrule
+\endlastfoot
+$X$ & 可提交的调度方案，$X=(g,a,\sigma)$ & 方案\\
+$V$ & 非COPY计算操作集合 & 集合\\
+$\mathcal T$ & 逻辑张量集合 & 集合\\
+$K$ & 可用核心数 & 核\\
+$g(v)$ & 操作$v$所属的子图 & 编号\\
+$a(s)$ & 子图$s$所在的核心 & 编号\\
+$\sigma_k$ & 核心$k$上的子图执行序列 & 序列\\
+$c_v$ & 操作$v$的计算时间 & 周期\\
+$b_t$ & 张量$t$的大小 & 字节\\
+$p(t)$ & 张量$t$的计算生产者 & 编号\\
+$U(t)$ & 张量$t$的计算消费者集合 & 集合\\
+$Q_r^0$ & 配置$r$下的切分搬运量 & 字节\\
+$Q_r^{\rm spill}$ & 配置$r$下的Spill搬运量 & 字节\\
+$D_r$ & 配置$r$下相对整图方案的额外数据搬运量 & 字节\\
+$F_r(X)$ & 方案$X$在配置$r$下的Makespan & 周期\\
+$L_G$ & 计算依赖图的加权最长路 & 周期\\
+$W_M$ & M流水线的总工作量 & 周期\\
+$W_V$ & V流水线的总工作量 & 周期\\
+$T_{1,i}$ & 第$i$张图的整图单核基准Makespan & 周期\\
+$S_{r,i,K}$ & 第$i$张图在配置$r$、$K$核下的加速比 & 1\\
+\end{longtable}
+\normalsize
+其中周期、大小、容量与带宽来自题目配置；方案由求解器选择；事件时刻与Cache状态由评估程序推导。
+\input{sections/05-assumptions}

@@ -1,0 +1,252 @@
+[
+  {
+    "path": "2024/亚军_江苏科技大学_C24102890089.pdf",
+    "bytes": 7576608,
+    "sha256": "81f2b821a8f442cd0c94f067edd27c570e2d63ddbbcae3a7d92f1f573e410b48"
+  },
+  {
+    "path": "2024/冠军_山东大学_C24104220149.pdf",
+    "bytes": 3123287,
+    "sha256": "382bde4b71f57eae705347767120aa58b2d993ae090d71cdf246d0e13d6bf871"
+  },
+  {
+    "path": "2024/季军_东南大学_B24102860287.pdf",
+    "bytes": 2785134,
+    "sha256": "3e0fc95ca986458c90e024b55ad074660d419331f5b2feef26377e5e9abc5ee4"
+  },
+  {
+    "path": "2024/提名奖_华侨大学_D24103850092.pdf",
+    "bytes": 11677848,
+    "sha256": "a8c55b50f7be97971dc0b5844952dcbdc6929c07f52f841c0d0add83bec7628d"
+  },
+  {
+    "path": "2024/提名奖_南京工业大学_E24102910005.pdf",
+    "bytes": 5619324,
+    "sha256": "7420d18869b74b8f8a5d036e57ac0fa7b3a94fc54313e1729bbd97e578cfe2cd"
+  },
+  {
+    "path": "2024/提名奖_南京航空航天大学_F24102870082.pdf",
+    "bytes": 2633382,
+    "sha256": "71f0d1214c0790b5cbcdd45ad6c7712ea1fda01ea98b98f5e22f70e0ab987f9b"
+  },
+  {
+    "path": "2024/提名奖_国防科技大学_F24910020063.pdf",
+    "bytes": 7596610,
+    "sha256": "19377b63620d87cd6bbca526c7276857335f5bf99d30bed61e710f8bdb389125"
+  },
+  {
+    "path": "2024/提名奖_曲阜师范大学_D24104460003.pdf",
+    "bytes": 16813103,
+    "sha256": "01a6fe09f175de99159d78bdf8aa5997bc4564d85ae7f931f5715df5f2603db4"
+  },
+  {
+    "path": "2024/提名奖_浙江大学_A24103350007.pdf",
+    "bytes": 20043836,
+    "sha256": "7fe2813d94da5d72676dd6c8fe0ff6cfead155b8aeb67918be9269de1a0cab5e"
+  },
+  {
+    "path": "2024/提名奖_福州大学_C24103860012.pdf",
+    "bytes": 5362289,
+    "sha256": "20aa9ecb0164fd4e11130590da00f8e0a22a1147dc43b1b85ba9aa4f951a56d3"
+  },
+  {
+    "path": "2024/提名奖_西北农林科技大学_A24107120016.pdf",
+    "bytes": 8184115,
+    "sha256": "daa73a15a67fe912cebe0948f9db9c2ad8e985032f55212eecd64393308ca9e6"
+  },
+  {
+    "path": "2024/提名奖_西安邮电大学_B24116640167.pdf",
+    "bytes": 6464110,
+    "sha256": "26a34f2fa048e06f40e4d7981e25fc6f5f01067ceafc5e98af48916e4a51c637"
+  },
+  {
+    "path": "2024/提名奖_辽宁石油化工大学_E24101480006.pdf",
+    "bytes": 27317024,
+    "sha256": "84047e2dd922687d05f1ff326408c32dda51bc95ca1d1cd568ca8eac409ab9e4"
+  },
+  {
+    "path": "2025/原文待补齐.md",
+    "bytes": 2058,
+    "sha256": "90d597d5c497e620c55792aaa176ffe5f42886a589bd123d2ebdb6d56cc3c836"
+  },
+  {
+    "path": "README.md",
+    "bytes": 3471,
+    "sha256": "cb46343af129a27c64e72c802b83b5582c045c7b6069b12d8884df2d5272df70"
+  },
+  {
+    "path": "来源与校验/2024_奖项核对.json",
+    "bytes": 8128,
+    "sha256": "f7c755f93f2d23cc127c51b87b5ad343e90cef24103eb0b5c436922ea84c2a5f"
+  },
+  {
+    "path": "来源与校验/2024_官方获奖名单.xlsx",
+    "bytes": 1532390,
+    "sha256": "846cbdd1057beded8d53df42892fdf5fa5d2610b7ce998a83e1f042af2a65976"
+  },
+  {
+    "path": "来源与校验/2024_获奖来源网页.html",
+    "bytes": 83726,
+    "sha256": "7cb34bf855ea352849be388c25ee84c102cc0b4dd66896f420d5c19e397e7513"
+  },
+  {
+    "path": "来源与校验/2024_论文校验.json",
+    "bytes": 10083,
+    "sha256": "f4d88f859ce60f557c044ddb37230161c09998801b9fd0244453e9033858f7ae"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/A24103350007.txt",
+    "bytes": 3814,
+    "sha256": "39f0674f6a9d980818baafa26e3f9ab0a8ca6b589f4aa57f159ad619068b2f0e"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/A24107120016.txt",
+    "bytes": 3120,
+    "sha256": "5d6508b2f5259c983760cda5d8cf92e7148949e1ad6eacb15aaac1e160d46d99"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/B24102860287.txt",
+    "bytes": 3327,
+    "sha256": "bb07d9a5dbb1ce02f58fe55d5400655a14f0f902703f7f3ed1858d7a67c1d288"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/B24116640167.txt",
+    "bytes": 3764,
+    "sha256": "0124f2dd2e27c76164d6eaaf2cf101524395fd30d0491f4d0a666f85ab35cdcd"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/C24102890089.txt",
+    "bytes": 3017,
+    "sha256": "bef799f06b4c0c16342b2030217c3f61c69c8ede918efe976d3b4ae5dc3bd784"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/C24103860012.txt",
+    "bytes": 2225,
+    "sha256": "499394412c036cddbc3f84352e6ab1c1f9b94b8c1eec7a6f94a8ca99da0961ea"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/C24104220149.txt",
+    "bytes": 3304,
+    "sha256": "a18cac3b15a09a0c102b2a19be7dc69494be60313a178f44292b962105327aa4"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/D24103850092.txt",
+    "bytes": 3732,
+    "sha256": "cc855c119142e17e025936942359a1ee171dfafa015878aba7faaadf2068d83c"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/D24104460003.txt",
+    "bytes": 3791,
+    "sha256": "74e060f1cc0728adba1aca308381db56f8dfcbac776fadac45bce1d5d776510c"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/E24101480006.txt",
+    "bytes": 2897,
+    "sha256": "003bf3aaabdeb26f9f1da64d49dace61a73bc653d59fdd6a48a07cfc08e3935b"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/E24102910005.txt",
+    "bytes": 3143,
+    "sha256": "e4531b6db343ffe8587fe37b5969c698c76cc9493a96e93b447afed945a69b34"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/F24102870082.txt",
+    "bytes": 4045,
+    "sha256": "aabc4262dbb1a272677deec27f7b7ebd90e99da5157538ff5dd012f042ff1e15"
+  },
+  {
+    "path": "来源与校验/2024_首页文本/F24910020063.txt",
+    "bytes": 2982,
+    "sha256": "438a593380f5a12403a925145c5fbdc568275f73a6ace8f222404f73ce593502"
+  },
+  {
+    "path": "来源与校验/2025_奖项核对.json",
+    "bytes": 12438,
+    "sha256": "1cbb9461adbcd6fc44c922827d47d5ae13de510ea9f000f600b01d64744c0026"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单.rar",
+    "bytes": 1719665,
+    "sha256": "f2964391bb052e7e91b70635ed64853c77e7a492e586bed9ef5f65c2e37168dc"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/A.xlsx",
+    "bytes": 65613,
+    "sha256": "aa14574f7f8e701198688bd046269efff383b1bf3dd8699e6788ce31af56a3b2"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/B.xlsx",
+    "bytes": 104269,
+    "sha256": "73c0a147752360ab5ac785ed238f6195384722f34b6c6316c629d828019ac703"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/C.xlsx",
+    "bytes": 264671,
+    "sha256": "0ae4779b451a5174de0cd4e3aa916f35dbb307da2d7b2e323f46ea5be8ca0e6b"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/D.xlsx",
+    "bytes": 216286,
+    "sha256": "e39cff6bcdf369fa146e7501b51e5caa928381c7c70bf0cf362c7ebeb5cfd195"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/E.xlsx",
+    "bytes": 1216463,
+    "sha256": "ac7b9a0463c1276a0e15bb0befd1be68d57670b95f68cfb99f70ab2698f4539d"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/F.xlsx",
+    "bytes": 161309,
+    "sha256": "0fe6ec65c20e44110caef1f16ca015c62213b365a985bb35075671eca8d561ac"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/G.xlsx",
+    "bytes": 10173,
+    "sha256": "369ca77cd8d31b1c223e42963a5f51912016e152a6e589053a245ad92c20db48"
+  },
+  {
+    "path": "来源与校验/2025_官方获奖名单解包/H.xlsx",
+    "bytes": 9584,
+    "sha256": "b0e377b292fadb70e0b4c0663c6a356d704a9bec6b7c360c84f8af844f95788a"
+  },
+  {
+    "path": "来源与校验/2025_获奖来源网页.html",
+    "bytes": 86860,
+    "sha256": "d7f2f6d11d6be8cfe701855374fc4d26dbce3380afca28bdea15089976b2e36a"
+  },
+  {
+    "path": "来源与校验/2025_颁奖回顾.html",
+    "bytes": 87142,
+    "sha256": "d0d282af5c5e3f52e112abc5e21613b729aac423960be51b9973f7beea677bb7"
+  },
+  {
+    "path": "来源与校验/来源清单.json",
+    "bytes": 1946,
+    "sha256": "b593e7f2679bd20e7c2252173c7e17810f1aa995917565760f1f648a5e4fedc1"
+  },
+  {
+    "path": "论文目录.csv",
+    "bytes": 2430,
+    "sha256": "4e19cfc289e5e1c8fa403ef9d1368e29816d093cb893db06dc7979cd2ea4429b"
+  },
+  {
+    "path": "采集记录/2025_检索记录.json",
+    "bytes": 5308,
+    "sha256": "0bf919365eca7d08f4b66d2fa6b64005970cef1f96571efd77517a592919bbad"
+  },
+  {
+    "path": "采集记录/finalize_package.py",
+    "bytes": 7647,
+    "sha256": "fc2ed371063459eacc02944a227b8330fa48c6e50b5655e4fee9f8ed9fc02e92"
+  },
+  {
+    "path": "采集记录/prepare_package.py",
+    "bytes": 6053,
+    "sha256": "9414dfe52411c284f2979d984e110dbcc6fdf115b487be45f44459f3f2afded9"
+  },
+  {
+    "path": "采集记录/render_checks.py",
+    "bytes": 1142,
+    "sha256": "f658862576a37de3fa2f91014643f64873a7111a0ba0fd07e8c598f24011cf1a"
+  }
+]

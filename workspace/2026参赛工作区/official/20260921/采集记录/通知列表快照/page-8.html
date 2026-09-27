@@ -1,0 +1,1653 @@
+
+
+
+
+
+
+
+<!DOCTYPE html><html lang="zh-CN">
+    
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="研创网,中国研究生,系列赛事,中国研究生教育学会,中国研究生创新实践系列大赛" />
+    <meta name="description" content="中国研究生创新实践系列大赛由教育部学位管理与研究生教育司指导，中国学位与研究生教育学会和中国科协青少年科技中心共同主办，是目前我国唯一被政府认可和指导的专门面向研究生群体的全国性赛事" />
+    <title>中国研究生创新实践系列大赛管理平台</title>
+    <base href="https://cpipc.acge.org.cn/">
+    <link href="source/index/cpipc.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="source/website/platform2025/css/bootstrap_2025.css">
+    <link rel="stylesheet" href="source/framework/fonts/ezfont.css">
+    <link rel="stylesheet" href="source/component/ckeditor2/contents.css">
+    <link rel="stylesheet" href="source/website/platform2025/css/animate.css">
+    <link rel="stylesheet" href="source/website/platform2025/css/reset.css">
+    <link rel="stylesheet" href="source/website/platform2025/css/swiper.min.css">
+    <link rel="stylesheet" href="source/website/platform2025/css/style.css?v=1.0.6">
+    <link rel="stylesheet" href="source/website/platform2025/css/inner.css?v=1.0.7">
+    <script src="source/website/platform2025/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="source/website/bdtj.js?v=1.0.1"></script>
+</head>
+    <body>
+    <div class="container">
+        
+
+
+
+
+
+
+
+
+
+<div class="head-box">
+    <div class="head head_pc">
+        <div class="logo">
+            <img src="source/website/platform2025/images/foot-logo.svg" alt="">
+        </div>
+        <div class="nav">
+            <div class="tp">
+                <ul>
+                    <li class="item">
+                        <img src="source/website/platform2025/images/head_event1.svg" alt="">
+                        <span class="tit-16 col-fff f-400">2026承办单位：西安交通大学</span>
+                    </li>
+                    <li class="item">
+                        <img src="source/website/platform2025/images/head3.svg" alt="">
+                        
+                            
+                                <span class="tit-16 col-fff f-400" style="cursor: pointer;" onclick="switchLanguage('en')">English</span>
+                            
+                            
+                        
+
+                        <img src="source/website/platform2025/images/head6.svg" alt="">
+                    </li>
+                    
+                    <li class="item">
+                        <!-- 数学建模新增证书验真 -->
+                        
+                            <a class="tit-16 col-fff f-400" style="cursor: pointer;" onclick="certificateValidation()" id="certificateValidation">证书验真</a>
+                        
+                        <!-- 研电赛新增证书验真 -->
+                        
+                    </li>
+                    
+                    <li class="item">
+                        <a href="">
+                            <img src="source/website/platform2025/images/head_event2.svg" alt="">
+                            <span class="tit-16 col-fff f-400">返回首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="item btn" >
+                        
+                            
+                            
+                                <a href="login/signUp" target="_blank"><span
+                                        class="tit-16 col-fff f-400">注册丨</span></a>
+                                <span class="tit-16 col-fff f-400"
+                                      onclick="loginEntrance4Register()">登录</span>
+                            
+                        
+
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="bt">
+                <ul>
+                    <li class="item">
+                        <a href="cw/contestIntrol/4" class="tit-20 col-fff f-400">
+                            赛事介绍
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="cw/contestData/4/12" class="tit-20 col-fff f-400">
+                            组织架构
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="cw/contestData/4/3" class="tit-20 col-fff f-400">
+                            常见问题
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="cw/contestData/4/4" class="tit-20 col-fff f-400">
+                            联系我们
+                        </a>
+                    </li>
+                    
+                    <li class="item">
+                        <a onClick="registerContest('4')" class="tit-20 col-fff f-400">
+                            我要报名<img src="source/website/platform2025/images/head_event3.svg" alt="">
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="head_ph">
+        <a class="logo">
+            <img src="source/website/platform2025/images/foot-logo.svg" alt="">
+        </a>
+        <div class="head_nav"><img src="source/website/platform2025/images/46.png" alt=""></div>
+    </div>
+
+
+    <div class="mh_nav">
+        <div class="close">
+            <img src="source/website/platform2025/images/out3.png">
+        </div>
+        <ul class="nav">
+            <li class="none">
+                <a href="cw/contestIntrol/4">赛事介绍</a>
+            </li>
+            <li class="none">
+                <a href="cw/contestData/4/12">组织架构</a>
+            </li>
+            <li class="none">
+                <a href="cw/contestData/4/3">常见问题</a>
+            </li>
+            <li class="none">
+                <a href="cw/contestData/4/4">联系我们</a>
+            </li>
+            
+            <li class="none">
+                <a onClick="registerContest('4')">我要报名</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<script src="source/component/jQuery.md5.js?v=1789943624112"></script>
+
+<style >
+    .no-padding{
+        padding: 0 !important;
+    }
+
+    .accountType-margin{
+        margin-left: 0.4rem;
+    }
+</style>
+
+<div class="id4_tc">
+    <div class="bj"></div>
+    <div class="tc_con">
+        <img src="source/website/platform2025/imgx/idtc_out.svg" class="out" alt="">
+        <div class="h tit-24">
+            登录
+        </div>
+        <!-- 错误提示信息 -->
+        <div id="warnMsg" style="height: 20px;"></div>
+        <div class="alert alert-danger login-msg hide" id="alertMsg">
+            <span class="icon-remove ui-margin-right"></span>
+            <span class="error-msg"></span>
+        </div>
+        <form id="tc_form">
+            <div class="input">
+                <div class="name tit-18">账号</div>
+                <input id="loginId" type="text" class="tit-18" placeholder="请输入您的手机号或登录账号">
+            </div>
+            <div class="input">
+                <div class="name tit-18">密码</div>
+                <input id="password" type="password" class="tit-18" placeholder="请输入您的密码">
+            </div>
+            <div class="input row no-gutters">
+                <div class="form-item col-xs-12" style="display:none"><label class="form-label required name tit-18 label-vertical" for="accountType">账户类型</label><input class="ezui ui-input" id="accountType" data-cls="tit-18 accountType-margin" data-toggle="radio" data-tag-id="radio_001" data-span="12" data-label="账户类型" data-label-align="right" data-tip-position="top" data-label-pos="top" data-required="true" data-readonly="false" data-disabled="false" data-hidden="true" data-pure-text="false" data-value-field="value" data-text-field="text" data-datas='[{"text":"其他账户","value":"1"},{"text":"学校管理员账户","value":"2"}]' data-horizontal="true" name="accountType" hidden></div>
+            </div>
+            <div class="input row no-gutters">
+                <input class="ezui ui-input" style="display:none" id="codeValue" data-cls="tit-18" data-toggle="textInput" data-tag-id="textInput_001" data-span="0" data-label-align="right" data-tip-position="top" data-label-pos="left" data-required="false" data-readonly="false" data-disabled="false" data-hidden="true" data-pure-text="false" data-size="lg" data-placeholder="验证码" data-icon="bgiconCls" name="codeValue" hidden><div class="has-feedback input-group input-group-lg" style="display:none"><input class="form-control tit-18 input-lg" type="text" placeholder="验证码"><span class="form-control-feedback icon-bgiconCls"></span><span class="input-group-addon code-img no-padding">
+                        <img id="codeImg" style="height: 34px;" class="tit-18"
+                             src="login/getIdentifyingCode?time=1790001216753"
+                             title="看不清楚，换一张" />
+                    </span></div>
+            </div>
+            <div class="p1 tit-14">
+                <span style="color:#0306EC"></span>
+                <span><a href="login/enterRetrievePwdIndex" target="_blank">找回密码</a></span>
+            </div>
+            <button id="submitLoginBtn" class="tit-18">提交</button>
+        </form>
+        <div class="p2 tit-16">
+            还没有参赛账号，<a href="login/signUp" target="_blank">立即注册 ></a><br>
+            还没有单位账号，<a href="login/applyUniversityLinkman" target="_blank">申请创建 ></a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function showErrorMsg(msg) {
+        $("#warnMsg").hide();
+        $("#alertMsg").show().find(".error-msg").text(msg);
+    }
+
+    // 检测手机号码是否对应多账户
+    function changeAccount(value){
+        if(value){
+            if(StringUtils.validate(value,"phone").isValid){
+                var url = new Url("login/checkIsHasMoreAccountByMobile");
+                url.addParam("loginId", value);
+                $.req({
+                    url : url,
+                    modal : false,
+                    success : function(rtn){
+                        if(rtn == AppConstant.YES){
+                            get("accountType").show();
+                            $(".accountTypeDesc").show();
+                        }else{
+                            get("accountType").hide();
+                            $(".accountTypeDesc").hide();
+                        }
+                    }
+                });
+            }else{
+                get("accountType").hide();
+                $(".accountTypeDesc").hide();
+            }
+        }
+    }
+
+    $(function () {
+
+        $("#loginId").off("change").on("change", function() {
+            changeAccount($(this).val().trim());
+        });
+
+        $("#codeImg").click(function() {
+            $(".bgiconCls").hide();
+
+            var codeInp = get("codeValue");
+            codeInp.clear().focus();
+            var time = new Date().getTime();
+            $(this).attr("src", "login/getIdentifyingCode?time=" + time);
+        });
+
+        var _timer = null;
+
+        $("#codeValue").next("div").find("input").attr("maxLength", 4).on("keydown", function() {
+            if (_timer) {
+                clearTimeout(_timer);
+            }
+
+            var target = event.target || event.srcElement;
+            _timer = setTimeout(function(e) {
+                var value = $(target).val();
+                var codeFlag = $(".bgiconCls");
+                if (value.length == 4) {
+                    var url = new Url("login/checkIdentifyingCode", "code", value);
+                    $.req({
+                        url : url,
+                        modal : false
+                    },  function(rtn) {
+                        var flag = rtn.code == 1;
+                        if (!flag) {
+                            get("codeValue").focus();
+                            if (rtn.code == 4) {
+                                $("#codeImg").click();
+                            }
+                        }
+
+                        codeFlag.show().toggleClass("icon-check", flag).toggleClass("icon-remove", !flag);
+                    });
+                } else {
+                    codeFlag.hide();
+                }
+            }, 100);
+        });
+
+        $("#submitLoginBtn").off("click").on("click", function(e) {
+            // 阻止默认行为（关键代码）
+            e.preventDefault();
+            var $loginInp = $("#loginId");
+            var loginId = $loginInp.val();
+            if (!loginId) {
+                $loginInp.focus();
+                showErrorMsg('用户名不能为空');
+                return;
+            }
+
+            var $passwordInp = $("#password");
+            var password = $passwordInp.val();
+            if (!password) {
+                showErrorMsg('密码不能为空');
+                $passwordInp.focus();
+                return;
+            }
+
+            var codeInp = get("codeValue");
+            var needValidCode = !codeInp.isHidden();
+            if (needValidCode) {
+                var codeValue = codeInp.getValue();
+                if (! codeValue) {
+                    showErrorMsg('验证码不能为空');
+                    codeInp.focus();
+                    return;
+                }
+
+                var codeFlag = $(".bgiconCls");
+                if (codeFlag.hasClass("icon-remove")) {
+                    showErrorMsg('验证码不正确');
+                    codeInp.focus();
+                    return;
+                }
+            }
+
+            var accountTypeInp = get("accountType");
+            var needAccountType = !accountTypeInp.isHidden();
+            if (needAccountType) {
+                var accountType = accountTypeInp.getValue();
+                if (!accountTypeInp.validate()) {
+                    showErrorMsg('请选择登录账户类型');
+                    return;
+                }
+            }
+
+            var url = new Url("login/signin", "user", {
+                loginId : loginId,
+                password : $.md5(password)
+            });
+
+            if (needValidCode) {
+                url.addParam("code", codeInp.getValue());
+            }
+
+            if(needAccountType){
+                url.addParam("accountType", get("accountType").getValue());
+            }
+
+            $.req({
+                url: url,
+                headers: {screenWidth: window.screen.width, screenHeight: window.screen.height},
+                onLoadSuccess: function (rtn) {
+                    if (rtn.code === 1) {
+                        var redirectUrl = $(".id4_tc").data("redirectUrl") || "";
+                        if (redirectUrl == null || redirectUrl == "") {
+                            window.location.href = rtn.data;
+                        } else {
+                            window.location.href = redirectUrl;
+                        }
+
+                    } else if (rtn.code === 3) {
+                        showErrorMsg(rtn.msg);
+                        codeInp.focus();
+                        $("#codeImg").click();
+                        return;
+                    } else if (rtn.code === 9) {
+                        // 多账户
+                        showErrorMsg(rtn.msg);
+                        get("accountType").show();
+                        $(".accountTypeDesc").show();
+                        get("accountType").validate();
+                    } else {
+                        if (rtn.code === 6) {
+                            codeInp.toggle(true);
+                        }
+                        showErrorMsg(rtn.msg);
+                        $("#codeImg").click();
+                        return;
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script>
+
+    function switchLanguage(lang) {
+        // 判断一下是否开放了英文访问
+        var language = '1';
+        var isOpenEnglish = '1';
+        if (AppConstant.LANGUAGE_CN == language &&  AppConstant.YES !=isOpenEnglish ) {
+            lang = "zh";
+        } else {
+            var baseUrl = $.util.getBaseUrl()+'cw/hp/'+'4';
+            var newUrl = baseUrl + '?lang=' + lang;
+            window.location.href = newUrl;
+        }
+    }
+
+    function registerContest(competeId) {
+        $.req({
+            url: "contestant/checkSignIn",
+            modal: true,
+            success: function(rtn) {
+                if(AppConstant.YES == rtn) {//已登录
+                    var url = new Url("contestant/checkCompeteReg");
+                    url.addParam("competeId", competeId);
+                    $.req({
+                        url: url,
+                        modal: true,
+                        success: function(rtn) {
+                            var flag = rtn.code == 1;
+                            if (flag) {
+                                $.openDialog({
+                                    url : "contestant/registerNote",
+                                    width : 800,
+                                    height : "auto",
+                                    title : "报名",
+                                    falign : 'center',
+                                    closeBtn : false,
+                                    buttons : [ {
+                                        text : '填写报名信息',
+                                        size : 'lg',
+                                        onClick : function() {
+                                            fillRegister(competeId);
+                                        }
+                                    } ]
+                                });
+                            } else {
+                                $.alert("当前大赛未到报名时间，请从大赛官网上确认大赛的报名信息");
+                            }
+                        }
+                    });
+                } else {
+                    _login($.util.getBaseUrl() + "/login/enterMain");
+                }
+            }
+        });
+    }
+
+    function certificateValidation(){
+        $.openDialog({
+            url : "contestant/enterCertificateValidation",
+            title : "证书验真",
+            closeBtn : false
+        });
+    }
+    // 证书验真研电赛->学生
+    function certificateValidationYds(){
+        $.openDialog({
+            url : "contestant/enterCertificateValidationYds",
+            title : "证书验真",
+            closeBtn : false
+        });
+    }
+
+    function fillRegister(competeId) {
+        $.req({
+            url: "contestant/checkRegister",
+            modal: true,
+            success: function(rtn) {
+                if(AppConstant.USER_TYPE_STUDENT == rtn) {
+
+                    //提示信息，只有队长才可以组队
+                    $.confirm("若您是队长，请点击【确认】按钮继续报名流程；若您为队员，请耐心等待队长的邀请，待队长建立队伍后，系统将给您发送短信通知到您，您在【我的赛事】中接受邀请即可。",function(flag){
+                        if(flag){
+                            $.closeDialog();
+                            var url = $.util.getBaseUrl() + "login/enterMain/contestant/myContest";
+
+                            $('<form>', {
+                                method: 'POST',
+                                action: url,
+                                css: { display: 'none' }
+                            }).append($('<input>', {
+                                type: 'hidden',
+                                name: 'competeId',
+                                value: competeId
+                            })).appendTo('body').submit();
+                        }
+                    });
+
+                } else {
+                    $.alert("仅参赛队员（学生）具有报名权限");
+                }
+            }
+        });
+    }
+
+</script>
+
+        <div class="newsLayout">
+            
+
+
+
+
+
+
+            <div class="n_con" id="notice_list_container">
+                <div class="crumb tit-16"><span><img src="source/website/platform2025/images/inner/home.svg"></span><a
+                        href="" class="ahover">首页 </a> / <a href="cw/hp/4">中国研究生数学建模竞赛</a> / <a>大赛通知</a></div>
+                <div class="title1 wow fadeInUp">
+                    <div class="img-box">
+                        <img src="source/website/platform2025/images/3.svg" alt="">
+                    </div>
+                    <span class="tit-50 col-333 f-500">大赛通知</span>
+                    <p class="tit-16 col-999 f-300">Competition Notice</p>
+                </div>
+                <ul class="ul news_list" id="news_list">
+                    
+                        <li class="li wow fadeInUp" id="2c908015839c03e20183aaf60cda124e">
+                            <a href="cw/contestNews/detail/4/2c908015839c03e20183aaf60cda124e?page=8" class="ss alltime"
+                               title="“中国光谷·华为杯”第十九届中国研究生数学建模竞赛赛题">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">06</div>
+                                    <div class="date GilroyR tit-20">2022-10</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            “中国光谷·华为杯”第十九届中国研究生数学建模竞赛赛题
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            A题：移动场景超分辨定位问题B题：方形件组批优化问题C题：汽车制造公司涂装-总装缓存区调序调度优化问题D题：PISA架构芯片资源排布问题E题：草原放牧策略研究F题：COVID-19疫情期间生活物资的科学管理问题百度网盘链接：https://pan.baidu.com/s/1yGes_z2s6_0ZrDE9yNEkTw百度网盘文件提取码：u1i2赛题解压码：19hua22zhongse注：题目解密密码公布时间：2022年10月6日8:00。
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c90801583651d4101838850aace3087">
+                            <a href="cw/contestNews/detail/4/2c90801583651d4101838850aace3087?page=8" class="ss alltime"
+                               title="“中国光谷·华为杯”第十九届中国研究生数学建模竞赛开赛公告">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">29</div>
+                                    <div class="date GilroyR tit-20">2022-09</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            “中国光谷·华为杯”第十九届中国研究生数学建模竞赛开赛公告
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            各培养单位、各参赛队：为了保证2022年&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛顺利举行，现将竞赛开赛的相关事项通知如下：一、时间节点1.加密题目开始下载时间：2022年10月5日8:00，截止时间：2022年10月10日12:002.题目解密密码公布时间：2022年10月6日8:00，截止时间：2022年10月10日12:003.竞赛开始时间：2022年10月6日8:00，截止时间：2022年10月10日12:004.上传竞赛论文MD5码开始时间：2022年10月9日12:00，截止时间：2022年10月10日12:005.竞赛论文上传开始时间：2022年10月10日14:00，截止时间：2022年10月11日24:006.附件上传开始时间：2022年10月12日8:00，截止时间：2022年10月13日24:007.查看论文开始时间：2022年10月12日8:00，截止时间：2022年10月14日12:00二、队伍编号的生成队伍编号是参赛队提交论文的重要信息码之一，将在2022年10月5日8:00公布，届时队长可登陆中国研究生创新实践系列大赛管理平台，进入个人中心-我的赛事-下载试题/上传论文功能中查看队伍编号，请各参赛队队长查看后牢记队伍编号。三、竞赛试题下载及论文上传流程竞赛试题统一通过中国研究生创新实践系列大赛管理平台发布，队长登陆账号，进入个人中心-我的赛事功能进行竞赛试题的下载及论文上传。具体流程详见《&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛下载试题及上传论文操作手册》（附件1），请务必仔细阅读。四、论文要求（一）格式要求论文首先网上评审，后集中评审，请务必依照《&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛论文格式规范》(附件2)、使用《&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛论文模板》（附件3）进行论文编写，具体要求如下：1.上传竞赛网站的电子版论文（包括摘要）必须为pdf格式，不得压缩。2.论文命名格式：参赛试题编号+队伍编号，如*22000010001.pdf，其中*为参赛试题编号，用A、B、C、D、E、F表示。3.论文必须按附件3模板进行编写，并确保提交的论文的首页为封皮（不可删除，包含团队相关信息，4个图标不能替换），第二页起为摘要页和正文页。除首页外其他页面中不允许出现单位、参赛人员姓名、队伍编号等信息，否则视为违规，论文无效。4.使用&ldquo;统一摘要页&rdquo;（附件3）。摘要是竞赛论文的重要组成部分，提请参赛研究生注意摘要需包含：建模思路、主要方法、模型、结果与结论、创新点等。摘要内容不超过两页。（二）提交要求因参赛队伍较多，为缓解网络压力，本届大赛采用提交论文的MD5识别码&mdash;提交论文pdf文件&mdash;提交附件（可选）三步分时段依次进行，具体要求为：1.竞赛提交论文的MD5识别码的开始时间是2022年10月9日12:00，截止时间是2022年10月10日12:00，请参赛研究生队在此时段之间提交识别码（注意：MD5识别码与提交论文对应，一旦提交MD5识别码，相应论文禁止修改，否则论文将无法成功上传）。2.竞赛提交论文的开始时间为2022年10月10日14:00，截止时间是2022年10月11日24:00，请参赛研究生队在此期间内于竞赛系统中提交论文，必须上传pdf文档，无需上传其他附件。论文上传成功后请务必点击【提交】按钮，提交成功后后台方能收到论文。3.赛题中有明确要求上传附件或赛题虽然无明确要求，但参赛队认为上传附件有利于评审专家理解本参赛队研究成果的，并在论文中注明上传了附件，参赛队伍可在2022年10月12日8:00&mdash;10月13日24：00期间在系统上上传程序、计算结果等论文附件的压缩包，压缩包命名格式为：参赛试题编号+队伍编号，如*22000010001.rar，其中*为参赛试题编号，用A、B、C、D、E、F表示。附件大小不得超过50M。此环节不是必须项。五、竞赛纪律及违规处理1.参赛单位应责成有关职能部门负责竞赛的组织和纪律监督工作，保证本单位竞赛的规范、真实与公正。2.各参赛队遵守竞赛纪律，竞赛期间参赛队伍不与任何教师（指导老师）交流赛题相关的任何问题，不与队外任何人进行任何形式（包括网上）的赛题交流讨论，不抄袭、不买卖论文，否则一律视为严重违反竞赛纪律；3.各参赛队遵守科学道德与学术规范，所有引用文献，引用程序均按规定注明来源。竞赛专家委员会将对所有论文进行查重处理，重复率高于某阈值（由专家委员会确定）的论文，一般直接判定为&ldquo;违规论文&rdquo;，必要时进行人工判断，确定其是否为&ldquo;违规论文&rdquo;，引用他人程序也需明确标注引用来源，否则发现程序雷同，按抄袭认定为&ldquo;违规论文&rdquo;。4.各参赛队不在竞赛期间将参赛论文进行网上查重，否则造成论文泄露，后果自负。5.违纪情况一经核实认证后，组委会将取消培养单位评奖资格，视情节1-3年内不得推荐参评优秀组织奖及先进个人；取消违纪队伍的参赛或获奖资格，并通报其参赛单位进行相应处罚，强制停赛一年。六、其他注意事项1.此次竞赛不收取纸质论文，全部线上提交，请参赛队伍尽量提前提交，避开最终截止时间点的高峰，如因错过截止时间导致的问题，组委会一概不予处理。2.参赛队若在&ldquo;提交论文的MD5识别码&rdquo;环节遇到网络问题等不可控因素无法在截止时间（10月10日12:00）前上传，请将系统上传失败或错误的截图、论文MD5码、与MD5码相对应的论文pdf文件、队伍编号等相关信息发送至承办方邮箱：sxjmhust@163.com，邮件发送截止时间为10月10日13:00，超过截止时间邮件无效。若确实由于网络原因提交失败，系统后台会有相关记录，组委会将比对系统后台记录与邮件内容，决定是否给予该队伍参赛资格。3.竞赛期间仅开放数学建模网（www.shumo.com）论坛上提问（QQ群在竞赛期间禁言），如果对赛题的文字理解方面有问题，可以在论坛上提问，专家委员会将组织命题人员在网上解答，不应回答的，恕不回答。请研究生在提问前事先查看已经回答的问题以免重复。4.竞赛奖励：（1）数模之星奖，冠军队50000元，亚军队40000元，季军队30000元，提名奖10000元/队；（2）一等奖，2500元/队；（3）华为专项奖：一等奖，10000元/队，二等奖，5000元/队（选择华为赛题的赛队，属于重复奖，奖金累加）（4）中兴专项奖：一等奖，10000元/队，二等奖，5000元/队（选择中兴赛题的赛队，属于重复奖，奖金累加）竞赛承办单位（华中科技大学）联系方式：电话：027-87543131电子邮箱：sxjmhust@163.com竞赛组委会秘书处（东南大学）联系方式：电话：025-83795939电子邮箱：gscpc3@seu.edu.cn中国研究生数学建模竞赛组织委员会&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛执行委员会华中科技大学数学与统计学院（代章）2022年9月29日附件：1.《&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛下载试题及上传论文操作手册》2.《&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛论文格式规范》3.《&ldquo;中国光谷&middot;华为杯&rdquo;第十九届中国研究生数学建模竞赛论文模板》
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c90801583651d41018382e7fae12bb9">
+                            <a href="cw/contestNews/detail/4/2c90801583651d41018382e7fae12bb9?page=8" class="ss alltime"
+                               title="中国光谷·“华为杯”第十九届中国研究生数学建模竞赛 已缴费队伍更换队员流程">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">28</div>
+                                    <div class="date GilroyR tit-20">2022-09</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            中国光谷·“华为杯”第十九届中国研究生数学建模竞赛 已缴费队伍更换队员流程
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            各参赛队：中国光谷&middot;&ldquo;华为杯&rdquo;第十九届中国研究生数学建模竞赛将于2022年10月6日开赛。考虑到存在因不可抗力因素导致原报名参赛队员无法参赛，必须更换参赛队员的情况，现规范申请更换队员流程如下：1、新队员先行在竞赛系统网站上填写个人信息完成注册；2、如实填写通知附件中《关于更换参赛队员的申请》，所在单位研究生院或研究生工作部负责人签字盖章；3、扫描《关于更换参赛队员的申请》签字盖章件为PDF文件格式，发邮件至承办单位邮箱：sxjmhust@163.com本申请受理截止时间2022年10月2日17:00，过期不予受理。第十九届中国研究生数学建模竞赛执行委员会2022年9月28日附件：《关于更换参赛队员的申请》
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c90800c82fc3521018339a236305195">
+                            <a href="cw/contestNews/detail/4/2c90800c82fc3521018339a236305195?page=8" class="ss alltime"
+                               title="关于中国光谷·“华为杯”第十九届中国研究生数学建模竞赛延期举办等相关事宜的通知">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">14</div>
+                                    <div class="date GilroyR tit-20">2022-09</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            关于中国光谷·“华为杯”第十九届中国研究生数学建模竞赛延期举办等相关事宜的通知
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            各研究生培养单位、参赛队伍：由于今年开学季，面临新冠疫情多点爆发的复杂形势，导致部分高校开学和学生报到受到影响。为让意向参赛的师生有更加充裕的时间报名、备赛，经研究决定，现对原定的各时间节点予以延期，具体如下：1.报名截止时间：2022年9月26日17：002.培养单位参赛资格审核截止时间：2022年9月27日17:003.缴费截止时间：2022年9月30日17:004.试题下载与校验时间：2022年10月5日8:00起5.正式竞赛时间：2022年10月6日8:00至10月10日12:00如在报名过程中遇到问题，请通过以下方式进行咨询：1.承办方（华中科技大学）咨询电话：027-87543131（工作日8:30&mdash;11:30,14:30&mdash;17:30）2.承办方（华中科技大学）咨询邮箱：sxjmhust@163.com3.有关缴费及获取电子发票等事项，请咨询东南大学秘书处，电话：025-83795939，邮箱：gscpc3@seu.edu.cn4.&ldquo;中国研究生数学建模竞赛&rdquo;培养单位联系人QQ群（群1：376090827、群2：143047036）。由于参赛人数较多，此群仅限培养单位指定的工作人员入群，请见谅；参赛人员通过所在培养单位的联系人（或领队）在以上QQ群进行咨询或者联系指定邮箱。5.关注&ldquo;中国研究生数学建模竞赛&rdquo;微信公众号（微信号：npgmcm），了解赛事信息。6.考虑到有个别已报名队伍因故不能参加本届比赛，现开通退费通道。请有需要的队伍务必于2022年9月28日17：00前在系统中提交退费申请，退费指南详见附件附件：中国研究生创新实践系列大赛-数学建模退费管理-用户手册中国研究生数学建模竞赛组织委员会第十九届中国研究生数学建模竞赛执行委员会华中科技大学数学与统计学院（代章）2022年9月14日
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c90800c8121a77c01814246eb602116">
+                            <a href="cw/contestNews/detail/4/2c90800c8121a77c01814246eb602116?page=8" class="ss alltime"
+                               title="关于推荐第十九届中国研究生数学建模竞赛网评专家的通知">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">08</div>
+                                    <div class="date GilroyR tit-20">2022-06</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            关于推荐第十九届中国研究生数学建模竞赛网评专家的通知
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            各研究生培养单位：第十九届中国研究生数学建模竞赛将于2022年9月22日上午8点正式开赛，为了体现公平、公正的原则，进一步促进数学建模学术交流，补充新鲜血液加入评审专家队伍，请每个参赛单位推荐2至3名老师参加评审。评审专家需要熟悉数学建模，具备高级职称（正高级职称优先考虑），且保证10月份有充足时间参加网络评审工作，优先推荐数学专业的老师，亦欢迎推荐具备上述条件的非数学专业老师。尤其是近期指导老师队伍有调整、更换主教练的单位积极推荐网评专家，保持与专家队伍的联系和学术交流。请各培养单位将附件中的表格填好后，于2022年6月30日下午17:00前发至邮箱：npgmcm@163.com，数模竞赛专家委员会将综合考虑，择优录用。友情提醒：数模竞赛专家库中已有参加过往届研究生数学建模竞赛评审的老师，各单位无需再次推荐。附件：关于推荐第十九届中国研究生数学建模竞赛评审专家的通知第十九届中国研究生数学建模竞赛评审专家推荐表中国研究生数学建模竞赛组织委员会2022年6月8日
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c9080158121a90d018138423f7b0fc6">
+                            <a href="cw/contestNews/detail/4/2c9080158121a90d018138423f7b0fc6?page=8" class="ss alltime"
+                               title="第十九届中国研究生数学建模竞赛参赛通知">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">06</div>
+                                    <div class="date GilroyR tit-20">2022-06</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            第十九届中国研究生数学建模竞赛参赛通知
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            各研究生培养单位：中国研究生数学建模竞赛作为教育部学位管理与研究生教育司指导；中国学位与研究生教育学会、中国科协青少年科技中心主办的&ldquo;中国研究生创新实践系列大赛&rdquo;主题赛事之一，是一项面向在校研究生进行数学建模应用研究的学术竞赛活动，是广大在校研究生提高建立数学模型和运用互联网信息技术解决实际问题能力，培养科研创新精神和团队合作意识的大平台。经竞赛组委会研究决定，2022年第十九届中国研究生数学建模竞赛由华中科技大学承办。本届竞赛参赛对象是中国（含港澳台地区）高校、研究所的在读研究生（硕士生、博士生）和已获研究生入学资格的本科毕业生，以及国外大学在读研究生和国内大学在读留学研究生。希望各研究生培养单位大力宣传、组织动员、积极鼓励本单位研究生报名参赛。现就2022年第十九届中国研究生数学建模竞赛的具体安排通知如下：一、参赛报名（一）参赛单位报名1.请各参赛单位安排专人作为联系人，负责本单位研究生的参赛组织工作，保持与承办单位的联系交流（咨询电话：027-87543131-301）。2.本届赛事参赛报名、培养单位审核、参赛缴费、作品提交等均在中国研究生创新实践系列大赛官方网站(以下简称&ldquo;研创网&rdquo;)https://cpipc.acge.org.cn/上进行。2021年参加过中国研究生数学建模竞赛的研究生培养单位，沿用去年的用户名和密码。2021年未参加竞赛的研究生培养单位，请及时联系承办单位索取用户名和初始密码，并通过&ldquo;研创网&rdquo;登录，完成研究生培养单位用户的相关工作。3.请各参赛单位联系人加入&ldquo;中国研究生数学建模竞赛&rdquo;QQ群（群1：376090827或群2：143047036），跟踪大赛流程及交流咨询。（二）参赛团队报名研究生组队参赛（每队人数3人，专业不限）。除2022级研究生外，其他年级研究生不允许跨校、跨单位组队参赛。参赛同学请登录&ldquo;研创网&rdquo;注册账号，并由队长报名参赛。参赛团队报名起止时间为：2022年6月1日8:00至2022年9月14日17:00。二、参赛单位审核请参赛单位联系人定期登录&ldquo;研创网&rdquo;，履行本单位管理职责，完成本单位报名参赛人员的参赛资格审核工作（含本单位研究生担任跨校混合组队队长，3名成员均为2022级研究生新生的参赛队），审核起止时间为：2022年6月1日8:00至2022年9月16日17:00。三、参赛团队缴费及发票获取方式1.参赛报名费每队300元，若单位统一缴费，请参赛单位联系人登录&ldquo;研创网&rdquo;，完成网上缴费；若参赛队单独缴费，请队长本人登录&ldquo;研创网&rdquo;，完成网上缴费。2.报名参赛队需在参赛队伍审核通过后进行缴费，网上缴费起止时间为：2022年6月1日8:00至2022年9月19日17:00（缴费咨询邮箱:gscpc3@seu.edu.cn）。3.缴费成功后，请参赛队登录系统查看缴费状态。4.参赛队缴费完成后，若单位统一缴费，请参赛单位联系人登陆&ldquo;研创网&rdquo;，点击【资格审核通过团队管理】界面下的【数学建模大赛交费电子票据】按钮进入电子票据查看页面，点击页面中的链接可查看并下载电子票据；若参赛队单独缴费，请队长本人登陆&ldquo;研创网&rdquo;点击【我的赛事】界面下的【电子票据】按钮进入电子票据查看页面，点击页面中的链接可查看并下载电子票据。四、竞赛时间及方式1．竞赛时间：竞赛定于2022年9月22日8:00至2022年9月26日12:00举行。2.试题下载与校验：各参赛队队长可于9月21日8:00起登录&ldquo;研创网&rdquo;，下载&ldquo;试题ZIP包&rdquo;,同时下载竞赛指定的&ldquo;MD5码校验工具&rdquo;，校验&ldquo;试题ZIP包&rdquo;。3.试题解密与论文编写：各参赛队队长于2022年9月22日8:00，登录&ldquo;研创网&rdquo;查看试题解压密码，解密试题，使用《竞赛论文标准文档》编写竞赛论文。4.&ldquo;竞赛系统&rdquo;论文提交：各参赛队队长使用指定的&ldquo;MD5码校验工具&rdquo;，生成pdf格式竞赛论文的MD5识别码，于9月26日12:00以前，登录&ldquo;研创网&rdquo;提交论文MD5识别码。2022年9月26日14:00至9月27日24:00，登录&ldquo;研创网&rdquo;上传pdf格式竞赛论文。5.竞赛纪律：竞赛期间，指导教师不得与参赛选手进行任何形式的交流；参赛队不得与队外任何人交流（包括网上）讨论。参赛研究生培养单位应尽力为队员提供必要的竞赛条件，督导参赛队员遵守竞赛纪律。6.违规处理：参赛队员必须遵守科学道德与学术规范，引用文献必须注明来源。竞赛专家委员会将对所有论文进行重合率检测，重合率高于某阈值（由专家委员会确定）或相互雷同的论文，一般直接判定为&ldquo;违规论文&rdquo;，必要时进行人工判断。引用他人程序也需明确标注引用来源，否则按抄袭认定为&ldquo;违规论文&rdquo;。组委会将严肃处理参赛学生的违规行为，取消其获奖（包括成功参赛奖）资格，将处理结果通报其所在培养单位，并取消培养单位优秀组织奖及先进个人等奖项。五、奖项设置竞赛设立一、二、三等奖、企业专项奖、&ldquo;数模之星&rdquo;冠亚季军、&ldquo;数模之星&rdquo;提名奖、成功参赛奖、参赛单位优秀组织奖、参赛单位先进个人等。其中一、二、三等奖获奖队数原则上不超过参赛队总数的1.5%、13%、20%。国（境）内外参赛队分开评奖,具体数量由组委会根据参赛情况确定。在获得一等奖的参赛队中，经专家委员会评审推荐，每道赛题排名前两名的队伍参加&ldquo;数模之星&rdquo;决赛答辩会，答辩得分前三名队伍将获得&ldquo;数模之星&rdquo;冠亚季军，未进入前三名的队伍获&ldquo;数模之星&rdquo;提名奖。六、竞赛结果公示与颁奖大会&ldquo;研创网&rdquo;将于2022年11月中下旬公示竞赛结果并发布拟获奖名单；2022年12月17-18日，在华中科技大学举行第十九届中国研究生数学建模竞赛&ldquo;数模之星&rdquo;决赛现场答辩会和颁奖大会。七、参赛单位报名回执请各研究生培养单位联系人，于2022年6月18日前扫描下方二维码，提交参赛单位回执。八、联系方式1.竞赛承办单位联系方式联系人：王佳恒王玥（华中科技大学数学与统计学院）电话：027-87543131-301（工作日8:30-11:30,14:00-17:00）地址：武汉市洪山区珞喻路1037号华中科技大学数学与统计学院邮编：430074电子邮箱：sxjmhust@163.com2.竞赛组委会秘书处联系方式联系人：周青青奚社新（东南大学研究生院）电话：025-83795939地址：江苏省南京市四牌楼2号东南大学逸夫建筑馆206邮编：210096电子邮箱：gscpc3@seu.edu.cn欢迎关注中国研究生数学建模竞赛微信公众号npgmcm，了解赛事信息。衷心祝愿贵单位在竞赛中取得佳绩！附件：参赛通知附件
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c90800c8053ea0001805b9eb12602eb">
+                            <a href="cw/contestNews/detail/4/2c90800c8053ea0001805b9eb12602eb?page=8" class="ss alltime"
+                               title="“华为杯”第十八届中国研究生数学建模竞赛颁奖大会圆满落幕">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">24</div>
+                                    <div class="date GilroyR tit-20">2022-04</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            “华为杯”第十八届中国研究生数学建模竞赛颁奖大会圆满落幕
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            4月24日，由华南理工大学承办的&ldquo;华为杯&rdquo;第十八届中国研究生数学建模竞赛落下帷幕，大赛相关单位嘉宾、各参赛单位教师代表、获奖研究生代表以及师生观众在云端共赴盛会，精彩纷呈。中国学位与研究生教育学会副会长丁雪梅，中国科协青少年科技中心副主任刘会强，组委会副主任委员、东南大学副校长金石，组委会秘书长、东南大学研究生院常务副院长耿新，华中科技大学副校长张新亮，华南理工大学副校长李正，赞助单位华为公司战略研究院院长周红等领导和嘉宾出席大会。李正首先致辞，他提到，本届研究生数模竞赛的举办是推动研究生教育创新发展的一个非常好的契机，华南理工大学将与国内外兄弟院校和企事业单位团结合作，为广大研究生搭建创新平台，让青年科技人才投身科研创新的事业中，为党和国家培养一批政治过硬、本领高强的科技创新主力军。华南理工大学党委常委、副校长李正致辞丁雪梅代表竞赛主办方在讲话中指出，中国研究生数学建模竞赛作为中国研究生创新实践系列大赛的重要组成部分，一直秉承着助力创新人才培养的宗旨。她对华南理工大学积极应对新冠肺炎疫情，及时调整赛事部署，努力营造安全、公平、高效的竞赛环境，保障本届比赛的顺利进行，给予了高度的评价。中国学位与研究生教育学会副会长丁雪梅讲话颁奖大会上，华南理工大学通过视频汇报了本届竞赛的承办工作，历时12个月，常态化、多地频发的新冠疫情给竞赛的进行带来很大的困难和挑战，华南理工大学积极筹措各方力量，及时调整工作方案、制定和实施了切实有效的措施，顺利完成各项赛事任务。获得一等奖的参赛队伍代表、华南理工大学研究生梁允舜同学在发言中回顾了自己和队友们一路参赛的经历与收获。竞赛组委会秘书处单位东南大学副校长金石、本届赞助单位华为公司战略研究院院长周红分别讲话。本次大会创新性的举行了云端颁奖仪式，华为公司战略研究院院长周红、专家委员会刘力维、东南大学副校长金石、东南大学研究生院常务副院长耿新、中国科协青少年科技中心副会长刘会强、华南理工大学副校长李正分别为本届竞赛的华为专项奖、一等奖、先进个人奖、命题奖、优秀组织奖、&ldquo;数模之星&rdquo;提名奖、冠亚季军等进行颁奖致辞和宣布获奖名单，让所有与会师生观众进一步了解大赛奖项背后的故事，也为未能到现场领奖的个人和集体提供了展示的平台。颁奖大会上，还举行了竞赛会旗云交接仪式，华南理工大学副校长将竞赛会旗交给下一届竞赛承办单位。华中科技大学副校长张新亮云端接过竞赛会旗并作了表态发言。本届竞赛还创新性的制作了竞赛主题曲和吉祥物，并在颁奖大会正式发布。主题曲由华南理工大学师生原创制作演绎，吉祥物由华南理工校友创作，共同传递大赛精神与理念，受到参赛师生的好评与喜爱。最后大会在云合影中落下帷幕。云端合影颁奖大会当天上午，举行了&ldquo;数模之星&rdquo;的云端答辩会，12支参赛代表队提前录制了队伍风采视频展示，让评委、观众对队伍有深入了解，云端现场各队伍对不同赛题从问题背景、理论方法、建模过程、模型效果等多个方面进行了精彩的答辩展示，并回答评委们提出的问题。最后经过专家评审和大众评审的投票，最终产生&ldquo;数模之星&rdquo;冠亚季军获得者和9支&ldquo;数模之星&rdquo;提名奖的获奖团队。本届竞赛&ldquo;数模之星&rdquo;冠军为来自华南理工大学的梁允舜、黎杰、黄泳熙团队，亚军是来自东南大学的凌泰炀、张逸洋、钱缪峰，季军是来自上海交通大学的范晓宇、焦光磊、孔郑娇。特别值得一提对是，云端答辩会给参赛选手和观众也提供了互动交流的平台，选手和观众在直播间频频互动，学术交流氛围浓厚。选手在直播间与观众互动交流4月24日，赛题学术交流会分赛题在6个云端学术会议分别举行，参会师生代表围绕竞赛赛题进行了深入的交流和探讨。本届大赛赛题聚焦国家重大战略需求和前沿科技而命题，&ldquo;大数据通信优化&rdquo;&ldquo;超宽带精确定位&rdquo;&ldquo;空气质量&rdquo;&ldquo;康复工程&rdquo;和&ldquo;交通管制&rdquo;是本届赛题的关键词，兼具前沿性、创新性、实用性和广泛性。赛题学术交流会云端现场本届比赛共吸引来自全国34个省、市、自治区、特别行政区以及国外等535所高校和部分研究院的20525支队伍报名参赛，共有60861名在校研究生参赛。最终，共有17692支队伍、53076人成功完赛。共评选出一等奖206支，二等奖2175支，三等奖3519支。报名人数、参赛人数均创历史新高，较往年大幅提升。
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c90800c7e0e1631017e139213c60022">
+                            <a href="cw/contestNews/detail/4/2c90800c7e0e1631017e139213c60022?page=8" class="ss alltime"
+                               title="第十八届中国研究生数学建模竞赛优秀组织奖名单公示">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">01</div>
+                                    <div class="date GilroyR tit-20">2022-01</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            第十八届中国研究生数学建模竞赛优秀组织奖名单公示
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            各培养单位：根据《中国研究生数学建模竞赛优秀组织奖评选方法》，经组委会审议，本届赛事共55家培养单位获优秀组织奖。获奖名单如下（按得分由高到低排序）：1上海海事大学29西南交通大学2上海理工大学30北京邮电大学3东南大学31东北石油大学4上海大学32重庆大学5中南大学33吉林大学6上海工程技术大学34郑州大学7同济大学35燕山大学8西安交通大学35西南石油大学9西安邮电大学37贵州大学10上海师范大学38哈尔滨工程大学11南京航空航天大学39中国石油大学（华东）12宁波大学39北京交通大学13武汉大学41华侨大学14北京理工大学42华南理工大学15华中科技大学42重庆理工大学16华东理工大学44南京理工大学17电子科技大学45西北工业大学18华东交通大学46云南大学19中国计量大学47国防科技大学20浙江工商大学47上海应用技术大学21杭州电子科技大学49南京师范大学22上海电力大学50上海对外经贸大学23武汉理工大学51西南大学24重庆邮电大学52昆明理工大学25南通大学53西安建筑科技大学26南京林业大学54中国地质大学（武汉）27山东大学55北京航空航天大学28华东师范大学中国研究生数学建模竞赛组委会二〇二二年一月一日
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c9080127da2ac5c017db676d1d9089d">
+                            <a href="cw/contestNews/detail/4/2c9080127da2ac5c017db676d1d9089d?page=8" class="ss alltime"
+                               title="关于“华为杯”第十八届中国研究生数模竞赛发票换开截止的通知">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">14</div>
+                                    <div class="date GilroyR tit-20">2021-12</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            关于“华为杯”第十八届中国研究生数模竞赛发票换开截止的通知
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            各研究生培养单位、各参赛队伍：&ldquo;华为杯&rdquo;第十八届中国研究生数学建模竞赛发票换开工作将于2021年12月20日17:00截止。请各参赛队伍仔细核对收到的电子发票信息。如有问题，需要换开，请按照如下流程操作于12月20日17:00前提交申请，逾期不予受理。特此通知，请互相转告。发票换开流程如下：提交一份&ldquo;发票换开申请书&rdquo;，申请书内容必须包含错票的抬头税号、需要修改的抬头税号以及队长的姓名及联系方式。申请书必须加盖校财务处财务专用章。提交申请流程：登陆【个人中心】点击【我的赛事】&mdash;&mdash;【发票信息修改申请】处提交申请并等待审核，发票换开完成后即可在邮箱及数模官网获取新发票。如图1.1，图1.2所示。图1.1图1.2联系方式：电话：025-83795939朱老师邮箱：gscpc3@seu.edu.cn
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="li wow fadeInUp" id="2c9080127cb68257017d2d89749a4991">
+                            <a href="cw/contestNews/detail/4/2c9080127cb68257017d2d89749a4991?page=8" class="ss alltime"
+                               title="第十八届中国研究生数学建模竞赛第二次执委会在线上顺利召开">
+                                <div class="left">
+                                    <div class="day GilroyB tit-40">17</div>
+                                    <div class="date GilroyR tit-20">2021-11</div>
+                                </div>
+                                <div class="right">
+                                    <div class="t1 t_line1 tit-28 f-500">
+                                            第十八届中国研究生数学建模竞赛第二次执委会在线上顺利召开
+                                    </div>
+                                    <div class="t2 t_line2 tit-16">
+                                            11月12日，第十八届中国研究生数学建模竞赛第二次执委会在线上召开。华南理工大学研究生院副院长许勇，数学学院党委书记孙国忠、党委副书记邹敏、刘深泉教授等参加会议。中国学位与研究生教育学会副秘书长赵瑜，中国研究生数模竞赛专家委员会主任朱道元、秘书处奚社新，以及赞助单位华为技术有限公司叶国华等人通过网络参与会议。会议由华南理工大学数学学院刘深泉教授主持&zwj;。华南理工大学研究生院副院长许勇为本次会议致辞，他代表华工感谢了各位专家的大力支持，介绍了本次竞赛的总体参赛情况以及当下新冠疫情防控要求，表示会全力配合完成好大赛各项工作。会上，华南理工大学数学学院党委副书记邹敏对本次数学建模竞赛进行了阶段工作总结，并介绍了广州市新冠疫情新情况和防控要求，对后续的评审会议、公示获奖名单工作与&ldquo;数模之星&rdquo;答辩会以及颁奖大会安排提出了举办方案。专家委员会朱道元教授结合疫情形势，对评审工作的有效开展提出了具体建议。秘书处奚社新副教授汇报了部分组织管理工作，面对疫情挑战，各组织单位及时做出调整并有序推进了各项工作。中国学位与研究生教育学会副秘书长赵瑜指出必须严格按照疫情防控要求开展后续工作，同时对于参赛作品的学术诚信问题提出建议。经过执委会会议充分讨论，一致同意在结合疫情防控要求下，筹备开展评审会议，&ldquo;数模之星&rdquo;答辩会及颁奖大会延期至2022年3月底后举行，其他事项按期推进。本次会议圆满结束。华南理工大学分会场华南理工大学许勇致辞线上参会各位专家据悉，本届数模竞赛的研究生参赛规模再创新高，来自全国34个省、市、自治区、特别行政区以及国外等535所高校和部分研究院的20525支队伍报名参赛，较去年增长19.2%，共有60861名在校研究生参赛。成功提交论文的队伍共17692支，较去年增长22.5%，在延迟比赛的情况下，成功参赛率高达为90.09%，较去年增长3%。同时，本届数模竞赛的新亮点是我校依托粤港澳大湾区区位优势，整合我校与港澳台高校的定向合作资源，提升活动影响力。其中，国际、港澳台地区研究生共计56人，涉及5个国家（包括英国、美国、新加坡、新西兰等国）,2个地区（香港、澳门）；18个研究生培养单位（包括帝国理工学院、美国康奈尔大学、新加坡南洋理工大学、香港中文大学等）。
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                </ul>
+                <div class="pages wow fadeInUp">
+                    
+                        <a href="cw/contestNews/list/4/7" class="alltime pgbtn pg_prev"><img
+                                src="source/website/platform2025/images/inner/pages_prev.svg"></a>
+                    
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/2" class="alltime num tit-18"><span>2</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/3" class="alltime num tit-18"><span>3</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/4" class="alltime num tit-18"><span>4</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/5" class="alltime num tit-18"><span>5</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/6" class="alltime num tit-18"><span>6</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/7" class="alltime num tit-18"><span>7</span></a>
+                        
+                    
+                        
+                            <a class="alltime num act tit-18"><span>8</span></a>
+                        
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/9" class="alltime num tit-18"><span>9</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/10" class="alltime num tit-18"><span>10</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/11" class="alltime num tit-18"><span>11</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/12" class="alltime num tit-18"><span>12</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/13" class="alltime num tit-18"><span>13</span></a>
+                        
+                    
+                        
+                        
+                            <a href="cw/contestNews/list/4/14" class="alltime num tit-18"><span>14</span></a>
+                        
+                    
+                    
+                        <a href="cw/contestNews/list/4/9" class="alltime pgbtn pg_next"><img
+                                src="source/website/platform2025/images/inner/pages_next.svg"></a>
+                    
+                </div>
+            </div>
+        </div>
+        
+
+
+<div class="footer"  >
+    <div class="top">
+        <div class="img-box">
+            <div class="logo">
+                <img src="source/website/platform2025/images/foot-logo.svg" alt="">
+            </div>
+
+            <div class="foot-nav">
+                <div class="item">
+                    <div class="item-top">
+                        <div class="tit"><a>大赛概况</a></div>
+                        <div class="ico"><img src="source/website/platform2025/images/51.png" alt=""></div>
+                    </div>
+                    <div class="item-bot">
+                        <div class="lv2"><a href="pw/competition/introl" target="_blank">大赛沿革</a></div>
+                        <div class="lv2"><a href="https://cpipc.acge.org.cn/pw/preview2025/2c90800c8237fefe01823d7374a1044b" target="_blank">组织机构</a></div>
+                        <div class="lv2"><a href="pw/competition/regime" target="_blank">信息公开</a></div>
+                        <div class="lv2"><a onclick="jumpPlatformAnchor('partner');return false;">合作单位</a></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-top">
+                        <div class="tit"><a>主题赛事</a></div>
+                        <div class="ico"><img src="source/website/platform2025/images/51.png" alt=""></div>
+                    </div>
+                    <div class="item-bot">
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/1"
+                                                                target="_blank">智慧城市技术与创意设计大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/3"
+                                                                target="_blank">未来飞行器创新大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/4"
+                                                                target="_blank">数学建模竞赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/6"
+                                                                target="_blank">电子设计竞赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/10"
+                                                                target="_blank">创“芯”大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c9080158ee9c272018f229208b610a6"
+                                                                target="_blank">创“芯”大赛-EDA精英挑战赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c9088a5696cbf370169a3f8101510bd"
+                                                                target="_blank">人工智能创新大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c9088a5696cbf370169a3f8934810be"
+                                                                target="_blank">机器人创新设计大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/7"
+                                                                target="_blank">能源装备创新设计大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/8"
+                                                                target="_blank">公共管理案例大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                    <div class="lv2"><a href="#" data-id="catalogParent"
+                                                        data-parentId="2c90800c7a132603017a137394d1036e">乡村振兴科技强农+创新大赛</a>
+                                    </div>
+                                
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c90800c8093eef401809d33b36f0652"
+                                                                target="_blank">网络安全创新大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c90800c8093eef401809d348f8b0653"
+                                                                target="_blank">“双碳”创新与创意大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c90800c8093eef401809d3501080654"
+                                                                target="_blank">金融科技创新大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c908018876ef068018774a9501a03fe"
+                                                                target="_blank">“美丽中国”创新设计大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c90801786cfa2b60186de4143390279"
+                                                                target="_blank">企业管理创新大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c9080178c7c917b018d1b1a0af61cd6"
+                                                                target="_blank">操作系统开源创新大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c9080178e896671018e97ce7525018b"
+                                                                target="_blank">“文化中国”两创大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c9080158e2ad864018e5fa55a450c49"
+                                                                target="_blank">国际中文教育案例大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <div class="lv2"><a href="cw/hp/2c90801795a92a850195d03b537b1bac"
+                                                                target="_blank">智能建造创新大赛</a>
+                                            </div>
+                                        
+                                    
+                                
+                            
+                        
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-top">
+                        <div class="tit"><a>大赛资讯</a></div>
+                        <div class="ico"><img src="source/website/platform2025/images/51.png" alt=""></div>
+                    </div>
+                    <div class="item-bot">
+                        <div class="lv2"><a href="pw/document/list/1" target="_blank">大赛文件</a></div>
+                        <div class="lv2"><a href="pw/news/list/1" target="_blank">大赛新闻</a></div>
+                        <div class="lv2"><a href="pw/notice/list/1" target="_blank">大赛通知</a></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-top">
+                        <div class="tit"><a href="pw/notice/detail/2c9080179e403028019e484cf50210a6?page=0" target="_blank">赛程安排</a></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-top">
+                        <div class="tit"><a
+                                href="https://cpipc.acge.org.cn/pw/preview2025/2c9080147bca2d84017be2e065422a96"
+                                target="_blank">联系我们</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li class="item">
+                    <img src="source/website/platform2025/images/vx2.svg" alt="">
+                    <div class="pop">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="112" height="126"
+                             viewBox="0 0 112 126"
+                             fill="none">
+                            <path
+                                    d="M0 19.4526C0 16.1388 2.68629 13.4526 6 13.4526H41.1832C42.9676 13.4526 44.6595 12.6583 45.7994 11.2854L54.4613 0.853222C55.261 -0.109958 56.739 -0.109961 57.5387 0.853219L66.2006 11.2854C67.3405 12.6583 69.0324 13.4526 70.8168 13.4526H106C109.314 13.4526 112 16.1388 112 19.4526V120C112 123.314 109.314 126 106 126H6C2.68629 126 0 123.314 0 120V19.4526Z"
+                                    fill="#F8F8F8"/>
+                        </svg>
+                        <img class="bor" src="source/website/platform2025/images/bor.svg" alt="">
+                        <img class="qr" src="source/website/platform2025/images/gzh_qr.png" alt="">
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="source/website/platform2025/images/sph_svg.svg" alt="">
+                    <div class="pop">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="112" height="126"
+                             viewBox="0 0 112 126"
+                             fill="none">
+                            <path
+                                    d="M0 19.4526C0 16.1388 2.68629 13.4526 6 13.4526H41.1832C42.9676 13.4526 44.6595 12.6583 45.7994 11.2854L54.4613 0.853222C55.261 -0.109958 56.739 -0.109961 57.5387 0.853219L66.2006 11.2854C67.3405 12.6583 69.0324 13.4526 70.8168 13.4526H106C109.314 13.4526 112 16.1388 112 19.4526V120C112 123.314 109.314 126 106 126H6C2.68629 126 0 123.314 0 120V19.4526Z"
+                                    fill="#F8F8F8"/>
+                        </svg>
+                        <img class="bor" src="source/website/platform2025/images/bor.svg" alt="">
+                        <img class="qr" src="source/website/platform2025/images/sph_qr.png" alt="">
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="source/website/platform2025/images/bili.svg" alt="">
+                    <div class="pop">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="112" height="126"
+                             viewBox="0 0 112 126"
+                             fill="none">
+                            <path
+                                    d="M0 19.4526C0 16.1388 2.68629 13.4526 6 13.4526H41.1832C42.9676 13.4526 44.6595 12.6583 45.7994 11.2854L54.4613 0.853222C55.261 -0.109958 56.739 -0.109961 57.5387 0.853219L66.2006 11.2854C67.3405 12.6583 69.0324 13.4526 70.8168 13.4526H106C109.314 13.4526 112 16.1388 112 19.4526V120C112 123.314 109.314 126 106 126H6C2.68629 126 0 123.314 0 120V19.4526Z"
+                                    fill="#F8F8F8"/>
+                        </svg>
+                        <img class="bor" src="source/website/platform2025/images/bor.svg" alt="">
+                        <img class="qr" src="source/website/platform2025/images/bilibili_qr.png" alt="">
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="source/website/platform2025/images/xhs2.svg" alt="">
+                    <div class="pop">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="112" height="126"
+                             viewBox="0 0 112 126"
+                             fill="none">
+                            <path
+                                    d="M0 19.4526C0 16.1388 2.68629 13.4526 6 13.4526H41.1832C42.9676 13.4526 44.6595 12.6583 45.7994 11.2854L54.4613 0.853222C55.261 -0.109958 56.739 -0.109961 57.5387 0.853219L66.2006 11.2854C67.3405 12.6583 69.0324 13.4526 70.8168 13.4526H106C109.314 13.4526 112 16.1388 112 19.4526V120C112 123.314 109.314 126 106 126H6C2.68629 126 0 123.314 0 120V19.4526Z"
+                                    fill="#F8F8F8"/>
+                        </svg>
+                        <img class="bor" src="source/website/platform2025/images/bor.svg" alt="">
+                        <img class="qr" src="source/website/platform2025/images/xhs_qr.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="text" style="z-index: 2;"> 
+            <div class="items">
+                <span class="tit-20 col-fff f-300">大赛概况</span>
+                <ul>
+                    <li class="item">
+                        <a href="pw/competition/introl" class="tit-18 col-fff f-300">
+                            大赛沿革
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="https://cpipc.acge.org.cn/pw/preview2025/2c90800c8237fefe01823d7374a1044b" class="tit-18 col-fff f-300">
+                            组织机构
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="pw/competition/regime" class="tit-18 col-fff f-300">
+                            信息公开
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a onclick="jumpPlatformAnchor('partner');return false;" class="tit-18 col-fff f-300">
+                            合作单位
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="items">
+                <span class="tit-20 col-fff f-300">主题赛事</span>
+                <div class="ullist">
+                    
+                        <ul>
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/1"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">智慧城市技术与创意设计大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/3"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">未来飞行器创新大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/4"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">数学建模竞赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/6"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">电子设计竞赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/10"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">创“芯”大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c9080158ee9c272018f229208b610a6"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">创“芯”大赛-EDA精英挑战赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c9088a5696cbf370169a3f8101510bd"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">人工智能创新大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c9088a5696cbf370169a3f8934810be"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">机器人创新设计大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/7"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">能源装备创新设计大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/8"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">公共管理案例大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        </ul>
+                    
+                        <ul>
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                        
+                                            <li class="item"><a href="#" data-id="catalogParent"
+                                                                data-parentId="2c90800c7a132603017a137394d1036e"
+                                                                class="tit-18 col-fff f-300">乡村振兴科技强农+创新大赛</a>
+                                            </li>
+                                        
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c90800c8093eef401809d33b36f0652"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">网络安全创新大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c90800c8093eef401809d348f8b0653"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">“双碳”创新与创意大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c90800c8093eef401809d3501080654"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">金融科技创新大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c908018876ef068018774a9501a03fe"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">“美丽中国”创新设计大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c90801786cfa2b60186de4143390279"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">企业管理创新大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c9080178c7c917b018d1b1a0af61cd6"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">操作系统开源创新大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c9080178e896671018e97ce7525018b"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">“文化中国”两创大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c9080158e2ad864018e5fa55a450c49"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">国际中文教育案例大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                                    
+                                        
+                                        
+                                            
+                                                
+                                                
+                                                    <li class="item"><a href="cw/hp/2c90801795a92a850195d03b537b1bac"
+                                                                        target="_blank"
+                                                                        class="tit-18 col-fff f-300">智能建造创新大赛</a>
+                                                    </li>
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+            <div class="items">
+                <span class="tit-20 col-fff f-300">大赛资讯</span>
+                <ul>
+                    <li class="item">
+                        <a href="pw/document/list/1" target="_blank" class="tit-18 col-fff f-300">
+                            大赛文件
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="pw/news/list/1" target="_blank" class="tit-18 col-fff f-300">
+                            大赛新闻
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="pw/notice/list/1" target="_blank" class="tit-18 col-fff f-300">
+                            大赛通知
+                        </a>
+                    </li>
+                </ul>
+                <span class="tit-20 col-fff f-300"><a href="pw/notice/detail/2c9080179e403028019e484cf50210a6?page=0" target="_blank" style="color:#fff;">赛程安排</a></span>
+                <span class="tit-20 col-fff f-300">
+                    <a href="https://cpipc.acge.org.cn/pw/preview2025/2c9080147bca2d84017be2e065422a96" target="_blank" style="color:#fff;">联系我们 </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="tips">
+        <div class="lf tit-16 col-fff f-300">
+
+        </div>
+        <div class="rg">
+            <span class="tit-16 col-fff f-300"><a href="" class="col-fff">京ICP备19019038号-2</a> 版权所有：中国学位与研究生教育学会</span>
+        </div>
+    </div>
+    <div class="bg">
+        <img src="source/website/platform2025/images/foot-bg.png" alt="">
+    </div>
+</div>
+
+<script src="source/website/platform2025/js/swiper.min.js"></script>
+<script src="source/website/platform2025/js/wow.min.js"></script>
+<script src="source/website/platform2025/js/public.js?v=1.0.6"></script>
+
+<script src="source/component/bootstrap/bootstrap.js"></script>
+<script src="source/framework/ezbase.js"></script>
+<script src="source/framework/ezui.js"></script>
+<script src="source/framework/ezuiExt.js"></script>
+<script src="source/component/chart/echarts.min.js"></script>
+<script src="source/component/chart/ez-echarts.js"></script>
+<script src="source/component/chart/ezuiChart.js"></script>
+<script src="source/component/chart/china.js"></script>
+<script src="source/component/vue.min.js"></script>
+<script src="source/component/jquery.fileDownload.js"></script>
+
+    </div>
+    </body>
+</html>

@@ -1,12 +1,12 @@
-# Huawei Cup 2026 A Evidence Package
+# Huawei Cup 2026 workspace (paper PDFs excluded)
 
-This is a private repository for the Huawei Cup 2026 A-problem experiment package.
+This private repository contains the browsable source and documentation export of `/Users/futaoran/Desktop/华为杯2026` as of 2026-09-27.
 
-The complete reproducibility archive is attached to the private release `2026-09-24`:
+Paper PDFs are intentionally excluded. The complete non-PDF workspace is stored in the private GitHub Release assets for tag `2026-09-27-no-paper-pdf`, as six 1-GiB tar.gz parts. Reconstruct and extract with:
 
-- `huawei_cup_2026_a_evidence_20260924.zip`: source snapshot, official evaluator outputs, audited CSV data, tables, figures, replay checks, and the paper-filling prompt.
-- `huawei_cup_2026_a_evidence_20260924.verification.json`: archive SHA-256, member count, and independent archive checks.
+```bash
+cat huawei-cup-2026-no-paper-pdf.tar.gz.part* > huawei-cup-2026-no-paper-pdf.tar.gz
+tar -xzf huawei-cup-2026-no-paper-pdf.tar.gz
+```
 
-The archive contains 22,163 verified members and has source content of about 10.4 GB. The uploaded ZIP is a compressed release asset; its SHA-256 is recorded in the verification JSON.
-
-The numerical results are official Python evaluator simulations over a finite candidate heuristic. They are not an NPU hardware measurement and do not prove global optimality. The paper-alignment report in the archive records the exact claims that remain unverified.
+`file-manifest.jsonl.gz` records source SHA-256 values. `excluded-files.json` records every excluded PDF, including PDFs found inside ZIP archives; 16 ZIP archives were rewritten to remove embedded paper PDFs before packaging. Generated build artefacts, virtual environments, and Git metadata are preserved in the full archive only when they were part of the source and were not PDFs.

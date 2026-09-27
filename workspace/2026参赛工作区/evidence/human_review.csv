@@ -1,0 +1,2 @@
+check_id,scope,evidence_file,reviewer,reviewed_at,outcome,note
+HUMAN-V071-01,V0.7.1模型、候选、数值、论文和AI标注,review/v071_result_summary_20260924.md,,,NOT_ASSESSED,尚无实际队员审核记录，不填签名或日期；五个大图完整结果仍PENDING

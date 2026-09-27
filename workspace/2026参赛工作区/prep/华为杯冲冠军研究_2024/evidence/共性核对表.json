@@ -1,0 +1,786 @@
+{
+  "study_date": "2026-09-23",
+  "page_basis": "PDF physical page; cover=1",
+  "interpretation": "Presence describes observable structure only, not scientific validity, fair comparison, reproducibility or award causation.",
+  "definitions": {
+    "connected_questions": "At least two questions have an explicit input/output connection.",
+    "actual_comparison": "At least one numerical or plotted comparison of candidate methods, alternatives or before/after designs; fairness is assessed separately.",
+    "actionable_output": "At least one concrete numerical answer, configuration or executable proposal responding to the problem.",
+    "appendix_code": "Code text is embedded in the inspected PDF; file listings alone do not count. Execution was not performed."
+  },
+  "counts": {
+    "papers": 13,
+    "pdf_pages": 971,
+    "connected_questions": 13,
+    "actual_comparison": 13,
+    "actionable_output": 13,
+    "appendix_code": 12
+  },
+  "papers": [
+    {
+      "id": "A24103350007",
+      "award": "提名奖",
+      "university": "浙江大学",
+      "problem": "A",
+      "pdf_pages": 79,
+      "sha256": "7fe2813d94da5d72676dd6c8fe0ff6cfead155b8aeb67918be9269de1a0cab5e",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_浙江大学_A24103350007.pdf",
+      "text_chars": 88451,
+      "analysis_source": "evidence/analyses/AB_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            30,
+            31,
+            41,
+            42
+          ],
+          "evidence": "第30页图28与5.2将功率/风速经问题二载荷和问题一疲劳送入第三问；第41页第4步将去噪补值后的数据输入第三问。代码版本是否贯通另未证。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            16,
+            17,
+            28,
+            34,
+            35,
+            36
+          ],
+          "evidence": "三种疲劳算法、两种拟合方法及原始/均分/优化方案均有实际数值或图示对照；不等于公平对照。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            31,
+            44,
+            65
+          ],
+          "evidence": "给出0至5MW与相对均分±1MW的约束、74.5945到77.5239dB结果，以及附录种群100/最大代数100等求解配置。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          67,
+          70,
+          72,
+          77,
+          79
+        ],
+        "evidence": "各问题部分MATLAB代码可见；包含不同疲劳目标版本及未给出的辅助函数，不是完整复现包。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "A24107120016",
+      "award": "提名奖",
+      "university": "西北农林科技大学",
+      "problem": "A",
+      "pdf_pages": 59,
+      "sha256": "daa73a15a67fe912cebe0948f9db9c2ad8e985032f55212eecd64393308ca9e6",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_西北农林科技大学_A24107120016.pdf",
+      "text_chars": 79380,
+      "analysis_source": "evidence/analyses/AB_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            48
+          ],
+          "evidence": "第7.5.3节明确去噪及延迟预测所得功率参考值/风速送入第三问优化器。第30页前两问到疲劳代理的真实性另有缺口。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            24,
+            27,
+            38,
+            49,
+            50,
+            51
+          ],
+          "evidence": "载荷修改前后SSE、均分/原始/优化功率、滤波和五种输入处理方案均有数值比较。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            34,
+            42,
+            51,
+            54,
+            55,
+            56
+          ],
+          "evidence": "遗传种群10、最大代数50；Q=R=0.029764；五方式ACD；附录前五机组前30条答案。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          54,
+          55,
+          56,
+          57,
+          58,
+          59
+        ],
+        "evidence": "窗口、载荷、遗传和卡尔曼片段可见；目标函数部分重复主程序且卡尔曼状态未逐机重置。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "B24102860287",
+      "award": "季军",
+      "university": "东南大学",
+      "problem": "B",
+      "pdf_pages": 90,
+      "sha256": "3e0fc95ca986458c90e024b55ad074660d419331f5b2feef26377e5e9abc5ee4",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/季军_东南大学_B24102860287.pdf",
+      "text_chars": 151493,
+      "analysis_source": "evidence/冠亚季军_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            17,
+            26
+          ],
+          "evidence": "前问发送机会参与后续速率分析与吞吐量建模。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            24,
+            25
+          ],
+          "evidence": "25分类退化图与转用PHY速率的报告结果形成替代方案对照。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            15,
+            24,
+            29,
+            35
+          ],
+          "evidence": "按测试与AP编号给发送时长、MCS/NSS、吞吐量。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          43,
+          69,
+          73,
+          75,
+          76,
+          90
+        ],
+        "evidence": "结果表后有多组代码片段，指标定义与正文存在对应缺口。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "B24116640167",
+      "award": "提名奖",
+      "university": "西安邮电大学",
+      "problem": "B",
+      "pdf_pages": 69,
+      "sha256": "26a34f2fa048e06f40e4d7981e25fc6f5f01067ceafc5e98af48916e4a51c637",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_西安邮电大学_B24116640167.pdf",
+      "text_chars": 89525,
+      "analysis_source": "evidence/analyses/AB_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            41,
+            44
+          ],
+          "evidence": "seq_time明确来自问题一，MCS/NSS查表得到PHY Rate，与PER和Test_dur输入问题三公式。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            23,
+            24,
+            25,
+            36,
+            37,
+            38,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51
+          ],
+          "evidence": "多个预测器、核函数和层数均有实际指标或图；存在不自洽数据，不能据此确认公平或最优。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            25,
+            38,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "evidence": "按场景给最终LSTM/RF配置，并列出带test_id/AP/STA标识的发送时长、MCS/NSS和吞吐量预测。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ],
+        "evidence": "七类代码片段与第55至63页预测表并列；片段不含全部数据入口和配置，未独立运行。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "C24104220149",
+      "award": "冠军",
+      "university": "山东大学",
+      "problem": "C",
+      "pdf_pages": 71,
+      "sha256": "382bde4b71f57eae705347767120aa58b2d993ae090d71cdf246d0e13d6bf871",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/冠军_山东大学_C24104220149.pdf",
+      "text_chars": 81920,
+      "analysis_source": "evidence/冠亚季军_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            47,
+            48
+          ],
+          "evidence": "问四损耗预测模型成为问五目标函数。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            25,
+            26,
+            27,
+            28,
+            43
+          ],
+          "evidence": "原公式寻优、温度修正、预测模型均有表格对照。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            46,
+            50,
+            53
+          ],
+          "evidence": "指定样本预测、工况与目标值；可行性及版本一致性另有缺口。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          57,
+          62,
+          66,
+          69
+        ],
+        "evidence": "有四组Python代码片段，不等于完整工程。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "C24102890089",
+      "award": "亚军",
+      "university": "江苏科技大学",
+      "problem": "C",
+      "pdf_pages": 71,
+      "sha256": "81f2b821a8f442cd0c94f067edd27c570e2d63ddbbcae3a7d92f1f573e410b48",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/亚军_江苏科技大学_C24102890089.pdf",
+      "text_chars": 76929,
+      "analysis_source": "evidence/冠亚季军_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            40,
+            41,
+            45,
+            46,
+            47
+          ],
+          "evidence": "温度修正扩展到12段模型，再进入优化。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            27,
+            28,
+            29,
+            30
+          ],
+          "evidence": "修正方程指标及初值变化有实际结果。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            44,
+            47,
+            49
+          ],
+          "evidence": "指定样本预测和优化工况；最终温度文字/表格有冲突。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          53,
+          58,
+          68,
+          71
+        ],
+        "evidence": "有预处理、拟合和优化片段，未执行。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "C24103860012",
+      "award": "提名奖",
+      "university": "福州大学",
+      "problem": "C",
+      "pdf_pages": 82,
+      "sha256": "20aa9ecb0164fd4e11130590da00f8e0a22a1147dc43b1b85ba9aa4f951a56d3",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_福州大学_C24103860012.pdf",
+      "text_chars": 82356,
+      "analysis_source": "evidence/analyses/CD_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            62,
+            66
+          ],
+          "evidence": "问四损耗预测模型作为问五目标函数；问三的波形、材料、温度结论用于收缩问五搜索范围。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            29,
+            35,
+            37,
+            57,
+            58,
+            59,
+            67
+          ],
+          "evidence": "基准SE对修正式、三特征方案以及三优化器均给实际数字。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            61,
+            67,
+            68
+          ],
+          "evidence": "指定样本预测和优化工况表；p67报告材料四、正弦波、90℃、频率188151.53、磁通峰值0.012、损耗831.89和传输磁能2259.83。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82
+        ],
+        "evidence": "给出Python部分代码；仅静态检查，没有执行，不能视作复现。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "D24104460003",
+      "award": "提名奖",
+      "university": "曲阜师范大学",
+      "problem": "D",
+      "pdf_pages": 96,
+      "sha256": "01a6fe09f175de99159d78bdf8aa5997bc4564d85ae7f931f5715df5f2603db4",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_曲阜师范大学_D24104460003.pdf",
+      "text_chars": 102944,
+      "analysis_source": "evidence/analyses/CD_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            46,
+            47
+          ],
+          "evidence": "正文明确将第二问数据整理为4100条聚合记录，再按经纬度/降雨/气温构建第三问GMM。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            61
+          ],
+          "evidence": "SVM Accuracy=0.993、AUC=0.671，RF Accuracy=0.999、AUC=0.999，并有混淆表。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            62,
+            63,
+            64,
+            71,
+            72,
+            73
+          ],
+          "evidence": "有具体区域地图/名单，以及南北、东西差异的数值结果；提供答案不等于验证未来正确性。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96
+        ],
+        "evidence": "R代码涉及统计、地理合并、分类和区域划分；未运行。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "D24103850092",
+      "award": "提名奖",
+      "university": "华侨大学",
+      "problem": "D",
+      "pdf_pages": 113,
+      "sha256": "a8c55b50f7be97971dc0b5844952dcbdc6929c07f52f841c0d0add83bec7628d",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_华侨大学_D24103850092.pdf",
+      "text_chars": 140683,
+      "analysis_source": "evidence/analyses/CD_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            7,
+            78
+          ],
+          "evidence": "p78明确问二使用问题一提取的气温、降水、高程和土地利用数据。p51的ARIMA到SVR是同问内部链，不用其替代跨问证据。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            76
+          ],
+          "evidence": "图6.21同图比较三种地域分界方案；该证据仅说明方案对照存在，不证明新线优越。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            49,
+            51,
+            52,
+            76,
+            77
+          ],
+          "evidence": "有五组临界条件、2019-2035六项输入预测表，以及和仲线和四区划分方案。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          82,
+          87,
+          89,
+          93,
+          96,
+          99,
+          101,
+          105,
+          108,
+          109,
+          113
+        ],
+        "evidence": "Python代码覆盖四问，包含数据和模型处理；静态核读发现版本/语义缺口，未运行。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "E24101480006",
+      "award": "提名奖",
+      "university": "辽宁石油化工大学",
+      "problem": "E",
+      "pdf_pages": 84,
+      "sha256": "84047e2dd922687d05f1ff326408c32dda51bc95ca1d1cd568ca8eac409ab9e4",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_辽宁石油化工大学_E24101480006.pdf",
+      "text_chars": 76147,
+      "analysis_source": "evidence/analyses/EF_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            11,
+            12,
+            26,
+            51,
+            54
+          ],
+          "evidence": "视频计数形成交通参数，密度预测经Greenberg转为速度，问题三直接复用该链并形成开道阈值。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            34,
+            39,
+            55,
+            57
+          ],
+          "evidence": "四预测器实际指标表；另有规则前后曲线。后者由人为乘因子产生，不证明真实干预收益。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            54,
+            55,
+            56,
+            57,
+            58,
+            61
+          ],
+          "evidence": "速度80/60/40 km/h分级、持续3帧、密度阈值、摄像机6.5m与15-30度建议、最少3摄像头二分布点方案。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          71,
+          74,
+          78,
+          80,
+          82,
+          83,
+          84
+        ],
+        "evidence": "含绘图、Greenberg、HA、树、SVR和YOLOv5/DeepSORT片段；未取得完整数据/权重，未见完整LSTM训练代码，不能宣称可运行复现。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "E24102910005",
+      "award": "提名奖",
+      "university": "南京工业大学",
+      "problem": "E",
+      "pdf_pages": 60,
+      "sha256": "7420d18869b74b8f8a5d036e57ac0fa7b3a94fc54313e1729bbd97e578cfe2cd",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_南京工业大学_E24102910005.pdf",
+      "text_chars": 62230,
+      "analysis_source": "evidence/analyses/EF_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            36,
+            37,
+            44,
+            45,
+            49,
+            53,
+            56
+          ],
+          "evidence": "视频参数和密度预测用于拥堵判断，K用于启闭与效果估计，新增E/F观测点补充下游状态和利用率回接流程。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            22,
+            24,
+            26,
+            34,
+            36,
+            51,
+            52
+          ],
+          "evidence": "候选交通流模型、线性/AdaBoost及启用前后实际图表；策略对照基于30%增益假设。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            45,
+            49,
+            52,
+            54,
+            55,
+            56
+          ],
+          "evidence": "K开启0.8/关闭0.6、0.4/0.6上游权重、下游240veh/km、B移至E及新增F利用率条件。"
+        }
+      },
+      "appendix_code": {
+        "status": "not_found",
+        "pages": [
+          60
+        ],
+        "evidence": "PDF附录只列16项外部脚本、权重和表格文件名称，没有代码正文；本次未得到这些外部附件。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "F24102870082",
+      "award": "提名奖",
+      "university": "南京航空航天大学",
+      "problem": "F",
+      "pdf_pages": 44,
+      "sha256": "71f0d1214c0790b5cbcdd45ad6c7712ea1fda01ea98b98f5e22f70e0ab987f9b",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_南京航空航天大学_F24102870082.pdf",
+      "text_chars": 71779,
+      "analysis_source": "evidence/analyses/EF_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            12,
+            18,
+            22,
+            23,
+            28,
+            30,
+            31
+          ],
+          "evidence": "问题一状态进入二/三问时延，第三问时延逆解进入第四问SSB到探测器序列，再归算并折叠。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            15,
+            35,
+            39
+          ],
+          "evidence": "STK数值对照，分箱数图示，NHPP与高斯100次均值。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            12,
+            18,
+            23,
+            24,
+            35,
+            38,
+            39
+          ],
+          "evidence": "给出状态矢量、时延分项、L=256、八项高斯参数和两方法相关系数。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          41,
+          42,
+          43,
+          44
+        ],
+        "evidence": "有MATLAB轨道/时延代码片段，主光子生成和100次实验完整代码未见，函数依赖未齐。"
+      },
+      "source_hash_verified": true
+    },
+    {
+      "id": "F24910020063",
+      "award": "提名奖",
+      "university": "国防科技大学",
+      "problem": "F",
+      "pdf_pages": 53,
+      "sha256": "19377b63620d87cd6bbca526c7276857335f5bf99d30bed61e710f8bdb389125",
+      "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_国防科技大学_F24910020063.pdf",
+      "text_chars": 58953,
+      "analysis_source": "evidence/analyses/EF_features.json",
+      "structural_features": {
+        "connected_questions": {
+          "status": "present",
+          "pages": [
+            16,
+            21,
+            23,
+            28,
+            29,
+            31
+          ],
+          "evidence": "轨道状态给几何时延，第三问精确时延及卫星位移给接收端强度，第四问反向修正相位并折叠。"
+        },
+        "actual_comparison": {
+          "status": "present",
+          "pages": [
+            35,
+            36,
+            37
+          ],
+          "evidence": "初始序列、折叠后及高精度组合改进均有实际图；没有公平统一协议或可量化独立增益。"
+        },
+        "actionable_output": {
+          "status": "present",
+          "pages": [
+            16,
+            27,
+            30,
+            31,
+            32,
+            37
+          ],
+          "evidence": "状态/时延分项数值、NHPP与折叠伪代码、组合精化方案；步长0.033s/0.033ms需先纠正。"
+        }
+      },
+      "appendix_code": {
+        "status": "present",
+        "pages": [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          49,
+          50,
+          51,
+          52,
+          53
+        ],
+        "evidence": "按Q1/Q2/Q3/Q4列MATLAB片段；关键类/函数未包含、事件生成主体被注释，不能直接视为可运行包。"
+      },
+      "source_hash_verified": true
+    }
+  ]
+}

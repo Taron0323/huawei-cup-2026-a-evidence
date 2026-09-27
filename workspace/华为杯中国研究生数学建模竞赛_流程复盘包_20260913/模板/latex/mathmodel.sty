@@ -1,0 +1,117 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathmodel}[2026/09/07 Maomao reference style v3 - pending user review]
+
+\newif\ifmodelportablefonts
+\DeclareOption{portablefonts}{\modelportablefontstrue}
+\ProcessOptions\relax
+
+\RequirePackage{iftex}
+\ifXeTeX\else
+  \PackageError{mathmodel}{Compile this project with XeLaTeX}{Select XeLaTeX in your editor.}
+\fi
+\RequirePackage{geometry}
+\geometry{a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm,footskip=12mm}
+\RequirePackage{fontspec}
+\RequirePackage{amsmath,amsthm,mathtools}
+\RequirePackage{unicode-math}
+\input{fonts.tex}
+\providecommand{\bm}[1]{\symbf{#1}}
+\RequirePackage{graphicx,booktabs,tabularx,longtable,array,multirow}
+\RequirePackage{caption,subcaption}
+\RequirePackage{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{listings}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\RequirePackage{fancyhdr}
+\RequirePackage[numbers,sort&compress,square,super]{natbib}
+\RequirePackage{url}
+\RequirePackage[hidelinks,unicode,bookmarksnumbered]{hyperref}
+\hypersetup{pdftitle={数学建模论文模板},pdfauthor={},pdfsubject={},pdfkeywords={},pdfcreator={XeLaTeX}}
+
+\definecolor{ModelBlue}{HTML}{276078}
+\definecolor{ModelGreen}{HTML}{3C7664}
+\definecolor{ModelInk}{HTML}{333333}
+\definecolor{ModelGray}{HTML}{F3F4F5}
+\definecolor{PlaceholderGray}{HTML}{646464}
+
+\ctexset{
+  section={format=\centering\heiti\fontsize{14bp}{18bp}\selectfont,
+    name={,.},number=\arabic{section},aftername=\quad,
+    beforeskip=16bp,afterskip=12bp},
+  subsection={format=\kaishu\fontsize{14bp}{18bp}\selectfont,
+    number=\arabic{section}.\arabic{subsection}.,aftername=\quad,
+    beforeskip=10bp,afterskip=5bp},
+  subsubsection={format=\songti\bfseries\fontsize{12bp}{15.6bp}\selectfont,
+    number=\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.,aftername=\quad,
+    beforeskip=8bp,afterskip=4bp}
+}
+\setcounter{secnumdepth}{3}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\linespread{1}
+\renewcommand{\normalsize}{\fontsize{12bp}{15.6bp}\selectfont}
+\AtBeginDocument{\normalsize}
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\setlength{\emergencystretch}{1.5em}
+\renewcommand{\arraystretch}{1.22}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\DeclareCaptionFont{maomao}{\kaishu\fontsize{12bp}{15.6bp}\selectfont}
+\captionsetup{font=maomao,labelsep=quad,skip=6pt}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+\captionsetup[subfigure]{font=small,labelformat=parens}
+\setlist[enumerate]{label=（\arabic*）,leftmargin=2.7em,itemsep=3pt,topsep=4pt}
+\setlist[itemize]{leftmargin=2em,itemsep=3pt,topsep=4pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\zihao{5}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{0pt}
+\raggedbottom
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+\newcommand{\papertitle}[1]{\begin{center}{\songti\bfseries\fontsize{16bp}{22bp}\selectfont#1\par}\end{center}\vspace{5bp}}
+\newenvironment{modelabstract}{\begin{center}\heiti\fontsize{14bp}{18bp}\selectfont 摘要\end{center}\fontsize{12bp}{17.15bp}\selectfont\noindent\hspace*{2em}\ignorespaces}{\par}
+\newcommand{\keywords}[1]{\par\vspace{8pt}\noindent{\heiti 关键词：}#1\par}
+\newcommand{\placeholder}[1]{\textcolor{PlaceholderGray}{【待填写：#1】}}
+\newcommand{\sampleonly}{\noindent\textcolor{PlaceholderGray}{\small 排版演示，非赛题结果。}\par}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+\newtheorem{assumption}{假设}
+\newtheorem{lemma}{引理}
+\newtheorem{proposition}{命题}
+\renewcommand{\proofname}{证明}
+
+\lstdefinestyle{modelcode}{
+  basicstyle=\ttfamily\footnotesize,keywordstyle=\color{ModelBlue},
+  commentstyle=\color{ModelGreen},stringstyle=\color{ModelInk},
+  numbers=left,numberstyle=\tiny\color{PlaceholderGray},numbersep=8pt,
+  frame=tb,rulecolor=\color{ModelInk},breaklines=true,breakatwhitespace=false,
+  columns=fullflexible,keepspaces=true,showstringspaces=false,tabsize=4,
+  aboveskip=10pt,belowskip=10pt,captionpos=t
+}
+\lstset{style=modelcode}
+\renewcommand{\lstlistingname}{代码}
+
+\newcommand{\beginappendices}{%
+  \label{mainbody:end}\clearpage\appendix
+  \ctexset{section={name={附录\space,},number=\Alph{section},aftername=\quad},
+    subsection={number=\Alph{section}.\arabic{subsection}.},
+    subsubsection={number=\Alph{section}.\arabic{subsection}.\arabic{subsubsection}.}}}
+
+\tikzset{
+  modelbox/.style={draw=ModelBlue,line width=0.6pt,fill=white,align=center,
+    minimum height=11mm,text width=38mm,inner sep=5pt,font=\small},
+  modellink/.style={-{Stealth[length=2mm]},line width=0.6pt,draw=ModelInk}
+}

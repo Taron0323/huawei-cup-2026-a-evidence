@@ -1,0 +1,244 @@
+\section{问题二模型建立与求解}
+\label{sec:question-two}
+
+问题一把每个子图看作独立Task，子图边界可能带来写回、读入和激活等待。问题二仍提交操作归属、分核和核内子图序列，但同一核心上的子图合成一个核级Task。数据可在该核心的L1或UB内继续使用，跨核心的数据仍经DDR传送。因此，本问的决策不只是减少跨核边：把消费者集中在同一核心可以节省读入，也可能让几个大张量同时留在片上，随后发生换出与恢复。本节依次建立核心级结构搬运、物理副本容量、有限候选求解和逐图结果之间的关系。
+
+\subsection{数据预处理与核心驻留域}
+\subsubsection{核心驻留域划分}
+给定第\ref{sec:question-one}节的计划$X=(g,a,\sigma)$，先由\texttt{node\_to\_subgraph}取得操作所属子图$g(v)$，再从\texttt{core\_schedules}取得子图所在核心$a(g(v))$及同核先后次序。原计算图中的COPY操作不由外层计划重新分配；候选只覆盖非COPY计算操作，实际输入、输出和跨核COPY由评估程序根据方案生成。每份候选须通过式\eqref{eq:plan-coverage}和式\eqref{eq:plan-sequence-unique}的覆盖与唯一性检查，核级Task、物理版本和事件时间线再由评估程序展开。对每个逻辑张量$t$，索引保存其大小$b_t$、生产者$p(t)$、去重后的计算消费者$U(t)$、存储区位置以及最终写回指示$o_t$。本研究使用的100张图均按同一字段定义建立这些关系，候选的归属与顺序变化不改变原计算依赖。
+
+问题一按消费Task去重，问题二按消费核心去重。定义计算操作$v$的驻留域$d_B(v)=a(g(v))$，则张量$t$的核级消费域为
+\begin{equation}
+\mathcal D_t^B=\{d_B(v):v\in U(t)\}.
+\label{eq:b-domain}
+\end{equation}
+同一张量在一个核心上的多个计算消费者，在式\eqref{eq:b-domain}中只占一个元素。这是接收核心去重，不表示张量跨不同核心共享同一片上物理副本。一个核心上的子图即使被分成多个块，其生产与消费边仍保留；评估程序的核内排序按提交的子图顺序安排这些操作。张量的逻辑编号用于统计接收域，容量检查则使用换出、恢复形成的物理版本编号。
+
+\begin{table}[H]\centering\caption{问题一与问题二的驻留及同步边界}\label{tab:b-rule-contrast}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+对象 & 问题一：Task驻留 & 问题二：核心驻留\\\midrule
+片上副本可复用范围 & 单个子图Task & 同核合并后的Task\\
+相同输入的读入次数 & 按消费子图去重 & 按消费核心去重\\
+中间结果的跨域COPY & 源Task写出、各远端Task读入 & 每个远端接收核心各有写出和读入一对\\
+跨核释放起点 & 前驱Task完成并等待1000 cycle & 源端COPY\_OUT完成并等待500 cycle\\
+容量统计 & Task内部的物理副本 & 同核合并序上的物理副本\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsubsection{跨核结构搬运}
+问题二允许同核多个子图复用片上数据，因而同一个张量在一个核心上只需一个驻留副本。对输入$t$记$I_B(t)=\{a(g(v)):v\in U(t)\}$；对有生产者的$t$记$R_B(t)=\{a(g(v)):v\in U(t),\,a(g(v))\ne a(g(p(t)))\}$。每个远端接收核需要源核写出与目标核读入，最终输出另行写回，得到
+\begin{equation}
+Q_B^0=Q_C^0=
+\sum_{t\in\mathcal T_{\rm in}}b_t|I_B(t)|
++\sum_{t\in\mathcal T_{\rm prod}}b_t(2|R_B(t)|+o_t).
+\label{eq:b-bytes}
+\end{equation}
+式\eqref{eq:b-bytes}中，图输入没有计算生产者，每个接收核心从DDR读入一次，贡献$b_t|I_B(t)|$。中间张量在生产核心形成，每个远端接收核心均需一份源写出与一份目标读入，贡献$2b_t|R_B(t)|$；原图要求输出的张量另写回一次，贡献$b_t o_t$。等式$Q_B^0=Q_C^0$指同一计划在无Cache与有Cache场景下的结构COPY字节相同；问题三改变读服务来源和完成时刻，不删除这条逻辑搬运。
+
+若一份$b$字节输入由同核两个子图消费，问题一可能读入$2b$，问题二只读入$b$。若一份中间结果的生产者位于核心0、两个消费子图分别位于核心1和2，本问需要两对跨核COPY，即$4b$；将两个消费者放到同一个远端核心后变为$2b$，全部放在生产核心则该项为零。问题一对两个远端Task的同一张量只需源Task写出一次、两个Task各读入一次，即$3b$。这些比较只涉及结构搬运，集中数据后可能产生的Spill另行计入。对于既要跨核发送又要最终写回的张量，评估程序分别创建跨核COPY与最终输出COPY，因此式中保留$o_t$。
+
+上述例子说明$Q_B^0$与$Q_A^0$没有固定的大小关系。令同一生产张量$t$的外部消费Task数为$r_A=|R_A(t)|$，远端消费核心数为$r_B=|R_B(t)|$，并令$o_t$表示最终写回指示。由式\eqref{eq:a-bytes}和式\eqref{eq:b-bytes}，该张量在两种场景下的结构搬运之差为
+\begin{equation}
+Q_{B,t}^0-Q_{A,t}^0
+=b_t\left(2r_B+o_t-r_A-\mathbf 1\{r_A>0\ \text{或}\ o_t=1\}\right).
+\label{eq:ab-structure-difference}
+\end{equation}
+其中$r_A$按Task计数，包含与生产Task同核但属于不同Task的消费者；$r_B$按远端核心计数且不包含生产核心。右端可为正、负或零，且只比较同一计划下的结构COPY，未含Spill、带宽排队和执行时序。因此A/B方案须分别按各自的搬运公式和事件模拟结果评价。
+
+同核切块可以改变执行顺序而不改变式\eqref{eq:b-bytes}的结构字节数，但张量驻留时间和容量恢复仍会变化。跨核目标COPY\_IN需等待源COPY\_OUT完成，再加500 cycle释放延迟。
+
+若$e^{\rm out}_{t,i\to j}$和$s^{\rm in}_{t,i\to j}$分别是该边源COPY\_OUT的结束和目标COPY\_IN的开始时刻，则
+\begin{equation}
+s^{\rm in}_{t,i\to j}\ge e^{\rm out}_{t,i\to j}+500.
+\label{eq:b-copy-release}
+\end{equation}
+源端写出受MTE3流水线及共享DDR服务影响，其完成时间移动时，目标读入的可发射时间随之移动。
+
+公式中的去重以消费核心为单位。把同一输入的消费者集中到一核可减少重复读入；把中间张量的消费者移回生产核可减少写读一对COPY。两种操作也可能使一个核心的计算和存活张量过于集中，结构搬运下降与最终工期的关系由完整事件时间线决定。
+
+\subsection{物理副本、容量与Spill}
+\subsubsection{物理副本存活期}
+Buffets把片上缓冲的填充、读取和释放交给显式的编排逻辑管理\cite{pellauer2019buffets}；本题的L1、UB同样按“申请时占用、最后读者完成时释放”管理空间，因此可以用物理副本的存活区间描述容量。核心$k$接收或生产一份逻辑张量后，该副本从片上空间申请时刻$A_{\tilde t}$开始占用L1或UB，直到最后一个读者完成的时刻$L_{\tilde t}$释放。读者包括计算操作以及将结果写入DDR的COPY。若Step2将它换出并在下次使用前恢复，恢复后占用空间的是新的物理版本$\tilde t'$。对存储区$q$，执行过程必须满足
+\begin{equation}
+\mathrm{Live}_{kq}(\tau)
+=\sum_{\tilde t\in\mathcal V_{kq}(X)}b_{\tilde t}
+\mathbf1\{A_{\tilde t}\le\tau<L_{\tilde t}\}
+\le C_q,\qquad q\in\{\mathrm{L1},\mathrm{UB}\}.
+\label{eq:b-physical-live}
+\end{equation}
+这里$\mathcal V_{kq}(X)$是计划$X$在核心$k$、存储区$q$产生的物理版本集合，容量$C_q$沿用式\eqref{eq:capacity}。分核与核内顺序改变操作的申请和末次使用次序，因而即使式\eqref{eq:b-bytes}的结构字节相同，式\eqref{eq:b-physical-live}中的重叠区间也会不同。
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[x=0.95cm,y=0.95cm]
+\draw[alink] (0,0)--(12.0,0) node[right]{$\tau$};
+\draw[very thick,blue!70!black] (1.0,0.9)--(10.3,0.9);
+\draw[very thick,orange!80!black] (3.1,1.55)--(8.4,1.55);
+\foreach \x in {1.0,3.1,8.4,10.3}
+  \draw[black!65] (\x,-0.12)--(\x,0.13);
+\node[font=\small,below,align=center] at (1.0,-0.16){第一份\\申请};
+\node[font=\small,below,align=center] at (3.1,-0.16){第二份\\申请};
+\node[font=\small,below,align=center] at (8.4,-0.16){第二份\\末次读};
+\node[font=\small,below,align=center] at (10.3,-0.16){第一份\\末次读};
+\node[left,font=\small] at (1.0,0.9){$\tilde t_1$};
+\node[left,font=\small] at (3.1,1.55){$\tilde t_2$};
+\draw[densely dashed,black!50] (3.1,0.2)--(3.1,1.85);
+\draw[densely dashed,black!50] (8.4,0.2)--(8.4,1.85);
+\node[font=\small] at (5.8,2.05){两份副本同时占用片上空间};
+\end{tikzpicture}
+\caption{同核两份物理副本的生存区间及容量重叠}\label{fig:b-lifetime}
+\end{figure}
+
+例如，两份各81920 B的UB张量若在图\ref{fig:b-lifetime}所示的区间内同时存活，峰值为163840 B，超过131072 B的UB容量32768 B。前移其中一份的末次使用或推迟另一份的申请可以消除这一重叠；否则Step2须通过换出、恢复组织空间。
+
+\subsubsection{换出恢复与容量约束}
+ZigZag在探索映射时同时评估存储层次上的数据驻留\cite{mei2021zigzag}。本文也在候选排序中加入容量压力项，但只作粗略估计：完整构图之前，程序在每核的局部拓扑操作序上建立位置索引；每个张量在该核上的局部生产者与消费者中，最早操作位置为代理生存起点，最晚操作位置为代理终点。对计划$X$沿这些位置统计张量的理想存活字节$\widehat{\mathrm{Live}}_{kq}(j)$，以
+\begin{equation}
+\Pi(X)=\sum_{k,q}\left[\max_j\widehat{\mathrm{Live}}_{kq}(j)-C_q\right]_+
+\label{eq:pressure}
+\end{equation}
+描述未换出时的容量压力，其中$[z]_+=\max\{z,0\}$。该代理对一份张量在某核心只设一段区间，只用于排列候选；实际容量约束由式\eqref{eq:b-physical-live}和评估程序的展开结果确定。评估程序的核内调度依次进行Step1初排及子图优先级调整、Step2插入Spill、Step3补足内存复用依赖；任何一步出现依赖环，候选不进入成功集合。
+
+一次Spill记录的张量大小为$b_s$；恢复COPY\_IN一定搬运$b_s$，若本次换出还需把当前数据写回DDR，则另有一份$b_s$的COPY\_OUT。以输出字段$z_s\in\{0,1\}$表示这次换出是否实际复制数据，Spill字节可从记录逐项复算为
+\begin{equation}
+Q_B^{\rm spill}=\sum_{s\in\mathcal S_{\rm spill}} b_s(1+z_s).
+\label{eq:b-spill}
+\end{equation}
+相同的容量超额$\Pi$可能因恢复次数、字节数和读者次序不同而产生不同的Spill搬运；Spill还可能推迟关键计算的发射时刻，故工期取决于它在时间线中的位置。
+
+由结构COPY、Spill和原图必要COPY的关系，评估程序输出的调度COPY与额外搬运满足
+\begin{equation}
+Q_B^{\rm sched}=Q_B^0+Q_B^{\rm spill},\qquad
+D_B=Q_B^{\rm sched}-Q^{\rm orig}
+=(Q_B^0-Q^{\rm orig})+Q_B^{\rm spill}.
+\label{eq:b-breakdown}
+\end{equation}
+第一项是分核与核级边界产生的结构附加搬运，第二项是容量恢复搬运。字节量以B计，换算MiB时除以$2^{20}$。
+
+表\ref{tab:b-copy-ledger}按式\eqref{eq:b-breakdown}把每个核数下100张图的主矩阵正式选中方案逐图分解后取算术平均。额外搬运合计等于结构新增与Spill新增之和，再加原图COPY即为调度COPY总量；该恒等式在500个B结果中逐行成立。
+
+\begin{table}[H]\centering\small
+\caption{问题二正式选中方案的COPY分解（每核数100图；字节列为逐图均值，MiB）}\label{tab:b-copy-ledger}
+\begin{tabular}{crrrrr}\toprule
+核数 & 原图COPY & 结构新增 & Spill新增 & 额外搬运合计 & 有Spill图数\\\midrule
+1 & 2.30 & 0.00 & 10.47 & 10.47 & 59\\
+2 & 2.30 & 1.56 & 11.58 & 13.14 & 40\\
+3 & 2.30 & 2.75 & 11.18 & 13.93 & 36\\
+4 & 2.30 & 3.60 & 10.53 & 14.12 & 35\\
+5 & 2.30 & 4.19 & 10.04 & 14.23 & 36\\\bottomrule
+\end{tabular}\end{table}
+
+由单核到五核，结构新增均值从0升至4.190 MiB，Spill新增均值从10.468降至10.038 MiB；额外搬运合计从10.468升至14.228 MiB。单核有59张图发生Spill，五核为36张：分核缩短了部分核级Task内物理副本的重叠，但也引入了跨核写读。
+
+\subsection{初始方案与求解}
+\subsubsection{核级驻留方案}
+Kwon等在多DNN加速器上把资源划分与层调度联合优化\cite{kwon2021heterogeneous}；问题二的分核与核内顺序同样相互牵制：分核决定接收域，核内顺序决定物理副本的重叠。整图B0保留原计算图在一个核级Task内的完整驻留，但多核配置中其余核心空闲。B1先求计算依赖的弱连通分量，按分量$\max(M,V)$工作量降序排列，再装入当前桶$\max(M,V)$工作量最小的核心；每个非空核心形成一个子图。无跨分量计算依赖，B1把天然并行的部分分散到不同核心，却无法切开一个占主导的大分量。B2和B3分别使用两种全图就绪序，按剩余$\max(M,V)$工作量目标切成至多$4K$、$8K$个连续块；接近目标的切点优先选择跨切点张量字节较少者。每个新增块接入核心时，对临时计划调用轻量评分，以共同考虑路径、核心负载、结构COPY和容量压力。问题二的块数上限（$4K$、$8K$）比问题一（$2K$、$4K$）更大，因为核级驻留允许同核多块共用片上副本，切得更细不会像问题一那样同比放大结构搬运，但代价是可能加重核内容量压力；更多的切点也给贪心分核更多调整空间。
+
+\begin{table}[H]\centering\caption{问题二四个起点的实际构造及作用}\label{tab:b-seeds}
+\begin{tabularx}{\linewidth}{cYY}\toprule
+起点 & 构造规则 & 对核级驻留的影响\\\midrule
+B0 & 整图一块，放在核心0 & 无新增跨核边界，保留最长驻留区间\\
+B1 & 弱连通分量降序装入最轻核心 & 利用独立分量，子图数量不超过非空核数\\
+B2 & 沿H序按$\max(M,V)$目标切至多$4K$块 & 优先考虑长计算链，并在候选切点中压低跨切点字节\\
+B3 & 沿R序按$\max(M,V)$目标切至多$8K$块 & 将末次消费释放与新输出规模纳入切点选择\\\bottomrule
+\end{tabularx}\end{table}
+
+H序使用式\eqref{eq:a-height}的后继最长计算路径优先级；它在每一步仅从已经就绪的操作中选择。R序在此基础上加入逻辑张量的剩余消费者数。令$n_j(t)$为排入第$j$个操作前张量$t$尚未安排的消费者数，从就绪集合中先取H优先级最高的至多8个，组成$\mathcal R_j^{(8)}$。然后计算
+\begin{equation}
+r_j(v)=\sum_{\substack{t:\,v\in U(t)\\n_j(t)=1}}b_t
+-\sum_{t:\,p(t)=v}b_t,
+\qquad v_j^*=\mathop{\arg\max}_{v\in\mathcal R_j^{(8)}}
+\bigl(r_j(v),h(v),-\operatorname{id}(v)\bigr).
+\label{eq:b-r-order}
+\end{equation}
+第一项只统计本步成为末次消费者的输入，第二项是本步新产生的输出大小。若多个操作释放量相同，先选H优先级高者，再选编号小者。R序是全图静态构造顺序，物理副本的实际生存区间仍由评估程序展开确定。
+
+\subsubsection{方案调整与候选筛选}
+每个起点保留原方案，并尝试迁块、同核合并、调序和容量风险块的前后移动。问题一同核数的最终方案也作为问题二的热启动锚点，用于直接比较场景变化带来的工期差异。迁块从累计计算周期最大的核心取其列表首块，移至其他核心中最轻者的列表末端；合并保持同核驻留域，却改变提交边界；调序不改变操作归属与式\eqref{eq:b-bytes}，但可改变式\eqref{eq:b-physical-live}中的重叠。每份编辑方案先规范化，再检查操作覆盖、商图无环及同核直接依赖，非法方案跳过；跨起点产生的相同计划按内容去重。
+
+对合法候选，记$L_k(X)$为核心$k$的计算周期总和，$\widehat L_B(X)$为沿原计算拓扑序的路径代理，跨核依赖在代理中附加500 cycle。令$\widehat Q_B(X)$为候选求解器的静态COPY代理，$\Pi(X)$为式\eqref{eq:pressure}，则入围排序采用
+\begin{equation}
+\widehat F_B(X)=\max\left\{\widehat L_B(X),\max_k L_k(X),
+\left\lceil\frac{\widehat Q_B(X)}{60}\right\rceil\right\},\qquad
+\widehat\kappa_B(X)=\bigl(\widehat F_B,\widehat Q_B,\Pi\bigr).
+\label{eq:b-light-score}
+\end{equation}
+$\widehat Q_B$按逻辑张量及其接收核心快速累加，$\widehat L_B$未模拟源端COPY耗时、流水线争用和共享DDR，因此三项只用于候选排序，最终计划按评估程序返回的$F_B$和$D_B$选择。
+
+\subsubsection{完整评价与方案选定}
+完整评价先覆盖去重后的整图、分量装桶、上一核正式选中锚点和问题一热启动计划，再从其余候选中至少评价一个代表。设去重后必评计划数为$m$、请求额度为$q$，常规完整调用额度为$\max\{\min(q,2),m+1\}$。评估程序的展开阶段构造核级Task及结构COPY，执行核内Step1/2/3并返回COPY与Spill统计；展开失败时保留错误文本并尝试下一份候选，不消耗完整模拟额度。展开成功后才调用B场景事件模拟，计算每条流水线、DDR及500 cycle跨核释放共同决定的$F_B$。完整模拟即使失败也占一次调用额度；若当前最优慢于上一核或单核基准，则补评尚未评价的对应单调回退计划；统一单核基准的回退补评仅在A场景执行。最终在当前$K$核的全部成功结果中按$(F_B,D_B)$字典序取\texttt{final\_selection}，正文逐图结果直接读取该核数的正式选择，不再跨核数事后取最短工期。
+
+\begin{algorithm}[H]\caption{问题二的核级驻留候选与完整评价}\label{alg:b-solve}
+\begin{algorithmic}[1]
+\REQUIRE 原始图$G$、核心数$K$、题设容量和带宽参数及请求完整调用额度$q$
+\ENSURE 最终计划$X_B^*$、工期$F_B$、结构及Spill搬运
+\STATE 从原图建立计算依赖、张量生产消费索引、H序与R序
+\STATE 生成B0整图、B1分量装桶、B2的$4K$块、B3的$8K$块
+\FOR{每个起点}
+\STATE 保留原方案；各尝试迁块、同核合并、调序及容量风险块的前后移动
+\STATE 检查覆盖和依赖，规范化并按计划内容去重
+\ENDFOR
+\STATE 按$(\widehat F_B,\widehat Q_B,\Pi)$排列候选
+\STATE 将整图、分量装桶、上一核正式选中锚点和问题一热启动计划置于去重后的必评队列
+\STATE 令$m$为必评数，完整调用额度为$\max\{\min(q,2),m+1\}$
+\WHILE{尚有候选且未达到常规完整调用额度}
+\STATE 对当前候选做展开检查；若失败，记录错误并继续
+\STATE 运行B场景事件模拟，保存成功结果或失败文本
+\ENDWHILE
+\STATE 若当前最优慢于上一核或单核基准，补评尚未评价的单调回退计划
+\STATE 在成功集合按$(F_B,D_B)$字典序选$X_B^*$
+\end{algorithmic}\end{algorithm}
+
+超过20000个计算操作的五张图也沿用B0--B3构造并纳入100图结果。
+\FloatBarrier
+
+\subsection{问题二结果分析}
+\subsubsection{逐核加速比}
+加速比仍以整图单核A0的$T_{1,i}$为基准，计算$T_{1,i}/F_B(X^*_{B,i,K})$；每个核数直接读取主矩阵正式选择。表\ref{tab:b-results}中各核数都没有慢于基准的图。图\ref{fig:speedup-b}的浅色带为100张图重采样1500次得到的均值95\%区间。
+\begin{table}[H]\centering\small\caption{问题二：100图逐核加速比（主矩阵正式选中方案）}\label{tab:b-results}
+\begin{tabular}{crrrr}\toprule
+核数 & 平均加速比 & 中位数 & 慢于A0的图数 & 首个成功至最终平均降幅\\\midrule
+1 & 1.0564 & 1.0033 & 0 & 4.0928\%\\
+2 & 1.7610 & 1.9703 & 0 & 39.4919\%\\
+3 & 2.3993 & 2.8435 & 0 & 51.3871\%\\
+4 & 2.9852 & 3.6353 & 0 & 57.2715\%\\
+5 & 3.4738 & 4.0343 & 0 & 60.3622\%\\\bottomrule
+\end{tabular}\end{table}
+\begin{figure}[!htbp]\centering
+\includegraphics[width=0.91\linewidth,height=0.43\textheight,keepaspectratio]{figures/speedup_B.pdf}
+\caption{问题二逐核加速比：均值、中位数、均值95\%重采样区间及4至5核重点区间}\label{fig:speedup-b}
+\end{figure}
+
+五核平均加速比为3.4738，中位数4.0343，均值的95\%重采样区间为$[3.1681,3.7597]$。由四核到五核，70张图工期缩短、23张图持平、7张图变长，没有图慢于整图单核基准。五核正式选择的平均额外搬运为14.228 MiB，其中结构附加4.190 MiB、Spill 10.038 MiB；36张图出现非零Spill。
+
+两场景五核正式选择的平均加速比分别为3.4383和3.4738，B比A高0.0355。逐图比较，B比A快26图、持平68图、慢6图。B更慢的图上，核级驻留节省的读入被Spill、跨核同步或关键路径上的等待抵消。图\ref{fig:b-ab-tradeoff}用五核正式选择逐图配对，横轴为额外搬运差，纵轴为B/A工期比；大多数图的额外搬运差和工期比不成单调关系，说明核级驻留的收益主要由核内复用决定，字节数高低并不直接决定工期快慢。
+\samplefigure{ab_tradeoff_scatter}{五核正式选择方案的逐图A/B对照：额外搬运差与工期比}{fig:b-ab-tradeoff}
+
+\begin{table}[H]\centering\small\caption{五核代表图在A/B场景的工期及额外搬运分解（正式选择方案）}\label{tab:b-cases}
+\begin{tabular}{llrrr}\toprule
+图 & 场景及候选 & 工期/cycle & 结构附加/B & Spill/B\\\midrule
+\Case{055} & A：L1\_base & 25635 & 231424 & 0\\
+ & B：L1\_base & 25635 & 231424 & 0\\
+\Case{053} & A：局部切分 & 491765 & 1194496 & 3275040\\
+ & B：B1\_base & 492232 & 1004032 & 4768320\\\bottomrule
+\end{tabular}\end{table}
+
+图\ref{fig:b-case055-timeline}展开\Case{055}五核B方案的事件时间线。
+\samplefigure{b_case055_official_timeline}{\Case{055}五核B方案的核级Task、COPY及在途搬运时间线}{fig:b-case055-timeline}
+
+该图A、B均选中同一份L1\_base计划，工期均为25635 cycle，说明核级驻留策略在此图上已使两个场景收敛。\Case{053}则保留场景差异：A的工期为491765 cycle，B为492232 cycle；B的结构附加搬运较少但Spill多1493280 B，最终工期反而略长。
+
+\subsubsection{容量恢复算例}
+结构附加搬运相同时，可以单独观察块结构与核内次序对Spill的影响。\Case{008}单核初始B0方案与正式选中L2方案的结构附加均为0；前者工期487605 cycle，后者工期269325 cycle，Spill为3760128 B。候选搜索通过改变核内驻留与执行顺序降低了尾部工期。
+\begin{table}[H]\centering\caption{\Case{008}单核问题二初始与正式选中候选}\label{tab:b-case008}
+\begin{tabular}{lrrr}\toprule
+候选 & 工期/cycle & 结构附加/B & Spill/B\\\midrule
+B0初始方案 & 487605 & 0 & 0\\
+L2正式选中 & 269325 & 0 & 3760128\\\bottomrule
+\end{tabular}\end{table}
+
+\subsection{问题二结论}
+问题二的核级接收域把同核消费归并为一份结构读入，式\eqref{eq:b-bytes}给出跨核COPY的计量，式\eqref{eq:b-physical-live}和式\eqref{eq:b-spill}说明容量恢复如何改变工期。按主矩阵正式选中方案，五核平均加速比为3.4738，100张图均不慢于整图单核基准。
+
+提交计划包含操作归属与核心列表。问题三的同计划配对以同核数下问题二的正式选择$X_B^*$为起点，在相同计划上加入只读Cache，再比较硬件作用与方案适配。各类结果记录见附录表\ref{tab:b-artifacts}。
+
+\subsection{问题二灵敏度分析}
+问题二的片上驻留对分块方式敏感。表\ref{tab:b-case008}的初始与正式选中方案在相同硬件和核数下只改变候选构造与核内次序，Spill与工期同时变化，说明核级Task内物理副本的生存期随块边界和操作次序改变。增加核心数的影响见表\ref{tab:b-results}和图\ref{fig:speedup-b}：四至五核有70图工期缩短、23图持平、7图变长；局部退化来自有限候选和新边界位置。

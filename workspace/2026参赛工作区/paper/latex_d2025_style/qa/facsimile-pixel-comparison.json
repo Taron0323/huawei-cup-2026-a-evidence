@@ -1,0 +1,552 @@
+[
+  {
+    "page": 1,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 2,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 3,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 4,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 5,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 6,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 7,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 8,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 9,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 10,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 11,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 12,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 13,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 14,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 15,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 16,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 17,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 18,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 19,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 20,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 21,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 22,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 23,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 24,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 25,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 26,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 27,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 28,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 29,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 30,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 31,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 32,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 33,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 34,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 35,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 36,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 37,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 38,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 39,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 40,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 41,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 42,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 43,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 44,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 45,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 46,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 47,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 48,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 49,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 50,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 51,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 52,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 53,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 54,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 55,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 56,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 57,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 58,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 59,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 60,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 61,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 62,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 63,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 64,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 65,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 66,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 67,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 68,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 69,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 70,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 71,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 72,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 73,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 74,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 75,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 76,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 77,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 78,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 79,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 80,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 81,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 82,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 83,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 84,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 85,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 86,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 87,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 88,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 89,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 90,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 91,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 92,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 93,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 94,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 95,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 96,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 97,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 98,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 99,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 100,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 101,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 102,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 103,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 104,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 105,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 106,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 107,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 108,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 109,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  },
+  {
+    "page": 110,
+    "mean_abs_channel_difference": 0.0,
+    "changed_pixel_fraction": 0.0
+  }
+]

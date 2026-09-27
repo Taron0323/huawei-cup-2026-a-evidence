@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-09-05T18:35:57.806466+00:00",
+  "national_sources": [
+    {
+      "requested_url": "https://www.mcm.edu.cn/upload_cn/node/785/Glps6mBh6563c55c45300fede72ddbf6eb33d3a8.pdf",
+      "resolved_url": "https://www.mcm.edu.cn/upload_cn/node/785/Glps6mBh6563c55c45300fede72ddbf6eb33d3a8.pdf",
+      "retrieved_at": "2026-09-05T18:35:55.637897+00:00",
+      "content_type": "application/pdf",
+      "bytes": 97121,
+      "sha256": "4cf6f30cdd37d6ef2cdb3439c5dba4d9f207c12d6aafe24419e81f3c69acf59a",
+      "file": "/Users/futaoran/Desktop/数学建模/prep/astra/sources/20260905T183554Z/2026_ai_rules.pdf",
+      "matches_prior_snapshot": true,
+      "pages": 1,
+      "snapshot": "prep/astra/sources/20260905T183554Z/2026_ai_rules.pdf"
+    },
+    {
+      "requested_url": "https://www.mcm.edu.cn/upload_cn/node/774/FlQt6kJV6f5d5b4603e06c3c60acf89b72d7f298.pdf",
+      "resolved_url": "https://www.mcm.edu.cn/upload_cn/node/774/FlQt6kJV6f5d5b4603e06c3c60acf89b72d7f298.pdf",
+      "retrieved_at": "2026-09-05T18:35:56.273687+00:00",
+      "content_type": "application/pdf",
+      "bytes": 123600,
+      "sha256": "46d3837906bfd7049eb04c40cfc8b8436912d7edae98462ba064abfa381a8d3a",
+      "file": "/Users/futaoran/Desktop/数学建模/prep/astra/sources/20260905T183554Z/2026_rules.pdf",
+      "matches_prior_snapshot": true,
+      "pages": 1,
+      "snapshot": "prep/astra/sources/20260905T183554Z/2026_rules.pdf"
+    },
+    {
+      "requested_url": "https://www.mcm.edu.cn/upload_cn/node/775/cQMeL0YY905244c8bd4b9af832f1699446d8385e.pdf",
+      "resolved_url": "https://www.mcm.edu.cn/upload_cn/node/775/cQMeL0YY905244c8bd4b9af832f1699446d8385e.pdf",
+      "retrieved_at": "2026-09-05T18:35:56.634830+00:00",
+      "content_type": "application/pdf",
+      "bytes": 168354,
+      "sha256": "cece4bb3a900a0435160032b98ea26e03b0f2d7eca58424b0d023e26085aed26",
+      "file": "/Users/futaoran/Desktop/数学建模/prep/astra/sources/20260905T183554Z/2026_format.pdf",
+      "matches_prior_snapshot": true,
+      "pages": 2,
+      "snapshot": "prep/astra/sources/20260905T183554Z/2026_format.pdf"
+    },
+    {
+      "requested_url": "https://www.mcm.edu.cn/upload_cn/node/779/D3txF20S95f4041e22b41b4a1f9e0e22ac8a1389.pdf",
+      "resolved_url": "https://www.mcm.edu.cn/upload_cn/node/779/D3txF20S95f4041e22b41b4a1f9e0e22ac8a1389.pdf",
+      "retrieved_at": "2026-09-05T18:35:57.800541+00:00",
+      "content_type": "application/pdf",
+      "bytes": 542991,
+      "sha256": "cf9c59dc9fd329377c0696a83b804d373ab927b4036d28b608c1e9c7909e8ec0",
+      "file": "/Users/futaoran/Desktop/数学建模/prep/astra/sources/20260905T183554Z/2026_notice.pdf",
+      "matches_prior_snapshot": true,
+      "pages": 11,
+      "snapshot": "prep/astra/sources/20260905T183554Z/2026_notice.pdf"
+    }
+  ],
+  "original_workflow_sha256": "868b177d71be721b6daabac1f53d7b94ed5f465d169dcbf10f21156f923fb71d",
+  "regional_rules_status": "AWAITING_REGION",
+  "formal_problem_received": false
+}

@@ -1,0 +1,20 @@
+{
+  "stored_matrix_rows": 1500,
+  "unique_combinations": 1500,
+  "formal_combinations": 1400,
+  "baseline_rows": 100,
+  "audited_successful_candidates_in_selected_combinations": 2784,
+  "failed_candidates_in_selected_combinations": 401,
+  "cache_pairs": 500,
+  "sensitivity_selected_rows": 48,
+  "sensitivity_successful_candidates": 60,
+  "sensitivity_failed_candidates": 12,
+  "sensitivity_selected_changed_plans": 0,
+  "consistency_failures": 0,
+  "old_missing_source_rows": 1047,
+  "old_missing_timing_rows": 1047,
+  "ab_speedup_below_one": 180,
+  "ab_adjacent_core_regressions": 192,
+  "scope": "all stored selected-combination results checked; independent replay is reported separately",
+  "paper_readiness": "PARTIAL_METHOD_AND_CONTROL_GAPS"
+}

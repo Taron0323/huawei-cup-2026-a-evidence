@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-23",
+  "scope": "2024数模之星提名论文C/D三篇；论文自身报告及附录静态核读，未运行或复现；不推断官方评分权重、获奖原因或2026模型选择。",
+  "page_convention": "从封面开始计数的1-based PDF页码",
+  "feature_rules": {
+    "status_values": ["present", "not_found", "unclear"],
+    "method_comparison": "必须有实际候选方法或方案的数值或图示对照；不据此推定公平比较或优越性。",
+    "validation": "有误差、留出、独立检验或仿真检查的实际报告；presence不等于验证充分。",
+    "sensitivity": "改变参数或输入并观察结果；只有标题或未呈现输出的代码不算明确存在。"
+  },
+  "papers": [
+    {
+      "paper_id": "C24103860012",
+      "institution": "福州大学",
+      "award": "提名奖",
+      "title": "数据驱动下磁性元件的磁芯损耗建模",
+      "pdf_file": "../../../数模之星优秀论文_2024-2025/2024/提名奖_福州大学_C24103860012.pdf",
+      "boundaries": {"total_pages": 82, "cover": [1], "abstract": [2, 3], "contents": [4, 5], "body_start": 6, "body_end": 70, "references_start": 71, "references_end": 71, "appendix_start": 72, "appendix_end": 82},
+      "reading": {"body": "完整读取PDF p6-70的页级文本；图示信息以文本及必要渲染补充。", "appendix": "p72-82读取并检查代表实现，含特征、修正方程、CatBoost及优化部分代码。", "rendered_pages": [67]},
+      "model_chain": [
+        {"question": 1, "pages": [13, 18, 19, 21, 22, 23, 26], "input": "1024点磁通波形", "operation": "统计/FFT/二阶差分共19特征，决策树、随机森林、逻辑回归比较，特征缩减与投票", "output": "分类规则和80个待分类样本的波形标签"},
+        {"question": 2, "pages": [28, 29, 32, 34, 35, 37, 38], "input": "正弦波工况下温度、频率、磁通峰值与损耗", "operation": "SE基准、温度残差诊断、六类修正式对照", "output": "温度及交互项修正方程4"},
+        {"question": 3, "pages": [39, 42, 44, 45, 46, 48, 49], "input": "温度×波形×材料48组合", "operation": "分组抽样、正态/方差检验、主效应与交互分析、重复抽样和频率分层", "output": "低损耗材料/波形及有频率条件的温度结论"},
+        {"question": 4, "pages": [50, 52, 53, 57, 58, 59, 60, 61], "input": "基础工况、波形特征、IGSE物理特征", "operation": "九回归器与不同特征集合对照", "output": "CatBoost损耗预测器及指定样本预测值"},
+        {"question": 5, "pages": [62, 63, 66, 67, 68, 70], "input": "问四预测器和问三的候选工况信息", "operation": "损耗与fBm双目标、三优化算法对照、48组合补查", "output": "材料/波形/温度/频率/磁通峰值配置与目标值"}
+      ],
+      "features": {
+        "question_alignment": {"status": "present", "pages": [6, 7, 8, 26, 38, 49, 61, 67], "evidence": "五问分别输出波形分类、修正方程、因素条件、预测值、优化工况；结果形态对应题目。"},
+        "domain_mechanism": {"status": "present", "pages": [28, 32, 34, 52, 53, 59], "evidence": "SE温度修正与IGSE物理先验进入损耗预测；新增交互项有基准误差对照。"},
+        "method_comparison": {"status": "present", "pages": [19, 21, 22, 29, 35, 37, 57, 58, 59, 67], "evidence": "分类器、候选方程、回归器/特征集合与优化算法均有实际表值；没有据此认定各表公平同口径。"},
+        "validation": {"status": "present", "pages": [19, 21, 22, 57, 58, 59, 74, 77], "evidence": "分类训练/交叉验证/测试指标、回归误差表及5折代码存在；p74原尺度R2参数顺序和p77切分比例与正文冲突限制证据质量。"},
+        "sensitivity": {"status": "present", "pages": [48, 49, 67, 68], "evidence": "重复抽样改变最佳温度判断，进一步按频率查看；70/90℃及48种工况有结果比较。未见双目标权重扰动的完整检查。"},
+        "quantified_abstract": {"status": "present", "pages": [2, 3], "evidence": "摘要按五问报告分类精度、预测效果及优化结果；详值以正文对照表为证据。"},
+        "visual_results": {"status": "present", "pages": [23, 35, 49, 59, 67, 68], "evidence": "特征分布、公式误差、分频散点及预测和优化结果表实际呈现。"},
+        "limitations": {"status": "present", "pages": [69, 70], "evidence": "明确讨论泛化、抽样依赖、叠加模型过拟合及其他组合出现更优方案。"},
+        "appendix_code": {"status": "present", "pages": [72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82], "evidence": "给出Python部分代码；仅静态检查，没有执行，不能视作复现。"}
+      },
+      "conservative_structure": {
+        "cross_question_link": {"status": "present", "pages": [62, 66], "evidence": "问四损耗预测模型作为问五目标函数；问三的波形、材料、温度结论用于收缩问五搜索范围。"},
+        "actual_comparison": {"status": "present", "pages": [29, 35, 37, 57, 58, 59, 67], "evidence": "基准SE对修正式、三特征方案以及三优化器均给实际数字。"},
+        "final_answer": {"status": "present", "pages": [61, 67, 68], "evidence": "指定样本预测和优化工况表；p67报告材料四、正弦波、90℃、频率188151.53、磁通峰值0.012、损耗831.89和传输磁能2259.83。"}
+      },
+      "anchors": [
+        {"pages": [29, 35], "quote": "修正方程4", "evidence": "基准MSE=1795301477.4、R2=0.929979；修正方程4 MSE=447692389.5、R2=0.985661。"},
+        {"pages": [48, 49], "quote": "经过多次抽样后", "evidence": "最优温度在70℃和90℃间变化，转向频率条件分析。"},
+        {"pages": [57, 58, 59], "quote": "CatBoost", "evidence": "不同特征设置平均相对误差0.07358、0.040123、0.03542；末表R2=0.99816。"},
+        {"pages": [62, 66], "quote": "基于之前建立的磁芯损耗预测模型", "evidence": "前问模型和结论进入后问优化。"},
+        {"pages": [67, 70], "quote": "在其他成分组合上出现了更优的方案", "evidence": "有具体配置，同时承认候选范围之外仍有更优组合。"}
+      ],
+      "transferable_design": ["以残差分层定位物理公式缺项，再逐项修正和比较。", "同一物理关系同时用作独立基准和机器学习特征。", "追查抽样不稳定性，把总体最优改为有条件的结论。", "明确前问输出进入后问的具体位置，并交付可执行工况。"],
+      "validation_gaps": [
+        {"pages": [74], "evidence": "原尺度r2_score(np.exp(y_pred),np.exp(y_test))真值和预测反置；MSE的对称性不适用于R2。"},
+        {"pages": [57, 77], "evidence": "正文8:2与附录部分代码test_size=0.3不一致，且该片段未包含完整最终特征；需找到实际运行版本。"},
+        {"pages": [63, 67], "evidence": "等权P-E缺少单位/权重解释；由表值计算粒子群P-E=-1452.55、灰狼=-1427.94，无法按该标量目标判灰狼更优。"},
+        {"pages": [69, 70], "evidence": "新材料/工况泛化、优化全局性和权重稳健性未由现有表格建立。"}
+      ]
+    },
+    {
+      "paper_id": "D24104460003",
+      "institution": "曲阜师范大学",
+      "award": "提名奖",
+      "title": "大数据驱动的地理综合问题",
+      "pdf_file": "../../../数模之星优秀论文_2024-2025/2024/提名奖_曲阜师范大学_D24104460003.pdf",
+      "boundaries": {"total_pages": 96, "cover": [1], "abstract": [2, 3], "contents": [4, 5, 6], "body_start": 7, "body_end": 76, "references_start": 77, "references_end": 79, "appendix_start": 80, "appendix_end": 96},
+      "reading": {"body": "完整读取PDF p7-76页级正文文本。", "appendix": "p80-86补充地图结构核查；p87-96四问R代码读取。", "rendered_pages": [44]},
+      "model_chain": [
+        {"question": 1, "pages": [12, 13, 14, 18, 26, 27], "input": "降水与土地利用时间空间数据", "operation": "年/月统计、距平、季节分解、动态度与地图", "output": "历史变化和区域差异"},
+        {"question": 2, "pages": [28, 29, 32, 34, 35, 36, 40, 42, 43, 44, 45], "input": "降雨、温度、DEM及土地覆盖", "operation": "0.5°网格整合、地形变量、分级抽样、联合均值方差、条件树、MCP", "output": "气候地形变量作用与阈值、统一数据表"},
+        {"question": 3, "pages": [46, 47, 49, 51, 53, 58, 61, 62, 64], "input": "问二数据聚合形成4100条空间记录", "operation": "GMM聚类、XGBoost/SHAP解释、SVM/RF比较及空间制图", "output": "风险区域和因素解释，作者标注为2025-2035预测"},
+        {"question": 4, "pages": [66, 70, 71, 72, 73, 74], "input": "人口/GDP/土地/气候及既有地理分界", "operation": "空间叠加和按分布条件选检验，补充Cohen's d", "output": "南北与东西差异及地理结构解释"}
+      ],
+      "features": {
+        "question_alignment": {"status": "present", "pages": [12, 28, 46, 66, 74], "evidence": "四问分别给出历史规律、作用因素、区域风险、土地变化结构；未来预测有效性另有缺口。"},
+        "domain_mechanism": {"status": "present", "pages": [29, 32, 38, 43, 58, 62], "evidence": "DEM坡度/坡向/山影、土地覆盖与气温降雨联合；季风、地形抬升等用于解释，不能据关联分析认定因果。"},
+        "method_comparison": {"status": "present", "pages": [61], "evidence": "SVM与随机森林有混淆表、Accuracy和AUC实际数值；同表标签和验证方式存在限制。"},
+        "validation": {"status": "present", "pages": [42, 44, 61, 70, 71, 94], "evidence": "均值方差模型诊断、MCP交叉验证误差、分类指标、区域检验及XGBoost留出代码；不将这些等同整条未来预测链验证。"},
+        "sensitivity": {"status": "present", "pages": [44], "evidence": "真实系数路径与交叉验证误差随λ改变，正文选择log(λ)=-2；属于参数选择层面，非最终风险图稳健性。"},
+        "quantified_abstract": {"status": "present", "pages": [2, 3], "evidence": "摘要包含因素和区域分析的量化结果，正文对应表图给具体数值。"},
+        "visual_results": {"status": "present", "pages": [18, 27, 42, 44, 53, 58, 61, 62, 64, 71], "evidence": "时空变化、残差、参数路径、SHAP、混淆表与风险地图实际呈现。"},
+        "limitations": {"status": "present", "pages": [76], "evidence": "有方法优缺点表，讨论参数、分布假设和效率等；对风险标签与未来外推缺口交代不足。"},
+        "appendix_code": {"status": "present", "pages": [87, 88, 89, 90, 91, 92, 93, 94, 95, 96], "evidence": "R代码涉及统计、地理合并、分类和区域划分；未运行。"}
+      },
+      "conservative_structure": {
+        "cross_question_link": {"status": "present", "pages": [46, 47], "evidence": "正文明确将第二问数据整理为4100条聚合记录，再按经纬度/降雨/气温构建第三问GMM。"},
+        "actual_comparison": {"status": "present", "pages": [61], "evidence": "SVM Accuracy=0.993、AUC=0.671，RF Accuracy=0.999、AUC=0.999，并有混淆表。"},
+        "final_answer": {"status": "present", "pages": [62, 63, 64, 71, 72, 73], "evidence": "有具体区域地图/名单，以及南北、东西差异的数值结果；提供答案不等于验证未来正确性。"}
+      },
+      "anchors": [
+        {"pages": [35, 36], "quote": "20800", "evidence": "有效无雨2395914条、特大暴雨92条；重采样20800条保留稀有事件。"},
+        {"pages": [44], "quote": "交叉验证的变量选择图", "evidence": "给出λ改变的系数路径和CV误差，选择log(λ)=-2。"},
+        {"pages": [46], "quote": "首先我们将第二问的数据进行整理", "evidence": "前问统一数据表成为第三问聚类输入。"},
+        {"pages": [61], "quote": "SVM", "evidence": "SVM精度0.993/AUC0.671，仅识别41个灾害标签中的14个；RF精度0.999/AUC0.999。"},
+        {"pages": [71], "quote": "Cohen", "evidence": "南北降水/气温d=1.452/0.776；东西降水/气温d=1.604/1.353。"}
+      ],
+      "transferable_design": ["先构建统一空间时间数据产品，再承担各问。", "保留稀有极端事件，公开每类原始基数和抽样后规模。", "树阈值、变量筛选和SHAP各自承担不同解释任务。", "准确率配混淆表，显著性配效应量。"],
+      "validation_gaps": [
+        {"pages": [93], "evidence": "风险由rain>6直接派生，SVM输入含rain，predict(fitsvm)没有独立newdata；标签代理和回代不能证明未来灾害预测。"},
+        {"pages": [93, 94], "evidence": "randomForest对象无newdata的预测可能是OOB，不能一概说训练回代；XGBoost另有8:2切分，不能用其证明SVM表的独立性。"},
+        {"pages": [62, 63, 64], "evidence": "地图标题指向2025-2035，但未见足够明确的未来协变量生成与留出年份外推验证。"},
+        {"pages": [76], "evidence": "优缺点表偏通用算法性质，未闭合标签定义、预测时点和自然类别分布下风险校准。"}
+      ]
+    },
+    {
+      "paper_id": "D24103850092",
+      "institution": "华侨大学",
+      "award": "提名奖",
+      "title": "多源异构数据驱动的暴雨成灾机理及其时空演变特征研究",
+      "pdf_file": "../../../数模之星优秀论文_2024-2025/2024/提名奖_华侨大学_D24103850092.pdf",
+      "boundaries": {"total_pages": 113, "cover": [1], "abstract": [2, 3], "contents": [4, 5], "body_start": 6, "body_end": 79, "references_start": 80, "references_end": 81, "appendix_start": 82, "appendix_end": 113},
+      "reading": {"body": "完整读取PDF p6-79页级正文文本。", "appendix": "检查p82-113结构，并读取p87-113代表合并、网格搜索、指数、分类、ARIMA、SVR及人口/GDP/椭圆代码。", "rendered_pages": [58, 76]},
+      "model_chain": [
+        {"question": 1, "pages": [10, 11, 13, 14, 19, 22], "input": "降水和五类土地覆盖栅格/序列", "operation": "像素地理坐标变换、投影与重采样、年度空间描述", "output": "多年降水及覆盖数据和时空趋势"},
+        {"question": 2, "pages": [23, 24, 26, 30, 31, 34, 35], "input": "前问提取数据", "operation": "回归树、按土地类型区分情境、阈值分类、地理机制解释", "output": "年均降水条件与分类规则"},
+        {"question": 3, "pages": [39, 40, 43, 45, 46, 49, 51, 52, 57, 58, 60], "input": "历史变量、滚动统计、趋势与土地地形特征", "operation": "V_index构造、XGBoost/树规则、ARIMA预测六项未知输入，再用SVR预测指数", "output": "五组条件、未来输入序列和区域风险图"},
+        {"question": 4, "pages": [62, 64, 65, 66, 71, 73, 74, 76, 77], "input": "土地空间分布、人口/GDP/降水", "operation": "标准差椭圆、空间叠加、提出和仲线并比较既有线", "output": "重心/方向/范围变化与四类区域方案"}
+      ],
+      "features": {
+        "question_alignment": {"status": "present", "pages": [6, 7, 22, 36, 49, 57, 76, 77, 78], "evidence": "四问各有明确结果；年均降水与暴雨事件、构造指数与灾害观测的语义差异限制答案有效性。"},
+        "domain_mechanism": {"status": "present", "pages": [30, 34, 35, 43, 49], "evidence": "分土地情境树、温度水汽关系、地形抬升和脆弱性分量；物理机制多为解释层，没有独立因果验证。"},
+        "method_comparison": {"status": "present", "pages": [76], "evidence": "图6.21实际同图比较胡焕庸线、博台线和和仲线，属于区域方案对照；未见预测算法的同任务性能优劣表。"},
+        "validation": {"status": "present", "pages": [29, 30, 57, 71, 72, 73, 108], "evidence": "决策树预测散点及SVR 80/20留出误差表存在；椭圆检查也有呈现但证明逻辑有限，SVR附录片段不完整。"},
+        "sensitivity": {"status": "unclear", "pages": [30, 89, 90], "evidence": "正文称网格寻优，附录有改变树深/叶规模并绘CV R2的代码；未见对应输出表或结果曲线，不能仅按代码认定已观察敏感性。"},
+        "quantified_abstract": {"status": "present", "pages": [2, 3], "evidence": "摘要给地域降水阈值、纬度/趋势/覆盖临界条件及预测风险区域。"},
+        "visual_results": {"status": "present", "pages": [13, 19, 30, 49, 53, 57, 58, 66, 76], "evidence": "时空地图、决策树、阈值表、时间预测、误差表和分界方案图实际呈现。"},
+        "limitations": {"status": "present", "pages": [79], "evidence": "明确承认遗漏径流/城市化/基础设施等变量，以及年度数据不能充分捕捉短时极端天气。"},
+        "appendix_code": {"status": "present", "pages": [82, 87, 89, 93, 96, 99, 101, 105, 108, 109, 113], "evidence": "Python代码覆盖四问，包含数据和模型处理；静态核读发现版本/语义缺口，未运行。"}
+      },
+      "conservative_structure": {
+        "cross_question_link": {"status": "present", "pages": [7, 78], "evidence": "p78明确问二使用问题一提取的气温、降水、高程和土地利用数据。p51的ARIMA到SVR是同问内部链，不用其替代跨问证据。"},
+        "actual_comparison": {"status": "present", "pages": [76], "evidence": "图6.21同图比较三种地域分界方案；该证据仅说明方案对照存在，不证明新线优越。"},
+        "final_answer": {"status": "present", "pages": [49, 51, 52, 76, 77], "evidence": "有五组临界条件、2019-2035六项输入预测表，以及和仲线和四区划分方案。"}
+      },
+      "anchors": [
+        {"pages": [30], "quote": "446.328mm", "evidence": "温度>-0.473℃、纬度≤31.5、经度>108.5对应树的年均降水输出。"},
+        {"pages": [49], "quote": "0.067", "evidence": "五组临界条件中包括耕地覆盖≤0.067、趋势>0.759、纬度≤35.5。"},
+        {"pages": [51], "quote": "输入特征数据是未知的", "evidence": "先预测降雨与五种覆盖，再输入SVR；2025年Rain=183.91。"},
+        {"pages": [57], "quote": "测试集（20%）", "evidence": "SVR测试MSE=0.0029、MAE=0.0442、R2=0.8565。"},
+        {"pages": [76], "quote": "胡焕庸线、博台线、和仲线的比较", "evidence": "三种分界方案在同一地图可视对照，正文明确四区含义。"}
+      ],
+      "transferable_design": ["先识别预测时未知的协变量，显式建立输入预测到目标预测的依赖。", "按有机制意义的土地类型建情境模型。", "把复杂模型输出转成阈值条件和可检查的地理方案。", "摘要保留数字、条件和空间位置，正文给回溯证据。"],
+      "validation_gaps": [
+        {"pages": [34, 79], "evidence": "用年均降水阈值代理暴雨，年度尺度未覆盖短时事件；作者已承认这一局限。"},
+        {"pages": [43, 44, 45, 99], "evidence": "正文熵权及三方面指数与代码五列MinMax后等权均值不一致，需要最终运行版本。"},
+        {"pages": [57, 108], "evidence": "代码有20%切分与测试预测，但所印片段未完整计算测试指标，且提前引用y_pred1；不能闭合主表复现。"},
+        {"pages": [58], "evidence": "正文将图5.24解释为脆弱性，已渲染图注实际写年均降水量Getis-Ord Gi*；需查真实输出字段。"},
+        {"pages": [65, 66, 67, 71, 72, 73], "evidence": "标准差椭圆几何面积不等于土地实际面积；一维正态68%口径也不能自动证明二维椭圆与灾害预测正确。"},
+        {"pages": [51, 57, 105, 106], "evidence": "未来输入生成有明确设计，但未见整个ARIMA→SVR链条的留出年份回测或误差传播。"}
+      ]
+    }
+  ]
+}

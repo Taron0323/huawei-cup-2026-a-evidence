@@ -1,0 +1,350 @@
+{
+  "year": 2025,
+  "contest_edition": 22,
+  "source_page_url": "https://cpipc.acge.org.cn/cw/contestNews/detail/4/2c9080179ab48607019ab53c045a01a9?page=2",
+  "source_file_url": "https://cpipc.acge.org.cn/sysFile/downFile.do?fileId=c12ddcb197e547e5be6bd47696b2f1f1",
+  "source_file_local": "来源与校验/2025_官方获奖名单.rar",
+  "source_sha256": "f2964391bb052e7e91b70635ed64853c77e7a492e586bed9ef5f65c2e37168dc",
+  "extracted_source_files": [
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/A.xlsx",
+      "sha256": "aa14574f7f8e701198688bd046269efff383b1bf3dd8699e6788ce31af56a3b2"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/B.xlsx",
+      "sha256": "73c0a147752360ab5ac785ed238f6195384722f34b6c6316c629d828019ac703"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/C.xlsx",
+      "sha256": "0ae4779b451a5174de0cd4e3aa916f35dbb307da2d7b2e323f46ea5be8ca0e6b"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/D.xlsx",
+      "sha256": "e39cff6bcdf369fa146e7501b51e5caa928381c7c70bf0cf362c7ebeb5cfd195"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/E.xlsx",
+      "sha256": "ac7b9a0463c1276a0e15bb0befd1be68d57670b95f68cfb99f70ab2698f4539d"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/F.xlsx",
+      "sha256": "0fe6ec65c20e44110caef1f16ca015c62213b365a985bb35075671eca8d561ac"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/G.xlsx",
+      "sha256": "369ca77cd8d31b1c223e42963a5f51912016e152a6e589053a245ad92c20db48"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单解包/H.xlsx",
+      "sha256": "b0e377b292fadb70e0b4c0663c6a356d704a9bec6b7c360c84f8af844f95788a"
+    }
+  ],
+  "official_awards_review_url": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c9080189e403095019e49ef61582f94?page=0",
+  "official_awards_review_verbatim": "本届颁奖典礼上表彰了6位命题专家、73位“先进个人”、65个“优秀组织单位”、244支一等奖获奖队伍、16支“华为专项奖”获奖队伍、9支“数模之星”提名奖获奖队伍。中国矿业大学牛敏学团队获得“数模之星”冠军，东北电力大学郑诗珉团队获得“数模之星”亚军，贵州大学杨通宇团队获得“数模之星”季军。",
+  "total_defense_nominees": 12,
+  "total_final_star_awards_in_official_review": 12,
+  "total_final_nomination_awards_in_official_review": 9,
+  "classification_limit": "Official spreadsheets explicitly verify 12 defense nominees. They do not directly mark final podium or final nomination awards. The official post-competition review verifies three podium teams by university and leader, and a total of nine final nomination awards without naming those nine individually. Remaining records retain a null final_star_award; no individual final nomination award is inferred.",
+  "awards": [
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/A.xlsx",
+      "sheet": "Sheet1",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "A",
+      "team_id": "25106570253",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩、华为专项一等奖)",
+      "leader": "杨通宇",
+      "university": "贵州大学",
+      "members": [
+        "杨通宇",
+        "覃国忠",
+        "田旭"
+      ],
+      "universities": [
+        "贵州大学",
+        "贵州大学",
+        "贵州大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": "季军",
+      "final_star_award_source": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c9080189e403095019e49ef61582f94?page=0",
+      "final_star_award_status": "verified_by_official_awards_review"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/A.xlsx",
+      "sheet": "Sheet1",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "A",
+      "team_id": "25103530036",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩、华为专项一等奖)",
+      "leader": "徐一鸣",
+      "university": "浙江工商大学",
+      "members": [
+        "徐一鸣",
+        "马鑫彤",
+        "陈翔"
+      ],
+      "universities": [
+        "浙江工商大学",
+        "浙江工商大学",
+        "浙江工商大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/B.xlsx",
+      "sheet": "Sheet1",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "B",
+      "team_id": "25100040034",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩、华为专项一等奖)",
+      "leader": "张乐童",
+      "university": "北京交通大学",
+      "members": [
+        "张乐童",
+        "李晨",
+        "熊志成"
+      ],
+      "universities": [
+        "北京交通大学",
+        "北京工业大学",
+        "北京交通大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/B.xlsx",
+      "sheet": "Sheet1",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "B",
+      "team_id": "25116640113",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩、华为专项一等奖)",
+      "leader": "薛博扬",
+      "university": "西安邮电大学",
+      "members": [
+        "薛博扬",
+        "蒋贵桓",
+        "李旭旭"
+      ],
+      "universities": [
+        "西安邮电大学",
+        "西安邮电大学",
+        "西安邮电大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/C.xlsx",
+      "sheet": "Sheet1",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "C",
+      "team_id": "25102890064",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "王先科",
+      "university": "江苏科技大学",
+      "members": [
+        "王先科",
+        "许文杰",
+        "秦佳乐"
+      ],
+      "universities": [
+        "江苏科技大学",
+        "江苏科技大学",
+        "江苏科技大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/C.xlsx",
+      "sheet": "Sheet1",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "C",
+      "team_id": "25102900037",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "牛敏学",
+      "university": "中国矿业大学",
+      "members": [
+        "牛敏学",
+        "王聪",
+        "周缘"
+      ],
+      "universities": [
+        "中国矿业大学",
+        "中国矿业大学",
+        "中国矿业大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": "冠军",
+      "final_star_award_source": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c9080189e403095019e49ef61582f94?page=0",
+      "final_star_award_status": "verified_by_official_awards_review"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/D.xlsx",
+      "sheet": "Sheet1",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "D",
+      "team_id": "25105340002",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "王茂",
+      "university": "湖南科技大学",
+      "members": [
+        "王茂",
+        "郭烨",
+        "刘如凯"
+      ],
+      "universities": [
+        "湖南科技大学",
+        "湖南科技大学",
+        "湖南科技大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/D.xlsx",
+      "sheet": "Sheet1",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "D",
+      "team_id": "25102470060",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "李政宁",
+      "university": "同济大学",
+      "members": [
+        "李政宁",
+        "何磊",
+        "王旭凌"
+      ],
+      "universities": [
+        "同济大学",
+        "同济大学",
+        "同济大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/E.xlsx",
+      "sheet": "Sheet1",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "E",
+      "team_id": "25106980094",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "时祎",
+      "university": "西安交通大学",
+      "members": [
+        "时祎",
+        "易龙翔",
+        "郭佳辉"
+      ],
+      "universities": [
+        "西安交通大学",
+        "西安交通大学",
+        "西安交通大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/E.xlsx",
+      "sheet": "Sheet1",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "E",
+      "team_id": "25103850099",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "洪奕烽",
+      "university": "华侨大学",
+      "members": [
+        "洪奕烽",
+        "汪洋",
+        "张希禹"
+      ],
+      "universities": [
+        "华侨大学",
+        "华侨大学",
+        "华侨大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/F.xlsx",
+      "sheet": "Sheet1",
+      "row": 2,
+      "source_range": "A2:J2",
+      "problem": "F",
+      "team_id": "25104040214",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "张凤棕",
+      "university": "华东交通大学",
+      "members": [
+        "张凤棕",
+        "史信星",
+        "王光勋"
+      ],
+      "universities": [
+        "华东交通大学",
+        "华东交通大学",
+        "华东交通大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": null,
+      "final_star_award_source": null,
+      "final_star_award_status": "individual_final_nomination_award_not_verified"
+    },
+    {
+      "source_file": "来源与校验/2025_官方获奖名单解包/F.xlsx",
+      "sheet": "Sheet1",
+      "row": 3,
+      "source_range": "A3:J3",
+      "problem": "F",
+      "team_id": "25101880004",
+      "award_verbatim": "一等奖(提名参加“数模之星”答辩)",
+      "leader": "郑诗珉",
+      "university": "东北电力大学",
+      "members": [
+        "郑诗珉",
+        "高赫",
+        "楚晓玮"
+      ],
+      "universities": [
+        "东北电力大学",
+        "东北电力大学",
+        "东北电力大学"
+      ],
+      "defense_nomination_verified": true,
+      "final_star_award": "亚军",
+      "final_star_award_source": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c9080189e403095019e49ef61582f94?page=0",
+      "final_star_award_status": "verified_by_official_awards_review"
+    }
+  ]
+}

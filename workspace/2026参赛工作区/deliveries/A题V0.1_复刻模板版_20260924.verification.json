@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "zip": "deliveries/A题V0.1_复刻模板版_20260924.zip",
+  "zip_bytes": 25186193,
+  "zip_sha256": "59be07581b44c8ff8a0a1ffe24132278dcbd0db796197cd62384a23340da1335",
+  "file_count": 536,
+  "uncompressed_bytes": 316133105,
+  "zip_crc": "PASS",
+  "extracted_file_hashes": "PASS",
+  "source_rows_regenerated": "PASS",
+  "rebuild_commands": [
+    {
+      "command": [
+        "scripts/generate_results.py"
+      ],
+      "returncode": 0,
+      "log": "clean3-command-1.log"
+    },
+    {
+      "command": [
+        "scripts/generate_appendices.py"
+      ],
+      "returncode": 0,
+      "log": "clean3-command-2.log"
+    },
+    {
+      "command": [
+        "build.py"
+      ],
+      "returncode": 0,
+      "log": "clean3-command-3.log"
+    }
+  ],
+  "clean_pdf_comparison": {
+    "main-2026": {
+      "pages": 59,
+      "text_equal": true
+    },
+    "main-reference": {
+      "pages": 76,
+      "text_equal": true
+    },
+    "main-overleaf": {
+      "pages": 59,
+      "text_equal": true
+    }
+  },
+  "all_figures_redrawn": true,
+  "all_generated_tables_regenerated": true,
+  "whole_matrix_rerun": false,
+  "independent_experiment_smoke": "support/experiment/logs/package_verification.json"
+}

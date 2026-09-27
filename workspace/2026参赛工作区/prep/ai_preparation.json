@@ -1,0 +1,13 @@
+{
+  "phase": "PREPARATION",
+  "tool": "Codex",
+  "developer": "OpenAI",
+  "model": null,
+  "version_release_date": null,
+  "version_evidence": null,
+  "purpose": "Workspace audit, public official-source archival, templates and validation tools",
+  "prompt_file": "prompts/00_准备与审查Goal.md",
+  "human_review": "PENDING",
+  "formal_contest_use": false
+}
+

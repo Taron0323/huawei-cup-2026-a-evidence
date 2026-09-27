@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />            
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="never" />
+    <title>2025年华为杯D题|低空湍流监测及最优航路规划|思路、代码、论文|持续更新中.... - 荔枝科研社 - 博客园</title>
+    
+    <meta name="description" content="​ &amp;#128165;&amp;#128165;&amp;#128158;&amp;#128158;欢迎来到本博客❤️❤️&amp;#128165;&amp;#128165; &amp;#127942;博主优势：&amp;#127774;&amp;#127774;&amp;#127774;博客内容尽量做到思维缜密，逻辑清晰，为了方便读者。 ⛳️座右铭：行百里者，半于九十" />    
+    <meta property="og:description" content="​ &amp;#128165;&amp;#128165;&amp;#128158;&amp;#128158;欢迎来到本博客❤️❤️&amp;#128165;&amp;#128165; &amp;#127942;博主优势：&amp;#127774;&amp;#127774;&amp;#127774;博客内容尽量做到思维缜密，逻辑清晰，为了方便读者。 ⛳️座右铭：行百里者，半于九十" />
+    <meta property="og:image" content="https://img2024.cnblogs.com/blog/2814533/202508/2814533-20250819174329644-1944308595.gif" />
+    <meta property="bytedance:published_time" content="2025-09-21T15:58:45+08:00" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=6O_Ku8w_jYd3yw2BX9ElmxGv25AYbAQ-F6ZeOeZfxYc" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=loTNLvkb89a6fIjcMO18yopX7e1nYgZyClwW73_ywYg" />
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=5J1NDtbnnIr2Rc2SdhEMlMxD4l9Eydj88B31E7_NhS4" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=NPsHiqWhUqSMRIbhcM6-CDq8a4LVOL1s2EPVE5p3SsU" />
+    
+    <link id="favicon" rel="icon" type="image/x-icon" sizes="32x32" href="https://assets.cnblogs.com/favicon_v3_3.ico" />
+    <link id="favicon_svg" rel="icon" type="image/svg+xml" href="https://assets.cnblogs.com/favicon_v3_3.svg" />
+    <link rel="apple-touch-icon" href="https://assets.cnblogs.com/apple-touch-icon.png?v=2" />
+    <link rel="canonical" href="https://www.cnblogs.com/li-zi-ke-yan/articles/19103763" />
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/li-zi-ke-yan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/li-zi-ke-yan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/li-zi-ke-yan/wlwmanifest.xml" />
+    
+    <script type="application/ld&#x2B;json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": "https://www.cnblogs.com/li-zi-ke-yan/articles/19103763",
+      "headline": "2025年华为杯D题|低空湍流监测及最优航路规划|思路、代码、论文|持续更新中....",
+      "description": "​ \u0026#128165;\u0026#128165;\u0026#128158;\u0026#128158;欢迎来到本博客❤️❤️\u0026#128165;\u0026#128165; \u0026#127942;博主优势：\u0026#127774;\u0026#127774;\u0026#127774;博客内容尽量做到思维缜密，逻辑清晰，为了方便读者。 ⛳️座右铭：行百里者，半于九十。 \u0026#128203;\u0026#128203;\u0026#128203;本文内容如下：\u0026#127873;\u0026#127873;\u0026#127873; ⛳️赠与读者 \u0026#128104;‍\u0026#128187;做科研，涉及到一个深在的思想系统，需要科研者逻辑缜密，踏实认真，但是不能",
+      "image": [
+        
+      ],
+      "author": {
+        "@type": "Person",
+        "@id": "https://www.cnblogs.com/li-zi-ke-yan/",
+        "name": "荔枝科研社",
+        "url": "https://www.cnblogs.com/li-zi-ke-yan/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.cnblogs.com/",
+        "name": "博客园",
+        "url": "https://www.cnblogs.com/"
+      },
+      "datePublished": "2025-09-21T15:59:00.0000000&#x2B;08:00",
+      "dateModified": "2025-09-21T15:59:00.0000000&#x2B;08:00",
+      "wordCount": "14332",
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://www.cnblogs.com/li-zi-ke-yan/",
+        "name": "li-zi-ke-yan",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.cnblogs.com/",
+          "name": "博客园"
+        }
+      }
+    }
+    </script>
+
+    <script>
+        var currentBlogId = 829923;
+        var currentBlogApp = 'li-zi-ke-yan';
+        var isLogined = false;
+        var isBlogOwner = false;
+        window.isCorp = false;
+        window.skinName = 'SimpleBlue';
+        var visitorUserId = '';
+        window.hasCustomScript = false;
+        window.cb_enable_mathjax = false;
+        window.mathEngine = 1;
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+        window.darkModeCodeHighlightTheme = 'vs2015';
+        window.isDarkCodeHighlightTheme = false;
+        window.isDarkModeCodeHighlightThemeDark = true;
+        window.isDisableCodeHighlighter = false;
+        window.enableCodeThemeTypeFollowSystem = false;
+        window.enableMacStyleCodeBlock = false;        
+    </script>
+        <script>
+            window.currentPostId = 19103763;
+            window.currentPostDateAdded = '2025-09-21 15:59';
+        </script>
+    <script src="https://assets.cnblogs.com/scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn-www.cnblogs.com/js/blog-common.min.js?v=PWROu77Oak9MpQlLeeT9R8GpDG3D7PsW1-SR_JqOdRk"></script>
+    
+</head>
+<body class="skin-simpleblue has-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="//assets.cnblogs.com/logo.svg" alt="博客园logo" />
+                    </a>
+                </li>
+                <li><a href="https://cnblogs.vip/">会员</a></li>
+                <li><a href="https://cnblogs.vip/store">周边</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>                
+                <li><a href="https://www.cnblogs.com/cmt/p/19316348">赞助商</a></li>
+                <li><a href="https://chat2db-ai.com/" target="_blank">Chat2DB</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search dropdown" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" autocomplete="off" />
+                        <button id="zzk_search_button" onclick="window.navbarSearchManager.triggerActiveOption()">
+                            <img id="search_icon" class="focus-hidden" src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                            <img class="hidden focus-visible" src="//assets.cnblogs.com/icons/enter.svg" alt="搜索" />
+                        </button>
+                        <ul id="navbar_search_options" class="dropdown-menu quick-search-menu">
+                            <li tabindex="0" class="active" onclick="zzkSearch(event, document.getElementById('zzk_search_input').value)">
+                                <div class="keyword-wrapper">
+                                    <img src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                                    <div class="keyword"></div>
+                                </div>
+                                <span class="search-area">所有博客</span>
+                            </li>
+                                    <li tabindex="1" onclick="zzkBlogSearch(event, 'li-zi-ke-yan', document.getElementById('zzk_search_input').value)">
+                                        <div class="keyword-wrapper">
+                                            <img src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                                            <div class="keyword"></div>
+                                        </div>
+                                        <span class="search-area">当前博客</span>
+                                    </li>
+                        </ul>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://www.cnblogs.com/my" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/message.svg" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="//assets.cnblogs.com/icons/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="//assets.cnblogs.com/icons/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://www.cnblogs.com/my">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="https://vip.cnblogs.com/my">会员中心</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/li-zi-ke-yan">li-zi-ke-yan</a>
+</div>
+<div class="subtitle"></div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/li-zi-ke-yan/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%8D%94%E6%9E%9D%E7%A7%91%E7%A0%94%E7%A4%BE">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/li-zi-ke-yan/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                <a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/li-zi-ke-yan/articles/19103763" title="发布于 2025-09-21 15:58">
+    
+
+    <span role="heading" aria-level="2">2025年华为杯D题|低空湍流监测及最优航路规划|思路、代码、论文|持续更新中....</span>
+    
+
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>
+<blockquote>
+<p>&nbsp;&nbsp;&nbsp;💥💥💞💞<strong>欢迎来到本博客</strong>❤️❤️💥💥</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><strong>🏆博主优势：</strong>🌞🌞🌞</strong>博客内容尽量做到思维缜密，逻辑清晰，为了方便读者。</p>
+<p>&nbsp;</p>
+<p>⛳️<strong>座右铭：</strong>行百里者，半于九十。</p>
+<p>&nbsp;</p>
+<p>📋📋📋<span style="text-decoration: underline"><strong>本文内容如下：</strong></span>🎁🎁🎁</p>
+<p id="main-toc">&nbsp;</p>
+</blockquote>
+<h2 id="%C2%A0%E2%9B%B3%EF%B8%8F%E8%B5%A0%E4%B8%8E%E8%AF%BB%E8%80%85">&nbsp;⛳️赠与读者</h2>
+<blockquote>
+<p>👨‍💻做科研，涉及到一个深在的思想系统，需要科研者逻辑缜密，踏实认真，但是不能只是努力，很多时候借力比努力更重要，然后还要有仰望星空的创新点和启发点。建议读者按目录次序逐一浏览，免得骤然跌入幽暗的迷宫找不到来时的路，它不足为你揭示全部问题的答案，但若能解答你胸中升起的一朵朵疑云，也未尝不会酿成晚霞斑斓的别一番景致，万一它给你带来了一场精神世界的苦雨，那就借机洗刷一下原来存放在那儿的“躺平”上的尘埃吧。</p>
+<p>&nbsp; &nbsp; &nbsp;或许，雨过云收，神驰的天地更清朗.......🔎🔎🔎</p>
+</blockquote>
+<h2 id="%F0%9F%92%A51%20%E6%A6%82%E8%BF%B0"><strong>💥1 概述</strong></h2>
+<p>低空湍流监测及最优航路规划</p>
+<p><strong>一、背景</strong></p>
+<p><strong>低空经济的战略地位：</strong></p>
+<p>2024 年被广泛认为是我国低空经济发展的元年。年初全国两会上“低空经济”被写入《政府工作报告》，中央经济工作会议将其列为战略性新兴产业。工信部等四部门联合印发《通用航空装备创新应用实施方案（2024—2030 年）》，截至2024年底，全国近 30 个省份将低空经济写入政府工作报告或出台专项政策。低空经济是以低空空域（垂直高度1000米以下）飞行活动为核心，整合航空器研发制造、基础设施建设和运营、飞行保障服务等形成的综合性经济形态。</p>
+<p><strong>低空飞行的场景复杂：</strong></p>
+<p>低空飞行具有飞行场景复杂、飞行器小的特点。低空飞行器主要包括有人机、无人机、eVTOL等。低空飞行区域包括城市、森林、农田、山区、湖泊等，因飞行高度低，受地形导致的局地气流作用影响严重。且因飞行器尺寸小，气流变化导致飞行器稳定程度下降，极易产生事故。</p>
+<p><strong>湍流的主要形成机制复杂多样：</strong></p>
+<p>空气湍流是指空气流动中因速度、压力或方向剧烈变化而产生的无序、不规则运动状态。按照形成的原因，湍流可分为热力湍流和机械湍流。热力湍流指由温度差异驱动的浮力效应引发的湍流，能量来源于地表加热或空气团温差导致的密度不稳定。机械湍流指由外力强迫作用引起的湍流，能量来源于气流的动能因障碍物或摩擦作用转化为无序涡旋运动。实际大气中常出现机械与热力湍流的耦合。影响飞行的湍流主要产生机制包括：1）急流带边缘风速差异大，导致的风切变湍流。2）强对流天气中下沉气流、强垂直气流、涡旋及对流重力波产生湍流。3）地表受热不均导致空气垂直对流，产生湍流。4）气流受地形（如山脉、建筑物）作用被迫抬升、转向或产生地形重力波，导致湍流。5）下垫面的摩擦作用导致近地层湍流。这些湍流成因在低空都会出现，导致低空湍流结构复杂。</p>
+<p><strong>湍流强度的表示方式：</strong></p>
+<p>在湍流研究领域有很多种方法或算法反映湍流及其强度。在研究湍流现象时，可以从中选取部分作为衡量湍流的指标。</p>
+<p>&nbsp;</p>
+<p>由于观测手段与数据的局限性，需要根据数据特点，选择不同的湍流强度计算公式。</p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="6" data-cke-widget-wrapper="1"><img alt="" width="1060" height="316" class="cke_widget_element lazyload" data-cke-saved-src="https://i-blog.csdnimg.cn/direct/f4efad24af4943ab862a29627d56f8ac.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fi-blog.csdnimg.cn%2Fdirect%2Ff4efad24af4943ab862a29627d56f8ac.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%221060%22%2C%22height%22%3A%22316%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" data-src="https://i-blog.csdnimg.cn/direct/f4efad24af4943ab862a29627d56f8ac.png"><span class="cke_reset cke_widget_drag_handler_container"><img width="15" height="15" class="cke_reset cke_widget_drag_handler lazyload" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" data-src="https://img2024.cnblogs.com/blog/2814533/202508/2814533-20250819174329644-1944308595.gif"><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片">编辑</span></span></span></span></p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="5" data-cke-widget-wrapper="1"><img alt="" width="1184" height="1194" class="cke_widget_element lazyload" data-cke-saved-src="https://i-blog.csdnimg.cn/direct/bd3f3fd36db84446ae82f08517ec2324.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fi-blog.csdnimg.cn%2Fdirect%2Fbd3f3fd36db84446ae82f08517ec2324.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%221184%22%2C%22height%22%3A%221194%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" data-src="https://i-blog.csdnimg.cn/direct/bd3f3fd36db84446ae82f08517ec2324.png"><span class="cke_reset cke_widget_drag_handler_container"><img width="15" height="15" class="cke_reset cke_widget_drag_handler lazyload" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" data-src="https://img2024.cnblogs.com/blog/2814533/202508/2814533-20250819174329644-1944308595.gif"><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片">编辑</span></span></span></span></p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="4" data-cke-widget-wrapper="1"><img alt="" width="1150" height="950" class="cke_widget_element lazyload" data-cke-saved-src="https://i-blog.csdnimg.cn/direct/fca883be1bff4733b2a0a1e44e9c9899.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fi-blog.csdnimg.cn%2Fdirect%2Ffca883be1bff4733b2a0a1e44e9c9899.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%221150%22%2C%22height%22%3A%22950%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" data-src="https://i-blog.csdnimg.cn/direct/fca883be1bff4733b2a0a1e44e9c9899.png"><span class="cke_reset cke_widget_drag_handler_container"><img width="15" height="15" class="cke_reset cke_widget_drag_handler lazyload" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" data-src="https://img2024.cnblogs.com/blog/2814533/202508/2814533-20250819174329644-1944308595.gif"><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片">编辑</span></span></span></span></p>
+<p><strong>可用于湍流监测的设备探测机制多样：</strong></p>
+<p>目前可用于监测并计算大气湍流强度的设备主要有地面自动气象站、风廓线雷达、超声风速计、微波辐射计、多普勒天气雷达等。地面自动站可测多个点位的水平风向风速，空间分辨率约5-10km，时间间隔1分钟。风廓线雷达测量风的垂直分布，垂直方向间隔为60m-240m，时间间隔6分钟，空间间隔为数十公里。微波辐射计可探测气温和湿度的垂直分布，探测高度一般为10km左右，垂直方向间隔为50-200m，时间间隔6分钟，空间间隔为数十公里。多普勒天气雷达可以获取以雷达为中心、多层仰角的锥面数据，可用信息包括雷达径向风速、谱宽，时间间隔6分钟，多普勒天气雷达的空间间隔一般为数百公里。</p>
+<p><strong>当前湍流监测中存在的问题：</strong></p>
+<p>依据上述现有设备，并不能直接监测湍流，而是需要从各种设备探测的信息中进行湍流计算。当大气湍流的尺度与飞机尺度相近时，容易造成飞机颠簸，这个尺度的湍流也就是在低空飞行中需要关注的。利用风廓线雷达计算湍流强度主要有功率法（Hocking and&nbsp;Mu，1997）等。利用多普勒天气雷达计算湍流强度主要有谱宽法、径向速度结构函数法等。</p>
+<p>多种设备的探测模式不同，有的垂直探测、有的水平探测、有的点位探测，且探测的空间、时间分辨率不一致。目前已知存在问题包括：地面自动站数据仅有地面一层；风廓线雷达和微波辐射计为某一个位置的垂直探测；多普勒天气雷达的晴空探测能力不足，且缺乏低层探测数据。如何在现有探测条件下，构造更符合低空飞行的湍流强度指标，是当前低空湍流监测的主要问题。</p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="3" data-cke-widget-wrapper="1"><img alt="" width="1118" height="468" class="cke_widget_element lazyload" data-cke-saved-src="https://i-blog.csdnimg.cn/direct/b945b44128104981a41345996e0d7e75.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fi-blog.csdnimg.cn%2Fdirect%2Fb945b44128104981a41345996e0d7e75.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%221118%22%2C%22height%22%3A%22468%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" data-src="https://i-blog.csdnimg.cn/direct/b945b44128104981a41345996e0d7e75.png"><span class="cke_reset cke_widget_drag_handler_container"><img width="15" height="15" class="cke_reset cke_widget_drag_handler lazyload" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" data-src="https://img2024.cnblogs.com/blog/2814533/202508/2814533-20250819174329644-1944308595.gif"><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片">编辑</span></span></span></span></p>
+<p>图1.多种探测设备探测范围、空间分布示意图</p>
+<p><strong>二、问题描述</strong></p>
+<p>飞行活动是一个时空规划问题。在某一时间，确定飞行器在什么位置、掌握飞行器处于什么飞行状态，是保障飞行安全的关键（如图2所示）。湍流中速度、压力等物理参数‌同时在时间和空间维度上发生随机变化‌，其不规则性不仅体现为时间序列的脉动，也表现为空间分布的不规则性。湍流表现为两个维度的耦合状态，因此要进行飞行湍流的监测及预警，需要从空间和时间两个维度上开展研究。</p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="2" data-cke-widget-wrapper="1"><img alt="" width="994" height="405" class="cke_widget_element lazyload" data-cke-saved-src="https://i-blog.csdnimg.cn/direct/1b518a3a5d4141c3899586136b2f5596.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fi-blog.csdnimg.cn%2Fdirect%2F1b518a3a5d4141c3899586136b2f5596.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%22994%22%2C%22height%22%3A%22405%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" data-src="https://i-blog.csdnimg.cn/direct/1b518a3a5d4141c3899586136b2f5596.png"><span class="cke_reset cke_widget_drag_handler_container"><img width="15" height="15" class="cke_reset cke_widget_drag_handler lazyload" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" data-src="https://img2024.cnblogs.com/blog/2814533/202508/2814533-20250819174329644-1944308595.gif"><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片">编辑</span></span></span></span></p>
+<p><strong>问题一：利用风廓线雷达资料的湍流强度计算模型</strong></p>
+<p>根据题目提供的风廓线雷达和微波辐射计资料进行以下研究：综合利用风廓线雷达及微波辐射计两种设备的资料（近似认为两者的空间位置重合），建立计算不同高度上湍流强度的数学模型a。仅利用风廓线资料，在时间维度、空间维度或融合两个维度上进行计算，建立计算不同高度上湍流强度的数学模型b。其中模型a的技术相对成熟且可靠性高，以模型a的结果为标准，验证模型b的结果并对模型b进行优化，最终确立仅基于风廓线雷达资料的、统一时间和空间维度的湍流强度计算模型b。湍流强度计算结果为风廓线雷达所在位置、不同高度上的湍流强度数值，结果显示方式参照风廓线雷达资料的显示方式，为沿垂直高度的廓线。</p>
+<p>提交材料：算法的框架、逻辑结构说明材料；采用的数学或物理方法的说明；两个模型结果对比验证的分析和判断依据；可运行的程序。</p>
+<p><strong>问题二：融合多种探测资料的三维空间湍流强度计算模型</strong></p>
+<p>根据题目提供的地面自动气象站、风廓线雷达、多普勒天气雷达（S波段、X波段）等设备的探测资料，考虑各种设备的探测方式、时空分辨率、探测要素等差异，选取或研发恰当的湍流强度算法，构建融合的三维空间上湍流强度计算模型c，要求时间及空间分辨率符合低空飞行器的尺度及低空飞行航线长度和宽度的尺度。其输出产品覆盖范围为包含所有地面自动气象站的矩形区域、高度2km以下、垂直分辨率50m、水平分辨率100m，并以提供的地理信息数据为地图，显示三维空间上湍流强度计算结果。</p>
+<p>提交材料：算法的框架、逻辑结构说明材料；采用的数学或物理方法的说明；湍流强度结果的分析和可靠程度判断依据；可运行的程序。</p>
+<p><strong>问题三. 低空航路湍流预警及航路规划</strong></p>
+<p>当遇到的湍流漩涡大小与飞机大小相当时，飞机的颠簸最为明显；对于商用飞机，这相当于百米尺度的涡流尺寸，对低空飞行来说，其尺度更小。现在的数值天气预报不能直接预报湍流，它的空间分辨率也远大于飞行器的尺度。题目提供连续三小时（02点-05点）多种观测资料、连续六小时（02点-08点）数值天气预报数据及地理信息数据。利用问题二研发的模型c计算02点-05点三维空间上湍流强度，并作为验证标准。研发基于数值天气预报数据的湍流强度计算的数学物理模型d，计算02点-05点三维空间上的湍流强度，与模型c得到的验证标准进行对比，优化模型d，并对模型c和模型d的结果进行分析。将模型d用于05点-08点的数值预报数据，得到05点-08点的三维空间湍流强度预报。在给定起点、终点及飞行允许区域内，规划出仅考虑湍流条件的最优航路。</p>
+<p>考虑在没有数值预报数据的情形下，仅依靠02点-05点连续三小时多种观测资料，构建非线性的时间维度上的湍流外推模型e，形成05点-06点的三维空间湍流强度预测结果，分析模型e计算结果的可靠性，并在给定起点、终点及飞行允许区域内，规划出仅考虑湍流条件的最优航路。</p>
+<p>提交材料：算法的框架、逻辑结构说明材料；采用的数学或物理方法的说明；预警结果准确程度的分析和最优航路的判断依据；可运行的程序。</p>
+<h2 id="%F0%9F%93%9A2%20%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><strong>📚2 完整资源下载</strong></h2>
+<blockquote>
+<p>通过网盘分享的文件：25华为杯<br>
+链接: https://pan.baidu.com/s/1NpT9h6UwwcB6SLFh2RAXzQ?pwd=2kui</p>
+<p>提取码: 2kui&nbsp;<br>
+--来自百度网盘超级会员v6的分享</p>
+
+
+</blockquote>
+<h2 id="%F0%9F%8E%893%C2%A0%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%C2%A0"><strong>🎉3</strong><strong>&nbsp;参考文献</strong>&nbsp;</h2>
+<blockquote>
+<p>文章中一些内容引自网络，会注明出处或引用为参考文献，难免有未尽之处，如有不妥，请随时联系删除。(文章内容仅供参考，具体效果以运行结果为准)</p>
+
+
+</blockquote>
+<h2 id="%F0%9F%8C%884%20Matlab%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="cke_widget_wrapper cke_widget_inline cke_widget_csdnlink cke_widget_selected" data-cke-display-name="a" data-cke-filter="off" data-cke-widget-id="1" data-cke-widget-wrapper="1"><a class="cke_widget_editable cke_widget_element" title="🌈" href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0MDMzNzYwOA==&amp;action=getalbum&amp;album_id=2591810113208958977#wechat_redirect" data-cke-enter-mode="2" data-cke-saved-href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0MDMzNzYwOA==&amp;action=getalbum&amp;album_id=2591810113208958977#wechat_redirect" data-cke-widget-data="%7B%22url%22%3A%22https%3A%2F%2Fmp.weixin.qq.com%2Fmp%2Fappmsgalbum%3F__biz%3DMzk0MDMzNzYwOA%3D%3D%26action%3Dgetalbum%26album_id%3D2591810113208958977%23wechat_redirect%22%2C%22text%22%3A%22%F0%9F%8C%88%22%2C%22desc%22%3A%22%22%2C%22icon%22%3A%22%22%2C%22isCard%22%3Afalse%2C%22hasResquest%22%3Atrue%2C%22iconDefault%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.4.2%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DP7R7%22%2C%22id%22%3A%22byKD3Q-1758441501650%22%2C%22classes%22%3Anull%7D" data-cke-widget-editable="text" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-link-icon="https://csdnimg.cn/release/blog_editor_html/release2.4.2/ckeditor/plugins/CsdnLink/icons/icon-default.png?t=P7R7" data-link-title="🌈" data-widget="csdnlink" rel="noopener nofollow">🌈</a><strong>4&nbsp;</strong>D<strong>题</strong>思路、代码、论文持续更新.....</span></h2>
+<blockquote>
+<p>后台回复：<strong>25华为杯</strong></p>
+
+
+</blockquote>
+<p>资料获取，更多粉丝福利，MATLAB|Simulink|Python资源获取</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="0" data-cke-widget-wrapper="1"><img alt="在这里插入图片描述" class="cke_widget_element lazyload" data-cke-saved-src="https://i-blog.csdnimg.cn/blog_migrate/fbede7fa95ce75bb78ad56ed8d5979ce.gif#pic_center" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fi-blog.csdnimg.cn%2Fblog_migrate%2Ffbede7fa95ce75bb78ad56ed8d5979ce.gif%23pic_center%22%2C%22alt%22%3A%22%E5%9C%A8%E8%BF%99%E9%87%8C%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E6%8F%8F%E8%BF%B0%22%2C%22width%22%3A%22%22%2C%22height%22%3A%22%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" data-src="https://i-blog.csdnimg.cn/blog_migrate/fbede7fa95ce75bb78ad56ed8d5979ce.gif#pic_center"><span class="cke_reset cke_widget_drag_handler_container"><img width="15" height="15" class="cke_reset cke_widget_drag_handler lazyload" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" data-src="https://img2024.cnblogs.com/blog/2814533/202508/2814533-20250819174329644-1944308595.gif"><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片">编辑</span></span></span></span></p>
+
+<span data-cke-copybin-start="1">
+<span data-cke-copybin-end="1">​</span></span>
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo" class="post-meta-container">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date" data-last-update-days="0" data-date-updated="2025-09-21 15:59">2025-09-21 15:58</span>&nbsp;
+<a href="https://www.cnblogs.com/li-zi-ke-yan">荔枝科研社</a>&nbsp;
+阅读(<span id="post_view_count">268</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(19103763);return false;">收藏</a>&nbsp;
+<a href="https://report.cnblogs.com?targetLink=https%3A%2F%2Fwww.cnblogs.com%2Fli-zi-ke-yan%2Farticles%2F19103763&targetId=19103763&targetType=0" target="_blank">举报</a>
+</div>
+        </div>
+        <script>
+    var cb_entryId = 19103763, cb_entryCreatedDate = '2025-09-21 15:58', cb_postType = 2, cb_postTitle = '2025年华为杯D题|低空湍流监测及最优航路规划|思路、代码、论文|持续更新中....';
+    var allowComments = true, cb_blogId = 829923, cb_blogApp = 'li-zi-ke-yan', cb_blogUserGuid = '4abda9c5-ea7a-48f6-500b-08da0e35d47c';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");    
+</script>
+        <a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav">
+        <div class="comment-nav-right">
+            <span id="span_refresh_tips"></span><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a>
+        </div>
+    </div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+        <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+        <div id="blog_c1" class="under-post-card below-post-card">
+            <a href="https://www.doubao.com/download/desktop?ug_apk_token=FxCjd" rel="nofollow" target="_blank" onclick="countCreativeClicks('C1-字节-豆包')">
+                <img src="https://img2024.cnblogs.com/blog/35695/202609/35695-20260905201441417-1701437871.webp" onload="countCreativeImpressions('C1-字节-豆包')" alt="" style="width:300px!important;height:250px!important;min-width:300px!important;max-width:300px!important;" />
+                <span id="c1_impression" style="display:none"></span>
+            </a>
+        </div>
+    <div id="under_post_card1"></div>
+    <div id="related_posts_card"></div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card below-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+        window.footnoteTipManager.generateFootnoteTips();
+
+            window.tocManager.displayDisableTocTips = false;
+            window.tocManager.generateToc();
+            
+            setTimeout(function() { countViews(cb_blogId, cb_entryId); }, 50);
+            
+            deliverT2();
+            deliverC1C2();
+            loadNewsAndKb();
+            
+            LoadPostCategoriesTags(cb_blogId, cb_entryId);
+            
+            LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+            GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+            loadOptUnderPost();
+            GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+                </script>
+</div>
+
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+    
+<h3 class="catListTitle">公告</h3>
+<div id="blog-news" class="sidebar-news">
+    <div id="sidebar_news_container">
+    </div>
+</div>
+<script>loadBlogNews();</script>
+</div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        
+<a href="https://www.cnblogs.com/" id="footer_site_link" class="footer-brand">博客园</a>
+<span class="footer-copyright"> &nbsp;&copy;&nbsp; 2004-2026</span>
+<br /><span class="footer-icp">
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602011771"><img src="//assets.cnblogs.com/images/ghs.png" />浙公网安备 33010602011771号</a>
+    <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021040463号-3</a>
+</span>
+
+    </div>
+</div>
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8Ow5-In01nBEvFwaadRGjqHDu0dCzrkyrpdP0gCwq4i3zV5ik95VLSU0-HINNZeNknDXYP-RDVRxYt_hkuUFq_gN8OaadEDaJEMiQvgsipMg0m_nSCANT5Xp_EP7cW91oEBf4Rg6syWafuWYC275wno" />
+    <script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+<script defer src="https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?32d945448dd797af605da9156763de3dc11c9886368d0f917d6388e4fcf5542030632485602430134f60bc55ca391050b680e2741bf7233a8f1da9902314a3fa" id="ttzz"></script>
+</body>
+</html>

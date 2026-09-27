@@ -1,0 +1,42 @@
+{
+  "archived_at": "2026-09-21T23:23:42.118818+08:00",
+  "records": [
+    {
+      "path": "来源与校验/2024_官方获奖名单.xlsx",
+      "source_url": "https://cpipc.acge.org.cn/sysFile/downFile.do?fileId=fe3fbf1ace87488c9d97c8d88260aa39",
+      "parent_page": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c908017963932320196b2fd18ea5158?page=0",
+      "sha256": "846cbdd1057beded8d53df42892fdf5fa5d2610b7ce998a83e1f042af2a65976",
+      "bytes": 1532390,
+      "kind": "official_awards_original"
+    },
+    {
+      "path": "来源与校验/2024_获奖来源网页.html",
+      "source_url": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c908017963932320196b2fd18ea5158?page=0",
+      "sha256": "7cb34bf855ea352849be388c25ee84c102cc0b4dd66896f420d5c19e397e7513",
+      "bytes": 83726,
+      "kind": "official_html"
+    },
+    {
+      "path": "来源与校验/2025_官方获奖名单.rar",
+      "source_url": "https://cpipc.acge.org.cn/sysFile/downFile.do?fileId=c12ddcb197e547e5be6bd47696b2f1f1",
+      "parent_page": "https://cpipc.acge.org.cn/cw/contestNews/detail/4/2c9080179ab48607019ab53c045a01a9?page=2",
+      "sha256": "f2964391bb052e7e91b70635ed64853c77e7a492e586bed9ef5f65c2e37168dc",
+      "bytes": 1719665,
+      "kind": "official_awards_original"
+    },
+    {
+      "path": "来源与校验/2025_获奖来源网页.html",
+      "source_url": "https://cpipc.acge.org.cn/cw/contestNews/detail/4/2c9080179ab48607019ab53c045a01a9?page=2",
+      "sha256": "d7f2f6d11d6be8cfe701855374fc4d26dbce3380afca28bdea15089976b2e36a",
+      "bytes": 86860,
+      "kind": "official_html"
+    },
+    {
+      "path": "来源与校验/2025_颁奖回顾.html",
+      "source_url": "https://cpipc.acge.org.cn/cw/contestPrevious/detail/4/2c9080189e403095019e49ef61582f94?page=0",
+      "sha256": "d0d282af5c5e3f52e112abc5e21613b729aac423960be51b9973f7beea677bb7",
+      "bytes": 87142,
+      "kind": "official_html"
+    }
+  ]
+}

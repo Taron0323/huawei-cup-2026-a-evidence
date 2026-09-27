@@ -1,0 +1,78 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        706475,
+        342323.2,
+        -9216,
+        491520,
+        "base_base"
+      ],
+      "plan_sha256": "60a26b6a3c952b931c7b43a829a0e05b86fa3a998ca1dab6a3b77999ad16f6d3",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "r1_split_g0_h1_c4_p0",
+      "expanded_rank": [
+        690085,
+        355097.6,
+        -1124352,
+        491520,
+        "r1_split_g0_h1_c4_p0"
+      ],
+      "plan_sha256": "57b5a541f6ceec49cae03b457f6b669defda84f3a70f69bcb2cb70e71178600e",
+      "source": "ordinary_chain"
+    },
+    {
+      "candidate": "base_aggregate",
+      "expanded_rank": [
+        1011769,
+        342323.2,
+        -9216,
+        491520,
+        "base_aggregate"
+      ],
+      "plan_sha256": "9e90b1319ed08016b8d1142021f24e1a37ec9d67c73493aadb7d5ef001b86c2d",
+      "source": "aggregate"
+    },
+    {
+      "candidate": "base_disperse_tid_1000014723_node_12275_core_4_pos_1",
+      "expanded_rank": [
+        706211,
+        342323.2,
+        -9216,
+        491520,
+        "base_disperse_tid_1000014723_node_12275_core_4_pos_1"
+      ],
+      "plan_sha256": "6a49ccf467f4aa095d562ef35e245d54c96035264d67c0b174d66901ae1e1acb",
+      "source": "disperse"
+    },
+    {
+      "candidate": "event_timing_tid_1000008835_miss_2_bytes_9216_core_0",
+      "expanded_rank": [
+        1287815,
+        342400.0,
+        -4608,
+        491520,
+        "event_timing_tid_1000008835_miss_2_bytes_9216_core_0"
+      ],
+      "plan_sha256": "59e10aed462b1be185a5f46235025e3792e8b34ecef5f67fc73f5d121a32de52",
+      "source": "event_timing"
+    },
+    {
+      "candidate": "event_timing_tid_1000008835_miss_2_bytes_9216_core_0",
+      "expanded_rank": [
+        997173,
+        342400.0,
+        -4608,
+        491520,
+        "event_timing_tid_1000008835_miss_2_bytes_9216_core_0"
+      ],
+      "plan_sha256": "fdb8b57b02a6e15f27017e4205c0b28564f3774f7a1f30c2f2fb51c3a8ae3e73",
+      "source": "event_timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 706,
+  "winner": "r1_split_g0_h1_c4_p0"
+}

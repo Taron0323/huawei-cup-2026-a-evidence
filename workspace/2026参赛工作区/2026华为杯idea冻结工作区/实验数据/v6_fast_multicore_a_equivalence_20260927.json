@@ -1,0 +1,196 @@
+{
+  "status": "MATCH",
+  "sampled_pairs": 5,
+  "comparisons": [
+    {
+      "case": "case_051",
+      "cores": 2,
+      "summary_match": true,
+      "full_result_match": true,
+      "original": {
+        "case": "case_051",
+        "cores": 2,
+        "summary": {
+          "makespan": 607628,
+          "scheduled_copy_bytes": 393218,
+          "original_graph_copy_bytes": 393218,
+          "added_copy_bytes": 0,
+          "partition_added_copy_bytes": 0,
+          "spill_added_copy_bytes": 0,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "4ffe4186cbfc585bb4e87fe4cdf3113039a063fbb1abbb5640b27961fb4378de"
+      },
+      "fast": {
+        "case": "case_051",
+        "cores": 2,
+        "summary": {
+          "makespan": 607628,
+          "scheduled_copy_bytes": 393218,
+          "original_graph_copy_bytes": 393218,
+          "added_copy_bytes": 0,
+          "partition_added_copy_bytes": 0,
+          "spill_added_copy_bytes": 0,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "4ffe4186cbfc585bb4e87fe4cdf3113039a063fbb1abbb5640b27961fb4378de"
+      }
+    },
+    {
+      "case": "case_051",
+      "cores": 5,
+      "summary_match": true,
+      "full_result_match": true,
+      "original": {
+        "case": "case_051",
+        "cores": 5,
+        "summary": {
+          "makespan": 607628,
+          "scheduled_copy_bytes": 393218,
+          "original_graph_copy_bytes": 393218,
+          "added_copy_bytes": 0,
+          "partition_added_copy_bytes": 0,
+          "spill_added_copy_bytes": 0,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "0649cb82e60d496a8248a2c2db1676b649d725792db1d6bd8ca8842a6b460189"
+      },
+      "fast": {
+        "case": "case_051",
+        "cores": 5,
+        "summary": {
+          "makespan": 607628,
+          "scheduled_copy_bytes": 393218,
+          "original_graph_copy_bytes": 393218,
+          "added_copy_bytes": 0,
+          "partition_added_copy_bytes": 0,
+          "spill_added_copy_bytes": 0,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "0649cb82e60d496a8248a2c2db1676b649d725792db1d6bd8ca8842a6b460189"
+      }
+    },
+    {
+      "case": "case_067",
+      "cores": 2,
+      "summary_match": true,
+      "full_result_match": true,
+      "original": {
+        "case": "case_067",
+        "cores": 2,
+        "summary": {
+          "makespan": 33768704,
+          "scheduled_copy_bytes": 270072704,
+          "original_graph_copy_bytes": 6048128,
+          "added_copy_bytes": 264024576,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 260302976,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "5772d74b73a3d185be530a352589e78942496a8d483a4929813d75e81637fae9"
+      },
+      "fast": {
+        "case": "case_067",
+        "cores": 2,
+        "summary": {
+          "makespan": 33768704,
+          "scheduled_copy_bytes": 270072704,
+          "original_graph_copy_bytes": 6048128,
+          "added_copy_bytes": 264024576,
+          "partition_added_copy_bytes": 3721600,
+          "spill_added_copy_bytes": 260302976,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "5772d74b73a3d185be530a352589e78942496a8d483a4929813d75e81637fae9"
+      }
+    },
+    {
+      "case": "case_067",
+      "cores": 5,
+      "summary_match": true,
+      "full_result_match": true,
+      "original": {
+        "case": "case_067",
+        "cores": 5,
+        "summary": {
+          "makespan": 15931687,
+          "scheduled_copy_bytes": 268798208,
+          "original_graph_copy_bytes": 6048128,
+          "added_copy_bytes": 262750080,
+          "partition_added_copy_bytes": 14886400,
+          "spill_added_copy_bytes": 247863680,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "68ea9df5555ce182367d209b8b9b8e2ac5b7124d7bb714230601077a729cd9ec"
+      },
+      "fast": {
+        "case": "case_067",
+        "cores": 5,
+        "summary": {
+          "makespan": 15931687,
+          "scheduled_copy_bytes": 268798208,
+          "original_graph_copy_bytes": 6048128,
+          "added_copy_bytes": 262750080,
+          "partition_added_copy_bytes": 14886400,
+          "spill_added_copy_bytes": 247863680,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "68ea9df5555ce182367d209b8b9b8e2ac5b7124d7bb714230601077a729cd9ec"
+      }
+    },
+    {
+      "case": "case_016",
+      "cores": 5,
+      "summary_match": true,
+      "full_result_match": true,
+      "original": {
+        "case": "case_016",
+        "cores": 5,
+        "summary": {
+          "makespan": 7715523,
+          "scheduled_copy_bytes": 393218,
+          "original_graph_copy_bytes": 393218,
+          "added_copy_bytes": 0,
+          "partition_added_copy_bytes": 0,
+          "spill_added_copy_bytes": 0,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "45a66f46da4904a0b49a969a27634f42f9e533e4f60aa6af8d5c58576cf8297c"
+      },
+      "fast": {
+        "case": "case_016",
+        "cores": 5,
+        "summary": {
+          "makespan": 7715523,
+          "scheduled_copy_bytes": 393218,
+          "original_graph_copy_bytes": 393218,
+          "added_copy_bytes": 0,
+          "partition_added_copy_bytes": 0,
+          "spill_added_copy_bytes": 0,
+          "cache_hit_bytes": 0,
+          "cache_miss_bytes": 0,
+          "cache_hit_rate": 0.0
+        },
+        "result_sha256": "45a66f46da4904a0b49a969a27634f42f9e533e4f60aa6af8d5c58576cf8297c"
+      }
+    }
+  ]
+}

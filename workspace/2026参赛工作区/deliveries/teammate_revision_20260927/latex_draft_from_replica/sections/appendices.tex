@@ -1,0 +1,66 @@
+\appendix
+\ctexset{section={aftername={\quad}}}
+\input{sections/source-code}
+\section{数据与指标说明}\label{app:provenance}
+表\ref{tab:a-code-map}列出与模型步骤对应的实现模块；表\ref{tab:b-artifacts}列出每个图--核数--场景保存的方案与评价记录，其中\texttt{profile.json}为展开检查结果，\texttt{result.json}为完整事件模拟结果。
+\begin{table}[H]\centering\small\caption{实现模块与模型步骤}\label{tab:a-code-map}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+实现模块 & 模型步骤 & 输出对象\\\midrule
+\texttt{graph.py}、\texttt{plan.py} & 生产消费索引、D/H序、四起点与计划合法性检查 & 依赖索引、映射和核内序列\\
+\texttt{candidates.py}、\texttt{scoring.py} & 局部变体、去重与轻量排序 & 候选方案和评分向量\\
+\texttt{official.py}、题给评估程序 & Task展开、展开检查与共享DDR事件模拟 & Task/COPY展开、工期和搬运\\
+\texttt{official.py}的选优接口 & 成功结果按工期、搬运排序 & 初始方案与最终方案\\\bottomrule
+\end{tabularx}\end{table}
+\begin{table}[H]\centering\small\caption{每组保存的方案与评价记录}\label{tab:b-artifacts}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+记录 & 内容 & 用途\\\midrule
+\texttt{final\_plan.json} & 操作映射、分核和同核列表 & 提交计划；问题三的固定B计划\\
+\texttt{final\_selection.json} & 候选名、计划哈希、工期、搬运 & 核对配对双方的计划是否一致\\
+候选\texttt{profile.json} & 核级展开、COPY及Spill统计 & 解释片上恢复和候选入围\\
+候选\texttt{result.json} & 工期、流水线事件与搬运字段 & 同计划B/C配对及约束核验\\\bottomrule
+\end{tabularx}\end{table}
+结果文件对1500个组合键及其中2784条成功候选记录做了数值、计划和时间线一致性检查，另有15项跨场景抽样重算与存档结果逐项相同。
+
+本文使用题面给出的100张计算图、硬件配置和评估程序。主表包含100图、1至5核和A、B、C三种场景的1500条记录；其中A的2至5核400条为正式问题一结果，另保存A单核100条用于核对整图A0基准（\texttt{baseline\_A0}），并单独标记单核搜索诊断（\texttt{search\_A\_K1}）。这两类记录用途不同：前者定义统一速度比基准，后者保留单核候选搜索的实际工期与比值。另有500组B/C同计划配对和24组Cache参数固定计划评价。表中工期、搬运和命中率均由相应评价结果汇总。
+
+图中区间以100图有放回重采样1500次所得经验分位数表示实例组成对均值的影响。加速比均由原始工期计算。统一基准工期为整图单Task单核 A0 的 $T_{1,i}$；A、B 单核曲线按题面显示为 1.000，逐例表的 A/B 单核单元仍列各自最终已评计划的实际工期，C 单核单元列实际工期比。以\Case{053}为例，A/B/C 的单核实际工期分别为 1471202、1448004、1426552 cycle，统一基准为 1472686 cycle。
+
+\section{三问逐图结果}\label{app:results}
+表\ref{tab:detail-1}至表\ref{tab:detail-5}共列出100图、5种核数、3问的1500条最终记录。
+每个$T_r/S_r$单元中的斜线分别分隔工期（cycle）和相对整图单核 A0 的加速比；$D_r$是官方额外搬运字节。A、B 的单核 $S_r$ 按题面显示为 1.000，C 的单核 $S_r$ 保留实际工期比；三种场景的单核实际工期均来自对应最终已评计划。
+逐例表只列出最终工期、相对整图单核 A0 的加速比和额外数据搬运量。初始工期、候选来源、方案哈希、切分搬运与 Spill 搬运见 \path{data/v7_fast_20260927/main_results.csv}；\path{data/v7_fast_20260927/candidate_effects.csv} 另列首个成功候选至最终候选的逐组工期变化。
+\begingroup
+\small
+\setlength{\tabcolsep}{2.5pt}
+\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}
+\renewcommand{\arraystretch}{1.03}
+\input{generated/selected_tables.tex}
+\endgroup
+
+\section{Cache同计划完整配对}\label{app:cache}
+表\ref{tab:cache-detail-1}至表\ref{tab:cache-detail-5}共列出500组配对。
+$T_B=F_B(X_B^*)$，$T_C(X_B)=F_C(X_B^*)$，
+$T_C(X_C)=F_C(X_C^*)$；三比值由式\eqref{eq:cache-factors}计算。
+表中同时列出$C(X_B)$与$C(X_C)$各自的字节命中率；硬件效应图和同计划工期解释只使用$C(X_B)$字段。
+每组的$C(X_B)$沿用该组$B$的最终计划，因而三段工期的计划身份保持一致。
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}
+\renewcommand{\arraystretch}{1.03}
+\input{generated/cache_tables.tex}
+\endgroup
+
+\section{Cache参数敏感性}\label{app:sensitivity}
+六图各在四个非默认硬件配置下固定五核B最终计划，并尝试候选重优化。
+下表的“失败候选”表示未通过依赖检查的记录；这些记录不赋予工期。
+\begingroup
+\small
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{0.94}
+\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}
+\input{generated/sensitivity_table.tex}
+\endgroup
+
+\section{计算参数与配对字段}
+正式评价使用题面默认的L1、UB、DDR和L2 Cache参数；敏感性实验仅改变L2容量或读带宽，其他计划和硬件条件保持不变。C初始命中率与C最终命中率分别保存，固定计划和重调度计划的字段由此分开。未通过依赖检查的候选不进入工期统计。

@@ -1,0 +1,8 @@
+{
+  "added_copy_bytes": 7405056,
+  "candidate": "L2_base",
+  "full_calls": 2,
+  "makespan": 1661193,
+  "plan_sha256": "60a26b6a3c952b931c7b43a829a0e05b86fa3a998ca1dab6a3b77999ad16f6d3",
+  "source": "legacy_seed"
+}

@@ -1,0 +1,184 @@
+% !TEX program = xelatex
+\documentclass[UTF8,a4paper,zihao=-4,fontset=fandol]{ctexart}
+\usepackage{mathmodel}
+\graphicspath{{figures/}}
+\hypersetup{pdftitle={数学建模论文样式演示},pdfauthor={}}
+\begin{document}
+\papertitle{数学建模论文样式演示}
+\begin{modelabstract}
+本文件以可手工核对的小型算例展示论文版式。所有数据均为演示数据，不对应正式赛题，也不作为任何范文结果的复现。字体和标题层次主要参考猫猫的 2024 年国赛 C 题范文，保留宋体正文、黑体一级标题、楷体二级标题和三线表。本版尚待用户审核，正文可在论文骨架中替换。
+
+针对确定性资源分配问题，以两类产品的产量为决策变量，在两项资源约束下建立线性规划模型。将约束边界的交点与其余顶点逐一比较，得到最优产量为 $(2,2)$，目标函数值为 $10$。该结果用于展示完整模型、引理证明和结果表的排版。
+
+针对一阶衰减过程，给出状态方程的解析解及其参数导数。将衰减系数从 $0.4$ 调整至 $0.6$，展示参数变化对状态曲线的影响。图中曲线由给定方程直接计算，没有误差带，因此不表达不确定性区间。
+
+文末给出模型边界、参考文献、完整绘图代码和补充表格。电子版从摘要开始连续编号，不设置目录、身份页或装饰页眉。
+\end{modelabstract}
+\keywords{数学建模\quad 线性规划\quad 独立核验\quad 论文排版}
+\clearpage
+\normalsize
+\label{mainbody:start}
+
+\section{问题重述}
+\subsection{研究对象与任务}
+考虑两类产品共同消耗两项有限资源的情形。产品产量记为 $x_1$ 和 $x_2$，单位收益分别为 $3$ 和 $2$。第一项资源的单位消耗均为 $1$，第二项资源的单位消耗分别为 $2$ 和 $1$，资源上限分别为 $4$ 和 $6$。
+
+本算例要求给出收益最大的生产方案，并核对资源消耗。另以一阶衰减方程展示参数扫描图的组织方式。两项演示彼此独立，不能在技术路线中虚构数据依赖。
+\subsection{任务的数学表达}
+线性收益和线性资源约束决定了第一项任务的数学结构。第二项任务的状态由常微分方程给定，可先获得解析解，再用它检查数值计算。
+
+\section{问题分析}
+\subsection{资源分配问题的分析}
+可行域是闭有界多边形，线性目标在顶点处取得最优值。因此可以直接枚举顶点，不必为这个小型问题引入启发式搜索。随后用目标上界证明检查枚举结果，形成独立的正确性依据。
+\subsection{衰减过程的分析}
+对参数变化的解释需要保持初值、时间范围与绘图尺度一致。曲线分离反映参数效应，不能据此宣称某种算法更优。解析解给定了边界值和单调性，也提供了数值积分的参照。
+\subsection{技术路线}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=7mm and 9mm]
+\node[modelbox] (input) {资源与收益参数};
+\node[modelbox,right=of input] (model) {线性规划模型};
+\node[modelbox,right=of model] (answer) {生产方案与收益};
+\node[modelbox,below=of input] (vertices) {顶点枚举};
+\node[modelbox,right=of vertices] (bound) {目标上界证明};
+\node[modelbox,right=of bound] (check) {资源逐项核对};
+\draw[modellink] (input)--(model);
+\draw[modellink] (model)--(answer);
+\draw[modellink] (model.south)--(bound.north);
+\draw[modellink] (input)--(vertices);
+\draw[modellink] (vertices)--(bound);
+\draw[modellink] (bound)--(check);
+\draw[modellink] (answer)--(check);
+\end{tikzpicture}
+\caption{资源分配算例的求解与核验路线}
+\label{fig:demo-route}
+\end{figure}
+
+\section{模型假设}
+\begin{assumption}
+产品可以按连续数量生产，单位收益与资源消耗在考察范围内不变。
+\end{assumption}
+这一假设使目标和约束保持线性。若实际产品只能整件生产，应增加整数约束并重新求解；若存在规模效应，则需重新确认线性近似范围。
+\begin{assumption}
+演示的衰减过程中没有外部输入，初始状态为 $1$，衰减系数为正常数。
+\end{assumption}
+因此状态不会随时间增长，也不会出现负值。真实过程若存在补给，需在状态方程中加入相应项。
+
+\section{符号说明}
+\begin{table}[htbp]
+\centering
+\caption{演示算例的主要符号}
+\label{tab:demo-symbols}
+\begin{tabularx}{\textwidth}{cYc}
+\toprule 符号 & 含义 & 单位 \\ \midrule
+$x_1,x_2$ & 两类产品的生产数量 & 产品单位 \\
+$J$ & 总收益 & 收益单位 \\
+$t$ & 演示过程的时间 & 时间单位 \\
+$\lambda$ & 衰减系数 & 时间单位$^{-1}$ \\
+$u(t)$ & 归一化状态 & 无量纲 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{模型的建立与求解}
+\subsection{线性规划模型}
+\subsubsection{目标函数与约束条件}
+总收益由两类产品的收益相加得到。资源消耗不超过上限，产品产量非负，因而模型为
+\begin{equation}
+\begin{aligned}
+\max_{x_1,x_2}\quad &J=3x_1+2x_2,\\
+\text{s.t.}\quad &x_1+x_2\leq4,\\
+&2x_1+x_2\leq6,\\
+&x_1,x_2\geq0.
+\end{aligned}
+\label{eq:lp}
+\end{equation}
+式\eqref{eq:lp}中，前两项不等式分别对应两项资源。求解后应逐项代入检查，不能只检查目标值。线性规划的标准形式与对偶方法可参见文献\cite{bertsimas}。
+\subsubsection{结果与独立证明}
+可行域共有四个顶点，各点的收益见表\ref{tab:vertices}。其中 $(2,2)$ 的收益最高。
+\begin{table}[htbp]
+\centering
+\caption{可行域顶点及其收益}
+\label{tab:vertices}
+\begin{tabular}{ccccc}
+\toprule $x_1$ & $x_2$ & 第一项资源消耗 & 第二项资源消耗 & 总收益 $J$ \\ \midrule
+0 & 0 & 0 & 0 & 0 \\
+3 & 0 & 3 & 6 & 9 \\
+2 & 2 & 4 & 6 & 10 \\
+0 & 4 & 4 & 4 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{proposition}
+式\eqref{eq:lp}的最优目标值为 $10$，在 $(x_1,x_2)=(2,2)$ 处取得。
+\end{proposition}
+\begin{proof}
+将两项资源约束相加，得到 $3x_1+2x_2\leq10$。点 $(2,2)$ 满足全部约束并使该上界取等，因此它是最优解。
+\end{proof}
+这一证明给出了整个可行域上的收益上界。与仅观察迭代曲线是否变平相比，它直接回答了是否还存在更高收益的可行方案。
+
+\subsection{衰减过程与参数分析}
+\subsubsection{状态方程}
+考虑初值问题
+\begin{equation}
+\frac{\dif u}{\dif t}=-\lambda u,\qquad u(0)=1,\quad\lambda>0.
+\label{eq:decay}
+\end{equation}
+分离变量并积分，可得
+\begin{equation}
+u(t)=\exp(-\lambda t),\qquad
+\frac{\partial u(t)}{\partial\lambda}=-t\exp(-\lambda t).
+\label{eq:solution}
+\end{equation}
+当 $t>0$ 时，参数导数为负，说明增加衰减系数会降低同一时刻的状态值。该结论来自方程本身，不依赖某一种绘图工具。
+\subsubsection{结果展示}
+图\ref{fig:decay}采用相同初值与时间范围，对比三个参数值。所有曲线从 $1$ 出发并单调下降，与式\eqref{eq:solution}一致。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{decay.pdf}
+\caption{不同衰减系数下的解析状态曲线。三条曲线使用相同初值；图中未绘制统计误差带。}
+\label{fig:decay}
+\end{figure}
+
+\section{模型检验与敏感性分析}
+\subsection{边界与数值核对}
+资源分配结果将两项资源恰好用尽，资源余量均为零。衰减方程满足 $u(0)=1$，当 $t\to\infty$ 时状态趋于零；当 $\lambda\to0$ 时退化为常数状态。这些边界为代码提供了可检查的参照。
+
+数值积分应在相同采样时刻与解析解比较，并报告最大绝对误差。误差容限要依据数据精度及任务需求预先确定，不能因为一次运行通过就改写验收阈值。
+\subsection{参数变化的解释}
+参数变化使同一时刻的状态改变。它说明输出依赖于衰减系数，尚不能回答参数在真实系统中的分布。若要给出预测区间，还需引入参数估计误差或随机扰动的证据。微分方程数值方法可参见文献\cite{hairer}。
+
+\section{模型评价与推广}
+\subsection{模型优点}
+资源分配算例具有完整的可行性检查和目标上界证明，结果可由短推导独立核对。衰减算例同时提供解析解与边界条件，便于发现数值实现错误。
+\subsection{模型局限}
+这两个算例均使用明确给定的参数，未涉及真实数据中的测量误差、分布变化或大规模计算成本。演示版式中的验证思路可以迁移，数值结论不能迁移。
+
+\section*{AI工具使用声明}
+\addcontentsline{toc}{section}{AI工具使用声明}
+本文件为 AI 辅助制作的赛前模板演示，尚未参与正式赛题求解。正式论文应依据实际使用情况填写声明，并按当年规定在支撑材料中提供使用详情\cite{ai-rules}。此段不能作为正式参赛声明直接提交。
+
+\begin{thebibliography}{99}
+\bibitem{bertsimas} Bertsimas D, Tsitsiklis J N. Introduction to Linear Optimization[M]. Belmont: Athena Scientific, 1997.
+\bibitem{hairer} Hairer E, N\o rsett S P, Wanner G. Solving Ordinary Differential Equations I: Nonstiff Problems[M]. 2nd ed. Berlin: Springer, 1993.
+\bibitem{ai-rules} 全国大学生数学建模竞赛组委会. 全国大学生数学建模竞赛关于使用人工智能工具的规定[EB/OL]. 2026-09-01.\newline\url{https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html}.
+\end{thebibliography}
+\beginappendices
+\section{支撑材料清单}
+\begin{longtable}{L{39mm}L{22mm}L{85mm}}
+\caption{演示文件与用途}\label{tab:demo-files}\\
+\toprule 文件名 & 类型 & 用途 \\ \midrule\endfirsthead
+\multicolumn{3}{l}{表\thetable\quad 演示文件与用途（续）}\\
+\toprule 文件名 & 类型 & 用途 \\ \midrule\endhead
+\bottomrule\endfoot
+demo.tex & LaTeX & 当前演示文档的主文件 \\
+mathmodel.sty & LaTeX & 统一字体、标题、公式与表格样式 \\
+figures/decay.pdf & 矢量图 & 图\ref{fig:decay}的解析曲线 \\
+figures/decay.csv & 数据表 & 图\ref{fig:decay}使用的全部数据 \\
+figures/decay.svg & 矢量图 & 可编辑文字与曲线的备份格式 \\
+make\_figures.py & Python & 从解析方程生成数据和图片 \\
+\end{longtable}
+\section{完整绘图程序}
+运行环境为 Python、NumPy 与 Matplotlib。命令为 \texttt{python make\_figures.py}；程序在当前模板目录生成图与数据。这里使用 ASCII 代码与拉丁图标签，避免不同编辑器对代码字体的差异影响运行。
+\lstinputlisting[language=Python,caption={衰减曲线的完整生成程序}]{make_figures.py}
+\end{document}

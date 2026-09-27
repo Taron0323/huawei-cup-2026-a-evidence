@@ -1,0 +1,12 @@
+parameter_id,symbol,value,unit,source_kind,source_path,source_locator,plausible_min,plausible_max,sensitivity_plan,status
+P01,C_L1,524288,bytes,PROBLEM,inputs/raw/A题/附件/data/config.txt,capacity.L1,524288,524288,固定正式值,AI_VERIFIED
+P02,C_UB,131072,bytes,PROBLEM,inputs/raw/A题/附件/data/config.txt,capacity.UB,131072,131072,固定正式值,AI_VERIFIED
+P03,B_DDR,60,bytes/cycle,PROBLEM,inputs/raw/A题/附件/data/config.txt,bandwidth.bandwidth,60,60,固定正式值,AI_VERIFIED
+P04,delta_A_cross,1000,cycles,PROBLEM,inputs/raw/A题/附件/data/config.txt,multicore_scene_a.task_cross_core_wait_cycles,1000,1000,固定正式值,AI_VERIFIED
+P05,delta_A_same,100,cycles,PROBLEM,inputs/raw/A题/附件/data/config.txt,multicore_scene_a.task_same_core_wait_cycles,100,100,固定正式值,AI_VERIFIED
+P06,delta_B,500,cycles,PROBLEM,inputs/raw/A题/附件/data/config.txt,multicore_scene_b.cross_core_copy_delay_cycles,500,500,固定正式值,AI_VERIFIED
+P07,C_L2,1048576,bytes,PROBLEM,inputs/raw/A题/附件/data/config.txt,problem_3.cache_capacity_bytes,0,2097152,仅独立诊断0/524288/1048576/2097152,AI_VERIFIED
+P08,B_L2,250,bytes/cycle,PROBLEM,inputs/raw/A题/附件/data/config.txt,problem_3.cache_bandwidth_bytes_per_cycle,60,500,仅独立诊断60/125/250/500,AI_VERIFIED
+P09,K,1..5,cores,PROBLEM,inputs/problem/A题/通用神经网络处理器下的多核调度问题.docx,问题1至3,1,5,全量核数分析,AI_VERIFIED
+P10,b,100,operations,DESIGN_CHOICE,src/a_solver/a_solver.py,component_packed_plan,50,200,代表例50/100/200,AI_VERIFIED
+P11,seed,0/1/2,dimensionless,DESIGN_CHOICE,src/a_solver/run_batch.py,--seeds,0,2,随机示例重复对照,AI_VERIFIED

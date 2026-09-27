@@ -1,0 +1,53 @@
+{
+  "status": "WITHDRAWN_DRAFT_DELETED_BY_USER",
+  "completed_at": "2026-09-23T16:17:57.165435+08:00",
+  "zip_file": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/deliveries/A题自动求解_20260923.zip",
+  "zip_sha256": "b3ff528878b41c7689efd8b31e3a842e1d4346db73dd16d175acf2ed67532c0e",
+  "zip_bytes": 793616610,
+  "crc": "PASS",
+  "manifest_files": 15160,
+  "hash_matches": 15160,
+  "unlisted_files": [],
+  "browsable_directory": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/deliveries/A题自动求解_20260923",
+  "unpacked_directory": "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/review/auto_solve/20260923_120249/06_delivery/extracted/A题自动求解_20260923",
+  "unpacked_workspace_check": {
+    "software_structure": "PASS",
+    "official_records": 51,
+    "inputs": {
+      "count": 116,
+      "status": "VERIFIED"
+    },
+    "evidence_rows": {
+      "ai_usage": 3,
+      "claims": 21,
+      "figures": 6,
+      "human_review": 1,
+      "parameters": 11,
+      "references": 4,
+      "requirements": 22
+    },
+    "formal_scientific_review": "NOT_ASSESSED",
+    "human_review": "NOT_ASSESSED",
+    "submission": "NOT_SUBMITTED"
+  },
+  "smoke_command": [
+    "/Users/futaoran/Desktop/华为杯2026/2026参赛工作区/review/auto_solve/20260923_120249/06_delivery/extracted/A题自动求解_20260923/.venv/bin/python",
+    "run_a.py",
+    "--mode",
+    "smoke",
+    "--workers",
+    "14",
+    "--output-root",
+    "results/package_smoke"
+  ],
+  "smoke_environment": "New venv without pip/system site packages",
+  "smoke_exit_code": 0,
+  "smoke_rows": 45,
+  "smoke_differences": [],
+  "comparison_tolerance": 0,
+  "human_review": "NOT_ASSESSED",
+  "submission": "NOT_SUBMITTED",
+  "historical_status_before_draft_removal": "AI_VERIFIED",
+  "withdrawn_at": "2026-09-24T09:29:15.804864+08:00",
+  "note": "Old draft and containing ZIP deleted; historical experiment/smoke results retained."
+}

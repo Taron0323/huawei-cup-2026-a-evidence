@@ -1,0 +1,222 @@
+\section{问题一模型建立与求解}
+\label{sec:question-one}
+
+问题一的决策从原计算图出发，依次确定计算操作的子图边界、各子图所在核心与核内先后。切分增加了可并行的Task，也改变张量读写次数、片上存活区间和Task激活时刻。本节先建立提交方案和执行约束，再由张量接收Task推导结构搬运，最后把有限候选交给评估程序做事件模拟，按返回结果选出每张图的方案。
+
+\subsection{两级约束与评价目标}
+\subsubsection{调度变量与执行约束}
+第一层决定划分与次序：式\eqref{eq:plan-coverage}给出操作和子图覆盖，式\eqref{eq:plan-sequence-unique}要求每个非空子图在核内序列中恰好出现一次；若$s\in\sigma_k$，则$a(s)=k$。跨子图依赖形成的商图必须无环，同核序列还须遵守商图依赖；这两项检查在A、B、C三个场景共用。给定合法计划$X$后，评估程序展开Task与COPY，依次执行核内Step1排序、Step2换出恢复和Step3流水线及内存复用依赖构图，再模拟共享带宽事件。记这一展开为$\Psi_r(G,X)$，事件模拟为$\Phi_r$，其中$r\in\{A,B,C\}$。展开产生的操作集合记$\mathcal O_r(X)$，操作$o$的开始、结束时刻分别为$s_o,e_o$。数据或内存依赖$u\to v$要求$s_v\ge e_u$；带延迟的释放边要求$s_v\ge e_u+\delta_{uv}$。四条每核流水线M、V、MTE2和MTE3各自串行，不同流水线满足依赖后可重叠执行。
+
+容量也属于第二层。逻辑张量在换出与恢复后可有不同物理版本$\tilde t$。若版本在核心$k$的存储区$q$上从$A_{\tilde t}$占用至$L_{\tilde t}$，任何时刻$\tau$均须满足
+\begin{equation}
+\sum_{\tilde t\in\mathcal T_{kq}} b_{\tilde t}
+\mathbf1\{A_{\tilde t}\le\tau<L_{\tilde t}\}\le C_q,\qquad
+C_{\rm L1}=524288,\quad C_{\rm UB}=131072\ \mathrm{B}.
+\label{eq:capacity}
+\end{equation}
+这里的集合按物理版本而非逻辑张量计数。一个张量直到最后一个读者结束才释放，读者也包括向DDR写回的COPY。Step2在空间不足时生成换出恢复，Step3再为复用同一位置的操作补充先后约束。因此，改变Task边界不仅改变结构COPY，还可能改变物理版本的存活区间与恢复次数。
+
+问题一每个子图独立成Task，同核连续Task间隔100 cycle，跨核依赖Task释放延迟1000 cycle。后两问沿用容量与DDR参数，改变Task组织并在问题三加入Cache。
+\begin{table}[H]\centering\caption{题设配置中的容量、带宽与Task等待}\label{tab:q1-hardware}
+\begin{tabularx}{\linewidth}{lYY}\toprule
+项目 & 数值 & 在执行递推中的作用\\\midrule
+每核L1、UB & 524288 B、131072 B & 分存储区约束物理版本的同时驻留\\
+共享DDR & 60 B/cycle & 各核COPY读写共同占用同一服务池\\
+问题一同核等待 & 100 cycle & 同核前一Task结束后才能激活后一Task\\
+问题一跨核等待 & 1000 cycle & 跨核前驱Task结束后延迟释放\\
+问题二、三跨核延迟 & 500 cycle & 源端写出后目标COPY\_IN等待\\
+问题三只读Cache & 1048576 B、250 B/cycle & 独立读池与FIFO容量，详见问题三\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsubsection{共享DDR服务下的工期}
+给定一次COPY的字节数$b_o$，其独占DDR参考工作量为$w_{o,D}=\max\{1,\lceil b_o/60\rceil\}$。若时刻$\tau$有$m_D(\tau)$个在途DDR搬运，各自剩余参考工作量$R_o(\tau)$按
+\begin{equation}
+R_o(s_o)=w_{o,D},\qquad
+\frac{\mathrm dR_o(\tau)}{\mathrm d\tau}=-\frac{1}{m_D(\tau)}
+\quad\bigl(o\text{正在DDR池服务}\bigr)
+\label{eq:ddr-share}
+\end{equation}
+推进。一个搬运完成或新搬运发射后，$m_D$改变，其余搬运的预测完成时刻随之重算；评估程序按整数周期处理这些事件。相同字节量的方案可能在关键路径上遇到不同的竞争，因此完整工期只能由事件模拟确定。
+
+由此定义场景$r$的工期及额外搬运：
+\begin{equation}
+F_r(X)=\max_{o\in\mathcal O_r(X)}e_o,\qquad
+D_r(X)=Q_r^{\rm sched}(X)-Q^{\rm orig}.
+\label{eq:objective}
+\end{equation}
+以$\mathcal F_{r,K}$表示满足操作覆盖、商图无环、同核依赖顺序以及式\eqref{eq:capacity}物理容量约束的计划集合；Task等待和带宽服务按场景$r$由$\Psi_r$与$\Phi_r$确定。优化模型为
+\begin{equation}
+X^*_{r,K}\in\operatorname*{arg\,min}^{\rm lex}_{X\in\mathcal F_{r,K}}
+\bigl(F_r(X),D_r(X)\bigr).
+\label{eq:lex-objective}
+\end{equation}
+主目标是工期，工期相同时比较额外搬运。在仅有两核、每核一个Task、无依赖与搬运的特例中，各独立M操作的周期为正整数，判定工期能否不超过总周期的一半等价于将这些周期分成两个等和集合，即Partition判定。该特例已是弱NP完全问题，因此求解器生成有限候选，再以事件模拟评价可行计划。
+
+\subsubsection{工期下界}
+设$L_G$为计算依赖的加权最长路，$W_M,W_V$分别为两条计算流水线的总工作量；$Q_{\min}$为图输入至少一次读入与最终输出至少一次写出的最低字节数，$B_D=60$~B/cycle为共享DDR服务带宽。忽略Task等待、容量恢复、流水线排序和争用，先分别得到计算侧和IO侧下界
+\begin{equation}
+LB_{\rm comp}(K)=\max\left\{L_G,\frac{W_M}{K},\frac{W_V}{K}\right\},
+\qquad
+LB_{\rm io}=\frac{Q_{\min}}{B_D}.
+\label{eq:lower-bound-components}
+\end{equation}
+综合松弛下界取两侧瓶颈中的较大者：
+\begin{equation}
+LB(K)=\max\left\{LB_{\rm comp}(K),LB_{\rm io}\right\}.
+\label{eq:lower-bound}
+\end{equation}
+该下界未计入Task等待、容量恢复、流水线排序与共享带宽争用，$F/LB$用于诊断方案与理想瓶颈的距离。三问的加速比均以同图整图单Task、单核A0方案的Makespan $T_{1,i}$为统一参照值，使三问的收益具有相同起点。B、C场景没有独立评价各自的整图单核基准（B0、C0）；两个场景相应格子的比较基准沿用A0的工期，表注和逐图表中的"基准"列均指该值。
+
+\subsection{Task驻留域与结构搬运}
+\subsubsection{Task划分与边界搬运}
+问题一中每个子图形成独立Task。Task内部可以让同一张量服务多个计算消费者；跨Task时，即使两个Task安排在同一核心，后一个Task也要经过DDR边界重新读入。结构搬运按接收Task数量计量，跨核依赖边数不足以给出完整通信量。对输入张量$t$，记$I_A(t)=\{g(v):v\in U(t)\}$；对计算产生的张量，记$R_A(t)=\{g(v):v\in U(t),\ g(v)\ne g(p(t))\}$。集合消除了同一Task内的重复消费者。按评估程序的Task构图规则逐张量统计：输入对每个接收Task读入一次；内部结果若有外部接收Task，源Task写出一次，各目标Task各读入一次；最终输出仍需源Task写出。因此，不含容量恢复的结构COPY字节数为
+\begin{equation}
+Q_A^0=\sum_{t\in\mathcal T_{\rm in}}b_t|I_A(t)|
++\sum_{t\in\mathcal T_{\rm prod}}b_t
+\left[|R_A(t)|+\mathbf1\{|R_A(t)|>0\text{ 或 }o_t=1\}\right].
+\label{eq:a-bytes}
+\end{equation}
+例如，大小为$b$的内部张量由一个Task生产，在另外两个Task各有一个消费者，且不是最终输出。其结构搬运为一次写出与两次读入，共$3b$；将两个消费Task合并后变为$2b$；连同生产者一起合并则这部分边界搬运为零。若只把两个消费Task放到同一核心而不合并，问题一仍保留$3b$。这说明计算均衡和边界数并非同一目标：切开一条并行支路时，应同时检查边界附近的大张量。
+
+实际调度COPY还包含容量不足时的换出与恢复。与评估程序的输出字段对应，得到
+\begin{equation}
+Q_A^{\rm sched}=Q_A^0+Q_A^{\rm spill},\qquad
+D_A=\underbrace{(Q_A^0-Q^{\rm orig})}_{\text{划分新增搬运}}
++\underbrace{Q_A^{\rm spill}}_{\text{容量恢复搬运}}.
+\label{eq:a-copy-breakdown}
+\end{equation}
+式\eqref{eq:a-bytes}计算切图决定的逻辑边界，式\eqref{eq:a-copy-breakdown}将其与片上容量造成的物理搬运分开。即使结构搬运降低，张量生产和末次使用之间的间隔变长，也可能在Step2产生更多恢复字节；反之，适度切分虽增加边界COPY，却可能缩短张量的单Task存活区间。最终是否加速取决于这些COPY落在何时和哪条依赖路径上。
+
+\subsubsection{Task激活时刻}
+令Task $s$的激活、完成时刻为$\alpha_s,\beta_s$，同核前一个Task为$\operatorname{prev}(s)$，其计算数据前驱Task集合为$\operatorname{Pred}(s)$。激活需同时等待本核前一Task、所有数据前驱和跨核释放延迟：
+\begin{equation}
+\alpha_s\ge\max\left\{0,\ \beta_{\operatorname{prev}(s)}+100,\
+\max_{t\in\operatorname{Pred}(s)}\beta_t,\
+\max_{\substack{t\in\operatorname{Pred}(s)\\a(t)\ne a(s)}}(\beta_t+1000)\right\},
+\label{eq:a-wait}
+\end{equation}
+不存在的前驱项省略；各核心第一个无前驱Task可在零时刻激活。若同核等待和数据依赖同时发生，较晚的一项决定可激活时刻。切分使不同核心出现并行机会，也可能把一个原本位于Task内部的依赖改成相隔1000 cycle的跨核释放。该等待与结构COPY在同一切点出现，故应把二者连同计算负载一起比较。
+
+切块程序沿拓扑序累计M、V两类计算周期，以两条流水线工作量的较大者接近目标值作为负载条件，并在接近目标的切点中优先减少跨切点张量字节。生成完整计划后，轻量分数再计入路径等待、结构搬运与容量压力；工期取式\eqref{eq:objective}的事件模拟结果。若同一张量被多个新Task消费，式\eqref{eq:a-bytes}中的$|R_A(t)|$随接收Task数增加。
+
+\subsection{方案构造与求解}
+\subsubsection{初始候选方案}
+单个大Task保留数据驻留但难以让多核并行；只使用弱连通分量又不能切开\Case{016}一类近乎单分量的大图。程序以四个确定性主起点提供整图、天然独立支路和两种拓扑切分（表\ref{tab:a-seeds}）。
+\begin{table}[H]\centering\caption{问题一的四种确定性候选起点}\label{tab:a-seeds}
+\begin{tabularx}{\linewidth}{cYY}\toprule
+名称 & 子图构造 & 对应的调度取舍\\\midrule
+A0 & 整图为一个子图，置于核心0 & 保留完整Task驻留，作为独立单核基准计划\\
+A1 & 弱连通分量按M/V两类工作量装入$K$个桶，每个非空桶形成一块 & 利用天然并行并平衡两条计算流水线\\
+A2 & D序按M/V工作量接近目标、跨切点字节较少的规则切至多$2K$块 & 为大分量增加切点，维持分量内先后\\
+A3 & H序按相同规则切至多$4K$块 & 让关键链附近产生另一组边界和核内次序\\\bottomrule
+\end{tabularx}\end{table}
+
+H序的优先级由逆拓扑递推
+\begin{equation}
+h(v)=w_v+\max_{u\in\operatorname{Succ}(v)}h(u),\qquad
+\max\varnothing=0
+\label{eq:a-height}
+\end{equation}
+得到，它与HEFT列表调度中的向上秩（upward rank）\cite{topcuoglu2002heft}形式相同，只是本题各核同构，不需对计算代价取平均。只有前驱已放入序列的操作才参与就绪队列；$h(v)$相同时按编号确定次序。D序也遵守拓扑顺序，但优先保持同一弱连通分量的操作相邻。两种次序只用于生成切点，实际执行次序由评估程序的核内调度决定。与METIS一类多级图划分以最小边割为目标\cite{karypis1998metis}不同，这里的切块须沿拓扑序连续，保证块间依赖无环。A2、A3的块数上限随$K$增加。对已安置前$j-1$块的部分计划$X^{(j-1)}$，记$X^{(j-1)}\oplus_k S_j$为把第$j$块接到核心$k$当前序列末尾后的部分计划。按列表调度的贪心思路\cite{graham1969bounds}逐块比较轻量评分，选择
+\begin{equation}
+a(S_j)=\operatorname*{arg\,min}_{0\le k<K}
+\left(\widehat\kappa_A\bigl(X^{(j-1)}\oplus_k S_j\bigr),k\right).
+\label{eq:a-place}
+\end{equation}
+编号作为评分相同时的确定性次序。式中的$\widehat\kappa_A$是部分计划的轻量评分，包含路径、计算负载、结构COPY与容量压力；其值不等于实际工期。A1先按M/V工作量装桶，再以每桶一个子图形成方案；块内操作由Step1确定实际顺序。
+
+\subsubsection{候选方案调整}
+四起点各自保留原方案，并生成迁块、同核合并、调序及容量风险块前后移动等变体。先对起点做展开检查，以展开后的排序量选一个搜索起点；再在有限轮局部搜索中考察子图迁移、拆分与合并、边界操作迁移和核内重排，保留轻量分数改善代表及容量压力下降代表。改动后的映射与列表先规范化，检查覆盖、商图无环及同核依赖顺序，再按计划内容去重；非法或重复变体跳过。
+
+上一核数的已选计划在新增核心保持空闲后，作为本核数搜索中的单调锚点。整图、分量装桶和该锚点按内容去重后分别取得必评角色；同一计划承载多个角色时只评价一次。
+
+\subsubsection{完整评价与方案选定}
+CoSA把空间加速器的时空映射写成约束优化问题直接求解\cite{huang2021cosa}；本题的Makespan要经过Task展开、容量换出和共享带宽事件才能得到，难以写成同类显式约束。本文因此采用与TVM相近的两层做法\cite{chen2018tvm}：先用廉价的静态评分排列有限候选，再把完整事件模拟留给少数方案。设$\widehat L(X)$为沿计算拓扑序的路径代理；跨子图依赖在该代理中加入固定等待权重。设$\widehat Q(X)$为按张量接收域估计的COPY字节，$\widehat\Pi(X)$为每核按局部拓扑操作序估计的L1/UB超容量峰值。程序的第一排序量是
+\begin{equation}
+\widehat F(X)=\max\left\{\widehat L(X),\ \max_k L_k,\
+\left\lceil\frac{\widehat Q(X)}{60}\right\rceil\right\},\qquad
+\widehat\kappa(X)=\bigl(\widehat F(X),\widehat Q(X),\widehat\Pi(X)\bigr).
+\label{eq:a-light-score}
+\end{equation}
+其中$\widehat Q$和$\widehat\Pi$只用于安排试评顺序：前者按接收域估计结构搬运，后者以每核操作序上的张量首次与末次使用估计容量压力。路径代理对跨子图依赖加1000 cycle，未细分同核Task的100 cycle等待，也未模拟流水线与共享DDR事件；最终报告采用完整事件评价返回的$F_A$与$D_A$。式\eqref{eq:a-place}的$\widehat\kappa_A$采用同一排序量在部分计划上的取值。
+
+完整评价先覆盖去重后的整图、分量装桶和上一核正式选中锚点，再从其余候选中至少评价一个代表。设去重后必评计划数为$m$、请求额度为$q$，常规完整调用额度为$\max\{\min(q,2),m+1\}$。待评方案先经过结构展开检验；展开不成功的候选跳过，不消耗评价配额；进入完整事件模拟后失败才计入配额。成功集合按$(F_A,D_A)$字典序选最优方案；若当前最优慢于上一核或单核基准，再补评单调回退计划，随后只在当前$K$核的成功集合中确定\texttt{final\_selection}。
+
+\begin{algorithm}[H]\caption{问题一有限候选生成与完整评价}
+\begin{algorithmic}[1]
+\REQUIRE 原始图$G$、核数$K$、题设参数及请求完整调用额度$q$
+\ENSURE 选中映射、核心列表、工期和额外搬运
+\STATE 预处理生产消费关系，计算拓扑序、分量、D序和H序
+\STATE 生成A0整图、A1分量装桶、A2的$2K$块与A3的$4K$块
+\FOR{每个起点}
+\STATE 保留原方案；生成迁块、合并、调序和容量风险变体
+\STATE 规范化，检查商图及同核顺序，按方案内容去重
+\ENDFOR
+\STATE 对各起点做展开检查，并搜索轻量改善与容量改善代表
+\STATE 置整图、分量装桶和上一核正式选中计划为去重后的必评锚点
+\STATE 令$m$为必评数，完整调用额度为$\max\{\min(q,2),m+1\}$
+\WHILE{尚有候选且未达到常规完整调用额度}
+\STATE 先取未评必评计划，再取已展开检查的代表或轻量评分靠前者
+\STATE 展开失败则记录并继续；完整事件模拟保存结果或失败文本
+\ENDWHILE
+\STATE 若当前最优慢于上一核或单核基准，补评尚未评价的单调回退计划
+\STATE 在成功集合按$(F_A,D_A)$字典序选最终方案
+\end{algorithmic}\end{algorithm}
+
+静态分数和展开检查只决定试评顺序，工期、搬运和容量结果都来自完整事件评价。
+
+\subsection{问题一结果分析}
+\subsubsection{评价指标与正式选择}
+三问都以同一张图的整图单Task、单核A0方案的Makespan $T_{1,i}$为基准。问题一主矩阵覆盖1至5核、100张图，共500组；1核行也采用对应核数的正式选中结果。各核数均按主矩阵正式工期计算，令
+\begin{equation}
+S_{A,i,K}=T_{1,i}/F_A(X^*_{A,i,K}),\qquad K\in\{1,2,3,4,5\},\qquad
+\overline S_{A,K}=\frac1{100}\sum_{i=1}^{100}S_{A,i,K}.
+\label{eq:a-speedup}
+\end{equation}
+
+
+后文的“正式选中方案”专指对应核数$K$下候选评价输出的最终计划，记为$X^*_{r,K}$；上一核正式选中计划只作为下一核搜索的锚点或单调回退候选，不在结果汇总阶段再次跨核数取最短工期。这样，主矩阵中的每一行都对应一个明确的$(\text{图},\text{场景},K)$组合，表和曲线直接读取该行的$F_r(X^*_{r,K})$。
+
+\subsubsection{加速比结果}
+表\ref{tab:a-results}给出主矩阵中正式选中方案的加速比分布。图\ref{fig:speedup-a}的浅色带为100张图有放回重采样1500次得到的均值95\%区间，表示均值随图集合组成的波动范围。
+\begin{table}[H]\centering\small\caption{问题一：100图逐核加速比（主矩阵正式选中方案；慢例按未舍入工期严格比较）}\label{tab:a-results}
+\begin{tabularx}{\linewidth}{cYYYYY}\toprule
+核数 & 平均加速比 & 中位数 & 均值重采样区间 & 慢于A0图数 & 首个成功至最终降幅/\%\\\midrule
+1 & 1.0220 & 1.0000 & [1.0096,1.0380] & 0 & 1.7900\\
+2 & 1.7432 & 1.9650 & [1.6653,1.8146] & 0 & 38.5943\\
+3 & 2.3742 & 2.8407 & [2.2131,2.5183] & 0 & 50.0193\\
+4 & 2.9520 & 3.6710 & [2.7185,3.1806] & 0 & 55.5842\\
+5 & 3.4383 & 4.0343 & [3.1338,3.7352] & 0 & 58.6697\\\bottomrule
+\end{tabularx}\end{table}
+\samplefigure{speedup_A}{问题一加速比：100图均值、中位数及均值95\%重采样区间}{fig:speedup-a}
+
+五核平均加速比为3.4383，中位数为4.0343。由四核到五核，65张图工期缩短、30张图持平、5张图变长；这是对应核数的有限候选正式选择结果，不能改写成跨核数取最短的单调曲线。
+
+\subsubsection{搬运量分解}
+表\ref{tab:a-copy-results}按式\eqref{eq:a-copy-breakdown}拆分主矩阵正式选中方案的额外搬运，每格为100张图的字节数均值（MiB）。由单核到五核，划分新增搬运从1.687升至3.659 MiB，容量恢复在1至5核分别为10.064、11.156、10.647、10.229和9.895 MiB。五核有28张图发生容量恢复，结构边界和物理副本寿命共同决定总搬运。
+\begin{table}[H]\centering\caption{问题一额外搬运的结构与容量分解（主矩阵正式选中方案，100图均值，MiB）}\label{tab:a-copy-results}
+\begin{tabular}{crrrr}\toprule
+核数 & 划分新增 & 容量恢复 & 额外搬运合计 & 有容量恢复的图数\\\midrule
+1 & 1.687 & 10.064 & 11.751 & 39\\
+2 & 1.508 & 11.156 & 12.664 & 35\\
+3 & 2.815 & 10.647 & 13.461 & 33\\
+4 & 3.462 & 10.229 & 13.691 & 30\\
+5 & 3.659 & 9.895 & 13.554 & 28\\\bottomrule
+\end{tabular}\end{table}
+
+搬运量与工期并不同向变化：二核之后额外搬运逐核增加，平均加速比仍持续上升。式\eqref{eq:ddr-share}表明同样的字节量在不同时刻会遇到不同的并发数，式\eqref{eq:a-wait}又使跨Task和跨核等待进入关键路径。因此候选排序以字节量为辅助项，选优以模拟工期为第一目标。
+
+\subsubsection{典型算例与原始候选退化}
+\Case{001}有600个非COPY操作。五核A1方案按分量装桶，把它们分为五个各含120个操作的子图，每核执行一块。整图单核工期233110 cycle，四核58984 cycle，五核47502 cycle，五核加速比4.9074；仅新增4608 B划分搬运，无容量恢复。
+
+\Case{053}体现容量约束的持续作用。五核正式选中方案工期491765 cycle，加速比2.9947；额外搬运4464536 B中，划分新增1194496 B，容量恢复3275040 B，容量恢复仍占主要部分。
+
+有限候选的正式选择在个别图上会出现增核退化：\Case{043}由四核的268777 cycle变为五核的295497 cycle，虽然五核结构附加搬运由141320 B增至431104 B；\Case{082}则由四核712066 cycle变为五核721041 cycle，同时五核回到A0整图方案。这样的局部退化保留在主矩阵中，便于如实分析候选预算与核数的关系。
+
+\subsubsection{方案合法性检查}
+每个最终方案回代操作归属与核心列表，检查全部非COPY操作恰好归属一次、子图非空且在核心列表中恰好出现一次，再由评估程序展开确认。全部结果文件的字段一致性检查和15项跨场景抽样重算见附录\ref{app:provenance}。
+
+五核正式选择的候选标签中，A1\_base占46图、L1\_base占26图、A0\_base占11图、incumbent\_base占9图，L2\_base和A2\_base各占3图，另有2图由局部切分候选胜出；这些标签来自\texttt{final\_selection}，不是事后跨核数重选。逐图工期与额外搬运见附录\ref{app:results}。
+
+\subsection{问题一灵敏度分析}
+以可用核数$K$为扰动量，固定100张原图和场景A规则，直接比较主矩阵正式选中方案。由四核增至五核时，65图缩短、30图持平、5图延长，平均加速比由2.9520升至3.4383；两核与五核的均值重采样区间分别为$[1.6653,1.8146]$和$[3.1338,3.7352]$。\Case{043}和\Case{082}的局部退化说明增加核心并不自动消除边界搬运和关键路径等待，正式结果保留这些信息。

@@ -1,0 +1,86 @@
+{
+  "official_preflight_rejected": [],
+  "selected": [
+    "L1_base",
+    "A1_base"
+  ],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "score": [
+        67809,
+        554898,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A1_base",
+      "score": [
+        34144,
+        565842,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A2_base",
+      "score": [
+        34992,
+        605458,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A3_base",
+      "score": [
+        34676,
+        1808430,
+        0,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "L1_base",
+      "score": [
+        34006,
+        584274,
+        0,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L2_base",
+      "score": [
+        36719,
+        621980,
+        0,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L3_base",
+      "score": [
+        36020,
+        2161188,
+        68224,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    }
+  ]
+}

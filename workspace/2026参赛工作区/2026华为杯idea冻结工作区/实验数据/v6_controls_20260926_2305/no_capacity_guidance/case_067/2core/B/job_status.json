@@ -1,0 +1,51 @@
+{
+  "rows": [
+    {
+      "added_copy_bytes": 264024576,
+      "cache_hit_bytes": 0,
+      "cache_hit_rate": 0.0,
+      "cache_miss_bytes": 0,
+      "candidate": "B1_base",
+      "case": "case_067",
+      "control": "no_capacity_guidance",
+      "cores": 2,
+      "definition": "B R start uses H; capacity anchors, edits, representative and pressure ranking are removed; official Step2 spilling remains active.",
+      "evaluation_seconds": 4.948439165999844,
+      "makespan": 33768704,
+      "original_graph_copy_bytes": 6048128,
+      "partition_added_copy_bytes": 3721600,
+      "plan_sha256": "de4fc70bed692708f7aafe564468d462ad2cfa41508d6423ee70e58b2805f93e",
+      "rank": 1,
+      "scene": "B",
+      "scheduled_copy_bytes": 270072704,
+      "selected": true,
+      "source": "seed",
+      "spill_added_copy_bytes": 260302976,
+      "status": "AI_VERIFIED"
+    },
+    {
+      "added_copy_bytes": 255762432,
+      "cache_hit_bytes": 0,
+      "cache_hit_rate": 0.0,
+      "cache_miss_bytes": 0,
+      "candidate": "L2_base",
+      "case": "case_067",
+      "control": "no_capacity_guidance",
+      "cores": 2,
+      "definition": "B R start uses H; capacity anchors, edits, representative and pressure ranking are removed; official Step2 spilling remains active.",
+      "evaluation_seconds": 3.7879761250005686,
+      "makespan": 45720205,
+      "original_graph_copy_bytes": 6048128,
+      "partition_added_copy_bytes": 1163264,
+      "plan_sha256": "1af6ffee703b2a7faf4473a35bba235320b8d53823ac3c8dc8a7f2a54036f081",
+      "rank": 2,
+      "scene": "B",
+      "scheduled_copy_bytes": 261810560,
+      "selected": false,
+      "source": "legacy_seed",
+      "spill_added_copy_bytes": 254599168,
+      "status": "AI_VERIFIED"
+    }
+  ],
+  "status": "COMPUTED"
+}

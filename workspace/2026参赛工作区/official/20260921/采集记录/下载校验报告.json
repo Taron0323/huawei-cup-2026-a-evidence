@@ -1,0 +1,132 @@
+{
+  "source_records_verified": 51,
+  "attachment_count": 12,
+  "checks": [
+    {
+      "path": "02_官方附件/附件1：“华为杯”第二十三届中国研究生数学建模竞赛下载试题及上传论文操作手册.pdf",
+      "sha256_matches": true,
+      "bytes": 1276899,
+      "pages": 16,
+      "encrypted": false,
+      "empty_text_pages": [],
+      "extracted_characters": 4797,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/附件2：“华为杯”第二十三届中国研究生数学建模竞赛论文格式规范.docx",
+      "sha256_matches": true,
+      "bytes": 93167,
+      "zip_crc": "PASS",
+      "xml": "PASS",
+      "extracted_characters": 674,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/附件3：“华为杯”第二十三届中国研究生数学建模竞赛论文模板.doc",
+      "sha256_matches": true,
+      "bytes": 894976,
+      "ole_magic": "PASS",
+      "textutil_read": "PASS",
+      "extracted_characters": 487,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/附件4：“华为杯”第二十三届中国研究生数学建模竞赛人工智能工具及输出使用规定.docx",
+      "sha256_matches": true,
+      "bytes": 18523,
+      "zip_crc": "PASS",
+      "xml": "PASS",
+      "extracted_characters": 1051,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/2026年中国研究生数学建模竞赛培训教师学术交流会通知(盖章版).pdf",
+      "sha256_matches": true,
+      "bytes": 666654,
+      "pages": 3,
+      "encrypted": false,
+      "empty_text_pages": [],
+      "extracted_characters": 1793,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/附件一：报告内容.pdf",
+      "sha256_matches": true,
+      "bytes": 94063,
+      "pages": 1,
+      "encrypted": false,
+      "empty_text_pages": [],
+      "extracted_characters": 572,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/附件二：交通指南.pdf",
+      "sha256_matches": true,
+      "bytes": 169432,
+      "pages": 1,
+      "encrypted": false,
+      "empty_text_pages": [],
+      "extracted_characters": 698,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/关于推荐第二十三届中国研究生数学建模竞赛网评专家的通知.pdf",
+      "sha256_matches": true,
+      "bytes": 1348718,
+      "pages": 1,
+      "encrypted": false,
+      "empty_text_pages": [
+        1
+      ],
+      "extracted_characters": 20,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/第二十三届中国研究生数学建模竞赛评审专家推荐表.docx",
+      "sha256_matches": true,
+      "bytes": 18793,
+      "zip_crc": "PASS",
+      "xml": "PASS",
+      "extracted_characters": 270,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/中国研究生创新实践系列大赛数模竞赛-用户手册（研究生培养单位）.pdf",
+      "sha256_matches": true,
+      "bytes": 2467849,
+      "pages": 19,
+      "encrypted": false,
+      "empty_text_pages": [],
+      "extracted_characters": 10598,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/中国研究生创新实践系列大赛数模竞赛-用户手册（学生）V4.1.pdf",
+      "sha256_matches": true,
+      "bytes": 3000815,
+      "pages": 19,
+      "encrypted": false,
+      "empty_text_pages": [],
+      "extracted_characters": 8492,
+      "status": "PASS"
+    },
+    {
+      "path": "02_官方附件/“华为杯”第二十三届中国研究生数学建模竞赛参赛邀请函.pdf",
+      "sha256_matches": true,
+      "bytes": 1414627,
+      "pages": 7,
+      "encrypted": false,
+      "empty_text_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "extracted_characters": 146,
+      "status": "PASS"
+    }
+  ]
+}

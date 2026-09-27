@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        7703033,
+        81921.36666666667,
+        -196608,
+        655360,
+        "base_base"
+      ],
+      "plan_sha256": "6d6434de9c3ef3ce26d1ae7f99555457339f55d779d89363ccbbf36dce152590",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "base_move",
+      "expanded_rank": [
+        7703033,
+        88474.96666666666,
+        -196608,
+        655360,
+        "base_move"
+      ],
+      "plan_sha256": "d53dc6e84a163b3cf20bedb38dfefc7f822b4984973d4c04fd4a0a9aa7ff8830",
+      "source": "ordinary"
+    },
+    {
+      "candidate": "base_disperse_tid_1000002265_node_2255_core_1_pos_0",
+      "expanded_rank": [
+        7703010,
+        81375.23333333334,
+        -163840,
+        655360,
+        "base_disperse_tid_1000002265_node_2255_core_1_pos_0"
+      ],
+      "plan_sha256": "26b1b5ec5eb95043e231ace788c5c7cd439baedcc596bbb8bc15fd1463c7ab19",
+      "source": "disperse"
+    },
+    {
+      "candidate": "base_split_release_g3_p4",
+      "expanded_rank": [
+        7703033,
+        81921.36666666667,
+        -196608,
+        655360,
+        "base_split_release_g3_p4"
+      ],
+      "plan_sha256": "c6858c6e624c2b93e7c9509b6a42571748d93cdcca7736f37a074dc93b7d93ef",
+      "source": "timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 7703,
+  "winner": "base_disperse_tid_1000002265_node_2255_core_1_pos_0"
+}

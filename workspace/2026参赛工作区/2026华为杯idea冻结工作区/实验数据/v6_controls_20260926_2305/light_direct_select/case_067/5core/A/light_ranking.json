@@ -1,0 +1,74 @@
+{
+  "selected": [
+    "L2_base",
+    "L3_base"
+  ],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "score": [
+        61275840,
+        6048128,
+        59470208,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A1_base",
+      "score": [
+        12945600,
+        20934528,
+        72259456,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A2_base",
+      "score": [
+        12945600,
+        39542528,
+        44519296,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "A3_base",
+      "score": [
+        13587760,
+        39335168,
+        33731072,
+        0,
+        0
+      ],
+      "source": "seed"
+    },
+    {
+      "candidate": "L2_base",
+      "score": [
+        12274224,
+        40083200,
+        44343168,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    },
+    {
+      "candidate": "L3_base",
+      "score": [
+        12896560,
+        32469632,
+        30721920,
+        0,
+        0
+      ],
+      "source": "legacy_seed"
+    }
+  ]
+}

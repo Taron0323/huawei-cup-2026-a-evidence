@@ -1,0 +1,132 @@
+[
+  {
+    "id": "A24103350007",
+    "award": "提名奖",
+    "university": "浙江大学",
+    "problem": "A",
+    "pdf_pages": 79,
+    "sha256": "7fe2813d94da5d72676dd6c8fe0ff6cfead155b8aeb67918be9269de1a0cab5e",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_浙江大学_A24103350007.pdf",
+    "text_chars": 88451
+  },
+  {
+    "id": "A24107120016",
+    "award": "提名奖",
+    "university": "西北农林科技大学",
+    "problem": "A",
+    "pdf_pages": 59,
+    "sha256": "daa73a15a67fe912cebe0948f9db9c2ad8e985032f55212eecd64393308ca9e6",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_西北农林科技大学_A24107120016.pdf",
+    "text_chars": 79380
+  },
+  {
+    "id": "B24102860287",
+    "award": "季军",
+    "university": "东南大学",
+    "problem": "B",
+    "pdf_pages": 90,
+    "sha256": "3e0fc95ca986458c90e024b55ad074660d419331f5b2feef26377e5e9abc5ee4",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/季军_东南大学_B24102860287.pdf",
+    "text_chars": 151493
+  },
+  {
+    "id": "B24116640167",
+    "award": "提名奖",
+    "university": "西安邮电大学",
+    "problem": "B",
+    "pdf_pages": 69,
+    "sha256": "26a34f2fa048e06f40e4d7981e25fc6f5f01067ceafc5e98af48916e4a51c637",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_西安邮电大学_B24116640167.pdf",
+    "text_chars": 89525
+  },
+  {
+    "id": "C24104220149",
+    "award": "冠军",
+    "university": "山东大学",
+    "problem": "C",
+    "pdf_pages": 71,
+    "sha256": "382bde4b71f57eae705347767120aa58b2d993ae090d71cdf246d0e13d6bf871",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/冠军_山东大学_C24104220149.pdf",
+    "text_chars": 81920
+  },
+  {
+    "id": "C24102890089",
+    "award": "亚军",
+    "university": "江苏科技大学",
+    "problem": "C",
+    "pdf_pages": 71,
+    "sha256": "81f2b821a8f442cd0c94f067edd27c570e2d63ddbbcae3a7d92f1f573e410b48",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/亚军_江苏科技大学_C24102890089.pdf",
+    "text_chars": 76929
+  },
+  {
+    "id": "C24103860012",
+    "award": "提名奖",
+    "university": "福州大学",
+    "problem": "C",
+    "pdf_pages": 82,
+    "sha256": "20aa9ecb0164fd4e11130590da00f8e0a22a1147dc43b1b85ba9aa4f951a56d3",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_福州大学_C24103860012.pdf",
+    "text_chars": 82356
+  },
+  {
+    "id": "D24104460003",
+    "award": "提名奖",
+    "university": "曲阜师范大学",
+    "problem": "D",
+    "pdf_pages": 96,
+    "sha256": "01a6fe09f175de99159d78bdf8aa5997bc4564d85ae7f931f5715df5f2603db4",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_曲阜师范大学_D24104460003.pdf",
+    "text_chars": 102944
+  },
+  {
+    "id": "D24103850092",
+    "award": "提名奖",
+    "university": "华侨大学",
+    "problem": "D",
+    "pdf_pages": 113,
+    "sha256": "a8c55b50f7be97971dc0b5844952dcbdc6929c07f52f841c0d0add83bec7628d",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_华侨大学_D24103850092.pdf",
+    "text_chars": 140683
+  },
+  {
+    "id": "E24101480006",
+    "award": "提名奖",
+    "university": "辽宁石油化工大学",
+    "problem": "E",
+    "pdf_pages": 84,
+    "sha256": "84047e2dd922687d05f1ff326408c32dda51bc95ca1d1cd568ca8eac409ab9e4",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_辽宁石油化工大学_E24101480006.pdf",
+    "text_chars": 76147
+  },
+  {
+    "id": "E24102910005",
+    "award": "提名奖",
+    "university": "南京工业大学",
+    "problem": "E",
+    "pdf_pages": 60,
+    "sha256": "7420d18869b74b8f8a5d036e57ac0fa7b3a94fc54313e1729bbd97e578cfe2cd",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_南京工业大学_E24102910005.pdf",
+    "text_chars": 62230
+  },
+  {
+    "id": "F24102870082",
+    "award": "提名奖",
+    "university": "南京航空航天大学",
+    "problem": "F",
+    "pdf_pages": 44,
+    "sha256": "71f0d1214c0790b5cbcdd45ad6c7712ea1fda01ea98b98f5e22f70e0ab987f9b",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_南京航空航天大学_F24102870082.pdf",
+    "text_chars": 71779
+  },
+  {
+    "id": "F24910020063",
+    "award": "提名奖",
+    "university": "国防科技大学",
+    "problem": "F",
+    "pdf_pages": 53,
+    "sha256": "19377b63620d87cd6bbca526c7276857335f5bf99d30bed61e710f8bdb389125",
+    "source_path": "prep/数模之星优秀论文_2024-2025/2024/提名奖_国防科技大学_F24910020063.pdf",
+    "text_chars": 58953
+  }
+]

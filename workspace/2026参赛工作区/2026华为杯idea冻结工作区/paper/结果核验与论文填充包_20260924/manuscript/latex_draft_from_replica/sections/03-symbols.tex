@@ -1,0 +1,26 @@
+\section{本文数学符号说明}
+\begin{longtable}{p{0.20\linewidth}p{0.30\linewidth}p{0.35\linewidth}}
+\caption{主要符号、单位和证据边界}\\\toprule
+符号 & 含义 & 单位或取值范围\\\midrule
+\endfirsthead
+\toprule 符号 & 含义 & 单位或取值范围\\\midrule
+\endhead
+$G=(T,V,E)$ & 一张计算图，$T$ 为张量、$V$ 为操作、$E$ 为边 & 无\\
+$t,v,s,k$ & 张量、操作、子图和核心的索引 & 整数\\
+$b_t$ & 张量 $t$ 的大小 & bytes\\
+$K$ & 核数 & $1\le K\le5$\\
+$g(v)$ & 操作 $v$ 所属子图 id & 非负整数\\
+$a(s)$ & 子图 $s$ 所在核心 & $0,\ldots,K-1$\\
+$\sigma_k$ & 核心 $k$ 的子图执行顺序 & 排列\\
+$X=(g,a,\sigma)$ & 一个完整切图与调度方案 & 方案对象\\
+$F_r(X)$ & 场景 $r$ 的官方 Makespan & cycles\\
+$Q^{\mathrm{orig}}$ & 原始图 DDR 搬运量 & bytes\\
+$Q^{\mathrm{sched}}$ & 评估器补充调度后的 DDR 搬运量 & bytes\\
+$Q^{\mathrm{add}}$ & 额外搬运量 $Q^{\mathrm{sched}}-Q^{\mathrm{orig}}$ & bytes\\
+$A_{\tilde t},L_{\tilde t}$ & 物理张量版本的申请和释放时间 & cycles\\
+$C_m$ & 存储区 $m$ 的容量，$m\in\{L1,UB\}$ & bytes\\
+$\rho$ & Cache 命中字节占比 & $[0,1]$\\
+\bottomrule
+\end{longtable}
+
+问题一中，一个子图对应一个 Task；问题二和问题三中，一个核心上的全部子图合并为一个 Task。文中“结构搬运”指由驻留域边界直接产生的 COPY 字节；“Spill 搬运”指核内容量不足后插入的换出与换入字节；“Cache 服务字节”指由共享只读 Cache 承担的 COPY\_IN 访问。三者的统计口径不同，后续结果表必须分列。

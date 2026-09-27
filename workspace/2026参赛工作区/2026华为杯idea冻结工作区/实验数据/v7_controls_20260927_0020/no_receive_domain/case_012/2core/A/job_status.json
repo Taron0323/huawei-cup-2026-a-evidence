@@ -1,0 +1,51 @@
+{
+  "rows": [
+    {
+      "added_copy_bytes": 29376,
+      "cache_hit_bytes": 0,
+      "cache_hit_rate": 0.0,
+      "cache_miss_bytes": 0,
+      "candidate": "L1_base",
+      "case": "case_012",
+      "control": "no_receive_domain",
+      "cores": 2,
+      "definition": "A/B starts and local edits use compute load, path and id instead of receive-domain byte priorities; real copy traffic remains in official profile and evaluation.",
+      "evaluation_seconds": 0.3190393330005463,
+      "makespan": 30058,
+      "original_graph_copy_bytes": 554898,
+      "partition_added_copy_bytes": 29376,
+      "plan_sha256": "db30914618b4c8f56b037619f2bd7f5e53a72647f2c498d2d97d684db3177abf",
+      "rank": 1,
+      "scene": "A",
+      "scheduled_copy_bytes": 584274,
+      "selected": true,
+      "source": "legacy_seed",
+      "spill_added_copy_bytes": 0,
+      "status": "AI_VERIFIED"
+    },
+    {
+      "added_copy_bytes": 10944,
+      "cache_hit_bytes": 0,
+      "cache_hit_rate": 0.0,
+      "cache_miss_bytes": 0,
+      "candidate": "A1_base",
+      "case": "case_012",
+      "control": "no_receive_domain",
+      "cores": 2,
+      "definition": "A/B starts and local edits use compute load, path and id instead of receive-domain byte priorities; real copy traffic remains in official profile and evaluation.",
+      "evaluation_seconds": 0.3173184580009547,
+      "makespan": 30865,
+      "original_graph_copy_bytes": 554898,
+      "partition_added_copy_bytes": 10944,
+      "plan_sha256": "760245d792198d9a5c42701240f69c35bb9c9d5bc40214a907b4d15655c161c0",
+      "rank": 2,
+      "scene": "A",
+      "scheduled_copy_bytes": 565842,
+      "selected": false,
+      "source": "seed",
+      "spill_added_copy_bytes": 0,
+      "status": "AI_VERIFIED"
+    }
+  ],
+  "status": "COMPUTED"
+}

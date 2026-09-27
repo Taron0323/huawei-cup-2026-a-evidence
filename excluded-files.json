@@ -1,0 +1,1538 @@
+[
+  {
+    "path": "华为杯2026准备包_20260921.zip!/2026参赛工作区/paper/latex/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "华为杯2026准备包_20260921.zip!/2026参赛工作区/paper/latex/official-cover.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "华为杯2026准备包_20260921.zip!/2026参赛工作区/paper/preview/latex/template.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "华为杯2026准备包_20260921.zip!/2026参赛工作区/paper/preview/reference/official-template.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "华为杯2026准备包_20260921.zip!/2026参赛工作区/paper/preview/word/working-template.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "华为杯2026准备包_20260921.zip!/2026参赛工作区/reference/reference_C23105320040.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2025D论文复刻与2026LaTeX模板_20260922.zip!/latex_d2025_style/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2025D论文复刻与2026LaTeX模板_20260922.zip!/latex_d2025_style/output/facsimile.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2025D论文复刻与2026LaTeX模板_20260922.zip!/latex_d2025_style/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2025D论文复刻与2026LaTeX模板_20260922.zip!/latex_d2025_style/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2025D论文复刻与2026LaTeX模板_20260922.zip!/latex_d2025_style/output/models.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2025D论文复刻与2026LaTeX模板_20260922.zip!/latex_d2025_style/sources/reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/亚军_江苏科技大学_C24102890089.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/冠军_山东大学_C24104220149.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/季军_东南大学_B24102860287.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_华侨大学_D24103850092.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_南京工业大学_E24102910005.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_南京航空航天大学_F24102870082.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_国防科技大学_F24910020063.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_曲阜师范大学_D24104460003.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_浙江大学_A24103350007.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_福州大学_C24103860012.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_西北农林科技大学_A24107120016.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_西安邮电大学_B24116640167.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星论文_2024已齐13篇_2025待补原文.zip!/数模之星优秀论文_2024-2025/2024/提名奖_辽宁石油化工大学_E24101480006.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2026华为杯idea冻结工作区/论文正文初稿_v0.1_LaTeX_无实验结果_20260925.zip!/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2026华为杯idea冻结工作区/paper/结果核验与论文填充包_20260924.zip!/结果核验与论文填充包_20260924/manuscript/latex_draft_from_replica/build/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2026华为杯idea冻结工作区/paper/结果核验与论文填充包_20260924.zip!/结果核验与论文填充包_20260924/manuscript/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/HuaweiCup2026_A_schemeB_v7_latex_collaborator_package_20260927.zip!/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_025400_当前主源.zip!/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_025400_当前主源.zip!/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_025400_当前主源.zip!/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_025400_当前主源.zip!/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_021132_当前主工作区.zip!/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_021132_当前主工作区.zip!/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_021132_当前主工作区.zip!/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_021132_当前主工作区.zip!/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_三级标题修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_三级标题修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_三级标题修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_三级标题修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3.zip!/latex_draft_from_replica_v7_raw_20260927_delivery_3/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3.zip!/latex_draft_from_replica_v7_raw_20260927_delivery_3/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3.zip!/latex_draft_from_replica_v7_raw_20260927_delivery_3/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3.zip!/latex_draft_from_replica_v7_raw_20260927_delivery_3/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260925_最终修订版.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_35101_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_render_failure_20260926/frontmatter_before.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_final/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter-abstract.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_pos24_num43_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_doc_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926_team_lift_keep/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_up36_num63_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_up36_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_pos24_num6_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_up52_num79_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_again_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_again_20260926/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_up36_20260926_good/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_pos24_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_20260926/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_docx_revision_20260926/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_restore_team_number/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_reference_20260926/frontmatter-abstract.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_latest_pdf_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l60_n75/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l76_n87/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l68_n83/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l52_n71/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l60_n79/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l44_n69/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/aborted_cover_replacement_20260926/cover_page_881d423f34974fd6aa7b7483abaa16a7.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/aborted_cover_replacement_20260926/frontmatter_before.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_toc_revision_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926_team_lift/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_export/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_baseline_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_baseline_20260926/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_final2/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_render_repair_20260926/frontmatter-abstract.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_revision_20260926c/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/reference_doc_20260926/881d423f34974fd6aa7b7483abaa16a7 (1).pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l36_n70/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l52_n79/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l52_n71/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l36_n63/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l0_n0/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l44_n69/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l20_n29/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l24_n43/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926_team_center/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_followup2_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_followup_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/华为杯2026_A题_LaTeX协作包_20260927_023658_当前主工作区.zip!/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_prompt_20260926/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927.zip!/latex_draft_from_replica_v7_raw_figure2_20260927/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927.zip!/latex_draft_from_replica_v7_raw_figure2_20260927/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927.zip!/latex_draft_from_replica_v7_raw_figure2_20260927/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927.zip!/latex_draft_from_replica_v7_raw_figure2_20260927/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/A题V0.1_复刻模板版_20260924.zip!/A题V0.1_复刻模板版_20260924/frontmatter.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/A题V0.1_复刻模板版_20260924.zip!/A题V0.1_复刻模板版_20260924/output/main-2026.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/A题V0.1_复刻模板版_20260924.zip!/A题V0.1_复刻模板版_20260924/output/main-overleaf.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/A题V0.1_复刻模板版_20260924.zip!/A题V0.1_复刻模板版_20260924/output/main-reference.pdf",
+    "reason": "paper_pdf_inside_zip"
+  },
+  {
+    "path": "2026参赛工作区/2026华为杯idea冻结工作区/paper/latex_draft_from_replica/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/2026华为杯idea冻结工作区/paper/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/2026华为杯idea冻结工作区/paper/结果核验与论文填充包_20260924/manuscript/latex_draft_from_replica/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/2026华为杯idea冻结工作区/paper/结果核验与论文填充包_20260924/manuscript/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260923_1515_compute/before/latex/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260923_1515_compute/before/latex/official-cover.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260923_1515_compute/before/latex/build/main.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted/A题V0.1_复刻模板版_20260924/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted/A题V0.1_复刻模板版_20260924/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted/A题V0.1_复刻模板版_20260924/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted/A题V0.1_复刻模板版_20260924/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3/A题V0.1_复刻模板版_20260924/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3/A题V0.1_复刻模板版_20260924/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3/A题V0.1_复刻模板版_20260924/build/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3/A题V0.1_复刻模板版_20260924/build/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3/A题V0.1_复刻模板版_20260924/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3/A题V0.1_复刻模板版_20260924/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3/A题V0.1_复刻模板版_20260924/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3-failed-matplotlib/A题V0.1_复刻模板版_20260924/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3-failed-matplotlib/A题V0.1_复刻模板版_20260924/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3-failed-matplotlib/A题V0.1_复刻模板版_20260924/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/clean-extracted-3-failed-matplotlib/A题V0.1_复刻模板版_20260924/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/superseded-20260924-paper/A题论文V0.1_试验稿_20260924.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/superseded-20260924-paper/latex/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/superseded-20260924-paper/latex/official-cover.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/superseded-20260924-paper/latex/build/frontmatter_v071.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/superseded-20260924-paper/latex/build/main.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/superseded-20260924-paper/latex/build_frontmatter/frontmatter_v071.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_D_replica_to_A/template-word-render/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/after/paper/A题论文V0.1_试验稿_20260924.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/before/paper/A题论文V0.1_P0P1修订试验稿_20260924.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/before/paper/A题论文V0.1_试验稿_20260924.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/before/paper/latex/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/superseded/paper/A题论文V0.1_P0P1修订试验稿_20260924.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/superseded/paper/latex/build_p01/main_p01.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/superseded/paper/latex/build_v071_4/main_v071.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/superseded/paper/latex/build_v071_7/main_v071.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/superseded/paper/latex/build_v071_8/main.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_exemplar_rewrite/superseded/paper/latex/build_v071_9/main.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_final_idea_paper_update/after/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_final_idea_paper_update/before/main-2026-v071.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_final_idea_paper_update/before/qa-v071/word-expanded/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_final_idea_paper_update/before/qa-v071/word-expanded3/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_final_idea_paper_update/before/qa-v071/word-expanded4/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_final_idea_paper_update/before/qa-v071/word-expanded5/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_final_idea_paper_update/before/qa-v071/word-final/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_idea_v071/literature/Alpa_2201.12023.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_idea_v1/literature/R1_2002.02962v2.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_idea_v1/literature/R2_1511.03137v1.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_paper_restoration/before/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_paper_restoration/before/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_paper_restoration/before/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_paper_restoration/before/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_reference_style_restructure/before/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/Each Stage Review Work/20260924_replica_40page_completion/before/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/before-visual.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/frontmatter-before.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/render2/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/simsun/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/size230_down100/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/size230_down75/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/size245/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/size245_down105/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/size245_down75/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_cover_alignment_qa/size245_down90/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_final_qa/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_final_qa2/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_final_qa3/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/frontmatter_final_qa4/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/section_b_check/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/section_b_check/preamble.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/stage_before_abstract_appendix_20260924/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/stage_before_abstract_appendix_20260924/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/stage_before_code_ref_trim_20260925/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/build/stage_before_style_revision_20260925/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/snapshots/20260924_before_final_page_qa/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/archive/latex_draft_from_replica_before_collaborator_main_20260925/snapshots/20260924_before_final_page_qa/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter-abstract.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/aborted_cover_replacement_20260926/cover_page_881d423f34974fd6aa7b7483abaa16a7.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/aborted_cover_replacement_20260926/frontmatter_before.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_export/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_reference_20260926/frontmatter-abstract.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_render_failure_20260926/frontmatter_before.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/abstract_render_repair_20260926/frontmatter-abstract.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_restore_team_number/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_final/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_final2/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_up36_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_up36_20260926_good/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/export_team_number_up36_num63_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926_team_center/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926_team_lift/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_export_20260926_team_lift_keep/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_pos24_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_pos24_num43_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/frontmatter_team_number_baseline_pos24_num6_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_latest_pdf_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l0_n0/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l20_n29/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l24_n43/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l36_n63/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l36_n70/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l44_n69/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l52_n71/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep2_20260926/l52_n79/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l44_n69/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l52_n71/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l60_n75/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l60_n79/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l68_n83/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_param_sweep_20260926/l76_n87/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/qa_team_number_up52_num79_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/reference_doc_20260926/881d423f34974fd6aa7b7483abaa16a7 (1).pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_35101_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_doc_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_prompt_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_revision_20260926c/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_abstract_toc_revision_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_docx_revision_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_baseline_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_baseline_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_again_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_again_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_followup2_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/build/stage_before_team_number_lift_followup_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/output/2026 华为杯最终版.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter-abstract.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/aborted_cover_replacement_20260926/cover_page_881d423f34974fd6aa7b7483abaa16a7.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/aborted_cover_replacement_20260926/frontmatter_before.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/abstract_export/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/abstract_reference_20260926/frontmatter-abstract.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/abstract_render_failure_20260926/frontmatter_before.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/abstract_render_repair_20260926/frontmatter-abstract.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/export_restore_team_number/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/export_team_number_final/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/export_team_number_final2/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/export_team_number_up36_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/export_team_number_up36_20260926_good/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/export_team_number_up36_num63_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_export_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_export_20260926_team_center/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_export_20260926_team_lift/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_export_20260926_team_lift_keep/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_team_number_baseline_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_team_number_baseline_pos24_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_team_number_baseline_pos24_num43_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/frontmatter_team_number_baseline_pos24_num6_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_latest_pdf_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l0_n0/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l20_n29/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l24_n43/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l36_n63/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l36_n70/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l44_n69/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l52_n71/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep2_20260926/l52_n79/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep_20260926/l44_n69/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep_20260926/l52_n71/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep_20260926/l60_n75/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep_20260926/l60_n79/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep_20260926/l68_n83/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_param_sweep_20260926/l76_n87/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/qa_team_number_up52_num79_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/reference_doc_20260926/881d423f34974fd6aa7b7483abaa16a7 (1).pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_35101_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_abstract_doc_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_abstract_prompt_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_abstract_revision_20260926c/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_abstract_toc_revision_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_docx_revision_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_baseline_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_baseline_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_lift_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_lift_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_lift_again_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_lift_again_20260926/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_lift_followup2_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/build/stage_before_team_number_lift_followup_20260926/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_collaborator_package_20260925/latex_draft_from_replica_snapshot_20260927_020747/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_20260927_delivery_3/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/latex_draft_from_replica_v7_raw_figure2_20260927/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/archive/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/archive/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/archive/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/build/frontmatter-abstract.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/latex_draft_from_replica/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/teammate_revision_20260927_snapshot_before_v7/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/teammate_revision_20260927_snapshot_before_v7/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/teammate_revision_20260927_snapshot_before_v7/archive/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/teammate_revision_20260927_snapshot_before_v7/archive/output/main-overleaf.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/teammate_revision_20260927_snapshot_before_v7/archive/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/teammate_revision_20260927_snapshot_before_v7/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/deliveries/teammate_revision_20260927/teammate_revision_20260927_snapshot_before_v7/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/frontmatter.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/build/facsimile.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/build/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/build/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/build/models.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/output/facsimile.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/output/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/output/main-reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/output/models.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/latex_d2025_style/sources/reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/preview/latex/template.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/preview/reference/official-template.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/paper/preview/word/working-template.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/github/huawei-cup-champion/.git",
+    "reason": "git_internal_metadata"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/亚军_江苏科技大学_C24102890089.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/冠军_山东大学_C24104220149.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/季军_东南大学_B24102860287.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_华侨大学_D24103850092.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_南京工业大学_E24102910005.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_南京航空航天大学_F24102870082.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_国防科技大学_F24910020063.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_曲阜师范大学_D24104460003.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_浙江大学_A24103350007.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_福州大学_C24103860012.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_西北农林科技大学_A24107120016.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_西安邮电大学_B24116640167.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/prep/数模之星优秀论文_2024-2025/2024/提名奖_辽宁石油化工大学_E24101480006.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/reference/reference_C23105320040.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/reference/d2025_style/reference.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/review/pdf_review_20260926/main-2026-review-20260926.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/review/pdf_review_20260926/main-2026-review-35101.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "2026参赛工作区/review/pdf_review_20260926/main-2026-review.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "idea/main-2026.pdf",
+    "reason": "paper_pdf"
+  },
+  {
+    "path": "idea/华为杯main-2026.pdf",
+    "reason": "paper_pdf"
+  }
+]

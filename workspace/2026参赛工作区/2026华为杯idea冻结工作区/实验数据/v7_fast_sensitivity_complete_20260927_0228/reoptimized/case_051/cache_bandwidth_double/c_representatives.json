@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "candidate": "base_base",
+      "expanded_rank": [
+        531670,
+        124518.9,
+        -393216,
+        0,
+        "base_base"
+      ],
+      "plan_sha256": "23f9b112319e3936a068ccb03a1cd5b513fedf05827230057b5884ab0315e322",
+      "source": "incumbent"
+    },
+    {
+      "candidate": "r10_order_short_core_2",
+      "expanded_rank": [
+        542745,
+        129434.16666666667,
+        -753666,
+        720898,
+        "r10_order_short_core_2"
+      ],
+      "plan_sha256": "664156153313f35742dfaa82b0bb8946b338523d348fb6b75367f96d531d79d0",
+      "source": "ordinary_chain"
+    },
+    {
+      "candidate": "base_split_topo_g5_p4",
+      "expanded_rank": [
+        531670,
+        124518.9,
+        -393216,
+        0,
+        "base_split_topo_g5_p4"
+      ],
+      "plan_sha256": "8ab93a3cedb5d40269adf74c01ae3fd22c52f9dbc0897cc5c71f54d558f49e67",
+      "source": "timing"
+    }
+  ],
+  "reference_time_tolerance_cycles": 531,
+  "winner": "base_base"
+}

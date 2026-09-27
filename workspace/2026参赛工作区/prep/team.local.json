@@ -1,0 +1,25 @@
+{
+  "team_number": null,
+  "school": null,
+  "school_code": null,
+  "problem": null,
+  "members": [
+    {
+      "name": null,
+      "role": null
+    },
+    {
+      "name": null,
+      "role": null
+    },
+    {
+      "name": null,
+      "role": null
+    }
+  ],
+  "registration": "UNCONFIRMED",
+  "eligibility_review": "UNCONFIRMED",
+  "payment": "UNCONFIRMED",
+  "phone_verified": false,
+  "review_note": "Fill real team information locally; do not include this file in shared archives."
+}

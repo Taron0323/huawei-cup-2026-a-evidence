@@ -1,0 +1,544 @@
+[
+  {
+    "anchor_roles": [
+      "b_incumbent",
+      "whole_graph",
+      "component_pack"
+    ],
+    "candidate": "incumbent_base",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 0,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "0": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        0
+      ]
+    },
+    "mandatory": true,
+    "mandatory_rank": 0,
+    "plan_sha256": "0e3b42e1dbc1a5630fc2210cd2f0b6ab2434cffb077bf784caf4b64f3fcbad62",
+    "source": "incumbent"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "C2_base",
+    "light": {
+      "cache_expected_gain": 78.78666666666666,
+      "cache_hit_bytes": 6220,
+      "cache_hit_count": 20,
+      "cache_miss_bytes": 81718,
+      "cache_miss_count": 187,
+      "cache_query_bytes": 87938,
+      "cache_query_count": 207,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 32790,
+      "cache_service_bytes": 6220,
+      "cache_service_cycles": 25,
+      "copy_bytes": 140402,
+      "cross_read_bytes": 50672,
+      "cross_write_bytes": 50672,
+      "ddr_service_bytes": 134182,
+      "ddr_service_cycles": 2237,
+      "input_read_bytes": 37266,
+      "light_time": 8028,
+      "loads": {
+        "0": 6565,
+        "1": 6362,
+        "2": 7764,
+        "3": 2361
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        8028,
+        140402,
+        0,
+        -6220,
+        -32790
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "c8b7c4f3d07405d03a31fa1ceac1473a5bd6bfc133a1e51fdcebcd193b94c874",
+    "source": "seed"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "C3_base",
+    "light": {
+      "cache_expected_gain": 62.928,
+      "cache_hit_bytes": 4968,
+      "cache_hit_count": 16,
+      "cache_miss_bytes": 88358,
+      "cache_miss_count": 234,
+      "cache_query_bytes": 93326,
+      "cache_query_count": 250,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 93364,
+      "cache_service_bytes": 4968,
+      "cache_service_cycles": 20,
+      "copy_bytes": 147950,
+      "cross_read_bytes": 52832,
+      "cross_write_bytes": 52832,
+      "ddr_service_bytes": 142982,
+      "ddr_service_cycles": 2384,
+      "input_read_bytes": 40494,
+      "light_time": 9028,
+      "loads": {
+        "0": 8535,
+        "1": 5540,
+        "2": 8977
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        9028,
+        147950,
+        0,
+        -4968,
+        -93364
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "9683595c77239895177bb6c01c5ac4ce3b7e60061a90c92f3c978ea95fcb9d79",
+    "source": "seed"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_split_height_g0_p4",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 20796,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "0": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        -20796
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "698dbbc9c191682984881212ebe7c5aff6b5521f7c09c8bc563ca12465d6e55b",
+    "source": "timing"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_split_release_g0_p4",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 16532,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "0": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        -16532
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "d4740a3cc3da0219b7232a14fb4e4ee612b31ce8450510d6fbe61187e05e8aac",
+    "source": "timing"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_split_topo_g0_p4",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 15148,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "0": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        -15148
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "dac78487ef07d6f81a911162ffb3680925b972c36cc1272a56889c2b9e126ad1",
+    "source": "timing"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_split_height_g0_p2",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 10022,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "0": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        -10022
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "c2d484da34e1036a150d2e2be0e175493516cf641a6ac4b85cf56dc5933a1494",
+    "source": "timing"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_split_topo_g0_p2",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 5926,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "0": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        -5926
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "f5ac7da024cbcef35acb892bd0456b3f50aeef9b897d400a86972c88f99beaa8",
+    "source": "timing"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_split_release_g0_p2",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 3364,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "0": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        -3364
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "64130352eeddb4b249b7cdf046290b09c2c5535d163a84665440f1c957ffdff4",
+    "source": "timing"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_cache_delay_group_tid_1000000712_group_0_core_1_pos_0",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 0,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "1": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        0
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "50e687525f4182a25c2a487f0be82d75763a471a570dcb8e60d619476e3c12df",
+    "source": "cache_delay"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_cache_delay_group_tid_1000000712_group_0_core_2_pos_0",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 0,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "2": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        0
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "a6d0e907c202881aefc9a095092d1affbfb9cc13148490c1396cc8d1aab5bc4e",
+    "source": "cache_delay"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_cache_delay_group_tid_1000000712_group_0_core_3_pos_0",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 0,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "3": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        0
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "df92f72211e70e6708a3d7a3bcbd62631c6abdfb87a357323c43033e349e698b",
+    "source": "cache_delay"
+  },
+  {
+    "anchor_roles": [],
+    "candidate": "incumbent_cache_delay_group_tid_1000000712_group_0_core_4_pos_0",
+    "light": {
+      "cache_expected_gain": 0.0,
+      "cache_hit_bytes": 0,
+      "cache_hit_count": 0,
+      "cache_miss_bytes": 35622,
+      "cache_miss_count": 62,
+      "cache_query_bytes": 35622,
+      "cache_query_count": 62,
+      "cache_replay_error": null,
+      "cache_reuse_potential": 0,
+      "cache_service_bytes": 0,
+      "cache_service_cycles": 0,
+      "copy_bytes": 37414,
+      "cross_read_bytes": 0,
+      "cross_write_bytes": 0,
+      "ddr_service_bytes": 37414,
+      "ddr_service_cycles": 624,
+      "input_read_bytes": 35622,
+      "light_time": 23052,
+      "loads": {
+        "4": 23052
+      },
+      "output_write_bytes": 1792,
+      "pressure_bytes": 0,
+      "scene": "C",
+      "score": [
+        23052,
+        37414,
+        0,
+        0,
+        0
+      ]
+    },
+    "mandatory": false,
+    "mandatory_rank": null,
+    "plan_sha256": "cd58ebd1df1bdcea7a6976c9f8e44aebbb91aab595b84826177b58af1fd51359",
+    "source": "cache_delay"
+  }
+]

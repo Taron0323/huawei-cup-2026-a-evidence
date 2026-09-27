@@ -1,0 +1,52 @@
+{
+  "failures": [
+    {
+      "candidate": "r8_move_g0_c3_p0",
+      "error": "task schedule: dependency cycle; 3 -[subgraph dependency]-> 4; 4 -[subgraph dependency]-> 5; 5 -[subgraph dependency]-> 6; 6 -[core 4 task order]-> 3",
+      "error_type": "EvaluationValidationError"
+    }
+  ],
+  "representatives": [],
+  "starts": [
+    {
+      "candidate": "A0_base",
+      "profile_score": [
+        610436,
+        393218,
+        0
+      ]
+    },
+    {
+      "candidate": "A2_base",
+      "profile_score": [
+        658807,
+        4456702,
+        0
+      ]
+    },
+    {
+      "candidate": "A3_base",
+      "profile_score": [
+        728718,
+        19267674,
+        0
+      ]
+    },
+    {
+      "candidate": "L2_base",
+      "profile_score": [
+        655543,
+        4260106,
+        0
+      ]
+    },
+    {
+      "candidate": "L3_base",
+      "profile_score": [
+        715555,
+        17432786,
+        0
+      ]
+    }
+  ]
+}
